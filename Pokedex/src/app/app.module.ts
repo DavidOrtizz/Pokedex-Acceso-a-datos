@@ -3,10 +3,14 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { CabeceraComponent } from './cabecera/cabecera.component';
+import { PieDePaginaComponent } from './pie-de-pagina/pie-de-pagina.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CabeceraComponent,
+    PieDePaginaComponent
   ],
   imports: [
     BrowserModule,
