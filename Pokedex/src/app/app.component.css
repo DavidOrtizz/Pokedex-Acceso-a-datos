@@ -8,6 +8,7 @@
   border: 3px solid red; /* Estilo del borde */
   border-radius: 20px; /* Radio que ge genera en los bordes del border (Efecto de redondeo)  */
   transition-duration: 0.4s; /* Duración de la transición */
+  cursor: default; /* El raton no cambia el diseño */
 }
 
 .fuego:hover{ /* Cuando el raton pasa por encima */
@@ -23,6 +24,7 @@
   border: 3px solid rgb(55, 55, 243);
   border-radius: 20px;
   transition-duration: 0.4s;
+  cursor: default;
 }
 
 .agua:hover{
