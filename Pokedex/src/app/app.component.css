@@ -273,22 +273,17 @@
 }
 
 .steel{
-  color: rgb(80, 119, 70);
+  color: rgb(143, 154, 140);
   text-align: center;
   margin: 4px 2px;
   padding: 3px 10px;
-  border: 3px solid rgb(80, 119, 70);
+  border: 3px solid rgb(143, 154, 140);
   border-radius: 20px;
   transition-duration: 0.4s;
   cursor: default;
 }
 
 .steel:hover{
-  background-color: rgb(80, 119, 70);
+  background-color: rgb(143, 154, 140);
   color: white;
 }
-
-
-
-
-
