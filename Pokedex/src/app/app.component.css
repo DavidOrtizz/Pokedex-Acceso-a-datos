@@ -1,0 +1,46 @@
+
+/*Estilo de los elementos*/
+.fuego {
+  color: red; /* Color texto */
+  text-align: center; /* Donde se encuentre se alineará en el centro */
+  margin: 4px 2px;  /* Margen del primer valor arriba y abajo. Segundo valor margen de izquierda y derecha */
+  padding: 3px 10px;  /* Espacio entre los elementos */
+  border: 3px solid red; /* Estilo del borde */
+  border-radius: 20px; /* Radio que ge genera en los bordes del border (Efecto de redondeo)  */
+  transition-duration: 0.4s; /* Duración de la transición */
+}
+
+.fuego:hover{ /* Cuando el raton pasa por encima */
+  background-color: red; /* Cambiamos el color de fondo */
+  color: white; /* Cambiamos el color de la letra */
+}
+
+.agua {
+  color: rgb(55, 55, 243);
+  text-align: center;
+  margin: 4px 2px;
+  padding: 3px 10px;
+  border: 3px solid rgb(55, 55, 243);
+  border-radius: 20px;
+  transition-duration: 0.4s;
+}
+
+.agua:hover{
+  background-color: rgb(55, 55, 243);
+  color: white;
+}
+
+.planta {
+  color: green;
+  text-align: center;
+  margin: 4px 2px;
+  padding: 3px 10px;
+  border: 3px solid green;
+  border-radius: 20px;
+  transition-duration: 0.4s;
+}
+
+.planta:hover{
+  background-color: green;
+  color: white;
+}
