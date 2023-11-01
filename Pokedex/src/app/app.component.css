@@ -1,6 +1,6 @@
 
 /*Estilo de los elementos*/
-.fuego {
+.fire {
   color: red; /* Color texto */
   text-align: center; /* Donde se encuentre se alineará en el centro */
   margin: 4px 2px;  /* Margen del primer valor arriba y abajo. Segundo valor margen de izquierda y derecha */
@@ -11,12 +11,12 @@
   cursor: default; /* El raton no cambia el diseño */
 }
 
-.fuego:hover{ /* Cuando el raton pasa por encima */
+.fire:hover{ /* Cuando el raton pasa por encima */
   background-color: red; /* Cambiamos el color de fondo */
   color: white; /* Cambiamos el color de la letra */
 }
 
-.agua {
+.water {
   color: rgb(55, 55, 243);
   text-align: center;
   margin: 4px 2px;
@@ -27,12 +27,12 @@
   cursor: default;
 }
 
-.agua:hover{
+.water:hover{
   background-color: rgb(55, 55, 243);
   color: white;
 }
 
-.planta {
+.grass {
   color: green;
   text-align: center;
   margin: 4px 2px;
@@ -40,9 +40,255 @@
   border: 3px solid green;
   border-radius: 20px;
   transition-duration: 0.4s;
+  cursor: default;
 }
 
-.planta:hover{
+.grass:hover{
   background-color: green;
   color: white;
 }
+
+.bug {
+  color: rgb(19, 88, 19);
+  text-align: center;
+  margin: 4px 2px;
+  padding: 3px 10px;
+  border: 3px solid rgb(19, 88, 19);
+  border-radius: 20px;
+  transition-duration: 0.4s;
+  cursor: default;
+}
+
+.bug:hover{
+  background-color: rgb(19, 88, 19);
+  color: white;
+}
+
+.dark {
+  color: rgb(31, 34, 31);
+  text-align: center;
+  margin: 4px 2px;
+  padding: 3px 10px;
+  border: 3px solid rgb(31, 34, 31);
+  border-radius: 20px;
+  transition-duration: 0.4s;
+  cursor: default;
+}
+
+.dark:hover{
+  background-color: rgb(31, 34, 31);
+  color: white;
+}
+
+.dragon {
+  color: rgb(88, 186, 186);
+  text-align: center;
+  margin: 4px 2px;
+  padding: 3px 10px;
+  border: 3px solid rgb(88, 186, 186);
+  border-radius: 20px;
+  transition-duration: 0.4s;
+  cursor: default;
+}
+
+.dragon:hover{
+  background-color: rgb(88, 186, 186);
+  color: white;
+}
+
+.electric {
+  color: rgb(215, 212, 0);
+  text-align: center;
+  margin: 4px 2px;
+  padding: 3px 10px;
+  border: 3px solid rgb(215, 212, 0);
+  border-radius: 20px;
+  transition-duration: 0.4s;
+  cursor: default;
+}
+
+.electric:hover{
+  background-color: rgb(215, 212, 0);
+  color: white;
+}
+
+.fairy{
+  color: rgb(253, 94, 120);
+  text-align: center;
+  margin: 4px 2px;
+  padding: 3px 10px;
+  border: 3px solid rgb(253, 94, 120);
+  border-radius: 20px;
+  transition-duration: 0.4s;
+  cursor: default;
+}
+
+.fairy:hover{
+  background-color: rgb(253, 94, 120);
+  color: white;
+}
+
+.fighting{
+  color: rgb(253, 152, 0);
+  text-align: center;
+  margin: 4px 2px;
+  padding: 3px 10px;
+  border: 3px solid rgb(253, 152, 0);
+  border-radius: 20px;
+  transition-duration: 0.4s;
+  cursor: default;
+}
+
+.fighting:hover{
+  background-color: rgb(253, 152, 0);
+  color: white;
+}
+
+.flying{
+  color: rgb(123, 156, 247);
+  text-align: center;
+  margin: 4px 2px;
+  padding: 3px 10px;
+  border: 3px solid rgb(123, 156, 247);
+  border-radius: 20px;
+  transition-duration: 0.4s;
+  cursor: default;
+}
+
+.flying:hover{
+  background-color: rgb(123, 156, 247);
+  color: white;
+}
+
+.ghost{
+  color: rgb(77, 48, 82);
+  text-align: center;
+  margin: 4px 2px;
+  padding: 3px 10px;
+  border: 3px solid rgb(77, 48, 82);
+  border-radius: 20px;
+  transition-duration: 0.4s;
+  cursor: default;
+}
+
+.ghost:hover{
+  background-color: rgb(77, 48, 82);
+  color: white;
+}
+
+.ground{
+  color: rgb(113, 74, 10);
+  text-align: center;
+  margin: 4px 2px;
+  padding: 3px 10px;
+  border: 3px solid rgb(113, 74, 10);
+  border-radius: 20px;
+  transition-duration: 0.4s;
+  cursor: default;
+}
+
+.ground:hover{
+  background-color: rgb(113, 74, 10);
+  color: white;
+}
+
+.ice{
+  color: rgb(5, 220, 216);
+  text-align: center;
+  margin: 4px 2px;
+  padding: 3px 10px;
+  border: 3px solid rgb(5, 220, 216);
+  border-radius: 20px;
+  transition-duration: 0.4s;
+  cursor: default;
+}
+
+.ice:hover{
+  background-color: rgb(5, 220, 216);
+  color: white;
+}
+
+.normal{
+  color: rgb(202, 160, 167);
+  text-align: center;
+  margin: 4px 2px;
+  padding: 3px 10px;
+  border: 3px solid rgb(202, 160, 167);
+  border-radius: 20px;
+  transition-duration: 0.4s;
+  cursor: default;
+}
+
+.normal:hover{
+  background-color: rgb(202, 160, 167);
+  color: white;
+}
+
+.poison{
+  color: rgb(123, 33, 86);
+  text-align: center;
+  margin: 4px 2px;
+  padding: 3px 10px;
+  border: 3px solid rgb(123, 33, 86);
+  border-radius: 20px;
+  transition-duration: 0.4s;
+  cursor: default;
+}
+
+.poison:hover{
+  background-color: rgb(123, 33, 86);
+  color: white;
+}
+
+.psychic{
+  color: rgb(205, 36, 135);
+  text-align: center;
+  margin: 4px 2px;
+  padding: 3px 10px;
+  border: 3px solid rgb(205, 36, 135);
+  border-radius: 20px;
+  transition-duration: 0.4s;
+  cursor: default;
+}
+
+.psychic:hover{
+  background-color: rgb(205, 36, 135);
+  color: white;
+}
+
+.rock{
+  color: rgb(124, 81, 0);
+  text-align: center;
+  margin: 4px 2px;
+  padding: 3px 10px;
+  border: 3px solid rgb(124, 81, 0);
+  border-radius: 20px;
+  transition-duration: 0.4s;
+  cursor: default;
+}
+
+.rock:hover{
+  background-color: rgb(124, 81, 0);
+  color: white;
+}
+
+.steel{
+  color: rgb(80, 119, 70);
+  text-align: center;
+  margin: 4px 2px;
+  padding: 3px 10px;
+  border: 3px solid rgb(80, 119, 70);
+  border-radius: 20px;
+  transition-duration: 0.4s;
+  cursor: default;
+}
+
+.steel:hover{
+  background-color: rgb(80, 119, 70);
+  color: white;
+}
+
+
+
+
+
