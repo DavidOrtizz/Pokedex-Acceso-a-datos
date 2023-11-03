@@ -1,2 +1,20 @@
-<p>cabecera works!</p>
+<h1>Pokédex</h1>
+<div>
+  <table>
+    <tr>
+      <td><b>Introduce nombre del pokémon</b></td>
+      <td>
+        <input [(ngModel)]="buscadorPokemon"><!-- Buscador -->
+        <app-interior>
+          [mensajeDeEntrada]="buscadorPokemon"
+          (mensajeDeSalida)="buscamos"
+        </app-interior>
+      </td>
+      <td>
+        <button *ngIf="menuAbierto == false" (click)="abrirMenu()"><img src="../../assets/img/BusquedaAvanzada.png" width="17px" /></button>
+        <button *ngIf="menuAbierto == true" (click)="abrirMenu()"><img src="../../assets/img/CerrarBusquedaAvanzada.png" width="17px" /></button>
+      </td>
+    </tr>
+  </table>
+</div>
 <hr>
