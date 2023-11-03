@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { PokemonService } from '../pokemon.service';
 
 @Component({
   selector: 'app-interior',
@@ -7,4 +8,17 @@ import { Component } from '@angular/core';
 })
 export class InteriorComponent {
 
-}
+
+  constructor(private servicioPokemon: PokemonService) {}
+
+  ngOnInit() {
+
+    
+      
+      
+    }
+  
+
+    }
+  
+
