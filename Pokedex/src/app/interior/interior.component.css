@@ -1,0 +1,23 @@
+div {
+  display: flex;
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 6px;
+}
+
+.letraId {
+  font-size: small;
+  color: rgb(68, 68, 68);
+}
+
+.letraNombre {
+  font-size: 20px;
+}
+
+table {
+  padding: 3px 10px;
+  border: 5px solid;
+  border-radius: 20px;
+}
