@@ -1,15 +1,10 @@
-
-<div>
-  <input [(ngModel)]="buscadorPokemon" (input)="buscarPokemon()" placeholder="Buscar Pokémon por nombre">
-</div>
-
 <div>
 <table class="centro">
   <tr>
     <td><b>Buscador pokémon:</b></td>
     <td>
       <div>
-
+        <input [(ngModel)]="buscadorPokemon" (input)="buscarPokemon()" placeholder="Buscar Pokémon por nombre">
       </div>
     </td>
     <td></td>
@@ -50,13 +45,12 @@
 <td class="steel">Acero</td>
 </tr>
 </table>
-
 </div>
 
-
+<br>
 
 <!-- Tarjetas -->
-<div>
+<div class="tarjetasPokemon">
   <table *ngFor="let pokemon of pokemons">
     <tr> <!-- Imagen -->
       <td colspan="2">
@@ -64,7 +58,7 @@
       </td>
     </tr>
     <tr> <!-- id -->
-      <td colspan="2" class="letraId">N.º{{ pokemon.id }}</td>
+      <td colspan="2" class="letraId">N.º {{ pokemon.id }}</td>
     </tr>
     <tr> <!-- Nombre -->
       <td colspan="2" class="letraNombre">{{ pokemon.nombre }}</td>
@@ -73,5 +67,4 @@
       <td *ngFor="let tipo of pokemon.tipos" class="{{tipo}}">{{tipo}}</td>
     </tr>
   </table>
-
 </div>
