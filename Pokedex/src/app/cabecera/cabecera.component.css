@@ -1,22 +1,22 @@
-h1{
-  color: red;
-  text-align: center;
-  letter-spacing: 1px;
+.centro {
+  display: flex;
+  justify-content: center;  /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
 }
 
-input{
+input {
   border: 2px solid;
   border-radius: 20px;
   padding: 3px 15px;
   margin: auto;
 }
 
-table{
+table {
   table-layout: auto;
   text-align: center;
 }
 
-button{
+button {
   background: none;
   border: none;
   cursor: pointer;

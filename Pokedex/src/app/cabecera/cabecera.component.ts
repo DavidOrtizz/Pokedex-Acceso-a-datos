@@ -15,17 +15,17 @@ export class CabeceraComponent implements OnInit {
   @Output()
   buscamos = new EventEmitter();
 
-  constructor(){}
+  constructor() { }
 
   ngOnInit(): void {
-      
+
   }
 
-  abrirMenu(){
-   if(this.menuAbierto == true){
-    this.menuAbierto = false;
-   } else {
-    this.menuAbierto = true;
-   }
+  abrirMenu() {
+    if (this.menuAbierto == true) {
+      this.menuAbierto = false;
+    } else {
+      this.menuAbierto = true;
+    }
   }
 }

@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -10,11 +11,9 @@ export class PokemonService {
   getIdPokemon(): Observable<string> {
     return this.http.get()
   }
-
   getNombrePokemon(): Observable<string> {
     return
   }
-
   getTipoPokemon(): Observable<string> {
     return
   }
