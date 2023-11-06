@@ -3,13 +3,12 @@
   align-items: center;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content:center;
   gap: 6px;
 }
 
 .letraId {
   font-size: small;
-  color: rgb(68, 68, 68);
 }
 
 .letraNombre {

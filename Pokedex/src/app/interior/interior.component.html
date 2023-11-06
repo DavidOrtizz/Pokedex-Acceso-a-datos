@@ -16,6 +16,16 @@
       width="30px" /></button>
 </td>
 </tr>
+<tr>
+  <td><b>Vista:</b></td>
+  <td>
+    <button *ngIf="oscuro == false" (click)="modoOscuro()"><img src="../../assets/img/pokeballSol.png"
+      width="30px" /></button>
+  <button *ngIf="oscuro == true" (click)="modoOscuro()"><img src="../../assets/img/pokeballLuna.png"
+      width="30px" /></button>
+  </td>
+  <td><b>{{textoOscuro}}</b></td>
+</tr>
 </table>
 </div>
 <!-- Opciones del buscador avanzado -->

@@ -15,6 +15,8 @@ export class InteriorComponent {
 
   @Output() 
   menuAbierto = false;
+  oscuro = false;
+  textoOscuro = 'Claro';
   buscamos = new EventEmitter<string>(); // Emitir el nombre del Pokémon a buscar
   constructor(private pokemonService: PokemonService) {}
 
@@ -27,13 +29,21 @@ export class InteriorComponent {
   abrirMenu() {
     this.menuAbierto = !this.menuAbierto;
   }
+
+  modoOscuro() {
+    if(this.oscuro == false){
+      this.oscuro = true;
+      this.textoOscuro = 'Oscuro';
+    } else {
+      this.oscuro = false;
+      this.textoOscuro = 'Claro';
+    }
+  }
     // Método para buscar el Pokémon y emitir el evento
     buscarPokemon() {
       // Convierte el nombre a minúsculas para que la búsqueda sea insensible a mayúsculas y minúsculas
       const nombreABuscar = this.buscadorPokemon.toLowerCase();
       // Filtra los Pokémon cuyo nombre coincide con la búsqueda
       this.pokemons = this.pokemonsBuscador.filter(pokemon => pokemon.nombre.toLowerCase().includes(nombreABuscar));
-
-
     }
 }
