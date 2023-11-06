@@ -7,25 +7,12 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class CabeceraComponent implements OnInit {
 
-  menuAbierto = false;
-
-  @Input()
-  buscadorPokemon = '';
-
-  @Output()
-  buscamos = new EventEmitter();
 
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit(): void { }
 
-  }
+ 
 
-  abrirMenu() {
-    if (this.menuAbierto == true) {
-      this.menuAbierto = false;
-    } else {
-      this.menuAbierto = true;
-    }
-  }
+
 }

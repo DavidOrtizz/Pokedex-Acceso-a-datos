@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Output } from '@angular/core';
 import { PokemonService } from '../pokemon.service';
 import { Pokemon } from '../pokemon';
+import { EventEmitter, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-interior',
@@ -9,13 +10,30 @@ import { Pokemon } from '../pokemon';
 })
 export class InteriorComponent {
   pokemons: Pokemon[] = [];
+  pokemonsBuscador: Pokemon[] = [];
+  buscadorPokemon = ''; // Variable para almacenar el nombre del Pokémon a buscar
 
+  @Output() 
+  menuAbierto = false;
+  buscamos = new EventEmitter<string>(); // Emitir el nombre del Pokémon a buscar
   constructor(private pokemonService: PokemonService) {}
 
   ngOnInit() {
-    this.pokemonService.getPokemons(150).subscribe((dataPokemons: Pokemon[]) => {
+    this.pokemonService.getPokemons(151).subscribe((dataPokemons: Pokemon[]) => {
       this.pokemons = dataPokemons;
-      console.log(this.pokemons);
+      this.pokemonsBuscador = dataPokemons;
     });
   } 
+  abrirMenu() {
+    this.menuAbierto = !this.menuAbierto;
+  }
+    // Método para buscar el Pokémon y emitir el evento
+    buscarPokemon() {
+      // Convierte el nombre a minúsculas para que la búsqueda sea insensible a mayúsculas y minúsculas
+      const nombreABuscar = this.buscadorPokemon.toLowerCase();
+      // Filtra los Pokémon cuyo nombre coincide con la búsqueda
+      this.pokemons = this.pokemonsBuscador.filter(pokemon => pokemon.nombre.toLowerCase().includes(nombreABuscar));
+
+
+    }
 }
