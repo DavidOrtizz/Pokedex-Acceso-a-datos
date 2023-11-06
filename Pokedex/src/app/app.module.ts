@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
@@ -21,12 +20,9 @@ import { PruebasComponent } from './pruebas/pruebas.component';
   ],
   imports: [
     BrowserModule,
-
     AppRoutingModule,
     FormsModule,
-
     HttpClientModule
-
   ],
   providers: [],
   bootstrap: [AppComponent]  
