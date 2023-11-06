@@ -1,7 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-
-
 import { Pokemon } from './pokemon';
 import { Observable } from 'rxjs/internal/Observable';
 import { forkJoin } from 'rxjs';
@@ -15,7 +13,7 @@ export class PokemonService {
 
   constructor(private http: HttpClient) {}
 
-
+//conseguir un pokemon con sus datos
 
   getPokemon(i: number): Observable<Pokemon> {
     return this.http.get('https://pokeapi.co/api/v2/pokemon/' + i).pipe(map((data: any) => {
@@ -27,7 +25,7 @@ export class PokemonService {
       }
     }));
   }
-
+//conseguir todos los pokemons
   getPokemons(cantidad: number): Observable<Pokemon[]> {
     const requests: Observable<Pokemon>[] = [];
 
