@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { PokemonService } from '../pokemon.service';
+import { Pokemon } from '../pokemon';
 
 @Component({
   selector: 'app-interior',
@@ -7,9 +8,14 @@ import { PokemonService } from '../pokemon.service';
   styleUrls: ['./interior.component.css', '../app.component.css']
 })
 export class InteriorComponent {
+  pokemons: Pokemon[] = [];
 
+  constructor(private pokemonService: PokemonService) {}
 
-  constructor(private servicioPokemon: PokemonService) {}
-    }
-  
-
+  ngOnInit() {
+    this.pokemonService.getPokemons(150).subscribe((dataPokemons: Pokemon[]) => {
+      this.pokemons = dataPokemons;
+      console.log(this.pokemons);
+    });
+  } 
+}
