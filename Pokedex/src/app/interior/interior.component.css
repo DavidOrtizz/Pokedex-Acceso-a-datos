@@ -3,12 +3,18 @@
   align-items: center;
   display: flex;
   flex-wrap: wrap;
-  justify-content:center;
+  justify-content: center;
   gap: 6px;
+}
+
+.fondoTarjeta {
+  background-color: none;
 }
 
 .letraId {
   font-size: small;
+  text-align: right;
+  color: rgb(129, 131, 132);
 }
 
 .letraNombre {
@@ -23,8 +29,10 @@ table {
 
 .centro {
   display: flex;
-  justify-content: center;  /* Centra horizontalmente */
-  align-items: center; /* Centra verticalmente */
+  justify-content: center;
+  /* Centra horizontalmente */
+  align-items: center;
+  /* Centra verticalmente */
 }
 
 input {
@@ -44,4 +52,3 @@ button {
   border: none;
   cursor: pointer;
 }
-

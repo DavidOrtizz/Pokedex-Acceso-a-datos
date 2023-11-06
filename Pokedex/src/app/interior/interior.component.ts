@@ -16,7 +16,7 @@ export class InteriorComponent {
   @Output() 
   menuAbierto = false;
   oscuro = false;
-  textoOscuro = 'Claro';
+  textoOscuro = 'Tema claro';
   buscamos = new EventEmitter<string>(); // Emitir el nombre del Pokémon a buscar
   constructor(private pokemonService: PokemonService) {}
 
@@ -33,10 +33,10 @@ export class InteriorComponent {
   modoOscuro() {
     if(this.oscuro == false){
       this.oscuro = true;
-      this.textoOscuro = 'Oscuro';
+      this.textoOscuro = 'Tema oscuro';
     } else {
       this.oscuro = false;
-      this.textoOscuro = 'Claro';
+      this.textoOscuro = 'Tema claro';
     }
   }
     // Método para buscar el Pokémon y emitir el evento

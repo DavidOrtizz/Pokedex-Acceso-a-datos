@@ -17,8 +17,8 @@
 </td>
 </tr>
 <tr>
-  <td><b>Vista:</b></td>
-  <td>
+  <td>|</td>
+  <td class="derecha">
     <button *ngIf="oscuro == false" (click)="modoOscuro()"><img src="../../assets/img/pokeballSol.png"
       width="30px" /></button>
   <button *ngIf="oscuro == true" (click)="modoOscuro()"><img src="../../assets/img/pokeballLuna.png"
@@ -33,7 +33,7 @@
 <div class="centro" *ngIf="menuAbierto">
 <table>
 <tr>
-<td class="fire">Fuego</td>
+<td class="fire"><button>Fuego</button></td>
 <td class="water">Agua</td>
 <td class="grass">Planta</td>
 <td class="bug">Bicho</td>
@@ -61,7 +61,7 @@
 
 <!-- Tarjetas -->
 <div class="tarjetasPokemon">
-  <table *ngFor="let pokemon of pokemons">
+  <table *ngFor="let pokemon of pokemons" class="fondoTarjeta">
     <tr> <!-- Imagen -->
       <td colspan="2">
         <img src="{{pokemon.imagen}}" width="200px" />
