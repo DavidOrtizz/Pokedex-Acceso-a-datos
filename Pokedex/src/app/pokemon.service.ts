@@ -28,9 +28,6 @@ export class PokemonService {
     }));
   }
 
-
-
-
   getPokemons(cantidad: number): Observable<Pokemon[]> {
     const requests: Observable<Pokemon>[] = [];
 
