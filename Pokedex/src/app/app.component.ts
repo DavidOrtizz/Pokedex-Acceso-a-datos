@@ -5,7 +5,8 @@ import { Pokemon } from './pokemon';
 
 @Component({
   selector: 'app-root',
-  template: ``,
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
   pokemons: Pokemon[] = [];
@@ -15,6 +16,7 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this.pokemonService.getPokemons(150).subscribe((dataPokemons: Pokemon[]) => {
       this.pokemons = dataPokemons;
+      console.log(this.pokemons);
     });
   }
 }

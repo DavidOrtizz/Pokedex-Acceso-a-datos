@@ -1,3 +1,17 @@
-<app-interior></app-interior>
+
+
+<div *ngFor="let pokemon of pokemons">
+    <img src="{{pokemon.imagen}}"/>
+    <p>{{ pokemon.nombre }} {{ pokemon.id }}</p>
+  
+
+    <div *ngFor="let tipo of pokemon.tipos">
+        <p>{{tipo}}</p>
+    </div>
+</div>
+
+<app-interior>
+
+</app-interior>
 <app-pie-de-pagina></app-pie-de-pagina>
 <app-pruebas></app-pruebas>

@@ -10,15 +10,6 @@ export class InteriorComponent {
 
 
   constructor(private servicioPokemon: PokemonService) {}
-
-  ngOnInit() {
-
-    
-      
-      
-    }
-  
-
     }
   
 
