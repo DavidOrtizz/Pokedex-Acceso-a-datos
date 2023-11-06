@@ -1,4 +1,6 @@
-
+*{
+  font-family: Arial, Helvetica, sans-serif;
+}
 /*Estilo de los elementos*/
 .fire {
   color: red; /* Color texto */

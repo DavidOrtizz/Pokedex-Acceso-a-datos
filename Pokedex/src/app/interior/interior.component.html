@@ -1,9 +1,19 @@
-<div *ngFor="let pokemon of pokemons">
-  <img src="{{pokemon.imagen}}" width="175px"/>
-  <p>{{ pokemon.nombre }} {{ pokemon.id }}</p>
-
-
-  <div *ngFor="let tipo of pokemon.tipos">
-      <p class="{{tipo}}">{{tipo}}</p>
-  </div>
+<!-- Tarjetas -->
+<div>
+  <table *ngFor="let pokemon of pokemons">
+    <tr> <!-- Imagen -->
+      <td colspan="2">
+        <img src="{{pokemon.imagen}}" width="200px" />
+      </td>
+    </tr>
+    <tr> <!-- id -->
+      <td colspan="2" class="letraId">N.º{{ pokemon.id }}</td>
+    </tr>
+    <tr> <!-- Nombre -->
+      <td colspan="2" class="letraNombre">{{ pokemon.nombre }}</td>
+    </tr>
+    <tr> <!-- Tipos -->
+      <td *ngFor="let tipo of pokemon.tipos" class="{{tipo}}">{{tipo}}</td>
+    </tr>
+  </table>
 </div>
