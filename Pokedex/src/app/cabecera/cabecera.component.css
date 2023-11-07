@@ -3,21 +3,3 @@
   justify-content: center;  /* Centra horizontalmente */
   align-items: center; /* Centra verticalmente */
 }
-
-input {
-  border: 2px solid;
-  border-radius: 20px;
-  padding: 3px 15px;
-  margin: auto;
-}
-
-table {
-  table-layout: auto;
-  text-align: center;
-}
-
-button {
-  background: none;
-  border: none;
-  cursor: pointer;
-}

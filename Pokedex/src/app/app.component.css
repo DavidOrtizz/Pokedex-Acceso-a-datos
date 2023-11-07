@@ -1,9 +1,8 @@
 *{
   font-family: Arial, Helvetica, sans-serif;
-  text-transform: capitalize;;
 }
 
-.modoOscuro{
+.temaOscuro{
   color: white;
   background-color: black ;
 }

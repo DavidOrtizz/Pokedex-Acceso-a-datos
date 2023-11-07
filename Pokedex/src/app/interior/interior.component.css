@@ -1,4 +1,5 @@
 .tarjetasPokemon {
+  text-transform: capitalize;
   display: flex;
   align-items: center;
   display: flex;
@@ -47,8 +48,21 @@ table {
   text-align: center;
 }
 
-button {
+button{
   background: none;
   border: none;
   cursor: pointer;
 }
+
+.tipoFire{
+  color: red; /* Color texto */
+  text-align: center; /* Donde se encuentre se alineará en el centro */
+  margin: 4px 2px;  /* Margen del primer valor arriba y abajo. Segundo valor margen de izquierda y derecha */
+  padding: 3px 10px;  /* Espacio entre los elementos */
+  border: 3px solid red; /* Estilo del borde */
+  border-radius: 20px; /* Radio que ge genera en los bordes del border (Efecto de redondeo)  */
+  transition-duration: 0.4s; /* Duración de la transición */
+  cursor:pointer; /* El raton no cambia el diseño */
+}
+
+
