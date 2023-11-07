@@ -1,17 +1,5 @@
+
 /*
-
-/*.tarjetasPokemon {
-
-  display: flex;
-  align-items: center;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 6px;
-
-  
-}
-
 .fondoTarjeta {
   background-color: none;
 }
@@ -57,9 +45,6 @@ button{
   border: none;
   cursor: pointer;
 }
-
-
-
 
 .btn{
   cursor:pointer;
@@ -113,7 +98,7 @@ button{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 1px;
+    gap: 6px;
   }
 
   .fondoTarjeta {
@@ -141,11 +126,13 @@ button{
     border-radius: 20px;
     text-align: center;
   }
+
   table {
     width: 100%;
     padding: 3px 10px;
     border-radius: 20px;
     text-align: center;
+    padding-right: 10px;
   }
   
   .btn {

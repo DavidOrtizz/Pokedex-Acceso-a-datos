@@ -1,56 +1,50 @@
-
 <div> <!-- Menu principal -->
   <table class="centro">
     <tr> <!-- Buscador -->
-
-
-  <div>
-  <table class=" cajaBuscador ">
-    <tr>
-
       <td><b>Buscador pokémon:</b></td>
       <td>
         <div>
-          <input [(ngModel)]="buscadorPokemon" (input)="buscarPokemon()" placeholder="Buscar Pokémon">
+          <input [(ngModel)]="buscadorPokemon" (input)="buscarPokemon()" placeholder="Buscar Pokémon por nombre">
         </div>
       </td>
       <td></td>
-
-  <td><b>Buscador avanzado:</b></td><!-- para tipos -->
-  <td>
-    <button *ngIf="menuAbierto == false" (click)="abrirMenu()"><img src="../../assets/img/pokeballCerrada.png"
-        width="30px" /></button>
-    <button *ngIf="menuAbierto == true" (click)="abrirMenu()"><img src="../../assets/img/pokeballAbierta.png"
-        width="30px" /></button>
-  </td>
-  </tr>
-  <div>
-    <select [(ngModel)]="opcionSeleccionada" (change)="cambiarOpcion()" >
-      <option value="0">Todas las generaciones</option>
-      <option value="1">Generación 1</option>
-      <option value="2">Generación 2</option>
-      <option value="3">Generación 3</option>
-      <option value="4">Generación 4</option>
-      <option value="5">Generación 5</option>
-      <option value="6">Generación 6</option>
-      <option value="7">Generación 7</option>
-      <option value="8">Generación 8</option>
-      <option value="9">Generación 9</option>
-    </select>
-  </div>
-  <tr>
-    <td>|</td>
-    <td class="derecha">
-      <button *ngIf="oscuro == false" (click)="modoOscuro()"><img src="../../assets/img/pokeballSol.png"
-        width="30px" /></button>
-    <button *ngIf="oscuro == true" (click)="modoOscuro()"><img src="../../assets/img/pokeballLuna.png"
-        width="30px" /></button>
-    </td>
-    <td><b>{{textoOscuro}}</b></td>
-  </tr>
+      <td><b>Buscador avanzado:</b></td> <!-- Buscador para tipos -->
+      <td>
+        <button *ngIf="menuAbierto == false" (click)="abrirMenu()"><img src="../../assets/img/pokeballCerrada.png"
+            width="30px" /></button>
+        <button *ngIf="menuAbierto == true" (click)="abrirMenu()"><img src="../../assets/img/pokeballAbierta.png"
+            width="30px" /></button>
+      </td>
+    </tr>
+    <tr> <!-- Seleccionar generación -->
+      <td>|</td>
+      <td><b>Selecciona generación: </b></td>
+      <td>
+        <select [(ngModel)]="opcionSeleccionada" (change)="cambiarOpcion()">
+          <option value="0">Todas las generaciones</option>
+          <option value="1">Generación 1</option>
+          <option value="2">Generación 2</option>
+          <option value="3">Generación 3</option>
+          <option value="4">Generación 4</option>
+          <option value="5">Generación 5</option>
+          <option value="6">Generación 6</option>
+          <option value="7">Generación 7</option>
+          <option value="8">Generación 8</option>
+          <option value="9">Generación 9</option>
+        </select>
+      </td>
+    </tr>
+    <tr> <!-- Seleccionar modo oscuro o modo claro -->
+      <td>|</td>
+      <td class="derecha">
+        <button *ngIf="oscuro == false" (click)="modoOscuro()"><img src="../../assets/img/pokeballSol.png"
+            width="30px" /></button>
+        <button *ngIf="oscuro == true" (click)="modoOscuro()"><img src="../../assets/img/pokeballLuna.png"
+            width="30px" /></button>
+      </td>
+      <td><b>{{textoOscuro}}</b></td>
   </table>
-
-  </div>
+</div> <!-- Fin del menu principal -->
   <!-- Opciones del buscador avanzado -->
   <div class="centro" *ngIf="menuAbierto">
 
