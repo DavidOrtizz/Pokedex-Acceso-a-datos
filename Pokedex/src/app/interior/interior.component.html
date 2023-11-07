@@ -1,5 +1,5 @@
 <div> <!-- Menu principal -->
-  <table class="centro">
+  <table class="menu">
     <tr> <!-- Buscador -->
       <td><b>Buscador pokémon:</b></td>
       <td>
@@ -10,9 +10,9 @@
       <td></td>
       <td><b>Buscador avanzado:</b></td> <!-- Buscador para tipos -->
       <td>
-        <button *ngIf="menuAbierto == false" (click)="abrirMenu()"><img src="../../assets/img/pokeballCerrada.png"
+        <button *ngIf="menuAbierto == false" (click)="abrirMenu()" class="botonOpciones"><img src="../../assets/img/pokeballCerrada.png"
             width="30px" /></button>
-        <button *ngIf="menuAbierto == true" (click)="abrirMenu()"><img src="../../assets/img/pokeballAbierta.png"
+        <button *ngIf="menuAbierto == true" (click)="abrirMenu()" class="botonOpciones"><img src="../../assets/img/pokeballAbierta.png"
             width="30px" /></button>
       </td>
     </tr>
@@ -37,18 +37,20 @@
     <tr> <!-- Seleccionar modo oscuro o modo claro -->
       <td>|</td>
       <td class="derecha">
-        <button *ngIf="oscuro == false" (click)="modoOscuro()"><img src="../../assets/img/pokeballSol.png"
+        <button *ngIf="oscuro == false" (click)="modoOscuro()" class="botonOpciones"><img src="../../assets/img/pokeballSol.png"
             width="30px" /></button>
-        <button *ngIf="oscuro == true" (click)="modoOscuro()"><img src="../../assets/img/pokeballLuna.png"
+        <button *ngIf="oscuro == true" (click)="modoOscuro()" class="botonOpciones"><img src="../../assets/img/pokeballLuna.png"
             width="30px" /></button>
       </td>
       <td><b>{{textoOscuro}}</b></td>
   </table>
 </div> <!-- Fin del menu principal -->
   <!-- Opciones del buscador avanzado -->
-  <div class="centro" *ngIf="menuAbierto">
-
+  <div class="menu" *ngIf="menuAbierto">
     <table>
+      <tr>
+        <th colspan="9">Seleciona el tipo</th>
+      </tr>
       <tr>
         <td class="fire"(click)="filtroTipos('fire')">Fuego</td>
         <td class="water"(click)="filtroTipos('water')">Agua</td>
@@ -73,6 +75,8 @@
       </tr>
     </table>
   </div>
+
+  <br> <!-- Espacio separatorio del menu y las tarjetas -->
 
   <!-- Tarjetas -->
   <div class="tarjetasPokemon">
