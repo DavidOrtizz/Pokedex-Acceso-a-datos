@@ -16,17 +16,20 @@ export class InteriorComponent implements OnInit {
   tiposSeleccionados: string[] = [];
   //Array para usar en el buscador y muestre el resultado filtrado
   pokemonsBuscador: Pokemon[] = [];
-  buscadorPokemon = ''; // Variable para almacenar el nombre del Pokémon a buscar
-
+  // Variable para almacenar el nombre del Pokémon a buscar
   @Output() 
+  buscadorPokemon = ''; 
+  opcionSeleccionada: string = '';
+  generacionSeleccionada: number = 0;
   menuAbierto = false;
   oscuro = false;
   textoOscuro = 'Tema claro';
   buscamos = new EventEmitter<string>(); // Emitir el nombre del Pokémon a buscar
   constructor(private pokemonService: PokemonService) {}
-
+  
   ngOnInit() {
     //introduce cuantos pokemons quieres(hay que cambiarlo para uandos e haga lo de las generaciones)
+
     this.pokemonService.getPokemons(151).subscribe((dataPokemons: Pokemon[]) => {
       this.pokemons = dataPokemons;
       this.pokemonsBuscador = dataPokemons;
@@ -48,11 +51,10 @@ export class InteriorComponent implements OnInit {
     }
   }
     // Método para buscar el Pokémon y emitir el evento
-    buscarPokemon() {
+  buscarPokemon() {
       // Convierte el nombre a minúsculas para que la búsqueda sea insensible a mayúsculas y minúsculas
       const nombreBuscado = this.buscadorPokemon.toLowerCase();
       // Filtra los Pokémon cuyo nombre coincide con la búsqueda
-
       this.pokemons = this.pokemonsBuscador.filter(pokemon => pokemon.nombre.toLowerCase().includes(nombreBuscado));
 
     }
@@ -78,4 +80,61 @@ export class InteriorComponent implements OnInit {
       //volver a la version inicial del array usando el condicional de filtrarPorTipos
       this.filtrarPorTipos();
     }
+
+    
+    cambiarOpcion() {
+      console.log('Opción:', this.opcionSeleccionada);
+    
+      // Puedes realizar acciones adicionales en función de la opción seleccionada
+      if (this.opcionSeleccionada === '1') {
+        this.pokemonService.getPokemons(151).subscribe((dataPokemons: Pokemon[]) => {
+          this.pokemons = dataPokemons;
+          this.pokemonsBuscador = dataPokemons;
+        });
+      } else if (this.opcionSeleccionada === '2') {
+        
+        this.pokemonService.getPokemons(251).subscribe((dataPokemons: Pokemon[]) => {
+          this.pokemons = dataPokemons;
+          this.pokemonsBuscador = dataPokemons;
+        });
+      } else if (this.opcionSeleccionada === '3') {
+        this.pokemonService.getPokemons(386).subscribe((dataPokemons: Pokemon[]) => {
+          this.pokemons = dataPokemons;
+          this.pokemonsBuscador = dataPokemons;
+        });
+      }else if (this.opcionSeleccionada === '4') {
+        this.pokemonService.getPokemons(493).subscribe((dataPokemons: Pokemon[]) => {
+          this.pokemons = dataPokemons;
+          this.pokemonsBuscador = dataPokemons;
+        });
+      }else if (this.opcionSeleccionada === '5') {
+        this.pokemonService.getPokemons(649).subscribe((dataPokemons: Pokemon[]) => {
+          this.pokemons = dataPokemons;
+          this.pokemonsBuscador = dataPokemons;
+        });
+      }else if (this.opcionSeleccionada === '6') {
+        this.pokemonService.getPokemons(721).subscribe((dataPokemons: Pokemon[]) => {
+          this.pokemons = dataPokemons;
+          this.pokemonsBuscador = dataPokemons;
+          
+        });
+      }else if (this.opcionSeleccionada === '7') {
+        this.pokemonService.getPokemons(809).subscribe((dataPokemons: Pokemon[]) => {
+          this.pokemons = dataPokemons;
+          this.pokemonsBuscador = dataPokemons;
+        });
+      }else if (this.opcionSeleccionada === '8') {
+        this.pokemonService.getPokemons(898).subscribe((dataPokemons: Pokemon[]) => {
+          this.pokemons = dataPokemons;
+          this.pokemonsBuscador = dataPokemons;
+        });
+      }else if (this.opcionSeleccionada === '9') {
+        this.pokemonService.getPokemons(1017).subscribe((dataPokemons: Pokemon[]) => {
+          this.pokemons = dataPokemons;
+          this.pokemonsBuscador = dataPokemons;
+        });
+      }
+      
+    }
+
   }  
