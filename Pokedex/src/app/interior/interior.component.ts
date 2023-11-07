@@ -2,6 +2,7 @@ import { Component, Output } from '@angular/core';
 import { PokemonService } from '../pokemon.service';
 import { Pokemon } from '../pokemon';
 import { EventEmitter, Input, OnInit} from '@angular/core';
+import { ThemeService } from '../theme.service';
 
 @Component({
   selector: 'app-interior',

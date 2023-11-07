@@ -9,9 +9,13 @@ table {
   text-align: center;
 }
 
-.modoOscuro{
-  color: white;
-  background-color: black ;
+input{
+  display: none;
+}
+
+form{
+  padding-top: 5px;
+  padding-bottom: 10px;
 }
 
 .menu{
@@ -121,14 +125,24 @@ table {
     border: 3px solid red; /* Estilo del borde */
     border-radius: 20px; /* Radio que ge genera en los bordes del border (Efecto de redondeo)  */
     transition-duration: 0.4s; /* Duración de la transición */
-    cursor: default; /* El raton no cambia el diseño */
+    cursor: pointer; /* El raton no cambia el diseño */
   }
-  
-  .fire:hover{ /* Cuando el raton pasa por encima */
+
+  .seleccionFire{
+    padding-right: 8px;
+    color: red;
+    margin: auto;
+  }
+
+  .seleccionFire:checked + .seleccionFire-label {
     background-color: red; /* Cambiamos el color de fondo */
     color: white; /* Cambiamos el color de la letra */
+    margin: 4px 2px;  /* Margen del primer valor arriba y abajo. Segundo valor margen de izquierda y derecha */
+    padding: 4px 10px;  /* Espacio entre los elementos */
+    border-radius: 20px; /* Radio que ge genera en los bordes del border (Efecto de redondeo)  */
+    transition-duration: 0.4s; /* Duración de la transición */
   }
-  
+
   .water {
     font-size: medium;
     color: rgb(55, 55, 243);
@@ -141,9 +155,19 @@ table {
     cursor: default;
   }
   
-  .water:hover{
+  .seleccionWater{
+    padding-right: 8px;
+    color:rgb(55, 55, 243);
+    margin: auto;
+  }
+
+  .seleccionWater:checked + .seleccionWater-label {
     background-color: rgb(55, 55, 243);
-    color: white;
+    color: white; /* Cambiamos el color de la letra */
+    margin: 4px 2px;  /* Margen del primer valor arriba y abajo. Segundo valor margen de izquierda y derecha */
+    padding: 4px 10px;  /* Espacio entre los elementos */
+    border-radius: 20px; /* Radio que ge genera en los bordes del border (Efecto de redondeo)  */
+    transition-duration: 0.4s; /* Duración de la transición */
   }
   
   .grass {
@@ -158,10 +182,21 @@ table {
     cursor: default;
   }
   
-  .grass:hover{
-    background-color: green;
-    color: white;
+  .seleccionGrass{
+    padding-right: 8px;
+    color: green;
+    margin: auto;
   }
+
+  .seleccionGrass:checked + .seleccionGrass-label {
+    background-color: green;
+    color: white; /* Cambiamos el color de la letra */
+    margin: 4px 2px;  /* Margen del primer valor arriba y abajo. Segundo valor margen de izquierda y derecha */
+    padding: 4px 10px;  /* Espacio entre los elementos */
+    border-radius: 20px; /* Radio que ge genera en los bordes del border (Efecto de redondeo)  */
+    transition-duration: 0.4s; /* Duración de la transición */
+  }
+
   
   .bug {
     font-size: medium;
@@ -175,9 +210,19 @@ table {
     cursor: default;
   }
   
-  .bug:hover{
+  .seleccionBug{
+    padding-right: 8px;
+    color: rgb(19, 88, 19);
+    margin: auto;
+  }
+
+  .seleccionBug:checked + .seleccionBug-label {
     background-color: rgb(19, 88, 19);
-    color: white;
+    color: white; /* Cambiamos el color de la letra */
+    margin: 4px 2px;  /* Margen del primer valor arriba y abajo. Segundo valor margen de izquierda y derecha */
+    padding: 4px 10px;  /* Espacio entre los elementos */
+    border-radius: 20px; /* Radio que ge genera en los bordes del border (Efecto de redondeo)  */
+    transition-duration: 0.4s; /* Duración de la transición */
   }
   
   .dark {
@@ -192,9 +237,19 @@ table {
     cursor: default;
   }
   
-  .dark:hover{
+  .seleccionDark{
+    padding-right: 8px;
+    color: rgb(76, 83, 76);
+    margin: auto;
+  }
+
+  .seleccionDark:checked + .seleccionDark-label {
     background-color: rgb(76, 83, 76);
-    color: white;
+    color: white; /* Cambiamos el color de la letra */
+    margin: 4px 2px;  /* Margen del primer valor arriba y abajo. Segundo valor margen de izquierda y derecha */
+    padding: 4px 10px;  /* Espacio entre los elementos */
+    border-radius: 20px; /* Radio que ge genera en los bordes del border (Efecto de redondeo)  */
+    transition-duration: 0.4s; /* Duración de la transición */
   }
   
   .dragon {
@@ -209,9 +264,19 @@ table {
     cursor: default;
   }
   
-  .dragon:hover{
+  .seleccionDragon{
+    padding-right: 8px;
+    color: rgb(88, 186, 186);
+    margin: auto;
+  }
+
+  .seleccionDragon:checked + .seleccionDragon-label {
     background-color: rgb(88, 186, 186);
-    color: white;
+    color: white; /* Cambiamos el color de la letra */
+    margin: 4px 2px;  /* Margen del primer valor arriba y abajo. Segundo valor margen de izquierda y derecha */
+    padding: 4px 10px;  /* Espacio entre los elementos */
+    border-radius: 20px; /* Radio que ge genera en los bordes del border (Efecto de redondeo)  */
+    transition-duration: 0.4s; /* Duración de la transición */
   }
   
   .electric {
@@ -226,9 +291,19 @@ table {
     cursor: default;
   }
   
-  .electric:hover{
+  .seleccionElectric{
+    padding-right: 8px;
+    color: rgb(215, 212, 0);
+    margin: auto;
+  }
+
+  .seleccionElectric:checked + .seleccionElectric-label {
     background-color: rgb(215, 212, 0);
-    color: white;
+    color: white; /* Cambiamos el color de la letra */
+    margin: 4px 2px;  /* Margen del primer valor arriba y abajo. Segundo valor margen de izquierda y derecha */
+    padding: 4px 10px;  /* Espacio entre los elementos */
+    border-radius: 20px; /* Radio que ge genera en los bordes del border (Efecto de redondeo)  */
+    transition-duration: 0.4s; /* Duración de la transición */
   }
   
   .fairy{
@@ -243,9 +318,19 @@ table {
     cursor: default;
   }
   
-  .fairy:hover{
+  .seleccionFairy{
+    padding-right: 8px;
+    color: rgb(253, 94, 120);
+    margin: auto;
+  }
+
+  .seleccionFairy:checked + .seleccionFairy-label {
     background-color: rgb(253, 94, 120);
-    color: white;
+    color: white; /* Cambiamos el color de la letra */
+    margin: 4px 2px;  /* Margen del primer valor arriba y abajo. Segundo valor margen de izquierda y derecha */
+    padding: 4px 10px;  /* Espacio entre los elementos */
+    border-radius: 20px; /* Radio que ge genera en los bordes del border (Efecto de redondeo)  */
+    transition-duration: 0.4s; /* Duración de la transición */
   }
   
   .fighting{
@@ -260,9 +345,19 @@ table {
     cursor: default;
   }
   
-  .fighting:hover{
+  .seleccionFighting{
+    padding-right: 8px;
+    color: rgb(253, 152, 0);
+    margin: auto;
+  }
+
+  .seleccionFighting:checked + .seleccionFighting-label {
     background-color: rgb(253, 152, 0);
-    color: white;
+    color: white; /* Cambiamos el color de la letra */
+    margin: 4px 2px;  /* Margen del primer valor arriba y abajo. Segundo valor margen de izquierda y derecha */
+    padding: 4px 10px;  /* Espacio entre los elementos */
+    border-radius: 20px; /* Radio que ge genera en los bordes del border (Efecto de redondeo)  */
+    transition-duration: 0.4s; /* Duración de la transición */
   }
   
   .flying{
@@ -277,9 +372,19 @@ table {
     cursor: default;
   }
   
-  .flying:hover{
+  .seleccionFlying{
+    padding-right: 8px;
+    color: rgb(123, 156, 247);
+    margin: auto;
+  }
+
+  .seleccionFlying:checked + .seleccionFlying-label {
     background-color: rgb(123, 156, 247);
-    color: white;
+    color: white; /* Cambiamos el color de la letra */
+    margin: 4px 2px;  /* Margen del primer valor arriba y abajo. Segundo valor margen de izquierda y derecha */
+    padding: 4px 10px;  /* Espacio entre los elementos */
+    border-radius: 20px; /* Radio que ge genera en los bordes del border (Efecto de redondeo)  */
+    transition-duration: 0.4s; /* Duración de la transición */
   }
   
   .ghost{
@@ -294,9 +399,19 @@ table {
     cursor: default;
   }
   
-  .ghost:hover{
+  .seleccionGhost{
+    padding-right: 8px;
+    color: rgb(77, 48, 82);
+    margin: auto;
+  }
+
+  .seleccionGhost:checked + .seleccionGhost-label {
     background-color: rgb(77, 48, 82);
-    color: white;
+    color: white; /* Cambiamos el color de la letra */
+    margin: 4px 2px;  /* Margen del primer valor arriba y abajo. Segundo valor margen de izquierda y derecha */
+    padding: 4px 10px;  /* Espacio entre los elementos */
+    border-radius: 20px; /* Radio que ge genera en los bordes del border (Efecto de redondeo)  */
+    transition-duration: 0.4s; /* Duración de la transición */
   }
   
   .ground{
@@ -311,9 +426,19 @@ table {
     cursor: default;
   }
   
-  .ground:hover{
-    background-color: rgb(113, 74, 10);
-    color: white;
+  .seleccionGround{
+    padding-right: 8px;
+    color: rgb(77, 48, 82);
+    margin: auto;
+  }
+
+  .seleccionGround:checked + .seleccionGround-label {
+    background-color: rgb(77, 48, 82);
+    color: white; /* Cambiamos el color de la letra */
+    margin: 4px 2px;  /* Margen del primer valor arriba y abajo. Segundo valor margen de izquierda y derecha */
+    padding: 4px 10px;  /* Espacio entre los elementos */
+    border-radius: 20px; /* Radio que ge genera en los bordes del border (Efecto de redondeo)  */
+    transition-duration: 0.4s; /* Duración de la transición */
   }
   
   .ice{
@@ -328,9 +453,19 @@ table {
     cursor: default;
   }
   
-  .ice:hover{
+  .seleccionIce{
+    padding-right: 8px;
+    color: rgb(5, 220, 216);
+    margin: auto;
+  }
+
+  .seleccionIce:checked + .seleccionIce-label {
     background-color: rgb(5, 220, 216);
-    color: white;
+    color: white; /* Cambiamos el color de la letra */
+    margin: 4px 2px;  /* Margen del primer valor arriba y abajo. Segundo valor margen de izquierda y derecha */
+    padding: 4px 10px;  /* Espacio entre los elementos */
+    border-radius: 20px; /* Radio que ge genera en los bordes del border (Efecto de redondeo)  */
+    transition-duration: 0.4s; /* Duración de la transición */
   }
   
   .normal{
@@ -345,9 +480,19 @@ table {
     cursor: default;
   }
   
-  .normal:hover{
+  .seleccionNormal{
+    padding-right: 8px;
+    color: rgb(202, 160, 167);
+    margin: auto;
+  }
+
+  .seleccionNormal:checked + .seleccionNormal-label {
     background-color: rgb(202, 160, 167);
-    color: white;
+    color: white; /* Cambiamos el color de la letra */
+    margin: 4px 2px;  /* Margen del primer valor arriba y abajo. Segundo valor margen de izquierda y derecha */
+    padding: 4px 10px;  /* Espacio entre los elementos */
+    border-radius: 20px; /* Radio que ge genera en los bordes del border (Efecto de redondeo)  */
+    transition-duration: 0.4s; /* Duración de la transición */
   }
   
   .poison{
@@ -362,9 +507,19 @@ table {
     cursor: default;
   }
   
-  .poison:hover{
+  .seleccionPoison{
+    padding-right: 8px;
+    color: rgb(123, 33, 86);
+    margin: auto;
+  }
+
+  .seleccionPoison:checked + .seleccionPoison-label {
     background-color: rgb(123, 33, 86);
-    color: white;
+    color: white; /* Cambiamos el color de la letra */
+    margin: 4px 2px;  /* Margen del primer valor arriba y abajo. Segundo valor margen de izquierda y derecha */
+    padding: 4px 10px;  /* Espacio entre los elementos */
+    border-radius: 20px; /* Radio que ge genera en los bordes del border (Efecto de redondeo)  */
+    transition-duration: 0.4s; /* Duración de la transición */
   }
   
   .psychic{
@@ -379,9 +534,19 @@ table {
     cursor: default;
   }
   
-  .psychic:hover{
+  .seleccionPsychic{
+    padding-right: 8px;
+    color: rgb(205, 36, 135);
+    margin: auto;
+  }
+
+  .seleccionPsychic:checked + .seleccionPsychic-label {
     background-color: rgb(205, 36, 135);
-    color: white;
+    color: white; /* Cambiamos el color de la letra */
+    margin: 4px 2px;  /* Margen del primer valor arriba y abajo. Segundo valor margen de izquierda y derecha */
+    padding: 4px 10px;  /* Espacio entre los elementos */
+    border-radius: 20px; /* Radio que ge genera en los bordes del border (Efecto de redondeo)  */
+    transition-duration: 0.4s; /* Duración de la transición */
   }
   
   .rock{
@@ -396,9 +561,19 @@ table {
     cursor: default;
   }
   
-  .rock:hover{
+  .seleccionRock{
+    padding-right: 8px;
+    color: rgb(124, 81, 0);
+    margin: auto;
+  }
+
+  .seleccionRock:checked + .seleccionRock-label {
     background-color: rgb(124, 81, 0);
-    color: white;
+    color: white; /* Cambiamos el color de la letra */
+    margin: 4px 2px;  /* Margen del primer valor arriba y abajo. Segundo valor margen de izquierda y derecha */
+    padding: 4px 10px;  /* Espacio entre los elementos */
+    border-radius: 20px; /* Radio que ge genera en los bordes del border (Efecto de redondeo)  */
+    transition-duration: 0.4s; /* Duración de la transición */
   }
   
   .steel{
@@ -413,9 +588,19 @@ table {
     cursor: default;
   }
   
-  .steel:hover{
+  .seleccionSteel{
+    padding-right: 8px;
+    color: rgb(143, 154, 140);
+    margin: auto;
+  }
+
+  .seleccionSteel:checked + .seleccionSteel-label {
     background-color: rgb(143, 154, 140);
-    color: white;
+    color: white; /* Cambiamos el color de la letra */
+    margin: 4px 2px;  /* Margen del primer valor arriba y abajo. Segundo valor margen de izquierda y derecha */
+    padding: 4px 10px;  /* Espacio entre los elementos */
+    border-radius: 20px; /* Radio que ge genera en los bordes del border (Efecto de redondeo)  */
+    transition-duration: 0.4s; /* Duración de la transición */
   }
 
   .fondoTarjeta:hover .fire {
