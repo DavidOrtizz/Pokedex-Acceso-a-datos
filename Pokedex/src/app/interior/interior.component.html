@@ -47,11 +47,11 @@
 </div> <!-- Fin del menu principal -->
   <!-- Opciones del buscador avanzado -->
   <div class="menu" *ngIf="menuAbierto">
-    <table>
+    <table  *ngIf="menuAbierto">
       <tr>
         <th colspan="9">Seleciona el tipo</th>
       </tr>
-      <tr>
+      <tr class="adaptarPantalla">
         <td class="fire"(click)="filtroTipos('fire')">Fuego</td>
         <td class="water"(click)="filtroTipos('water')">Agua</td>
         <td class="grass"(click)="filtroTipos('grass')">Planta</td>
@@ -62,7 +62,7 @@
         <td class="fairy"(click)="filtroTipos('fairy')" >Hada</td>
         <td class="fighting"(click)="filtroTipos('fighting')">Lucha</td>
       </tr>
-      <tr>
+      <tr class="adaptarPantalla">
         <td class="flying"(click)="filtroTipos('flying')" >Volador</td>
         <td class="ghost"(click)="filtroTipos('ghost')" >Fantasma</td>
         <td class="ground"(click)="filtroTipos('ground')">Tierra</td>

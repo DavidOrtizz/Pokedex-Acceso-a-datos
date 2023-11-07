@@ -29,7 +29,6 @@ export class InteriorComponent implements OnInit {
   
   ngOnInit() {
     //introduce cuantos pokemons quieres(hay que cambiarlo para uandos e haga lo de las generaciones)
-
     this.pokemonService.getPokemons(151).subscribe((dataPokemons: Pokemon[]) => {
       this.pokemons = dataPokemons;
       this.pokemonsBuscador = dataPokemons;
