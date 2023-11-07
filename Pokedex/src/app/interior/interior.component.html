@@ -80,7 +80,7 @@
 
 <!-- Tarjetas -->
 <div class="tarjetasPokemon">
-  <table *ngFor="let pokemon of pokemons" class="fondoTarjeta">
+  <table *ngFor="let pokemon of pokemons" class="fondoTarjeta" [ngClass]="pokemon.tipos.join('')">
     <tr> <!-- Imagen -->
       <td colspan="2">
         <img src="{{pokemon.imagen}}" width="200px" />
