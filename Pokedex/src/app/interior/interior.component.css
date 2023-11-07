@@ -1,11 +1,15 @@
-.tarjetasPokemon {
-  text-transform: capitalize;
+/*
+
+/*.tarjetasPokemon {
+
   display: flex;
   align-items: center;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 6px;
+
+  
 }
 
 .fondoTarjeta {
@@ -29,11 +33,11 @@ table {
 }
 
 .centro {
-  display: flex;
-  justify-content: center;
-  /* Centra horizontalmente */
-  align-items: center;
-  /* Centra verticalmente */
+    display: flex;
+    justify-content: center;
+    /* Centra horizontalmente 
+    align-items: center;
+    /* Centra verticalmente 
 }
 
 input {
@@ -54,15 +58,524 @@ button{
   cursor: pointer;
 }
 
-.tipoFire{
-  color: red; /* Color texto */
-  text-align: center; /* Donde se encuentre se alineará en el centro */
-  margin: 4px 2px;  /* Margen del primer valor arriba y abajo. Segundo valor margen de izquierda y derecha */
-  padding: 3px 10px;  /* Espacio entre los elementos */
-  border: 3px solid red; /* Estilo del borde */
-  border-radius: 20px; /* Radio que ge genera en los bordes del border (Efecto de redondeo)  */
-  transition-duration: 0.4s; /* Duración de la transición */
-  cursor:pointer; /* El raton no cambia el diseño */
-}
+
+
+
+.btn{
+  cursor:pointer;
+    position:relative;
+    padding:10px 20px;
+    background:white;
+    font-size:28px;
+    border-top-right-radius:10px;
+    border-bottom-left-radius:10px;
+    transition:all 1s;
+    &:after,&:before{
+      content:" ";
+      width:10px;
+      height:10px;
+      position:absolute;
+      border :0px solid #fff;
+      transition:all 1s;
+      }
+    &:after{
+      top:-1px;
+      left:-1px;
+      border-top:5px solid black;
+      border-left:5px solid black;
+    }
+    &:before{
+      bottom:-1px;
+      right:-1px;
+      border-bottom:5px solid black;
+      border-right:5px solid black;
+    }
+    &:hover{
+
+      background:rgba(0,0,0,.5);
+      color:white;
+      &:before,&:after{       
+        width:100%;
+        height:100%;
+        border-color:white;
+      }
+    }
+  }
+  
+  .data-container{
+    background:#ffebee;
+    display:flex;
+
+  }
+  */
+  
+  .tarjetasPokemon {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1px;
+  }
+
+  .fondoTarjeta {
+    background-color: none;
+    width: calc(20% - 12px); /* Ancho del 20% con espacio de 6px entre las tarjetas */
+  }
+  
+  .letraId {
+    font-size: small;
+    text-align: right;
+    color: rgb(84, 85, 85);
+  }
+  
+  .letraNombre {
+    font-size: 20px;
+    color: black;
+  }
+  .fondoTarjeta:hover .letraNombre {
+    color: white;
+  }
+  .cajaBuscador {
+    width: 100%;
+    padding: 3px 10px;
+    border: 1px solid;
+    border-radius: 20px;
+    text-align: center;
+  }
+  table {
+    width: 100%;
+    padding: 3px 10px;
+    border-radius: 20px;
+    text-align: center;
+  }
+  
+  .btn {
+    cursor: pointer;
+    position: relative;
+    background: white;
+    font-size: 28px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    transition: all 1s;
+    &:after,
+    &:before {
+      content: " ";
+      width: 10px;
+      height: 10px;
+      position: absolute;
+      border: 0px solid #fff;
+      transition: all 1s;
+    }
+    &:after {
+      top: -1px;
+      left: -1px;
+      border-top: 5px solid black;
+      border-left: 5px solid black;
+    }
+    &:before {
+      bottom: -1px;
+      right: -1px;
+      border-bottom: 5px solid black;
+      border-right: 5px solid black;
+    }
+    &:hover {
+      background: rgba(0, 0, 0, .5);
+      color: white;
+      &:before,
+      &:after {
+        width: 100%;
+        height: 100%;
+        border-color: white;
+      }
+    }
+  }
+  *{
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: capitalize;
+  }
+  
+  .modoOscuro{
+    color: white;
+    background-color: black ;
+  }
+  
+  /*Estilo de los elementos*/
+  .fire {
+    color: red; /* Color texto */
+    text-align: center; /* Donde se encuentre se alineará en el centro */
+    margin: 4px 2px;  /* Margen del primer valor arriba y abajo. Segundo valor margen de izquierda y derecha */
+    padding: 3px 10px;  /* Espacio entre los elementos */
+    border: 3px solid red; /* Estilo del borde */
+    border-radius: 20px; /* Radio que ge genera en los bordes del border (Efecto de redondeo)  */
+    transition-duration: 0.4s; /* Duración de la transición */
+    cursor: default; /* El raton no cambia el diseño */
+  }
+  
+  .fire:hover{ /* Cuando el raton pasa por encima */
+    background-color: red; /* Cambiamos el color de fondo */
+    color: white; /* Cambiamos el color de la letra */
+  }
+  
+  .water {
+    color: rgb(55, 55, 243);
+    text-align: center;
+    margin: 4px 2px;
+    padding: 3px 10px;
+    border: 3px solid rgb(55, 55, 243);
+    border-radius: 20px;
+    transition-duration: 0.4s;
+    cursor: default;
+  }
+  
+  .water:hover{
+    background-color: rgb(55, 55, 243);
+    color: white;
+  }
+  
+  .grass {
+    color: green;
+    text-align: center;
+    margin: 4px 2px;
+    padding: 3px 10px;
+    border: 3px solid green;
+    border-radius: 20px;
+    transition-duration: 0.4s;
+    cursor: default;
+  }
+  
+  .grass:hover{
+    background-color: green;
+    color: white;
+  }
+  
+  .bug {
+    color: rgb(19, 88, 19);
+    text-align: center;
+    margin: 4px 2px;
+    padding: 3px 10px;
+    border: 3px solid rgb(19, 88, 19);
+    border-radius: 20px;
+    transition-duration: 0.4s;
+    cursor: default;
+  }
+  
+  .bug:hover{
+    background-color: rgb(19, 88, 19);
+    color: white;
+  }
+  
+  .dark {
+    color: rgb(31, 34, 31);
+    text-align: center;
+    margin: 4px 2px;
+    padding: 3px 10px;
+    border: 3px solid rgb(31, 34, 31);
+    border-radius: 20px;
+    transition-duration: 0.4s;
+    cursor: default;
+  }
+  
+  .dark:hover{
+    background-color: rgb(31, 34, 31);
+    color: white;
+  }
+  
+  .dragon {
+    color: rgb(88, 186, 186);
+    text-align: center;
+    margin: 4px 2px;
+    padding: 3px 10px;
+    border: 3px solid rgb(88, 186, 186);
+    border-radius: 20px;
+    transition-duration: 0.4s;
+    cursor: default;
+  }
+  
+  .dragon:hover{
+    background-color: rgb(88, 186, 186);
+    color: white;
+  }
+  
+  .electric {
+    color: rgb(215, 212, 0);
+    text-align: center;
+    margin: 4px 2px;
+    padding: 3px 10px;
+    border: 3px solid rgb(215, 212, 0);
+    border-radius: 20px;
+    transition-duration: 0.4s;
+    cursor: default;
+  }
+  
+  .electric:hover{
+    background-color: rgb(215, 212, 0);
+    color: white;
+  }
+  
+  .fairy{
+    color: rgb(253, 94, 120);
+    text-align: center;
+    margin: 4px 2px;
+    padding: 3px 10px;
+    border: 3px solid rgb(253, 94, 120);
+    border-radius: 20px;
+    transition-duration: 0.4s;
+    cursor: default;
+  }
+  
+  .fairy:hover{
+    background-color: rgb(253, 94, 120);
+    color: white;
+  }
+  
+  .fighting{
+    color: rgb(253, 152, 0);
+    text-align: center;
+    margin: 4px 2px;
+    padding: 3px 10px;
+    border: 3px solid rgb(253, 152, 0);
+    border-radius: 20px;
+    transition-duration: 0.4s;
+    cursor: default;
+  }
+  
+  .fighting:hover{
+    background-color: rgb(253, 152, 0);
+    color: white;
+  }
+  
+  .flying{
+    color: rgb(123, 156, 247);
+    text-align: center;
+    margin: 4px 2px;
+    padding: 3px 10px;
+    border: 3px solid rgb(123, 156, 247);
+    border-radius: 20px;
+    transition-duration: 0.4s;
+    cursor: default;
+  }
+  
+  .flying:hover{
+    background-color: rgb(123, 156, 247);
+    color: white;
+  }
+  
+  .ghost{
+    color: rgb(77, 48, 82);
+    text-align: center;
+    margin: 4px 2px;
+    padding: 3px 10px;
+    border: 3px solid rgb(77, 48, 82);
+    border-radius: 20px;
+    transition-duration: 0.4s;
+    cursor: default;
+  }
+  
+  .ghost:hover{
+    background-color: rgb(77, 48, 82);
+    color: white;
+  }
+  
+  .ground{
+    color: rgb(113, 74, 10);
+    text-align: center;
+    margin: 4px 2px;
+    padding: 3px 10px;
+    border: 3px solid rgb(113, 74, 10);
+    border-radius: 20px;
+    transition-duration: 0.4s;
+    cursor: default;
+  }
+  
+  .ground:hover{
+    background-color: rgb(113, 74, 10);
+    color: white;
+  }
+  
+  .ice{
+    color: rgb(5, 220, 216);
+    text-align: center;
+    margin: 4px 2px;
+    padding: 3px 10px;
+    border: 3px solid rgb(5, 220, 216);
+    border-radius: 20px;
+    transition-duration: 0.4s;
+    cursor: default;
+  }
+  
+  .ice:hover{
+    background-color: rgb(5, 220, 216);
+    color: white;
+  }
+  
+  .normal{
+    color: rgb(202, 160, 167);
+    text-align: center;
+    margin: 4px 2px;
+    padding: 3px 10px;
+    border: 3px solid rgb(202, 160, 167);
+    border-radius: 20px;
+    transition-duration: 0.4s;
+    cursor: default;
+  }
+  
+  .normal:hover{
+    background-color: rgb(202, 160, 167);
+    color: white;
+  }
+  
+  .poison{
+    color: rgb(123, 33, 86);
+    text-align: center;
+    margin: 4px 2px;
+    padding: 3px 10px;
+    border: 3px solid rgb(123, 33, 86);
+    border-radius: 20px;
+    transition-duration: 0.4s;
+    cursor: default;
+  }
+  
+  .poison:hover{
+    background-color: rgb(123, 33, 86);
+    color: white;
+  }
+  
+  .psychic{
+    color: rgb(205, 36, 135);
+    text-align: center;
+    margin: 4px 2px;
+    padding: 3px 10px;
+    border: 3px solid rgb(205, 36, 135);
+    border-radius: 20px;
+    transition-duration: 0.4s;
+    cursor: default;
+  }
+  
+  .psychic:hover{
+    background-color: rgb(205, 36, 135);
+    color: white;
+  }
+  
+  .rock{
+    color: rgb(124, 81, 0);
+    text-align: center;
+    margin: 4px 2px;
+    padding: 3px 10px;
+    border: 3px solid rgb(124, 81, 0);
+    border-radius: 20px;
+    transition-duration: 0.4s;
+    cursor: default;
+  }
+  
+  .rock:hover{
+    background-color: rgb(124, 81, 0);
+    color: white;
+  }
+  
+  .steel{
+    color: rgb(143, 154, 140);
+    text-align: center;
+    margin: 4px 2px;
+    padding: 3px 10px;
+    border: 3px solid rgb(143, 154, 140);
+    border-radius: 20px;
+    transition-duration: 0.4s;
+    cursor: default;
+  }
+  
+  .steel:hover{
+    background-color: rgb(143, 154, 140);
+    color: white;
+  }
+
+  .fondoTarjeta:hover .fire {
+    /* hover en tarjeta y boton */
+    background-color:red; /* Cambia #color del fondo */
+    color: white; /* Cambia el color de texto */
+  }
+  
+  .fondoTarjeta:hover .water {
+    background-color: rgb(55, 55, 243);
+    color: white;
+  }
+  
+  .fondoTarjeta:hover .grass {
+    background-color: green;
+    color: white;
+  }
+  
+  .fondoTarjeta:hover .bug {
+    background-color: rgb(19, 88, 19);
+    color: white;
+  }
+  
+  .fondoTarjeta:hover .dark {
+    background-color: rgb(31, 34, 31);
+    color: white;
+  }
+  
+  .fondoTarjeta:hover .dragon {
+    background-color: rgb(88, 186, 186);
+    color: white;
+  }
+  
+  .fondoTarjeta:hover .electric {
+    background-color: rgb(215, 212, 0);
+    color: white;
+  }
+  
+  .fondoTarjeta:hover .fairy {
+    background-color:  rgb(253, 94, 120);
+    color: white;
+  }
+  
+  .fondoTarjeta:hover .fighting {
+    background-color: rgb(253, 152, 0);
+    color: white;
+  }
+  
+  .fondoTarjeta:hover .flying {
+    background-color: rgb(123, 156, 247);
+    color: white;
+  }
+  
+  .fondoTarjeta:hover .ghost {
+    background-color: rgb(77, 48, 82);
+    color: white;
+  }
+  
+  .fondoTarjeta:hover .ground {
+    background-color: rgb(113, 74, 10);
+    color: white;
+  }
+  
+  .fondoTarjeta:hover .ice {
+    background-color: rgb(5, 220, 216);
+    color: white;
+  }
+  
+  .fondoTarjeta:hover .normal {
+    background-color: rgb(202, 160, 167);
+    color: white;
+  }
+  
+  .fondoTarjeta:hover .poison {
+    background-color: rgb(123, 33, 86);
+    color: white;
+  }
+.letraNombre
+  .fondoTarjeta:hover .psychic {
+    background-color: rgb(205, 36, 135);
+    color: white;
+  }
+  
+  .fondoTarjeta:hover .rock {
+    background-color: rgb(124, 81, 0);
+    color: white;
+  }
+  
+  .fondoTarjeta:hover .steel {
+    background-color: rgb(143, 154, 140);
+    color: white;
+  }
 
 
