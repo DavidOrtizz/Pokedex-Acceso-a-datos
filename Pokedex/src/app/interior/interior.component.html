@@ -1,11 +1,11 @@
 
   <div>
-  <table class="centro">
+  <table class=" cajaBuscador ">
     <tr>
       <td><b>Buscador pokémon:</b></td>
       <td>
         <div>
-          <input [(ngModel)]="buscadorPokemon" (input)="buscarPokemon()" placeholder="Buscar Pokémon por nombre">
+          <input [(ngModel)]="buscadorPokemon" (input)="buscarPokemon()" placeholder="Buscar Pokémon">
         </div>
       </td>
       <td></td>
@@ -18,7 +18,7 @@
   </td>
   </tr>
   <div>
-    <select [(ngModel)]="opcionSeleccionada" (change)="cambiarOpcion()">
+    <select [(ngModel)]="opcionSeleccionada" (change)="cambiarOpcion()" >
       <option value="0">Todas las generaciones</option>
       <option value="1">Generación 1</option>
       <option value="2">Generación 2</option>
@@ -75,22 +75,28 @@
 
   <!-- Tarjetas -->
   <div class="tarjetasPokemon">
-    <table *ngFor="let pokemon of pokemons" class="fondoTarjeta">
-      <tr> <!-- Imagen -->
-        <td colspan="2">
-          <img src="{{pokemon.imagen}}" width="200px" />
-        </td>
-      </tr>
-      <tr> <!-- id -->
-        <td colspan="2" class="letraId">N.º {{ pokemon.id }}</td>
-      </tr>
-      <tr> <!-- Nombre -->
-        <td colspan="2" class="letraNombre">{{ pokemon.nombre }}</td>
-      </tr>
-      <tr> <!-- Tipos -->
-        <td *ngFor="let tipo of pokemon.tipos" class="{{tipo}}">{{tipo}}</td>
-      </tr>
-    </table>
-
+    <div class="fondoTarjeta btn" *ngFor="let pokemon of pokemons">
+      <table>
+        <tr> <!-- Imagen -->
+          <td colspan="2">
+            <img src="{{pokemon.imagen}}" width="200px" />
+          </td>
+        </tr>
+      <td>
+        <div id="container">
+        </div>
+      </td>
+        <tr> 
+          <!-- id -->
+          <td colspan="2" class="letraId">N.º {{ pokemon.id }}</td>
+        </tr>
+        <tr> <!-- Nombre -->
+          <td colspan="2" class="letraNombre">{{ pokemon.nombre }}</td>
+        </tr>
+        <tr> <!-- Tipos -->
+          <td *ngFor="let tipo of pokemon.tipos" class="{{tipo}}">{{tipo}}</td>
+        </tr>
+      </table>
+    </div>
   </div>
 
