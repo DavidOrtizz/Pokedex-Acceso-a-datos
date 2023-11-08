@@ -21,7 +21,9 @@ export class PokemonService {
         id: data.id,
         nombre: data.name,
         tipos: data.types.map((dat: any) => dat.type.name),
-        imagen: data.sprites.other['official-artwork'].front_default
+        imagen: data.sprites.other['official-artwork'].front_default,
+        shiny: data.sprites.other['official-artwork'].front_shiny,
+        peso: data.weight
       }
     }));
   }

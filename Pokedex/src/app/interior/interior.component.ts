@@ -18,18 +18,22 @@ export class InteriorComponent implements OnInit {
   //Array para usar en el buscador y muestre el resultado filtrado
   pokemonsBuscador: Pokemon[] = [];
   // Variable para almacenar el nombre del Pokémon a buscar
+
   @Output() 
   buscadorPokemon = ''; 
   opcionSeleccionada: string = '';
   generacionSeleccionada: number = 0;
   menuAbierto = false;
   oscuro = false;
+  /*
+  shiny= false;
+  */
   textoOscuro = 'Tema claro';
   buscamos = new EventEmitter<string>(); // Emitir el nombre del Pokémon a buscar
   constructor(private pokemonService: PokemonService) {}
   
   ngOnInit() {
-    //introduce cuantos pokemons quieres(hay que cambiarlo para uandos e haga lo de las generaciones)
+    //iimprime la primera generacion nada mas empezar
     this.pokemonService.getPokemons(151).subscribe((dataPokemons: Pokemon[]) => {
       this.pokemons = dataPokemons;
       this.pokemonsBuscador = dataPokemons;
@@ -50,6 +54,7 @@ export class InteriorComponent implements OnInit {
       this.textoOscuro = 'Tema claro';
     }
   }
+
     // Método para buscar el Pokémon y emitir el evento
   buscarPokemon() {
       // Convierte el nombre a minúsculas para que la búsqueda sea insensible a mayúsculas y minúsculas
@@ -82,60 +87,68 @@ export class InteriorComponent implements OnInit {
     }
 
     
-    cambiarOpcion() {
-      console.log('Opción:', this.opcionSeleccionada);
-    
-      // Puedes realizar acciones adicionales en función de la opción seleccionada
-      if (this.opcionSeleccionada === '1') {
-        this.pokemonService.getPokemons(151).subscribe((dataPokemons: Pokemon[]) => {
-          this.pokemons = dataPokemons;
-          this.pokemonsBuscador = dataPokemons;
-        });
-      } else if (this.opcionSeleccionada === '2') {
+      cambiarGeneracion() {
         
-        this.pokemonService.getPokemons(251).subscribe((dataPokemons: Pokemon[]) => {
-          this.pokemons = dataPokemons;
-          this.pokemonsBuscador = dataPokemons;
-        });
-      } else if (this.opcionSeleccionada === '3') {
-        this.pokemonService.getPokemons(386).subscribe((dataPokemons: Pokemon[]) => {
-          this.pokemons = dataPokemons;
-          this.pokemonsBuscador = dataPokemons;
-        });
-      }else if (this.opcionSeleccionada === '4') {
-        this.pokemonService.getPokemons(493).subscribe((dataPokemons: Pokemon[]) => {
-          this.pokemons = dataPokemons;
-          this.pokemonsBuscador = dataPokemons;
-        });
-      }else if (this.opcionSeleccionada === '5') {
-        this.pokemonService.getPokemons(649).subscribe((dataPokemons: Pokemon[]) => {
-          this.pokemons = dataPokemons;
-          this.pokemonsBuscador = dataPokemons;
-        });
-      }else if (this.opcionSeleccionada === '6') {
-        this.pokemonService.getPokemons(721).subscribe((dataPokemons: Pokemon[]) => {
-          this.pokemons = dataPokemons;
-          this.pokemonsBuscador = dataPokemons;
+      
+        // Puedes realizar acciones adicionales en función de la generacion seleccionada
+        if (this.opcionSeleccionada === '1') {
+          this.pokemonService.getPokemons(151).subscribe((dataPokemons: Pokemon[]) => {
+            this.pokemons = dataPokemons;
+            this.pokemonsBuscador = dataPokemons;
+            console.log('Opción:', this.opcionSeleccionada);
+          });
+        } else if (this.opcionSeleccionada === '2') {
           
-        });
-      }else if (this.opcionSeleccionada === '7') {
-        this.pokemonService.getPokemons(809).subscribe((dataPokemons: Pokemon[]) => {
-          this.pokemons = dataPokemons;
-          this.pokemonsBuscador = dataPokemons;
-        });
-      }else if (this.opcionSeleccionada === '8') {
-        this.pokemonService.getPokemons(898).subscribe((dataPokemons: Pokemon[]) => {
-          this.pokemons = dataPokemons;
-          this.pokemonsBuscador = dataPokemons;
-        });
-      }else if (this.opcionSeleccionada === '9') {
-        this.pokemonService.getPokemons(1017).subscribe((dataPokemons: Pokemon[]) => {
-          this.pokemons = dataPokemons;
-          this.pokemonsBuscador = dataPokemons;
-        });
-      }
+          this.pokemonService.getPokemons(251).subscribe((dataPokemons: Pokemon[]) => {
+            this.pokemons = dataPokemons;
+            this.pokemonsBuscador = dataPokemons;
+          });
+        } else if (this.opcionSeleccionada === '3') {
+          this.pokemonService.getPokemons(386).subscribe((dataPokemons: Pokemon[]) => {
+            this.pokemons = dataPokemons;
+            this.pokemonsBuscador = dataPokemons;
+          });
+        }else if (this.opcionSeleccionada === '4') {
+          this.pokemonService.getPokemons(493).subscribe((dataPokemons: Pokemon[]) => {
+            this.pokemons = dataPokemons;
+            this.pokemonsBuscador = dataPokemons;
+          });
+        }else if (this.opcionSeleccionada === '5') {
+          this.pokemonService.getPokemons(649).subscribe((dataPokemons: Pokemon[]) => {
+            this.pokemons = dataPokemons;
+            this.pokemonsBuscador = dataPokemons;
+          });
+        }else if (this.opcionSeleccionada === '6') {
+          this.pokemonService.getPokemons(721).subscribe((dataPokemons: Pokemon[]) => {
+            this.pokemons = dataPokemons;
+            this.pokemonsBuscador = dataPokemons;
+            
+          });
+        }else if (this.opcionSeleccionada === '7') {
+          this.pokemonService.getPokemons(809).subscribe((dataPokemons: Pokemon[]) => {
+            this.pokemons = dataPokemons;
+            this.pokemonsBuscador = dataPokemons;
+          });
+        }else if (this.opcionSeleccionada === '8') {
+          this.pokemonService.getPokemons(898).subscribe((dataPokemons: Pokemon[]) => {
+            this.pokemons = dataPokemons;
+            this.pokemonsBuscador = dataPokemons;
+          });
+        }else if (this.opcionSeleccionada === '9') {
+          this.pokemonService.getPokemons(1017).subscribe((dataPokemons: Pokemon[]) => {
+            this.pokemons = dataPokemons;
+            this.pokemonsBuscador = dataPokemons;
+          });
+        }
       
     }
-
-    
+    /*
+    cambiarImagen() {
+      if (this.shiny) {
+        this.shiny = false; // Si ya está en modo shiny, volver a la normalidad
+      } else {
+        this.shiny = true; // Si está en modo normal, cambiar a shiny
+      }
+    }
+*/
   }  

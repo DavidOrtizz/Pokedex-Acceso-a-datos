@@ -3,5 +3,7 @@ export interface Pokemon {
   id: number;
   tipos: string[]; 
   imagen:string ;
+  shiny:string;
+  peso:number;
 }
 
