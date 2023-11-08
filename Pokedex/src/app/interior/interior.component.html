@@ -21,12 +21,12 @@
       <td>|</td>
       <td><b>Selecciona generación: </b></td>
       <td>
-        <select [(ngModel)]="opcionSeleccionada" (change)="cambiarGeneracion()">
+        <select [(ngModel)]="opcionSeleccionada" (change)="cambiarGeneracion()"  >
           
-          <option value="1">Generación 1</option>
-          <option value="2">Generación 2</option>
-          <option value="3">Generación 3</option>
-          <option value="4">Generación 4</option>
+          <option value="151">Generación 1</option>
+          <option value="252">Generación 2</option>
+          <option value="386">Generación 3</option>
+          <option value="493">Generación 4</option>
           <!-- Generaciones raretas
           <option value="0">Todas las generaciones</option>
           <option value="5">Generación 5</option>
@@ -154,7 +154,7 @@
 -->
 <!-- Tarjetas -->
 <div class="tarjetasPokemon">
-  <div class="fondoTarjeta btn" *ngFor="let pokemon of pokemons" >
+  <div class="fondoTarjeta btn" *ngFor="let pokemon of pokemons">
     <table>
       <tr> <!-- Imagen -->
         <td colspan="2">

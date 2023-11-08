@@ -99,13 +99,13 @@ form{
     &:after {
       top: -1px;
       left: -1px;
-      border-top:2px solid black;
-      border-left: 2px solid black;
+      border-top:2px solid rgb(0, 0, 0);
+      border-left: 2px solid rgb(0, 0, 0);
     }
     &:before {
       bottom: -1px;
       right: -1px;
-      border-bottom: 2px solid black;
+      border-bottom: 2px solid rgb(0, 0, 0);
       border-right: 2px solid black;
     }
     &:hover {
