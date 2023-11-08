@@ -18,6 +18,10 @@ form{
   display: none;
 }
 
+.sinBordeBoton{
+  border: 0;
+}
+
 .estiloBuscador{
   border-radius: 20px;
   padding: 3px 10px;
@@ -134,9 +138,9 @@ form{
     border: 3px solid;
     border-radius: 20px;
     transition-duration: 0.4s;
-    color: currentColor;;
+    color: currentColor;
   }
-
+  
   .fire {
     color: red;
     cursor: pointer;
