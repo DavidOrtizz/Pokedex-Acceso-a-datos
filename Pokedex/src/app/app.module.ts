@@ -10,6 +10,7 @@ import { CabeceraComponent } from './cabecera/cabecera.component';
 import { PieDePaginaComponent } from './pie-de-pagina/pie-de-pagina.component';
 import { InteriorComponent } from './interior/interior.component';
 import { PruebasComponent } from './pruebas/pruebas.component';
+import { Pagina404Component } from './pagina404/pagina404.component';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { PruebasComponent } from './pruebas/pruebas.component';
     PieDePaginaComponent,
     InteriorComponent,
     PruebasComponent,
+    Pagina404Component,
 
   ],
   imports: [
