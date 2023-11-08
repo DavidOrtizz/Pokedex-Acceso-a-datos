@@ -129,7 +129,7 @@ form{
   }
 
   .seleccionFire{
-    padding-right: 8px;
+    padding-right: 5px;
     color: red;
     margin: auto;
   }
@@ -156,7 +156,7 @@ form{
   }
   
   .seleccionWater{
-    padding-right: 8px;
+    padding-right: 5px;
     color:rgb(55, 55, 243);
     margin: auto;
   }
@@ -183,7 +183,7 @@ form{
   }
   
   .seleccionGrass{
-    padding-right: 8px;
+    padding-right: 5px;
     color: green;
     margin: auto;
   }
@@ -211,7 +211,7 @@ form{
   }
   
   .seleccionBug{
-    padding-right: 8px;
+    padding-right: 5px;
     color: rgb(19, 88, 19);
     margin: auto;
   }
@@ -238,7 +238,7 @@ form{
   }
   
   .seleccionDark{
-    padding-right: 8px;
+    padding-right: 5px;
     color: rgb(76, 83, 76);
     margin: auto;
   }
@@ -265,7 +265,7 @@ form{
   }
   
   .seleccionDragon{
-    padding-right: 8px;
+    padding-right: 5px;
     color: rgb(88, 186, 186);
     margin: auto;
   }
@@ -292,7 +292,7 @@ form{
   }
   
   .seleccionElectric{
-    padding-right: 8px;
+    padding-right: 5px;
     color: rgb(215, 212, 0);
     margin: auto;
   }
@@ -319,7 +319,7 @@ form{
   }
   
   .seleccionFairy{
-    padding-right: 8px;
+    padding-right: 5px;
     color: rgb(253, 94, 120);
     margin: auto;
   }
@@ -346,7 +346,7 @@ form{
   }
   
   .seleccionFighting{
-    padding-right: 8px;
+    padding-right: 5px;
     color: rgb(253, 152, 0);
     margin: auto;
   }
@@ -373,7 +373,7 @@ form{
   }
   
   .seleccionFlying{
-    padding-right: 8px;
+    padding-right: 5px;
     color: rgb(123, 156, 247);
     margin: auto;
   }
@@ -400,7 +400,7 @@ form{
   }
   
   .seleccionGhost{
-    padding-right: 8px;
+    padding-right: 5px;
     color: rgb(77, 48, 82);
     margin: auto;
   }
@@ -427,7 +427,7 @@ form{
   }
   
   .seleccionGround{
-    padding-right: 8px;
+    padding-right: 5px;
     color: rgb(77, 48, 82);
     margin: auto;
   }
@@ -454,7 +454,7 @@ form{
   }
   
   .seleccionIce{
-    padding-right: 8px;
+    padding-right: 5px;
     color: rgb(5, 220, 216);
     margin: auto;
   }
@@ -481,7 +481,7 @@ form{
   }
   
   .seleccionNormal{
-    padding-right: 8px;
+    padding-right: 5px;
     color: rgb(202, 160, 167);
     margin: auto;
   }
@@ -508,7 +508,7 @@ form{
   }
   
   .seleccionPoison{
-    padding-right: 8px;
+    padding-right: 5px;
     color: rgb(123, 33, 86);
     margin: auto;
   }
@@ -535,7 +535,7 @@ form{
   }
   
   .seleccionPsychic{
-    padding-right: 8px;
+    padding-right: 5px;
     color: rgb(205, 36, 135);
     margin: auto;
   }
@@ -562,7 +562,7 @@ form{
   }
   
   .seleccionRock{
-    padding-right: 8px;
+    padding-right: 5px;
     color: rgb(124, 81, 0);
     margin: auto;
   }
@@ -589,7 +589,7 @@ form{
   }
   
   .seleccionSteel{
-    padding-right: 8px;
+    padding-right: 5px;
     color: rgb(143, 154, 140);
     margin: auto;
   }
