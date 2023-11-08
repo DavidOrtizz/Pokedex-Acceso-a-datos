@@ -4,7 +4,7 @@
       <td><b>Buscador pokémon:</b></td>
       <td>
         <div>
-          <input [(ngModel)]="buscadorPokemon" (input)="buscarPokemon()" placeholder="Buscar Pokémon por nombre">
+          <input [(ngModel)]="buscadorPokemon" (input)="buscarPokemon()" placeholder="Buscar Pokémon por nombre" class="estiloBuscador">
         </div>
       </td>
       <td></td>
@@ -157,8 +157,7 @@
         <div id="container">
         </div>
       </td>
-      <tr>
-        <!-- id -->
+      <tr> <!-- id -->
         <td colspan="2" class="letraId">N.º {{ pokemon.id }}</td>
       </tr>
       <tr> <!-- Nombre -->
