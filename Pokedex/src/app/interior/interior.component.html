@@ -1,10 +1,11 @@
+
 <div> <!-- Menu principal -->
   <table class="menu">
     <tr> <!-- Buscador -->
       <td><b>Buscador pokémon:</b></td>
       <td>
         <div>
-          <input [(ngModel)]="buscadorPokemon" (input)="buscarPokemon()" placeholder="Buscar Pokémon por nombre">
+          <input [(ngModel)]="buscadorPokemon" (input)="buscarPokemon()" placeholder="Buscar Pokémon">
         </div>
       </td>
       <td></td>
@@ -20,17 +21,20 @@
       <td>|</td>
       <td><b>Selecciona generación: </b></td>
       <td>
-        <select [(ngModel)]="opcionSeleccionada" (change)="cambiarOpcion()">
-          <option value="0">Todas las generaciones</option>
+        <select [(ngModel)]="opcionSeleccionada" (change)="cambiarGeneracion()">
+          
           <option value="1">Generación 1</option>
           <option value="2">Generación 2</option>
           <option value="3">Generación 3</option>
           <option value="4">Generación 4</option>
+          <!-- Generaciones raretas
+          <option value="0">Todas las generaciones</option>
           <option value="5">Generación 5</option>
           <option value="6">Generación 6</option>
           <option value="7">Generación 7</option>
           <option value="8">Generación 8</option>
           <option value="9">Generación 9</option>
+        -->
         </select>
       </td>
     </tr>
@@ -78,31 +82,37 @@
 
   <br> <!-- Espacio separatorio del menu y las tarjetas -->
 
-  <!-- Tarjetas -->
-  <div class="tarjetasPokemon">
-    <div class="fondoTarjeta btn" *ngFor="let pokemon of pokemons">
-      <table>
-        <tr> <!-- Imagen -->
-          <td colspan="2">
-            <img src="{{pokemon.imagen}}" width="200px" />
-          </td>
-        </tr>
-      <td>
-        <div id="container">
-        </div>
-      </td>
-        <tr> 
-          <!-- id -->
-          <td colspan="2" class="letraId">N.º {{ pokemon.id }}</td>
-        </tr>
-        <tr> <!-- Nombre -->
-          <td colspan="2" class="letraNombre">{{ pokemon.nombre }}</td>
-        </tr>
-        <tr> <!-- Tipos -->
-          <td *ngFor="let tipo of pokemon.tipos" class="{{tipo}}">{{tipo}}</td>
-        </tr>
-      </table>
-    </div>
+<!-- Botón para cambiar a shiny 
+<button (click)="cambiarImagen()">Cambiar Imagen</button>
+-->
+<!-- Tarjetas -->
+<div class="tarjetasPokemon">
+  <div class="fondoTarjeta btn" *ngFor="let pokemon of pokemons" >
+    <table>
+      <tr> <!-- Imagen -->
+        <td colspan="2">
+          <img src="{{pokemon.imagen}}" width="200px" >
+    <!-- Imagen shiny 
+          <img *ngIf="shiny" src="{{pokemon.shiny}}" width="200px" >
+    -->
+        </td>
+      </tr>
+      <!-- Resto de la tabla -->
+      <tr>
+       <!-- boton informacion de cada pokemon 
+       <button>informacion</button> 
+       --> 
+        <!-- id -->
+        <td colspan="2" class="letraId">N.º {{ pokemon.id }}</td>
+      </tr>
+      <tr> <!-- Nombre -->
+        <td colspan="2" class="letraNombre">{{ pokemon.nombre }}</td>
+      </tr>
+      <tr> <!-- Tipos -->
+        <td *ngFor="let tipo of pokemon.tipos" class="{{tipo}}">{{tipo}}</td>
+      </tr>
+    </table>
   </div>
+</div>
 
 

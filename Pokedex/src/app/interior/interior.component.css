@@ -52,6 +52,11 @@ table {
     text-align: right;
     color: rgb(84, 85, 85);
   }
+  .fondoTarjeta:hover .letraId {
+    font-size: small;
+    text-align: right;
+    color: rgb(255, 255, 255);
+  }
   
   .letraNombre {
     font-size: 20px;
@@ -100,8 +105,7 @@ table {
       border-right: 2px solid black;
     }
     &:hover {
-      background: rgba(0, 0, 0, .5);
-      color: white;
+      background: rgba(0, 0, 0, 0.705);
       &:before,
       &:after {
         width: 100%;
@@ -508,5 +512,4 @@ table {
     background-color: rgb(143, 154, 140);
     color: white;
   }
-
 
