@@ -91,14 +91,14 @@ export class InteriorComponent implements OnInit {
       this.pokemonService.getPokemons(this.opcionSeleccionada).subscribe((dataPokemons: Pokemon[]) => {
         this.pokemons = dataPokemons;
         this.pokemonsBuscador = dataPokemons;
-    
+        this.filtrarPorTipos();
         // Verifica si había una búsqueda activa
         if (this.busquedaActual) {
           this.pokemons = this.pokemons.filter(pokemon => pokemon.nombre.toLowerCase().includes(this.busquedaActual));
         }
     
         // Llama a la función filtrarPorTipos para aplicar el filtro de tipos
-        this.filtrarPorTipos();
+       
       });
     }
     /*
