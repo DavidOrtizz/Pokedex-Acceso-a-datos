@@ -9,13 +9,18 @@ table {
   text-align: center;
 }
 
+form{
+  padding-top: 5px;
+  padding-bottom: 10px;
+}
+
 .noCuadrado{
   display: none;
 }
 
-form{
-  padding-top: 5px;
-  padding-bottom: 10px;
+.estiloBuscador{
+  border-radius: 20px;
+  padding: 3px 10px;
 }
 
 .menu{
@@ -120,18 +125,24 @@ form{
   }
   
   /*Estilo de los elementos*/
-  .fire {
+  .fire, .water, .grass, .bug, .dark, .dragon, .electric, .fairy, .fighting, .flying, 
+  .ghost, .ground, .ice, .normal, .poison, .psychic, .rock, .steel {
     font-size: medium;
-    color: red; /* Color texto */
-    text-align: center; /* Donde se encuentre se alineará en el centro */
-    margin: 4px 2px;  /* Margen del primer valor arriba y abajo. Segundo valor margen de izquierda y derecha */
-    padding: 3px 10px;  /* Espacio entre los elementos */
-    border: 3px solid red; /* Estilo del borde */
-    border-radius: 20px; /* Radio que ge genera en los bordes del border (Efecto de redondeo)  */
-    transition-duration: 0.4s; /* Duración de la transición */
-    cursor: pointer; /* El raton no cambia el diseño */
+    text-align: center;
+    margin: 4px 2px;
+    padding: 3px 10px;
+    border: 3px solid;
+    border-radius: 20px;
+    transition-duration: 0.4s;
+    color: currentColor;;
   }
 
+  .fire {
+    color: red;
+    cursor: pointer;
+    border-color: red;
+  }
+  
   .seleccionFire{
     padding-right: 5px;
     color: red;
@@ -148,15 +159,9 @@ form{
   }
 
   .water {
-    font-size: medium;
     color: rgb(55, 55, 243);
-    text-align: center;
-    margin: 4px 2px;
-    padding: 3px 10px;
-    border: 3px solid rgb(55, 55, 243);
-    border-radius: 20px;
-    transition-duration: 0.4s;
     cursor: default;
+    border-color: rgb(55, 55, 243);
   }
   
   .seleccionWater{
@@ -175,17 +180,11 @@ form{
   }
   
   .grass {
-    font-size: medium;
     color: green;
-    text-align: center;
-    margin: 4px 2px;
-    padding: 3px 10px;
-    border: 3px solid green;
-    border-radius: 20px;
-    transition-duration: 0.4s;
     cursor: default;
+    border-color:green;
   }
-  
+
   .seleccionGrass{
     padding-right: 5px;
     color: green;
@@ -203,15 +202,9 @@ form{
 
   
   .bug {
-    font-size: medium;
     color: rgb(19, 88, 19);
-    text-align: center;
-    margin: 4px 2px;
-    padding: 3px 10px;
-    border: 3px solid rgb(19, 88, 19);
-    border-radius: 20px;
-    transition-duration: 0.4s;
     cursor: default;
+    border-color:rgb(19, 88, 19);
   }
   
   .seleccionBug{
@@ -230,15 +223,9 @@ form{
   }
   
   .dark {
-    font-size: medium;
     color: rgb(76, 83, 76);
-    text-align: center;
-    margin: 4px 2px;
-    padding: 3px 10px;
-    border: 3px solid rgb(76, 83, 76);
-    border-radius: 20px;
-    transition-duration: 0.4s;
     cursor: default;
+    border-color:rgb(76, 83, 76);
   }
   
   .seleccionDark{
@@ -257,15 +244,9 @@ form{
   }
   
   .dragon {
-    font-size: medium;
     color: rgb(88, 186, 186);
-    text-align: center;
-    margin: 4px 2px;
-    padding: 3px 10px;
-    border: 3px solid rgb(88, 186, 186);
-    border-radius: 20px;
-    transition-duration: 0.4s;
     cursor: default;
+    border-color:rgb(88, 186, 186);
   }
   
   .seleccionDragon{
@@ -284,15 +265,9 @@ form{
   }
   
   .electric {
-    font-size: medium;
     color: rgb(215, 212, 0);
-    text-align: center;
-    margin: 4px 2px;
-    padding: 3px 10px;
-    border: 3px solid rgb(215, 212, 0);
-    border-radius: 20px;
-    transition-duration: 0.4s;
     cursor: default;
+    border-color:rgb(215, 212, 0);
   }
   
   .seleccionElectric{
@@ -311,15 +286,9 @@ form{
   }
   
   .fairy{
-    font-size: medium;
     color: rgb(253, 94, 120);
-    text-align: center;
-    margin: 4px 2px;
-    padding: 3px 10px;
-    border: 3px solid rgb(253, 94, 120);
-    border-radius: 20px;
-    transition-duration: 0.4s;
     cursor: default;
+    border-color:rgb(253, 94, 120);
   }
   
   .seleccionFairy{
@@ -338,15 +307,9 @@ form{
   }
   
   .fighting{
-    font-size: medium;
     color: rgb(253, 152, 0);
-    text-align: center;
-    margin: 4px 2px;
-    padding: 3px 10px;
-    border: 3px solid rgb(253, 152, 0);
-    border-radius: 20px;
-    transition-duration: 0.4s;
     cursor: default;
+    border-color:rgb(253, 152, 0);
   }
   
   .seleccionFighting{
@@ -365,15 +328,9 @@ form{
   }
   
   .flying{
-    font-size: medium;
     color: rgb(123, 156, 247);
-    text-align: center;
-    margin: 4px 2px;
-    padding: 3px 10px;
-    border: 3px solid rgb(123, 156, 247);
-    border-radius: 20px;
-    transition-duration: 0.4s;
     cursor: default;
+    border-color:rgb(123, 156, 247);
   }
   
   .seleccionFlying{
@@ -392,15 +349,9 @@ form{
   }
   
   .ghost{
-    font-size: medium;
     color: rgb(77, 48, 82);
-    text-align: center;
-    margin: 4px 2px;
-    padding: 3px 10px;
-    border: 3px solid rgb(77, 48, 82);
-    border-radius: 20px;
-    transition-duration: 0.4s;
     cursor: default;
+    border-color:rgb(77, 48, 82);
   }
   
   .seleccionGhost{
@@ -419,15 +370,9 @@ form{
   }
   
   .ground{
-    font-size: medium;
-    color: rgb(113, 74, 10);
-    text-align: center;
-    margin: 4px 2px;
-    padding: 3px 10px;
-    border: 3px solid rgb(113, 74, 10);
-    border-radius: 20px;
-    transition-duration: 0.4s;
+    color: rgb(77, 48, 82);
     cursor: default;
+    border-color:rgb(77, 48, 82);
   }
   
   .seleccionGround{
@@ -446,15 +391,9 @@ form{
   }
   
   .ice{
-    font-size: medium;
     color: rgb(5, 220, 216);
-    text-align: center;
-    margin: 4px 2px;
-    padding: 3px 10px;
-    border: 3px solid rgb(5, 220, 216);
-    border-radius: 20px;
-    transition-duration: 0.4s;
     cursor: default;
+    border-color:rgb(5, 220, 216);
   }
   
   .seleccionIce{
@@ -473,15 +412,9 @@ form{
   }
   
   .normal{
-    font-size: medium;
     color: rgb(202, 160, 167);
-    text-align: center;
-    margin: 4px 2px;
-    padding: 3px 10px;
-    border: 3px solid rgb(202, 160, 167);
-    border-radius: 20px;
-    transition-duration: 0.4s;
     cursor: default;
+    border-color:rgb(202, 160, 167);
   }
   
   .seleccionNormal{
@@ -500,15 +433,9 @@ form{
   }
   
   .poison{
-    font-size: medium;
     color: rgb(123, 33, 86);
-    text-align: center;
-    margin: 4px 2px;
-    padding: 3px 10px;
-    border: 3px solid rgb(123, 33, 86);
-    border-radius: 20px;
-    transition-duration: 0.4s;
     cursor: default;
+    border-color:rgb(123, 33, 86);
   }
   
   .seleccionPoison{
@@ -527,15 +454,9 @@ form{
   }
   
   .psychic{
-    font-size: medium;
     color: rgb(205, 36, 135);
-    text-align: center;
-    margin: 4px 2px;
-    padding: 3px 10px;
-    border: 3px solid rgb(205, 36, 135);
-    border-radius: 20px;
-    transition-duration: 0.4s;
     cursor: default;
+    border-color:rgb(205, 36, 135);
   }
   
   .seleccionPsychic{
@@ -554,15 +475,9 @@ form{
   }
   
   .rock{
-    font-size: medium;
     color: rgb(124, 81, 0);
-    text-align: center;
-    margin: 4px 2px;
-    padding: 3px 10px;
-    border: 3px solid rgb(124, 81, 0);
-    border-radius: 20px;
-    transition-duration: 0.4s;
     cursor: default;
+    border-color:rgb(124, 81, 0);
   }
   
   .seleccionRock{
@@ -581,15 +496,9 @@ form{
   }
   
   .steel{
-    font-size: medium;
     color: rgb(143, 154, 140);
-    text-align: center;
-    margin: 4px 2px;
-    padding: 3px 10px;
-    border: 3px solid rgb(143, 154, 140);
-    border-radius: 20px;
-    transition-duration: 0.4s;
     cursor: default;
+    border-color:rgb(143, 154, 140);
   }
   
   .seleccionSteel{
