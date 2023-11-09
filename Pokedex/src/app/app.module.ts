@@ -11,6 +11,7 @@ import { PieDePaginaComponent } from './pie-de-pagina/pie-de-pagina.component';
 import { InteriorComponent } from './interior/interior.component';
 import { PruebasComponent } from './pruebas/pruebas.component';
 import { Pagina404Component } from './pagina404/pagina404.component';
+import { DatosPokemonComponent } from './datos-pokemon/datos-pokemon.component';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import { Pagina404Component } from './pagina404/pagina404.component';
     InteriorComponent,
     PruebasComponent,
     Pagina404Component,
+    DatosPokemonComponent,
 
   ],
   imports: [

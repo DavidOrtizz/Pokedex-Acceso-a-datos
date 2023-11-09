@@ -149,12 +149,14 @@
 <br> <!-- Espacio separatorio del menu y las tarjetas -->
 
 
+
 <!-- Botón para cambiar a shiny 
 <button (click)="cambiarImagen()">Cambiar Imagen</button>
 -->
+
 <!-- Tarjetas -->
 <div class="tarjetasPokemon">
-  <button class="fondoTarjeta btn" *ngFor="let pokemon of pokemons" >
+  <button [routerLink]="'/datos/' + pokemon.id"  class="fondoTarjeta btn" *ngFor="let pokemon of pokemons" >
     <table>
       <tr> <!-- Imagen -->
         <td colspan="2">
