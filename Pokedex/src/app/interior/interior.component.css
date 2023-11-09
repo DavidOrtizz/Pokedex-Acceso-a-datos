@@ -18,6 +18,10 @@ form{
   display: none;
 }
 
+.noFondoBoton{
+  border: 0px;
+}
+
 .estiloBuscador{
   border-radius: 20px;
   padding: 3px 10px;
