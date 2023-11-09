@@ -1,11 +1,44 @@
 
-
+<!-- Nombre de pokemon -->
 <div>{{pokemon.nombre}}</div>
 
+<!-- Numero del pokemon -->
 <div>{{pokemon.id}}</div>
 
-<div>{{pokemon.tipos}}</div>
+<!-- Tipos del pokemon(es un array) -->
+<div *ngFor="let tipo of pokemon.tipos "class="{{tipo}}"> {{tipo}} </div>
 
+<!--                Imagenes de los pokemons dependiendo de su genero               -->
+
+<!--imagen femenino pokemon -->
+<div>{{pokemon.velocidad}}</div>
+
+<!-- Imagen -->
 <div>{{pokemon.imagen}}</div>
 
-<div>{{pokemon.nombre}}</div>
+<!-- Imagen del pokemon shiny -->
+
+<!-- Imagen pokemon shiny -->
+<div>{{pokemon.shiny}}</div>
+
+<!--            Estadistica de los pokemon                  -->
+
+<!-- peso del pokemon -->
+<div>{{pokemon.peso}}</div>
+
+<!-- ataque del pokemon -->
+<div>{{pokemon.ataque}}</div>
+
+<!-- defensa del pokemon -->
+<div>{{pokemon.defensa}}</div>
+
+<!-- atq especial pokemon -->
+<div>{{pokemon.atqEspecial}}</div>
+
+<!-- def especial pokemon -->
+<div>{{pokemon.defEspecial}}</div>
+
+<!-- velocidad del pokemon -->
+<div>{{pokemon.velocidad}}</div>
+
+

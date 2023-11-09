@@ -10,7 +10,20 @@ templateUrl: './datos-pokemon.component.html',
 styleUrls: ['./datos-pokemon.component.css']
 })
 export class DatosPokemonComponent implements OnInit {
-    pokemon: any;
+    pokemon: Pokemon = {
+      id: 0,
+      nombre: "",
+      tipos: [],
+      imagen:"",
+      shiny: "",
+      peso:0,    
+      vida:0,
+      ataque:0,
+      defensa:0,
+      atqEspecial:0,
+      defEspecial:0,
+      velocidad:0
+    };
 constructor(
 private PokemonService: PokemonService, private activatedRoute: ActivatedRoute) { }
 

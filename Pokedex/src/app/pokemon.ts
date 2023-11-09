@@ -5,12 +5,12 @@ export interface Pokemon {
   imagen:string ;
   shiny:string;
   peso:number;
-  ataque:string;
-  defensa:string;
-  atqEspecial:string;
-  defEspecial:string;
-  velocidad:string;
-  vida:string;
+  ataque:number;
+  defensa:number;
+  atqEspecial:number;
+  defEspecial:number;
+  velocidad:number;
+  vida:number;
 
 }
 

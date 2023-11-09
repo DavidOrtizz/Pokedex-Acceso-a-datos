@@ -29,8 +29,7 @@ export class PokemonService {
         defensa:data.stats['2'].base_stat,
         atqEspecial:data.stats['3'].base_stat,
         defEspecial:data.stats['4'].base_stat,
-        velocidad:data.stats['5'].base_stat
-        
+        velocidad:data.stats['5'].base_stat       
       }
     }));
   }
