@@ -149,38 +149,40 @@
 <br> <!-- Espacio separatorio del menu y las tarjetas -->
 
 
+
 <!-- Botón para cambiar a shiny 
 <button (click)="cambiarImagen()">Cambiar Imagen</button>
 -->
+
 <!-- Tarjetas -->
 <div class="tarjetasPokemon">
-    <button class="fondoTarjeta btn sinBordeBoton" *ngFor="let pokemon of pokemons">
-      <table>
-        <tr> <!-- Imagen -->
-          <td colspan="2">
-            <img src="{{pokemon.imagen}}" width="200px" >
-      <!-- Imagen shiny 
-            <img *ngIf="shiny" src="{{pokemon.shiny}}" width="200px" >
-      -->
-          </td>
-        </tr>
-        <!-- Resto de la tabla -->
-        <tr>
-        <!-- boton informacion de cada pokemon 
-        <button>informacion</button> 
-        --> 
-  
-          <!-- id -->
-          <td colspan="2" class="letraId">N.º {{ pokemon.id }}</td>
-        </tr>
-        <tr> <!-- Nombre -->
-          <td colspan="2" class="letraNombre">{{ pokemon.nombre }}</td>
-        </tr>
-        <tr> <!-- Tipos -->
-          <td *ngFor="let tipo of pokemon.tipos" class="{{tipo}}">{{tipo}}</td>
-        </tr>
-      </table>
-    </button>
+  <button [routerLink]="'/datos/' + pokemon.id"  class="fondoTarjeta btn" *ngFor="let pokemon of pokemons" >
+    <table>
+      <tr> <!-- Imagen -->
+        <td colspan="2">
+          <img src="{{pokemon.imagen}}" width="200px" >
+    <!-- Imagen shiny 
+          <img *ngIf="shiny" src="{{pokemon.shiny}}" width="200px" >
+    -->
+        </td>
+      </tr>
+      <!-- Resto de la tabla -->
+      <tr>
+      <!-- boton informacion de cada pokemon 
+      <button>informacion</button> 
+      --> 
+
+        <!-- id -->
+        <td colspan="2" class="letraId">N.º {{ pokemon.id }}</td>
+      </tr>
+      <tr> <!-- Nombre -->
+        <td colspan="2" class="letraNombre">{{ pokemon.nombre }}</td>
+      </tr>
+      <tr> <!-- Tipos -->
+        <td *ngFor="let tipo of pokemon.tipos" class="{{tipo}}">{{tipo}}</td>
+      </tr>
+    </table>
+  </button>
 </div>
 
 
