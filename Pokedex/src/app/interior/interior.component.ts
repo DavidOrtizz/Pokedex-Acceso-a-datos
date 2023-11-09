@@ -2,7 +2,6 @@ import { Component, Output } from '@angular/core';
 import { PokemonService } from '../pokemon.service';
 import { Pokemon } from '../pokemon';
 import { EventEmitter, Input, OnInit} from '@angular/core';
-import { ThemeService } from '../theme.service';
 
 @Component({
   selector: 'app-interior',
@@ -49,7 +48,7 @@ export class InteriorComponent implements OnInit {
   modoOscuro() {
     if(this.oscuro == false){
       this.oscuro = true;
-      this.textoOscuro = 'Tema oscuro';
+      this.textoOscuro = 'Tema oscuro no existe asi que te quedas con el claro';
     } else {
       this.oscuro = false;
       this.textoOscuro = 'Tema claro';
