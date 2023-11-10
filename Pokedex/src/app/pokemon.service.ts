@@ -14,7 +14,8 @@ export class PokemonService {
   constructor(private http: HttpClient) {}
 
 //conseguir un pokemon con sus datos
-
+//ruta para gifts
+//imagen: data.sprites.versions['generation-v']['black-white'].animated.front_default,
   getPokemon(i: number): Observable<Pokemon> {
     return this.http.get('https://pokeapi.co/api/v2/pokemon/' + i).pipe(map((data: any) => {
       return {
@@ -33,6 +34,7 @@ export class PokemonService {
       }
     }));
   }
+  
 //conseguir todos los pokemons
   getPokemons(cantidad: number): Observable<Pokemon[]> {
     const requests: Observable<Pokemon>[] = [];

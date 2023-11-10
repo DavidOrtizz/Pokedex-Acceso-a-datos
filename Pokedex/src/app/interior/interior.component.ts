@@ -86,20 +86,44 @@ export class InteriorComponent implements OnInit {
     }
 
     
+
+
     cambiarGeneracion() {
-      this.pokemonService.getPokemons(this.opcionSeleccionada).subscribe((dataPokemons: Pokemon[]) => {
-        this.pokemons = dataPokemons;
-        this.pokemonsBuscador = dataPokemons;
-        //filtrar primero para que el filtro perdure antes del cambio de generaciones
-        this.filtrarPorTipos();
+      const generacion = Number(this.opcionSeleccionada);
+      let limiteInferior = 1;
+      let limiteSuperior = 151;
+    
+      switch (generacion) {
+        case 1:
+          limiteInferior = 1;
+          limiteSuperior = 151;
+          break;
+        case 2:
+          limiteInferior = 152;
+          limiteSuperior = 251;
+          break;
+        case 3:
+          limiteInferior = 252;
+          limiteSuperior = 386;
+          break;
+        case 4:
+          limiteInferior = 387;
+          limiteSuperior = 493;
+          break;
+      
+      }
+      this.filtrarPorTipos();
+      this.pokemonService.getPokemons(limiteSuperior).subscribe((dataPokemons: Pokemon[]) => {
+        // Filtrar los Pokémon según los límites establecidos
+        this.pokemons = dataPokemons.filter((pokemon, index) => index + 1 >= limiteInferior && index + 1 <= limiteSuperior);
+        this.pokemonsBuscador = this.pokemons;
+    
         // Verifica si había una búsqueda activa
         if (this.busquedaActual) {
           this.pokemons = this.pokemons.filter(pokemon => pokemon.nombre.toLowerCase().includes(this.busquedaActual));
         }
-
       });
     }
-
     /*
     cambiarImagen() {
       if (this.shiny) {
