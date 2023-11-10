@@ -87,6 +87,12 @@ button{
     border-radius: 20px;
     text-align: center;
   }
+
+  .centro {
+    display: flex;
+    justify-content: center;  /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+  }
   
   .btn {
     text-transform: capitalize;

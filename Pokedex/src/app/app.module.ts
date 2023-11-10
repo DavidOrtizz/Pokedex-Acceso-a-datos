@@ -6,10 +6,8 @@ import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component'; 
-import { CabeceraComponent } from './cabecera/cabecera.component';
 import { PieDePaginaComponent } from './pie-de-pagina/pie-de-pagina.component';
 import { InteriorComponent } from './interior/interior.component';
-import { PruebasComponent } from './pruebas/pruebas.component';
 import { Pagina404Component } from './pagina404/pagina404.component';
 import { DatosPokemonComponent } from './datos-pokemon/datos-pokemon.component';
 
@@ -17,13 +15,10 @@ import { DatosPokemonComponent } from './datos-pokemon/datos-pokemon.component';
 @NgModule({
   declarations: [
     AppComponent, 
-    CabeceraComponent,
     PieDePaginaComponent,
     InteriorComponent,
-    PruebasComponent,
     Pagina404Component,
-    DatosPokemonComponent,
-
+    DatosPokemonComponent
   ],
   imports: [
     BrowserModule,
