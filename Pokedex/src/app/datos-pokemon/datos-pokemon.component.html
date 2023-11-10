@@ -1,28 +1,30 @@
 <!-- Datos pokemon -->
-<div>
-  <video src="../../assets/video/FondoDatosPokemon.mp4" autoplay muted loop class="video-foreground"></video>
+<div class="colorFondo">
+  <video src="../../assets/video/FondoDatosPokemon2.mp4" autoplay muted loop class="video-foreground"></video>
   <div class="texto-sobre-video">
 
-    <table class="margen">
+    <table class="margen-top">
       <tr>
-        <td>  <!-- Imagen -->
+        <td> <!-- Imagen -->
           <img src="{{pokemon.imagen}}" width="300px">
         </td>
+      </tr>
+      <tr>
         <td> <!-- Nombre de pokemon -->
-          <h1 class="efecto-sombra">{{pokemon.nombre}}</h1>
+          <h1 class="efecto-sombra margen-izquierda">{{pokemon.nombre}}</h1>
         </td>
+        <td><h3 class="efecto-sombra margen-izquierda">Id {{pokemon.id}}</h3></td>
+      </tr>
+      <tr>
+        <td>
+          <h2 class="efecto-sombra margen-izquierda">Tipo</h2>
+        </td>
+        <td *ngFor="let tipo of pokemon.tipos " class="{{tipo}}"> {{tipo}} </td>
       </tr>
     </table>
+    <table class="margen">
 
-
-    <!-- Numero del pokemon -->
-    <div>{{pokemon.id}}</div>
-
-    <!-- Tipos del pokemon(es un array) -->
-    <div *ngFor="let tipo of pokemon.tipos " class="{{tipo}}"> {{tipo}} </div>
-
-    <!--                Imagenes de los pokemons dependiendo de su genero               -->
-
+    </table>
     <!--imagen femenino pokemon -->
     <div>{{pokemon.velocidad}}</div>
 
