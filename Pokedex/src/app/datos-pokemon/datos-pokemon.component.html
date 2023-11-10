@@ -1,44 +1,54 @@
+<!-- Datos pokemon -->
+<div>
+  <video src="../../assets/video/FondoDatosPokemon.mp4" autoplay muted loop class="video-foreground"></video>
+  <div class="texto-sobre-video">
 
-<!-- Nombre de pokemon -->
-<div>{{pokemon.nombre}}</div>
-
-<!-- Numero del pokemon -->
-<div>{{pokemon.id}}</div>
-
-<!-- Tipos del pokemon(es un array) -->
-<div *ngFor="let tipo of pokemon.tipos "class="{{tipo}}"> {{tipo}} </div>
-
-<!--                Imagenes de los pokemons dependiendo de su genero               -->
-
-<!--imagen femenino pokemon -->
-<div>{{pokemon.velocidad}}</div>
-
-<!-- Imagen -->
-<div>{{pokemon.imagen}}</div>
-
-<!-- Imagen del pokemon shiny -->
-
-<!-- Imagen pokemon shiny -->
-<div>{{pokemon.shiny}}</div>
-
-<!--            Estadistica de los pokemon                  -->
-
-<!-- peso del pokemon -->
-<div>{{pokemon.peso}}</div>
-
-<!-- ataque del pokemon -->
-<div>{{pokemon.ataque}}</div>
-
-<!-- defensa del pokemon -->
-<div>{{pokemon.defensa}}</div>
-
-<!-- atq especial pokemon -->
-<div>{{pokemon.atqEspecial}}</div>
-
-<!-- def especial pokemon -->
-<div>{{pokemon.defEspecial}}</div>
-
-<!-- velocidad del pokemon -->
-<div>{{pokemon.velocidad}}</div>
+    <table class="margen">
+      <tr>
+        <td>  <!-- Imagen -->
+          <img src="{{pokemon.imagen}}" width="300px">
+        </td>
+        <td> <!-- Nombre de pokemon -->
+          <h1 class="efecto-sombra">{{pokemon.nombre}}</h1>
+        </td>
+      </tr>
+    </table>
 
 
+    <!-- Numero del pokemon -->
+    <div>{{pokemon.id}}</div>
+
+    <!-- Tipos del pokemon(es un array) -->
+    <div *ngFor="let tipo of pokemon.tipos " class="{{tipo}}"> {{tipo}} </div>
+
+    <!--                Imagenes de los pokemons dependiendo de su genero               -->
+
+    <!--imagen femenino pokemon -->
+    <div>{{pokemon.velocidad}}</div>
+
+    <!-- Imagen del pokemon shiny -->
+
+    <!-- Imagen pokemon shiny -->
+    <div>{{pokemon.shiny}}</div>
+
+    <!--            Estadistica de los pokemon                  -->
+
+    <!-- peso del pokemon -->
+    <div>{{pokemon.peso}}</div>
+
+    <!-- ataque del pokemon -->
+    <div>{{pokemon.ataque}}</div>
+
+    <!-- defensa del pokemon -->
+    <div>{{pokemon.defensa}}</div>
+
+    <!-- atq especial pokemon -->
+    <div>{{pokemon.atqEspecial}}</div>
+
+    <!-- def especial pokemon -->
+    <div>{{pokemon.defEspecial}}</div>
+
+    <!-- velocidad del pokemon -->
+    <div>{{pokemon.velocidad}}</div>
+  </div>
+</div>
