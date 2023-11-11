@@ -1,28 +1,30 @@
 <!-- Datos pokemon -->
-<div>
-  <video src="../../assets/video/FondoDatosPokemon.mp4" autoplay muted loop class="video-foreground"></video>
+<div class="colorFondo">
+  <video src="../../assets/video/FondoDatosPokemon2.mp4" autoplay muted loop class="video-foreground"></video>
   <div class="texto-sobre-video">
 
-    <table class="margen">
+    <table class="margen-top">
       <tr>
-        <td>  <!-- Imagen -->
+        <td> <!-- Imagen -->
           <img src="{{pokemon.imagen}}" width="300px">
         </td>
+      </tr>
+      <tr>
         <td> <!-- Nombre de pokemon -->
-          <h1 class="efecto-sombra">{{pokemon.nombre}}</h1>
+          <h1 class="efecto-sombra margen-izquierda">{{pokemon.nombre}}</h1>
         </td>
+        <td><h3 class="efecto-sombra margen-izquierda">Id {{pokemon.id}}</h3></td>
+      </tr>
+      <tr>
+        <td>
+          <h2 class="efecto-sombra margen-izquierda">Tipo</h2>
+        </td>
+        <td *ngFor="let tipo of pokemon.tipos " class="{{tipo}}"> {{tipo}} </td>
       </tr>
     </table>
+    <table class="margen">
 
-
-    <!-- Numero del pokemon -->
-    <div>{{pokemon.id}}</div>
-
-    <!-- Tipos del pokemon(es un array) -->
-    <div *ngFor="let tipo of pokemon.tipos " class="{{tipo}}"> {{tipo}} </div>
-
-    <!--                Imagenes de los pokemons dependiendo de su genero               -->
-
+    </table>
     <!--imagen femenino pokemon -->
     <div>{{pokemon.velocidad}}</div>
 
@@ -62,20 +64,15 @@
       <div class="nombre"><h2>{{pokemon.nombre}}</h2></div>
       <div class="power"><h6>ID: {{pokemon.id}}</h6></div>
       <div class="img_charizard"><img src="{{pokemon.imagen}}" width="100%"></div>
-      <div class="descripcion"><h3>N° 006 Pakémon Llama Altura: 1,7 m Peso: 90,5kg</h3></div>
+      <div class="descripcion"><h3>Peso:{{pokemon.peso}}  Altura:{{pokemon.altura}}</h3></div>
       <div class="Habilidad"><h4>Habilidad: Quema Energía</h4></div>
       <div class="Habilidad_detalle"><h5>Todas las Energías unidas a este Pokémon son Energías &#128165; en <br> vez  de su tipo habitual.</h5><hr></div>
-      <div class="fire_2"></div>
-      <div class="fire_3"></div>
-      <div class="fire_4"></div>
-      <div class="fire_5"></div>
-      <div class="descripcion_2"><h3>Giro Fuego</h3></div>
-      <div class="descripcion_3"><h3>200</h3></div>
+
       <div class="descripcion_4"><h3>Descarta 3 Energías unidad a este Pokémon.</h3></div>
       <div class="linea"></div>
-      <div class="debilidad"><h3>Debilidad &#128167;</h3></div>
-      <div class="resistencia"><h3>Resistencia  &#128165;</h3></div>
-      <div class="retirada"><h3>Retirada  &#128168;</h3></div>
+      <tr>
+      <div class="resistencia"*ngFor="let tipo of pokemon.tipos " class="{{tipo}}"><h3> {{tipo}} </h3></div>
+    </tr>
 
     </div>
 

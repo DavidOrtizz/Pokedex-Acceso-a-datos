@@ -21,6 +21,7 @@ export class PokemonService {
       return {
         id: data.id,
         nombre: data.name,
+        altura: data.height,
         tipos: data.types.map((dat: any) => dat.type.name),
         imagen: data.sprites.other['official-artwork'].front_default,
         shiny: data.sprites.other['official-artwork'].front_shiny,

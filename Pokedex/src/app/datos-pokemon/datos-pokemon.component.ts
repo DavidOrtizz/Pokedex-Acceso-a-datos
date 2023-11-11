@@ -22,7 +22,8 @@ export class DatosPokemonComponent implements OnInit {
       defensa:0,
       atqEspecial:0,
       defEspecial:0,
-      velocidad:0
+      velocidad:0,
+      altura:0
     };
 constructor(
 private PokemonService: PokemonService, private activatedRoute: ActivatedRoute) { }

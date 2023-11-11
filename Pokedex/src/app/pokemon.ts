@@ -11,6 +11,7 @@ export interface Pokemon {
   defEspecial:number;
   velocidad:number;
   vida:number;
+  altura:number;
 
 }
 
