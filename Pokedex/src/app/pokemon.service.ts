@@ -4,6 +4,8 @@ import { Pokemon } from './pokemon';
 import { Observable } from 'rxjs/internal/Observable';
 import { forkJoin } from 'rxjs';
 import { map } from 'rxjs';
+import { PokemonDetalle } from './pokemonDetalle';
+
 
 @Injectable({
   providedIn: 'root',
@@ -31,11 +33,17 @@ export class PokemonService {
         defensa:data.stats['2'].base_stat,
         atqEspecial:data.stats['3'].base_stat,
         defEspecial:data.stats['4'].base_stat,
-        velocidad:data.stats['5'].base_stat       
+        velocidad:data.stats['5'].base_stat    
       }
     }));
   }
-  
+  //descripion de pokemon
+  getDescripcion(i: number): Observable<string>{
+    return this.http.get('https://pokeapi.co/api/v2/pokemon-species/' + i).pipe(map((data: any) => {
+      return data.flavor_text_entries[0].flavor_text
+  }));
+  }
+
 //conseguir todos los pokemons
   getPokemons(cantidad: number): Observable<Pokemon[]> {
     const requests: Observable<Pokemon>[] = [];
@@ -48,6 +56,22 @@ export class PokemonService {
 
     return forkJoin(requests).pipe(map((dataPokemons: Pokemon[]) => dataPokemons))
   }
+
+
+  getPokemonsDetalle(identificador: number): Observable<PokemonDetalle> {
+    return forkJoin([
+      this.getPokemon(identificador),
+      this.getDescripcion(identificador)
+    ]).pipe(map(([pokemonData, descripcion]: [Pokemon, string]) => {
+      console.log(descripcion);
+        return {
+          ...pokemonData,
+          descripcion: descripcion
+          
+        };
+      })
+    );
+  }
+  
+
 }
-
-

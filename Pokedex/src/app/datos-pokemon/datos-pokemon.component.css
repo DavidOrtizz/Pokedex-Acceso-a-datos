@@ -1,293 +1,97 @@
-*{
-  text-transform: capitalize;
-}
-
-table{
-  border : 1px solid black;
-}
-
-.videoFondo {
-  background-size: cover;
-  width: 100%;
-  height: 100%;
-  padding-bottom: 70px;
-}
 
 .video-foreground {
-  position: absolute;
+  position: relative;
   width: 100%;
-  top: -350px; /* Mueve la imagen hacia arriba fuera de la pantalla */
+  top: 0%;
 }
 
-.texto-sobre-video {
-  position: absolute;
-  text-align: center;
-  color: white;
-  z-index: 1; /* Asegura que el texto esté encima del video */
-}
-
-/*intento de cartas*/
-
-
-
-
-.charizard{
-  height: 100vh;
-  width: 100vw;
+.habilidad_detalle{
   display: flex;
-  margin-top: -300px;
   justify-content: center;
-}
-.img_charizard{
-  height: 90px;
-  width: 120px;
-  background-size: cover;
-  z-index: 2;
-  position: absolute;
-  margin-left: calc((150px - 125px)/2);
-  top: 25px;
-  border: 4px solid rgb(255, 196, 0);
-  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.418);
+  align-items: center;
 }
 
-.adaptarPantalla{
-  text-align: center;
-  justify-content: center;
+.charizard {
+  height: 0%; /* Ajustado a porcentaje para hacerlo proporcional */
+  width:100%; /* Ajustado a porcentaje para hacerlo proporcional */
   display: flex;
-  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
 
-.margen{
-  margin: 80px;
-}
-.img_charizard img {
-  height: 120px; /* o la altura deseada */
-  margin-top: -15px;
-}
-.margen-top{
-  margin: auto;
-  padding-top: 50px;
-}
-
-.perspective{
-  perspective: 1000px;
-}
-.carta_fondo{
-  height: 200px;
-  width: 150px;
+.carta_fondo {
+  /*height: 80%; /* Cambiado a porcentaje para hacerlo proporcional */
+  /*width: 60%; /* Cambiado a porcentaje para hacerlo proporcional */
   background-color: #ffe659;
   border-radius: 5%;
   overflow: hidden;
   position: relative;
   display: flex;
+  flex-direction: column;
   align-items: center;
+  justify-content: space-between;
   transition: 0.5s;
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.205);
   cursor: pointer;
 }
 
-
-
-
-
-
-
-
-
-.nombre{
-  position: absolute;
-  z-index: 3;
-  bottom: 168px;
-  margin-left: 35px;
-}
-
-.nombre h2{
-  font-size: 12px;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
-
-
-.nivel{
-  position: absolute;
-  z-index: 3;
-  bottom: 171px;
-  margin-left: 87px;
-}
-
-
-.power{
-  position: absolute;
-  z-index: 3;
-  bottom: 160px;
-  margin-left: 100px;
-}
-
-.power h6{
-  font-size: 8px;
-  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
-}
-
-
-
-.descripcion{
-  position: absolute;
-  z-index: 3;
-  bottom: 65px;
-  margin-left: 17px;
-  background-image: linear-gradient(rgb(255, 196, 0),rgb(255, 223, 118));
-  height: 8px;
-  width: 120px;
+.img_charizard {
+  height: 50%; /* Cambiado a porcentaje para hacerlo proporcional */
+  width: 80%; /* Cambiado a porcentaje para hacerlo proporcional */
+  background-size: cover;
+  z-index: 2;
+  position: relative; /* Cambiado a relative */
+  border: 2px solid rgb(255, 196, 0); /* Cambiado a porcentaje para hacerlo proporcional */
   display: flex;
-  align-items: center;
   justify-content: center;
-  border-radius: 3px;
-}
-
-.descripcion h3{
-  font-size: 4.5px;
-  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  font-style: italic;
-}
-
-
-.Habilidad{
-  position: absolute;
-  z-index: 3;
-  bottom: 49px;
-  margin-left: 13px;
-  font-size: 5px;
-  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-}
-
-.Habilidad_detalle{
-  position: absolute;
-  z-index: 3;
-  bottom: 40px;
-  margin-left: 13px;
-  font-size: 4.5px;
-  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  color: rgb(0, 0, 0);
-}
-
-.Habilidad_detalle h5{
-  height: 5px;
-}
-
-
-
-.descripcion_2{
-  position: absolute;
-  z-index: 3;
-  bottom: 24px;
-  margin-left: 52px;
-  font-size: 6px;
-  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  color: rgb(0, 0, 0);
-}
-
-.descripcion_3{
-  position: absolute;
-  z-index: 3;
-  bottom: 24px;
-  margin-left: 120px;
-  font-size: 6px;
-  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  color: rgb(0, 0, 0);
-}
-
-
-
-.descripcion_4{
-  position: absolute;
-  z-index: 3;
-  bottom: 22px;
-  margin-left: 13px;
-  font-size: 3px;
-  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  color: rgb(0, 0, 0);
-}
-
-.linea{
-  height: 1px;
-  width: 40px;
-  background-color: gray;
-  z-index: 3;
-  position: absolute;
-  margin-top: 155px;
-  margin-left: 13px;
-  box-shadow: 0.5px 0.5px 0.5px rgba(0, 0, 0, 0.418);
-}
-
-.debilidad{
-  position: absolute;
-  z-index: 3;
-  bottom: 9px;
-  margin-left: 13px;
-  font-size: 4px;
-  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  color: rgb(0, 0, 0);
-  background-color: #ffe659;
-  border-radius: 10px;
-  height: 8px;
-  width: 35px;
-  display: flex;
   align-items: center;
-  justify-content: center;
+}
 
+.img_charizard img {
+  max-width: 100%;
+  height: auto;
+}
+
+.nombre {
+  position: relative;
+  margin-top: 0%; /* Ajustado para que sea relativo al tamaño de la carta */
+
+  right: 30%; /* Ajustado para que sea relativo al tamaño de la carta */
 }
 
 
-.resistencia{
-  position: absolute;
+
+.power {
+  margin-top:5% ;margin-top:5% ;
+  margin-bottom: -10%;
+  font-size: larger;
+  position: relative;
   z-index: 3;
-  bottom: 9px;
-  margin-left: 56px;
-  font-size: 4px;
-  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  color: rgb(0, 0, 0);
-  background-color: #ffe659;
-  border-radius: 10px;
-  height: 8px;
-  width: 38px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  top: 20%; /* Ajustado para que sea relativo al tamaño de la carta */
+  right: -30%; /* Ajustado para que sea relativo al tamaño de la carta */
+}
+
+
+.descripcion {
+  font-size:small; /* Ajustado a porcentaje para hacerlo proporcional */
+  margin-top:-2% ;
 }
 
 
 
-.retirada{
-  position: absolute;
-  z-index: 3;
-  bottom: 9px;
-  margin-left: 102px;
-  font-size: 4px;
-  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  color: rgb(0, 0, 0);
-  background-color: #ffe659;
-  border-radius: 10px;
-  height: 8px;
-  width: 35px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.Habilidad {
+  font-size:larger;
+  margin-top: 2%; /* Ajustado para que sea relativo al tamaño de la carta */
+  margin-right: 60%; /* Ajustado para que sea relativo al tamaño de la carta */
+}
+.desrrollo{
+  font-size:medium;
+
 }
 
 
-
-.margen-izquierda{
-  padding-left: 20px;
-}
-
-.efecto-sombra{
-  color: white;
-  font-weight: 900;
-  text-shadow: 3px 3px 0px black;
-}
-
-
-.colorFondo{
-  background-color: #82B773;
-  width: 100%;
-  height: 100%;
+.resistencia {
+  top: -5%; /* Ajustado para que sea relativo al tamaño de la carta */
+  right: -10%; /* Ajustado para que sea relativo al tamaño de la carta */
+  white-space: nowrap;  /* Evita el salto de línea */
 }

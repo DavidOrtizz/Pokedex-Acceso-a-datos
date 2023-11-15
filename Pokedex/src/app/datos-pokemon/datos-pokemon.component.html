@@ -1,58 +1,6 @@
 <!-- Datos pokemon -->
 <div class="colorFondo">
   <video src="../../assets/video/FondoDatosPokemon2.mp4" autoplay muted loop class="video-foreground"></video>
-  <div class="texto-sobre-video">
-
-    <table class="margen-top">
-      <tr>
-        <td> <!-- Imagen -->
-          <img src="{{pokemon.imagen}}" width="300px">
-        </td>
-      </tr>
-      <tr>
-        <td> <!-- Nombre de pokemon -->
-          <h1 class="efecto-sombra margen-izquierda">{{pokemon.nombre}}</h1>
-        </td>
-        <td><h3 class="efecto-sombra margen-izquierda">Id {{pokemon.id}}</h3></td>
-      </tr>
-      <tr>
-        <td>
-          <h2 class="efecto-sombra margen-izquierda">Tipo</h2>
-        </td>
-        <td *ngFor="let tipo of pokemon.tipos " class="{{tipo}}"> {{tipo}} </td>
-      </tr>
-    </table>
-    <table class="margen">
-
-    </table>
-    <!--imagen femenino pokemon -->
-    <div>{{pokemon.velocidad}}</div>
-
-    <!-- Imagen del pokemon shiny -->
-
-    <!-- Imagen pokemon shiny -->
-    <div>{{pokemon.shiny}}</div>
-
-    <!--            Estadistica de los pokemon                  -->
-
-    <!-- peso del pokemon -->
-    <div>{{pokemon.peso}}</div>
-
-    <!-- ataque del pokemon -->
-    <div>{{pokemon.ataque}}</div>
-
-    <!-- defensa del pokemon -->
-    <div>{{pokemon.defensa}}</div>
-
-    <!-- atq especial pokemon -->
-    <div>{{pokemon.atqEspecial}}</div>
-
-    <!-- def especial pokemon -->
-    <div>{{pokemon.defEspecial}}</div>
-
-    <!-- velocidad del pokemon -->
-    <div>{{pokemon.velocidad}}</div>
-  </div>
 </div>
 
 <div class="charizard">
@@ -60,19 +8,22 @@
   <div class="perspective">
     
     <div class="carta_fondo">
-      <div class="fase_2"></div>
+      <div class="power">ID: {{pokemon.id}}</div>
       <div class="nombre"><h2>{{pokemon.nombre}}</h2></div>
-      <div class="power"><h6>ID: {{pokemon.id}}</h6></div>
+
       <div class="img_charizard"><img src="{{pokemon.imagen}}" width="100%"></div>
-      <div class="descripcion"><h3>Peso:{{pokemon.peso}}  Altura:{{pokemon.altura}}</h3></div>
+      
+
+
+
+      <div class="descripcion"><h3>Peso:{{pokemon.peso}}      Altura:{{pokemon.altura}}</h3></div>
+
       <div class="Habilidad"><h4>Descripción:</h4></div>
-      <div class="Habilidad_detalle"><h5><!-- descripcion del pokemon --></h5><hr></div>
-
-
-      <div class="linea"></div>
-      <tr>
-      <div class="resistencia"*ngFor="let tipo of pokemon.tipos " class="{{tipo}}"><h3> {{tipo}} </h3></div>
-    </tr>
+      <div class="Habilidad_detalle">{{pokemon.descripcion}}<h5><!-- descripcion del pokemon --></h5><hr></div>
+      <div>
+        <span class="resistencia"*ngFor="let tipo of pokemon.tipos" class="{{tipo}}"> {{tipo}}</span>
+      </div>
+      
 
     </div>
 
