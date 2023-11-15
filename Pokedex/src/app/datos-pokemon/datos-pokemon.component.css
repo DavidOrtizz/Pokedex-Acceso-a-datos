@@ -95,3 +95,220 @@
   right: -10%; /* Ajustado para que sea relativo al tamaño de la carta */
   white-space: nowrap;  /* Evita el salto de línea */
 }
+
+.fondoCarta{
+  background-color: aquamarine;
+}
+
+/* Color tipos pokemon */
+
+  /*Estilo de los elementos*/
+  .fire, .water, .grass, .bug, .dark, .dragon, .electric, .fairy, .fighting, .flying, 
+  .ghost, .ground, .ice, .normal, .poison, .psychic, .rock, .steel {
+    font-size: medium;
+    text-align: center;
+    margin: 4px 2px;
+    padding: 3px 10px;
+    border: 3px solid;
+    border-radius: 20px;
+    transition-duration: 0.4s;
+    color: currentColor;
+  }
+
+  .fire {
+    color: red;
+    cursor: default;
+    border-color: red;
+  }
+
+  .fire:hover{
+    background-color:red; /* Cambia #color del fondo */
+    color: white; /* Cambia el color de texto */
+  }
+
+  .water {
+    color: rgb(55, 55, 243);
+    cursor: default;
+    border-color: rgb(55, 55, 243);
+  }
+
+  .water:hover{
+    background-color:rgb(55, 55, 243);
+    color: white; 
+  }
+
+  .grass {
+    color: green;
+    cursor: default;
+    border-color:green;
+  }
+
+  .grass:hover{
+    background-color:green;
+    color: white; 
+  }
+
+  .bug {
+    color: rgb(19, 88, 19);
+    cursor: default;
+    border-color:rgb(19, 88, 19);
+  }
+
+  .bug:hover{
+    background-color:rgb(19, 88, 19);
+    color: white; 
+  }
+
+  .dark {
+    color: rgb(76, 83, 76);
+    cursor: default;
+    border-color:rgb(76, 83, 76);
+  }
+
+  .dark:hover{
+    background-color:rgb(76, 83, 76);
+    color: white; 
+  }
+
+  .dragon {
+    color: rgb(88, 186, 186);
+    cursor: default;
+    border-color:rgb(88, 186, 186);
+  }
+
+  .dragon:hover{
+    background-color:rgb(88, 186, 186);
+    color: white; 
+  }
+
+  .electric {
+    color: rgb(215, 212, 0);
+    cursor: default;
+    border-color:rgb(215, 212, 0);
+  }
+
+  .electric:hover{
+    background-color:rgb(215, 212, 0);
+    color: white; 
+  }
+
+  .fairy{
+    color: rgb(253, 94, 120);
+    cursor: default;
+    border-color:rgb(253, 94, 120);
+  }
+
+  .fairy:hover{
+    background-color:rgb(253, 94, 120);
+    color: white; 
+  }
+
+  .fighting{
+    color: rgb(253, 152, 0);
+    cursor: default;
+    border-color:rgb(253, 152, 0);
+  }
+
+  .fighting:hover{
+    background-color:rgb(253, 152, 0);
+    color: white; 
+  }
+
+  .flying{
+    color: rgb(123, 156, 247);
+    cursor: default;
+    border-color:rgb(123, 156, 247);
+  }
+
+  .flying:hover{
+    background-color:rgb(123, 156, 247);
+    color: white; 
+  }
+
+  .ghost{
+    color: rgb(77, 48, 82);
+    cursor: default;
+    border-color:rgb(77, 48, 82);
+  }
+
+  .ghost:hover{
+    background-color:rgb(77, 48, 82);
+    color: white; 
+  }
+
+  .ground{
+    color: rgb(113, 74, 10);
+    cursor: default;
+    border-color:rgb(113, 74, 10);
+  }
+
+  .ground:hover{
+    background-color:rgb(113, 74, 10);
+    color: white; 
+  }
+    
+  .ice{
+    color: rgb(5, 220, 216);
+    cursor: default;
+    border-color:rgb(5, 220, 216);
+  }
+
+  .ice:hover{
+    background-color:rgb(5, 220, 216);
+    color: white; 
+  }
+
+  .normal{
+    color: rgb(202, 160, 167);
+    cursor: default;
+    border-color:rgb(202, 160, 167);
+  }
+
+  .normal:hover{
+    background-color:rgb(202, 160, 167);
+    color: white; 
+  }
+
+  .poison{
+    color: rgb(123, 33, 86);
+    cursor: default;
+    border-color:rgb(123, 33, 86);
+  }
+
+  .poison:hover{
+    background-color:rgb(123, 33, 86);
+    color: white; 
+  }
+
+  .psychic{
+    color: rgb(205, 36, 135);
+    cursor: default;
+    border-color:rgb(205, 36, 135);
+  }
+
+  .psychic:hover{
+    background-color:rgb(205, 36, 135);
+    color: white; 
+  }
+
+  .rock{
+    color: rgb(124, 81, 0);
+    cursor: default;
+    border-color:rgb(124, 81, 0);
+  }
+
+  .rock:hover{
+    background-color:rgb(124, 81, 0);
+    color: white; 
+  }
+
+  .steel{
+    color: rgb(143, 154, 140);
+    cursor: default;
+    border-color:rgb(143, 154, 140);
+  }
+
+  .steel:hover{
+    background-color:rgb(143, 154, 140);
+    color: white; 
+  }
