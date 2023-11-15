@@ -115,7 +115,7 @@ export class InteriorComponent implements OnInit {
           break;
       
       }
-      this.filtrarPorTipos();
+
       this.pokemonService.getPokemons(limiteSuperior).subscribe((dataPokemons: Pokemon[]) => {
         // Filtrar los Pokémon según los límites establecidos
         this.pokemons = dataPokemons.filter((pokemon, index) => index + 1 >= limiteInferior && index + 1 <= limiteSuperior);
@@ -125,6 +125,7 @@ export class InteriorComponent implements OnInit {
         if (this.busquedaActual) {
           this.pokemons = this.pokemons.filter(pokemon => pokemon.nombre.toLowerCase().includes(this.busquedaActual));
         }
+        this.filtrarPorTipos();
       });
     }
     /*
