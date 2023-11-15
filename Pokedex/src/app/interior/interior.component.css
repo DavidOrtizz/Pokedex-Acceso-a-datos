@@ -148,7 +148,7 @@ button{
   
   .fire {
     color: red;
-    cursor: pointer;
+    cursor: default;
     border-color: red;
   }
   
@@ -379,14 +379,14 @@ button{
   }
   
   .ground{
-    color: rgb(77, 48, 82);
+    color: rgb(113, 74, 10);
     cursor: default;
-    border-color:rgb(77, 48, 82);
+    border-color:rgb(113, 74, 10);
   }
   
   .seleccionGround{
     padding-right: 5px;
-    color: rgb(77, 48, 82);
+    color: rgb(113, 74, 10);
     margin: auto;
   }
 

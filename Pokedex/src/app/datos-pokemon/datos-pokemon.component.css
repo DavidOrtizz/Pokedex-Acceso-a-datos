@@ -4,6 +4,7 @@
 
 table{
   border : 1px solid black;
+  border-radius: 20px;
 }
 
 .videoFondo {
@@ -26,30 +27,6 @@ table{
   z-index: 1; /* Asegura que el texto esté encima del video */
 }
 
-/*intento de cartas*/
-
-
-
-
-.charizard{
-  height: 100vh;
-  width: 100vw;
-  display: flex;
-  margin-top: -300px;
-  justify-content: center;
-}
-.img_charizard{
-  height: 90px;
-  width: 120px;
-  background-size: cover;
-  z-index: 2;
-  position: absolute;
-  margin-left: calc((150px - 125px)/2);
-  top: 25px;
-  border: 4px solid rgb(255, 196, 0);
-  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.418);
-}
-
 .adaptarPantalla{
   text-align: center;
   justify-content: center;
@@ -58,222 +35,13 @@ table{
 }
 
 .margen{
-  margin: 80px;
+  margin: auto;
 }
-.img_charizard img {
-  height: 120px; /* o la altura deseada */
-  margin-top: -15px;
-}
+
 .margen-top{
   margin: auto;
   padding-top: 50px;
 }
-
-.perspective{
-  perspective: 1000px;
-}
-.carta_fondo{
-  height: 200px;
-  width: 150px;
-  background-color: #ffe659;
-  border-radius: 5%;
-  overflow: hidden;
-  position: relative;
-  display: flex;
-  align-items: center;
-  transition: 0.5s;
-  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.205);
-  cursor: pointer;
-}
-
-
-
-
-
-
-
-
-
-.nombre{
-  position: absolute;
-  z-index: 3;
-  bottom: 168px;
-  margin-left: 35px;
-}
-
-.nombre h2{
-  font-size: 12px;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
-
-
-.nivel{
-  position: absolute;
-  z-index: 3;
-  bottom: 171px;
-  margin-left: 87px;
-}
-
-
-.power{
-  position: absolute;
-  z-index: 3;
-  bottom: 160px;
-  margin-left: 100px;
-}
-
-.power h6{
-  font-size: 8px;
-  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
-}
-
-
-
-.descripcion{
-  position: absolute;
-  z-index: 3;
-  bottom: 65px;
-  margin-left: 17px;
-  background-image: linear-gradient(rgb(255, 196, 0),rgb(255, 223, 118));
-  height: 8px;
-  width: 120px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 3px;
-}
-
-.descripcion h3{
-  font-size: 4.5px;
-  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  font-style: italic;
-}
-
-
-.Habilidad{
-  position: absolute;
-  z-index: 3;
-  bottom: 49px;
-  margin-left: 13px;
-  font-size: 5px;
-  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-}
-
-.Habilidad_detalle{
-  position: absolute;
-  z-index: 3;
-  bottom: 40px;
-  margin-left: 13px;
-  font-size: 4.5px;
-  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  color: rgb(0, 0, 0);
-}
-
-.Habilidad_detalle h5{
-  height: 5px;
-}
-
-
-
-.descripcion_2{
-  position: absolute;
-  z-index: 3;
-  bottom: 24px;
-  margin-left: 52px;
-  font-size: 6px;
-  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  color: rgb(0, 0, 0);
-}
-
-.descripcion_3{
-  position: absolute;
-  z-index: 3;
-  bottom: 24px;
-  margin-left: 120px;
-  font-size: 6px;
-  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  color: rgb(0, 0, 0);
-}
-
-
-
-.descripcion_4{
-  position: absolute;
-  z-index: 3;
-  bottom: 22px;
-  margin-left: 13px;
-  font-size: 3px;
-  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  color: rgb(0, 0, 0);
-}
-
-.linea{
-  height: 1px;
-  width: 40px;
-  background-color: gray;
-  z-index: 3;
-  position: absolute;
-  margin-top: 155px;
-  margin-left: 13px;
-  box-shadow: 0.5px 0.5px 0.5px rgba(0, 0, 0, 0.418);
-}
-
-.debilidad{
-  position: absolute;
-  z-index: 3;
-  bottom: 9px;
-  margin-left: 13px;
-  font-size: 4px;
-  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  color: rgb(0, 0, 0);
-  background-color: #ffe659;
-  border-radius: 10px;
-  height: 8px;
-  width: 35px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-}
-
-
-.resistencia{
-  position: absolute;
-  z-index: 3;
-  bottom: 9px;
-  margin-left: 56px;
-  font-size: 4px;
-  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  color: rgb(0, 0, 0);
-  background-color: #ffe659;
-  border-radius: 10px;
-  height: 8px;
-  width: 38px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-
-
-.retirada{
-  position: absolute;
-  z-index: 3;
-  bottom: 9px;
-  margin-left: 102px;
-  font-size: 4px;
-  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  color: rgb(0, 0, 0);
-  background-color: #ffe659;
-  border-radius: 10px;
-  height: 8px;
-  width: 35px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-
 
 .margen-izquierda{
   padding-left: 20px;
@@ -285,9 +53,225 @@ table{
   text-shadow: 3px 3px 0px black;
 }
 
-
 .colorFondo{
   background-color: #82B773;
   width: 100%;
   height: 100%;
 }
+
+.fondoCarta{
+  background-color: aquamarine;
+}
+
+/* Color tipos pokemon */
+
+  /*Estilo de los elementos*/
+  .fire, .water, .grass, .bug, .dark, .dragon, .electric, .fairy, .fighting, .flying, 
+  .ghost, .ground, .ice, .normal, .poison, .psychic, .rock, .steel {
+    font-size: medium;
+    text-align: center;
+    margin: 4px 2px;
+    padding: 3px 10px;
+    border: 3px solid;
+    border-radius: 20px;
+    transition-duration: 0.4s;
+    color: currentColor;
+  }
+
+  .fire {
+    color: red;
+    cursor: default;
+    border-color: red;
+  }
+
+  .fire:hover{
+    background-color:red; /* Cambia #color del fondo */
+    color: white; /* Cambia el color de texto */
+  }
+
+  .water {
+    color: rgb(55, 55, 243);
+    cursor: default;
+    border-color: rgb(55, 55, 243);
+  }
+
+  .water:hover{
+    background-color:rgb(55, 55, 243);
+    color: white; 
+  }
+
+  .grass {
+    color: green;
+    cursor: default;
+    border-color:green;
+  }
+
+  .grass:hover{
+    background-color:green;
+    color: white; 
+  }
+
+  .bug {
+    color: rgb(19, 88, 19);
+    cursor: default;
+    border-color:rgb(19, 88, 19);
+  }
+
+  .bug:hover{
+    background-color:rgb(19, 88, 19);
+    color: white; 
+  }
+
+  .dark {
+    color: rgb(76, 83, 76);
+    cursor: default;
+    border-color:rgb(76, 83, 76);
+  }
+
+  .dark:hover{
+    background-color:rgb(76, 83, 76);
+    color: white; 
+  }
+
+  .dragon {
+    color: rgb(88, 186, 186);
+    cursor: default;
+    border-color:rgb(88, 186, 186);
+  }
+
+  .dragon:hover{
+    background-color:rgb(88, 186, 186);
+    color: white; 
+  }
+
+  .electric {
+    color: rgb(215, 212, 0);
+    cursor: default;
+    border-color:rgb(215, 212, 0);
+  }
+
+  .electric:hover{
+    background-color:rgb(215, 212, 0);
+    color: white; 
+  }
+
+  .fairy{
+    color: rgb(253, 94, 120);
+    cursor: default;
+    border-color:rgb(253, 94, 120);
+  }
+
+  .fairy:hover{
+    background-color:rgb(253, 94, 120);
+    color: white; 
+  }
+
+  .fighting{
+    color: rgb(253, 152, 0);
+    cursor: default;
+    border-color:rgb(253, 152, 0);
+  }
+
+  .fighting:hover{
+    background-color:rgb(253, 152, 0);
+    color: white; 
+  }
+
+  .flying{
+    color: rgb(123, 156, 247);
+    cursor: default;
+    border-color:rgb(123, 156, 247);
+  }
+
+  .flying:hover{
+    background-color:rgb(123, 156, 247);
+    color: white; 
+  }
+
+  .ghost{
+    color: rgb(77, 48, 82);
+    cursor: default;
+    border-color:rgb(77, 48, 82);
+  }
+
+  .ghost:hover{
+    background-color:rgb(77, 48, 82);
+    color: white; 
+  }
+
+  .ground{
+    color: rgb(113, 74, 10);
+    cursor: default;
+    border-color:rgb(113, 74, 10);
+  }
+
+  .ground:hover{
+    background-color:rgb(113, 74, 10);
+    color: white; 
+  }
+    
+  .ice{
+    color: rgb(5, 220, 216);
+    cursor: default;
+    border-color:rgb(5, 220, 216);
+  }
+
+  .ice:hover{
+    background-color:rgb(5, 220, 216);
+    color: white; 
+  }
+
+  .normal{
+    color: rgb(202, 160, 167);
+    cursor: default;
+    border-color:rgb(202, 160, 167);
+  }
+
+  .normal:hover{
+    background-color:rgb(202, 160, 167);
+    color: white; 
+  }
+
+  .poison{
+    color: rgb(123, 33, 86);
+    cursor: default;
+    border-color:rgb(123, 33, 86);
+  }
+
+  .poison:hover{
+    background-color:rgb(123, 33, 86);
+    color: white; 
+  }
+
+  .psychic{
+    color: rgb(205, 36, 135);
+    cursor: default;
+    border-color:rgb(205, 36, 135);
+  }
+
+  .psychic:hover{
+    background-color:rgb(205, 36, 135);
+    color: white; 
+  }
+
+  .rock{
+    color: rgb(124, 81, 0);
+    cursor: default;
+    border-color:rgb(124, 81, 0);
+  }
+
+  .rock:hover{
+    background-color:rgb(124, 81, 0);
+    color: white; 
+  }
+
+  .steel{
+    color: rgb(143, 154, 140);
+    cursor: default;
+    border-color:rgb(143, 154, 140);
+  }
+
+  .steel:hover{
+    background-color:rgb(143, 154, 140);
+    color: white; 
+  }

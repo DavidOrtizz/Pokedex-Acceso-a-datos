@@ -55,38 +55,41 @@ export class InteriorComponent implements OnInit {
     }
   }
 
-    // Método para buscar el Pokémon y emitir el evento
-    buscarPokemon() {
-      const nombreBuscado = this.buscadorPokemon.toLowerCase();
-      this.busquedaActual = nombreBuscado; // Almacena la búsqueda actual
-      this.pokemons = this.pokemonsBuscador.filter(pokemon => pokemon.nombre.toLowerCase().includes(nombreBuscado));
+  buscarPokemon() {
+    const nombreBuscado = this.buscadorPokemon.toLowerCase();
+    this.busquedaActual = nombreBuscado; // Almacena la búsqueda actual
+    this.aplicarFiltros(); // Aplica los filtros
+  }
+  
+  filtrarPorTipos() {
+    // Filtra los Pokemon solo si hay tipos seleccionados
+    if (this.tiposSeleccionados.length > 0) {
+      this.pokemons = this.pokemonsBuscador.filter(pokemon => pokemon.tipos.some(tipo => this.tiposSeleccionados.includes(tipo)));
+    } else {
+      // Si no hay tipos seleccionados, muestra todos los Pokemons
+      this.pokemons = this.pokemonsBuscador;
     }
-    filtrarPorTipos() {
-      // Filtra los Pokémon solo si hay tipos seleccionados
-      if (this.tiposSeleccionados.length > 0) {
-        this.pokemons = this.pokemonsBuscador.filter(pokemon => 
-          pokemon.tipos.some(tipo => this.tiposSeleccionados.includes(tipo))
-        );
-      } else {
-        // Si no hay tipos seleccionados, muestra todos los Pokémon originales
-        this.pokemons = this.pokemonsBuscador;
-      }
-    }
+    this.aplicarFiltros(); // Aplica ambos filtros
+  }
 
-    filtroTipos(tipo: string) {
-      if (this.tiposSeleccionados.includes(tipo)) {
-        // Si el tipo ya está seleccionado, quítalo de la lista
-        this.tiposSeleccionados = this.tiposSeleccionados.filter(t => t !== tipo);
-      } else {
-        // Si el tipo no está seleccionado, agrégalo a la lista
-        this.tiposSeleccionados.push(tipo);
-      }     
-      // Realiza el filtrado solo cuando se selecciona o quita un tipo
-      this.filtrarPorTipos();
-    }
+  filtroTipos(tipo: string) {
+    if (this.tiposSeleccionados.includes(tipo)) {
+      // Si el tipo ya está seleccionado se quíta de la lista
+      this.tiposSeleccionados = this.tiposSeleccionados.filter(t => t !== tipo);
+    } else {
+      // Si el tipo no está seleccionado agrega a la lista
+      this.tiposSeleccionados.push(tipo);
+    }     
+    this.aplicarFiltros(); // Muestra los filtros
+  }
 
-    
-
+  aplicarFiltros() {
+    // Filtra por nombre y tipos a la vez
+    const nombreBuscado = this.busquedaActual.toLowerCase();
+     // Si el nombre del pokemon y el tipo de pokemon estan en la lista entoces aparece
+    this.pokemons = this.pokemonsBuscador.filter(pokemon => 
+    pokemon.nombre.toLowerCase().includes(nombreBuscado) && (this.tiposSeleccionados.length == 0 || pokemon.tipos.some(tipo => this.tiposSeleccionados.includes(tipo))));
+  }
 
     cambiarGeneracion() {
       const generacion = Number(this.opcionSeleccionada);
