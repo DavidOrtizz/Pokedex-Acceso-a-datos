@@ -25,11 +25,12 @@
         <div class="descripcion"><h3>Peso:{{pokemon.peso}}      Altura:{{pokemon.altura}}</h3></div>
   
         <div class="Habilidad"><h4>Descripción:</h4></div>
-        <div class="Habilidad_detalle">{{pokemon.descripcion}}<h5><!-- descripcion del pokemon --></h5><hr></div>
+        <div class="Habilidad_detalle">{{pokemon.descripcion}}</div>
+        <br>
         <div>
-          <span class="resistencia"*ngFor="let tipo of pokemon.tipos" class="{{tipo}}"> {{tipo}}</span>
+          <span class="resistencia"*ngFor="let tipo of pokemon.tipos" class="{{tipo}}Letter"> {{tipo}}</span>
         </div>
-        
+        <br>
   
       </div>
   
