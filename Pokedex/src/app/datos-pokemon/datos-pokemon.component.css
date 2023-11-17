@@ -31,12 +31,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
 }
 
 .carta_fondo {
   height: 80%; 
   width: 60%; 
-  background-color: #ffe659;
+  background-color: currentColor;
   border-radius: 5%;
   overflow: hidden;
   position: relative;
@@ -47,7 +48,13 @@
   transition: 0.5s;
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.205);
   cursor: pointer;
+  
+
 }
+
+
+
+
 
 .img_charizard {
   height: 50%; /* Cambiado a porcentaje para hacerlo proporcional */
@@ -55,15 +62,17 @@
   background-size: cover;
   z-index: 2;
   position: relative; /* Cambiado a relative */
-  border: 2px solid rgb(255, 196, 0); /* Cambiado a porcentaje para hacerlo proporcional */
+  border: 3px solid rgb(194, 193, 193); /* Cambiado a porcentaje para hacerlo proporcional */
   display: flex;
   justify-content: center;
   align-items: center;
+
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.418);
 }
 
 .img_charizard img {
   max-width: 100%;
-  height: auto;
+  
 }
 
 .nombre {
@@ -84,7 +93,14 @@
 
 .descripcion {
   font-size:small; /* Ajustado a porcentaje para hacerlo proporcional */
-  margin-top:-2% ;
+
+  height:3px;
+  width: 80%;
+  text-align: center;
+  padding: 10px;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.418);
+  background-image: radial-gradient(rgb(220, 218, 218),rgb(193, 189, 189));
+  border-radius: 17%;
 }
 
 .Habilidad {
@@ -95,6 +111,8 @@
 
 .desrrollo{
   font-size:medium;
+  text-align: center;
+  padding: 10px;
 
 }
 

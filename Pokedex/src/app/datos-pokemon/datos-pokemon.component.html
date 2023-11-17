@@ -8,7 +8,7 @@
 
     <div class="perspective">
       
-      <div class="carta_fondo">
+      <div class="{{pokemon.tipos}} carta_fondo">
         <div class="power">ID: {{pokemon.id}}</div>
         <div class="nombre"><h2>{{pokemon.nombre}}</h2></div>
   
@@ -17,9 +17,11 @@
   
   
   
-        <div class="descripcion"><h3>Peso:{{pokemon.peso}}      Altura:{{pokemon.altura}}</h3></div>
+        <div class="descripcion">
+          Peso:{{pokemon.peso}}      Altura:{{pokemon.altura}}
+        </div>
   
-        <div class="Habilidad"><h4>Descripción:</h4></div>
+        <div class="Habilidad">Descripción:</div>
         <div class="Habilidad_detalle">{{pokemon.descripcion}}<h5><!-- descripcion del pokemon --></h5><hr></div>
         <div>
           <span class="resistencia"*ngFor="let tipo of pokemon.tipos" class="{{tipo}}"> {{tipo}}</span>
