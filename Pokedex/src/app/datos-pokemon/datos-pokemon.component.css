@@ -2,6 +2,23 @@
   text-transform: capitalize;
 }
 
+.btn {
+  color: #fff;
+  background-color: #7BD6FF;
+  border: none;
+  border-bottom: 1px solid;
+  cursor: pointer;
+  display: block;
+  font-size:16px;
+  font-weight: 400;
+  line-height: 45px;
+  max-width: 160px; 
+  position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
+  width: 100%; 
+}
+
 .videoFondo {
   position: relative;
   width: 100%;
