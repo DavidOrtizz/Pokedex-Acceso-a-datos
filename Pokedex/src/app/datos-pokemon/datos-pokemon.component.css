@@ -1,8 +1,22 @@
+*{
+  text-transform: capitalize;
+}
 
-.video-foreground {
+.videoFondo {
   position: relative;
   width: 100%;
-  top: 0%;
+  height: 100%; /* Esto asegura que el contenedor sea del tamaño de la ventana */
+  overflow: hidden;
+}
+
+.video-foreground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1; /* Asegura que el video esté detrás de otros elementos */
 }
 
 .habilidad_detalle{
@@ -20,8 +34,8 @@
 }
 
 .carta_fondo {
-  /*height: 80%; /* Cambiado a porcentaje para hacerlo proporcional */
-  /*width: 60%; /* Cambiado a porcentaje para hacerlo proporcional */
+  height: 80%; 
+  width: 60%; 
   background-color: #ffe659;
   border-radius: 5%;
   overflow: hidden;
@@ -55,11 +69,8 @@
 .nombre {
   position: relative;
   margin-top: 0%; /* Ajustado para que sea relativo al tamaño de la carta */
-
   right: 30%; /* Ajustado para que sea relativo al tamaño de la carta */
 }
-
-
 
 .power {
   margin-top:5% ;margin-top:5% ;
@@ -71,24 +82,21 @@
   right: -30%; /* Ajustado para que sea relativo al tamaño de la carta */
 }
 
-
 .descripcion {
   font-size:small; /* Ajustado a porcentaje para hacerlo proporcional */
   margin-top:-2% ;
 }
-
-
 
 .Habilidad {
   font-size:larger;
   margin-top: 2%; /* Ajustado para que sea relativo al tamaño de la carta */
   margin-right: 60%; /* Ajustado para que sea relativo al tamaño de la carta */
 }
+
 .desrrollo{
   font-size:medium;
 
 }
-
 
 .resistencia {
   top: -5%; /* Ajustado para que sea relativo al tamaño de la carta */
@@ -96,13 +104,7 @@
   white-space: nowrap;  /* Evita el salto de línea */
 }
 
-.fondoCarta{
-  background-color: aquamarine;
-}
-
 /* Color tipos pokemon */
-
-  /*Estilo de los elementos*/
   .fire, .water, .grass, .bug, .dark, .dragon, .electric, .fairy, .fighting, .flying, 
   .ghost, .ground, .ice, .normal, .poison, .psychic, .rock, .steel {
     font-size: medium;
