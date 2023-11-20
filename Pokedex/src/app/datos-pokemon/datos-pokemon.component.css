@@ -5,9 +5,20 @@
     flex-wrap: wrap;
   }
 
+  .mayuscula{
+    text-transform: capitalize;
+  }
+
   .meter-izquierda{
    margin-left: -180px;
-   margin-top: -400px;
+  }
+
+  .meter-arriba{
+    margin-top: -400px;
+  }
+
+  .meter-unPoco-arriba{
+    margin-top: -100px;
   }
 
   .letra-mediana{

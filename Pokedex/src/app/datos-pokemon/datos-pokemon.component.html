@@ -40,7 +40,7 @@
         <br>
 
         <div>
-          <span class="resistencia"*ngFor="let tipo of pokemon.tipos" class="{{tipo}}Letter"> {{tipo}}</span>
+          <span *ngFor="let tipo of pokemon.tipos" class="{{tipo}}Letter resistencia mayuscula"> {{tipo}}</span>
         </div>
         <br>
   
@@ -49,7 +49,7 @@
     </div> <!-- Para que aparezca al lado de la carta -->
 
     <!-- Estadísticas pokémon -->
-    <div class="texto-sombra meter-izquierda letra-mediana">
+    <div class="texto-sombra meter-izquierda meter-arriba letra-mediana">
       <table>
         <tr>
           <th colspan="2">Estadísticas pokémon</th>
@@ -80,5 +80,23 @@
         </tr>
       </table>
     </div>
-  </div>
+
+    <div class="texto-sombra meter-unPoco-arriba meter-izquierda letra-mediana">
+      <table class="mayuscula">
+        <tr>
+          <th colspan="2">Debilidades</th>
+        </tr>
+        <tr> <!-- Todas las debilidades -->
+          <td *ngFor="let tipo of pokemon.tipos "class="{{tipo}}"></td>
+        </tr>
+        <tr>
+          <th colspan="2">Fortaleza</th>
+        </tr>
+        <tr> <!-- Todas las fortalezas-->
+          <td *ngFor="let tipo of pokemon.tipos "class="{{tipo}}"></td>
+        </tr>
+      </table>
+    </div>
+
+  </div> <!-- Lo que este debajo de esto se pone debajo de la carta -->
 </div>
