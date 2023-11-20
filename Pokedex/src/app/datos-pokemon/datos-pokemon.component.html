@@ -2,31 +2,43 @@
   <video src="../../assets/video/FondoDatosPokemon2.mp4" autoplay muted loop class="video-foreground"></video>
 </div>
 
-<div><!-- Boton de regreso -->
-  <button class="btn">Volver atras</button>
+<div  class="adaptarPantalla"><!-- Botones -->
+  <table>
+    <tr> <!-- Botón para anterior pokemon -->
+      <td><button class="btn-Video" (click)="anteriorPokemon()" >Anterior</button></td>
+    </tr>
+  </table>
+  <table>
+    <tr> <!-- Botón para volver a la lista -->
+      <td> <button class="btn-Video" [routerLink]="'/listado'">Volver</button></td>
+    </tr>
+  </table>
+  <table>
+    <tr> <!-- Botón para siguiente pokemon -->
+      <td><button class="btn-Video" (click)="siguientePokemon()" >Siguiente</button></td>
+    </tr>
+  </table>
 </div>
 
 <br>
 
-<div> <!-- Carta pokemon -->
+<div  class="adaptarPantalla"> <!-- Carta pokemon -->
   <div class="charizard">
-
     <div class="perspective">
-      
       <div class="{{pokemon.tipos}} carta_fondo">
         <div class="power">ID: {{pokemon.id}}</div>
         <div class="nombre"><h2>{{pokemon.nombre}}</h2></div>
   
         <div class="img_charizard"><img src="{{pokemon.imagen}}" width="100%"></div>
-        
-  
-  
-  
-        <div class="descripcion"><h3>Peso:{{pokemon.peso}}      Altura:{{pokemon.altura}}</h3></div>
-  
+
+        <div class="descripcion"><h3>Peso: {{pokemon.peso}} |  Altura: {{pokemon.altura}}</h3></div>
+
         <div class="Habilidad"><h4>Descripción:</h4></div>
+
         <div class="Habilidad_detalle">{{pokemon.descripcion}}</div>
+
         <br>
+
         <div>
           <span class="resistencia"*ngFor="let tipo of pokemon.tipos" class="{{tipo}}Letter"> {{tipo}}</span>
         </div>

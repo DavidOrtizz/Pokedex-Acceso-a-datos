@@ -2,7 +2,14 @@
   text-transform: capitalize;
 }
 
-.btn {
+  .adaptarPantalla{
+    text-align: center;
+    justify-content:space-between;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+.btn-Video {
   color: #fff;
   background-color: #7BD6FF;
   border: none;
@@ -45,8 +52,8 @@
 .charizard {
   height: 0%; /* Ajustado a porcentaje para hacerlo proporcional */
   width:100%; /* Ajustado a porcentaje para hacerlo proporcional */
-  display: flex;
-  justify-content: center;
+  display:flex;
+  justify-content:left;
   align-items: center;
 }
 
@@ -147,7 +154,6 @@
 
   .fireLetter{
     color: white;
-    cursor: default;
     border-color: red;
     font-size: medium;
     text-align: center;
@@ -155,7 +161,6 @@
     padding: 3px 10px;
     border: 3px solid;
     border-radius: 20px;
-
     color: currentColor;
   }
 
@@ -170,6 +175,18 @@
     color: white; 
   }
 
+  .waterLetter{
+    color: white;
+    border-color: rgb(55, 55, 243);
+    font-size: medium;
+    text-align: center;
+    margin: 4px 2px;
+    padding: 3px 10px;
+    border: 3px solid;
+    border-radius: 20px;
+    color: currentColor;
+  }
+
   .grass {
     color: green;
     cursor: default;
@@ -179,6 +196,18 @@
   .grass:hover{
     background-color:green;
     color: white; 
+  }
+
+  .grassLetter{
+    color: white;
+    border-color: rgb(19, 88, 19);
+    font-size: medium;
+    text-align: center;
+    margin: 4px 2px;
+    padding: 3px 10px;
+    border: 3px solid;
+    border-radius: 20px;
+    color: currentColor;
   }
 
   .bug {
@@ -192,6 +221,18 @@
     color: white; 
   }
 
+  .bugLetter{
+    color: white;
+    border-color: rgb(19, 88, 19);
+    font-size: medium;
+    text-align: center;
+    margin: 4px 2px;
+    padding: 3px 10px;
+    border: 3px solid;
+    border-radius: 20px;
+    color: currentColor;
+  }
+
   .dark {
     color: rgb(76, 83, 76);
     cursor: default;
@@ -201,6 +242,18 @@
   .dark:hover{
     background-color:rgb(76, 83, 76);
     color: white; 
+  }
+
+  .darkLetter{
+    color: white;
+    border-color: rgb(76, 83, 76);
+    font-size: medium;
+    text-align: center;
+    margin: 4px 2px;
+    padding: 3px 10px;
+    border: 3px solid;
+    border-radius: 20px;
+    color: currentColor;
   }
 
   .dragon {
@@ -214,6 +267,18 @@
     color: white; 
   }
 
+  .dragonLetter{
+    color: white;
+    border-color: rgb(88, 186, 186);
+    font-size: medium;
+    text-align: center;
+    margin: 4px 2px;
+    padding: 3px 10px;
+    border: 3px solid;
+    border-radius: 20px;
+    color: currentColor;
+  }
+
   .electric {
     color: rgb(215, 212, 0);
     cursor: default;
@@ -223,6 +288,18 @@
   .electric:hover{
     background-color:rgb(215, 212, 0);
     color: white; 
+  }
+
+  .electricLetter{
+    color: white;
+    border-color: rgb(215, 212, 0);
+    font-size: medium;
+    text-align: center;
+    margin: 4px 2px;
+    padding: 3px 10px;
+    border: 3px solid;
+    border-radius: 20px;
+    color: currentColor;
   }
 
   .fairy{
@@ -236,6 +313,18 @@
     color: white; 
   }
 
+  .fairyLetter{
+    color: white;
+    border-color: rgb(253, 94, 120);
+    font-size: medium;
+    text-align: center;
+    margin: 4px 2px;
+    padding: 3px 10px;
+    border: 3px solid;
+    border-radius: 20px;
+    color: currentColor;
+  }
+
   .fighting{
     color: rgb(253, 152, 0);
     cursor: default;
@@ -245,6 +334,18 @@
   .fighting:hover{
     background-color:rgb(253, 152, 0);
     color: white; 
+  }
+
+  .fightingLetter{
+    color: white;
+    border-color: rgb(253, 152, 0);
+    font-size: medium;
+    text-align: center;
+    margin: 4px 2px;
+    padding: 3px 10px;
+    border: 3px solid;
+    border-radius: 20px;
+    color: currentColor;
   }
 
   .flying{
@@ -258,6 +359,18 @@
     color: white; 
   }
 
+  .flyingLetter{
+    color: white;
+    border-color: rgb(123, 156, 247);
+    font-size: medium;
+    text-align: center;
+    margin: 4px 2px;
+    padding: 3px 10px;
+    border: 3px solid;
+    border-radius: 20px;
+    color: currentColor;
+  }
+
   .ghost{
     color: rgb(77, 48, 82);
     cursor: default;
@@ -269,6 +382,18 @@
     color: white; 
   }
 
+  .ghostLetter{
+    color: white;
+    border-color: rgb(77, 48, 82);
+    font-size: medium;
+    text-align: center;
+    margin: 4px 2px;
+    padding: 3px 10px;
+    border: 3px solid;
+    border-radius: 20px;
+    color: currentColor;
+  }
+
   .ground{
     color: rgb(113, 74, 10);
     cursor: default;
@@ -278,6 +403,18 @@
   .ground:hover{
     background-color:rgb(113, 74, 10);
     color: white; 
+  }
+
+  .groundLetter{
+    color: white;
+    border-color: rgb(113, 74, 10);
+    font-size: medium;
+    text-align: center;
+    margin: 4px 2px;
+    padding: 3px 10px;
+    border: 3px solid;
+    border-radius: 20px;
+    color: currentColor;
   }
     
   .ice{
@@ -291,6 +428,18 @@
     color: white; 
   }
 
+  .iceLetter{
+    color: white;
+    border-color: rgb(5, 220, 216);
+    font-size: medium;
+    text-align: center;
+    margin: 4px 2px;
+    padding: 3px 10px;
+    border: 3px solid;
+    border-radius: 20px;
+    color: currentColor;
+  }
+
   .normal{
     color: rgb(202, 160, 167);
     cursor: default;
@@ -300,6 +449,18 @@
   .normal:hover{
     background-color:rgb(202, 160, 167);
     color: white; 
+  }
+
+  .normalLetter{
+    color: white;
+    border-color: rgb(202, 160, 167);
+    font-size: medium;
+    text-align: center;
+    margin: 4px 2px;
+    padding: 3px 10px;
+    border: 3px solid;
+    border-radius: 20px;
+    color: currentColor;
   }
 
   .poison{
@@ -313,6 +474,18 @@
     color: white; 
   }
 
+  .poisonLetter{
+    color: white;
+    border-color: rgb(123, 33, 86);
+    font-size: medium;
+    text-align: center;
+    margin: 4px 2px;
+    padding: 3px 10px;
+    border: 3px solid;
+    border-radius: 20px;
+    color: currentColor;
+  }
+
   .psychic{
     color: rgb(205, 36, 135);
     cursor: default;
@@ -322,6 +495,18 @@
   .psychic:hover{
     background-color:rgb(205, 36, 135);
     color: white; 
+  }
+
+  .psychicLetter{
+    color: white;
+    border-color: rgb(205, 36, 135);
+    font-size: medium;
+    text-align: center;
+    margin: 4px 2px;
+    padding: 3px 10px;
+    border: 3px solid;
+    border-radius: 20px;
+    color: currentColor;
   }
 
   .rock{
@@ -335,6 +520,18 @@
     color: white; 
   }
 
+  .rockLetter{
+    color: white;
+    border-color: rgb(124, 81, 0);
+    font-size: medium;
+    text-align: center;
+    margin: 4px 2px;
+    padding: 3px 10px;
+    border: 3px solid;
+    border-radius: 20px;
+    color: currentColor;
+  }
+
   .steel{
     color: rgb(143, 154, 140);
     cursor: default;
@@ -344,4 +541,16 @@
   .steel:hover{
     background-color:rgb(143, 154, 140);
     color: white; 
+  }
+
+  .steelLetter{
+    color: white;
+    border-color: rgb(143, 154, 140);
+    font-size: medium;
+    text-align: center;
+    margin: 4px 2px;
+    padding: 3px 10px;
+    border: 3px solid;
+    border-radius: 20px;
+    color: currentColor;
   }
