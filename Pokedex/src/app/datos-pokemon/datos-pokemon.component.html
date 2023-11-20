@@ -31,7 +31,7 @@
   
         <div class="img_charizard"><img src="{{pokemon.imagen}}" width="100%"></div>
 
-        <div class="descripcion"><h3>Peso: {{pokemon.peso}} |  Altura: {{pokemon.altura}}</h3></div>
+        <div class="descripcion"><h3>Peso: {{pokemon.peso}}kg |  Altura: {{pokemon.altura}}</h3></div>
 
         <div class="Habilidad"><h4>Descripción:</h4></div>
 
@@ -46,6 +46,39 @@
   
       </div>
   
+    </div> <!-- Para que aparezca al lado de la carta -->
+
+    <!-- Estadísticas pokémon -->
+    <div class="texto-sombra meter-izquierda letra-mediana">
+      <table>
+        <tr>
+          <th colspan="2">Estadísticas pokémon</th>
+        </tr>
+        <tr>
+          <td>Vida</td>
+          <td>{{pokemon.vida}}</td>
+        </tr>
+        <tr>
+          <td>Ataque</td>
+          <td>{{pokemon.ataque}}</td>
+        </tr>
+        <tr>
+          <td>Defensa</td>
+          <td>{{pokemon.defensa}}</td>
+        </tr>
+        <tr>
+          <td>AtqEspecial</td>
+          <td>{{pokemon.atqEspecial}}</td>
+        </tr>
+        <tr>
+          <td>DefEspecial</td>
+          <td>{{pokemon.defEspecial}}</td>
+        </tr>
+        <tr>
+          <td>Velocidad</td>
+          <td>{{pokemon.velocidad}}</td>
+        </tr>
+      </table>
     </div>
   </div>
 </div>

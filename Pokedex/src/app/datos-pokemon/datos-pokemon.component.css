@@ -1,12 +1,23 @@
-*{
-  text-transform: capitalize;
-}
-
   .adaptarPantalla{
     text-align: center;
     justify-content:space-between;
     display: flex;
     flex-wrap: wrap;
+  }
+
+  .meter-izquierda{
+   margin-left: -180px;
+   margin-top: -400px;
+  }
+
+  .letra-mediana{
+    font-size: large;
+    letter-spacing: 2px;
+  }
+
+  .texto-sombra{
+    text-shadow: 2px 2px 2px #000;
+    color: white;
   }
 
 .btn-Video {
@@ -55,13 +66,13 @@
   display:flex;
   justify-content:left;
   align-items: center;
-
+  margin-left: 60px;
 }
 
 .carta_fondo {
   height: 80%; 
   width: 60%; 
-  background-color: #ffe659aa;
+  background-color: #ffe659c9;
   border-radius: 5%;
   overflow: hidden;
   position: relative;
@@ -73,12 +84,7 @@
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.205);
   cursor: pointer;
   
-
 }
-
-
-
-
 
 .img_charizard {
   height: 50%; /* Cambiado a porcentaje para hacerlo proporcional */
@@ -90,16 +96,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.418);
 }
 
 .img_charizard img {
   max-width: 100%;
-  
 }
 
 .nombre {
+  text-transform: capitalize;
   position: relative;
   margin-top: 0%; /* Ajustado para que sea relativo al tamaño de la carta */
   right: 30%; /* Ajustado para que sea relativo al tamaño de la carta */
@@ -117,7 +122,6 @@
 
 .descripcion {
   font-size:small; /* Ajustado a porcentaje para hacerlo proporcional */
-
   height:3px;
   width: 80%;
   text-align: center;
@@ -137,7 +141,6 @@
   font-size:medium;
   text-align: center;
   padding: 10px;
-
 }
 
 .resistencia {
