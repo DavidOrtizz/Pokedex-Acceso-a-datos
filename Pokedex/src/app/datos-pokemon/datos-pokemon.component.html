@@ -35,7 +35,18 @@
         <br>
   
       </div>
-  
     </div>
-  </div>
-</div>
+
+    <div *ngIf="pokemon">
+      <!-- Otra información del Pokémon -->
+      <h2>Debilidades:</h2>
+      <ul>
+        <li *ngFor="let debilidad of debilidades">{{ debilidad }}</li>
+      </ul>
+    
+      <h2>Fortalezas:</h2>
+      <ul>
+        <li *ngFor="let fortaleza of fortalezas">{{ fortaleza }}</li>
+      </ul>
+    </div>
+    

@@ -25,19 +25,43 @@ export class DatosPokemonComponent implements OnInit {
       defEspecial:0,
       velocidad:0,
       altura:0,
-      descripcion:""
-    };
+      descripcion:"",
 
-constructor(
-private PokemonService: PokemonService, private activatedRoute: ActivatedRoute) { }
+    };
+    debilidades: string[] = [];
+    fortalezas: string[] = [];
+
+constructor(private PokemonService: PokemonService, private activatedRoute: ActivatedRoute) { }
 
 ngOnInit(): void {
 const id = this.activatedRoute.snapshot.paramMap.get('id') as unknown as number;
 this.PokemonService.getPokemonsDetalle(id).subscribe((pokemonDatos: PokemonDetalle) => {
     this.pokemon = pokemonDatos;
-
+    this.actualizarDebilidadesYFortalezas();
   });
+
+}
+
+
+actualizarDebilidadesYFortalezas() {
+  this.debilidades = [];
+  this.fortalezas = [];
+  console.log('sdadadsad')
+  if (this.pokemon && this.pokemon.tipos && this.pokemon.tipos.length > 0) {
+    console.log('Tipos:', this.pokemon.tipos);
+    
+    this.pokemon.tipos.forEach(tipo => {
+      let debilidades = this.PokemonService.obtenerDebilidadesDeTipo(this.pokemon.tipos[0]);
+      let fortalezas = this.PokemonService.obtenerFortalezasDeTipo(this.pokemon.tipos[0]);
+      this.debilidades.push(...debilidades);
+      this.fortalezas.push(...fortalezas);
+      console.log('Debilidades actualizadas:', this.debilidades);
+      console.log('Fortalezas actualizadas:', this.fortalezas);
+    });
+  }
 
 
 }
+
+
 }
