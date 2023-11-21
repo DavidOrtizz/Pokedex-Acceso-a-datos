@@ -5,6 +5,12 @@
     flex-wrap: wrap;
   }
 
+  .fondoCesped{
+    background-color: #82B773;
+    width: 100%;
+    height: 100%;
+  }
+
   .mayuscula{
     text-transform: capitalize;
   }
@@ -84,7 +90,7 @@
 .carta_fondo {
   height: 80%; 
   width: 60%; 
-  background-color: #ffe659c9;
+  background: radial-gradient(ellipse, rgb(198, 198, 198),rgb(87, 87, 87));
   border-radius: 5%;
   overflow: hidden;
   position: relative;
@@ -94,13 +100,10 @@
   justify-content: space-between;
   transition: 0.5s;
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.205);
-  cursor: pointer;
-  
 }
 
 .img_charizard {
-  height: 50%; /* Cambiado a porcentaje para hacerlo proporcional */
-  width: 80%; /* Cambiado a porcentaje para hacerlo proporcional */
+  width: 300px; /* Cambiado a porcentaje para hacerlo proporcional */
   background-size: cover;
   z-index: 2;
   position: relative; /* Cambiado a relative */
@@ -111,10 +114,6 @@
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.418);
 }
 
-.img_charizard img {
-  max-width: 100%;
-}
-
 .nombre {
   text-transform: capitalize;
   position: relative;
@@ -123,7 +122,7 @@
 }
 
 .power {
-  margin-top:5% ;margin-top:5% ;
+  margin-top:5% ;
   margin-bottom: -10%;
   font-size: larger;
   position: relative;
@@ -183,6 +182,7 @@
   .fire:hover{
     background-color:red; /* Cambia #color del fondo */
     color: white; /* Cambia el color de texto */
+    animation: subirBajar 1s infinite alternate;
   }
 
   .fireLetter{
@@ -206,6 +206,7 @@
   .water:hover{
     background-color:rgb(55, 55, 243);
     color: white; 
+    animation: subirBajar 1s infinite alternate;
   }
 
   .waterLetter{
@@ -229,6 +230,7 @@
   .grass:hover{
     background-color:green;
     color: white; 
+    animation: subirBajar 1s infinite alternate;
   }
 
   .grassLetter{
@@ -252,6 +254,7 @@
   .bug:hover{
     background-color:rgb(19, 88, 19);
     color: white; 
+    animation: subirBajar 1s infinite alternate;
   }
 
   .bugLetter{
@@ -275,6 +278,7 @@
   .dark:hover{
     background-color:rgb(76, 83, 76);
     color: white; 
+    animation: subirBajar 1s infinite alternate;
   }
 
   .darkLetter{
@@ -298,6 +302,7 @@
   .dragon:hover{
     background-color:rgb(88, 186, 186);
     color: white; 
+    animation: subirBajar 1s infinite alternate;
   }
 
   .dragonLetter{
@@ -321,6 +326,7 @@
   .electric:hover{
     background-color:rgb(215, 212, 0);
     color: white; 
+    animation: subirBajar 1s infinite alternate;
   }
 
   .electricLetter{
@@ -344,6 +350,7 @@
   .fairy:hover{
     background-color:rgb(253, 94, 120);
     color: white; 
+    animation: subirBajar 1s infinite alternate;
   }
 
   .fairyLetter{
@@ -367,6 +374,7 @@
   .fighting:hover{
     background-color:rgb(253, 152, 0);
     color: white; 
+    animation: subirBajar 1s infinite alternate;
   }
 
   .fightingLetter{
@@ -390,6 +398,7 @@
   .flying:hover{
     background-color:rgb(123, 156, 247);
     color: white; 
+    animation: subirBajar 1s infinite alternate;
   }
 
   .flyingLetter{
@@ -413,6 +422,7 @@
   .ghost:hover{
     background-color:rgb(77, 48, 82);
     color: white; 
+    animation: subirBajar 1s infinite alternate;
   }
 
   .ghostLetter{
@@ -436,6 +446,7 @@
   .ground:hover{
     background-color:rgb(113, 74, 10);
     color: white; 
+    animation: subirBajar 1s infinite alternate;
   }
 
   .groundLetter{
@@ -459,6 +470,7 @@
   .ice:hover{
     background-color:rgb(5, 220, 216);
     color: white; 
+    animation: subirBajar 1s infinite alternate;
   }
 
   .iceLetter{
@@ -482,6 +494,7 @@
   .normal:hover{
     background-color:rgb(202, 160, 167);
     color: white; 
+    animation: subirBajar 1s infinite alternate;
   }
 
   .normalLetter{
@@ -505,6 +518,7 @@
   .poison:hover{
     background-color:rgb(123, 33, 86);
     color: white; 
+    animation: subirBajar 1s infinite alternate;
   }
 
   .poisonLetter{
@@ -528,6 +542,7 @@
   .psychic:hover{
     background-color:rgb(205, 36, 135);
     color: white; 
+    animation: subirBajar 1s infinite alternate;
   }
 
   .psychicLetter{
@@ -551,6 +566,7 @@
   .rock:hover{
     background-color:rgb(124, 81, 0);
     color: white; 
+    animation: subirBajar 1s infinite alternate;
   }
 
   .rockLetter{
@@ -574,6 +590,7 @@
   .steel:hover{
     background-color:rgb(143, 154, 140);
     color: white; 
+    animation: subirBajar 1s infinite alternate;
   }
 
   .steelLetter{
@@ -586,4 +603,588 @@
     border: 3px solid;
     border-radius: 20px;
     color: currentColor;
+  }
+
+  .grasspoison:hover, .poisongrass:hover,  .grasspsychic:hover, .psychicgrass:hover,
+  .fireflying:hover, .flyingfire:hover, .bugpoison:hover, .poisonbug:hover,
+  .bugflying:hover, .flyingbug:hover, .buggrass:hover, .grassbug:hover,
+  .normalflying:hover, .flyingnormal:hover, .poisonground:hover, .groundpoison:hover,
+  .poisonflying:hover, .flyingpoison:hover,  .normalfairy:hover, .fairynormal:hover,
+  .waterfighting:hover, .fightingwater:hover,  .waterpoison:hover, .poisonwater:hover,
+  .waterpsychic:hover, .psychicwater:hover, .waterice:hover, .icewater:hover,
+  .rockground:hover, .groundrock:hover,  .electricsteel:hover, .steelelectric:hover,
+  .gostpoison:hover, .poisonghost:hover, .psychicfairy:hover, .fairypsychic:hover,
+  .bugflying:hover, .flyingbug:hover, .icepsychic:hover, .psychicice:hover,
+  .waterflying:hover, .flyingwater:hover, .rockwater:hover, .waterrock:hover,
+  .rockflying:hover, .flyingrock:hover, .iceflying:hover, .flyinice:hover,
+  .electricflying:hover, .flyingelectric:hover, .dragonflying:hover, .flyingdragon:hover,
+  .bugpoison:hover, .poisonbug:hover,.waterelectric:hover, .electricwater:hover,
+  .fairyflying:hover, .flyingfairy:hover,  .psychicflying:hover, .flyingpsychic:hover,
+  .psychicflying:hover, .flyingpsychic:hover, .waterfairy:hover, .fairywater:hover,
+  .grassflying:hover, .flyinggrass:hover, .bugflying:hover, .flyingbug:hover,
+  .waterground:hover, .groundwater:hover,  .darkflying:hover, .flyingdark:hover,
+  .bugsteel:hover, .steelbug:hover,  .groundflying:hover, .flyingground:hover,
+  .steelground:hover, .groundsteel:hover, .bugrock:hover, .rockbug:hover,
+  .bugfighting:hover, .fightingbug:hover,  .darkice:hover, .icedark:hover,
+  .firerock:hover, .rockfire:hover, .iceground:hover, .groundice:hover,
+  .steelflying:hover, .flyingsteel:hover, .darkfire:hover, .firedark:hover,
+  .waterdragon:hover, .dragonwater:hover, .rockdark:hover, .rockdark:hover,
+  .firefighting:hover, .fightingfire:hover, .watergrass:hover, .grasswater:hover,
+  .bugwater:hover, .waterbug:hover,  .grassfighting:hover, .fightinggrass:hover,
+  .bugground:hover, .groundbug:hover,.bugghost:hover, .ghostbug:hover,
+  .darkghost:hover, .ghostdark:hover, .steelfairy:hover, .fairysteel:hover,
+  .steelrock:hover, .rocksteel:hover,  .fightingpsychic:hover, .psychicfighting:hover,
+  .waterdark:hover, .darkwater:hover, .fireground:hover, .groundfire:hover,
+  .rockpsychic:hover, .psychicrock:hover, .groundpsychic:hover, .psychicground:hover,
+  .rockgrass:hover, .grassrock:hover, .steelpsychic:hover, .psychicsteel:hover,
+  .dragonpsychic:hover, .psychicdragon:hover
+  {
+    animation: subirBajar 1s infinite alternate;
+    color: white;
+  }
+  /* Mezclas */
+  .grasspoison, .poisongrass{
+    border: 3px solid;
+    border-radius: 20px;
+    color: rgb(240, 237, 237);
+    background: linear-gradient(to bottom right , rgb(36, 213, 5), #e229c9);
+    cursor: default;
+  }
+
+  .grasspsychic, .psychicgrass{
+    border: 3px solid;
+    border-radius: 20px;
+    color: rgb(240, 237, 237);
+    background: linear-gradient(to bottom right , rgb(36, 213, 5), rgb(253, 94, 120));
+    cursor: default;
+  }
+
+  .fireflying, .flyingfire{
+    border: 3px solid;
+    border-radius: 20px;
+    color: rgb(240, 237, 237);
+    background: linear-gradient(to bottom right ,rgb(248, 27, 27), rgb(123, 156, 247));
+    cursor: default;
+  }
+
+  .bugpoison .poisonbug{
+    border: 3px solid;
+    border-radius: 20px;
+    color: rgb(240, 237, 237);
+    background: linear-gradient(to bottom right , rgb(22, 165, 22), #e229c9);
+    cursor: default;
+  }
+
+  .bugflying, .flyingbug{
+    border: 3px solid;
+    border-radius: 20px;
+    color: rgb(240, 237, 237);
+    background: linear-gradient(to bottom right , rgb(22, 165, 22), rgb(123, 156, 247));
+    cursor: default;
+  }
+
+  .buggrass, .grassbug{
+    border: 3px solid;
+    border-radius: 20px;
+    color: rgb(240, 237, 237);
+    background: linear-gradient(to bottom right , rgb(22, 165, 22), rgb(36, 213, 5));
+    cursor: default;
+  }
+
+  .normalflying, .flyingnormal{
+    border: 3px solid;
+    border-radius: 20px;
+    color: rgb(240, 237, 237);
+    background: linear-gradient(to bottom right ,rgb(202, 160, 167), rgb(123, 156, 247));
+    cursor: default;
+  }
+
+  .poisonground, .groundpoison{
+    border: 3px solid;
+    border-radius: 20px;
+    color: rgb(240, 237, 237);
+    background: linear-gradient(to bottom right , #981a87,rgb(113, 74, 10));
+    cursor: default;
+  }
+
+  .poisonflying, .flyingpoison{
+    border: 3px solid;
+    border-radius: 20px;
+    color: rgb(240, 237, 237);
+    background: linear-gradient(to bottom right , #981a87,rgb(123, 156, 247));
+    cursor: default;
+  }
+
+  .normalfairy, .fairynormal{
+    border: 3px solid;
+    border-radius: 20px;
+    color: rgb(240, 237, 237);
+    background: linear-gradient(to bottom right ,rgb(202, 160, 167), rgb(253, 94, 120));
+    cursor: default;
+  }
+
+  .waterfighting, .fightingwater{
+    border: 3px solid;
+    border-radius: 20px;
+    color: rgb(240, 237, 237);
+    background: linear-gradient(to bottom right ,rgb(55, 55, 243), rgb(253, 152, 0));
+    cursor: default;
+  }
+
+  .waterpoison, .poisonwater{
+    border: 3px solid;
+    border-radius: 20px;
+    color: rgb(240, 237, 237);
+    background: linear-gradient(to bottom right ,rgb(55, 55, 243), #981a87);
+    cursor: default;
+  }
+
+  .waterpsychic, .psychicwater{
+    border: 3px solid;
+    border-radius: 20px;
+    color: rgb(240, 237, 237);
+    background: linear-gradient(to bottom right ,rgb(55, 55, 243), rgb(253, 94, 120));
+    cursor: default;
+  }
+
+  .waterice, .icewater{
+    border: 3px solid;
+    border-radius: 20px;
+    color: rgb(240, 237, 237);
+    background: linear-gradient(to bottom right ,rgb(55, 55, 243), rgb(5, 220, 216));
+    cursor: default;
+  }
+
+  .rockground, .groundrock{
+    border: 3px solid;
+    border-radius: 20px;
+    color: rgb(240, 237, 237);
+    background: linear-gradient(to bottom right , rgb(174, 114, 1),rgb(88, 57, 8));
+    cursor: default;
+  }
+
+  .electricsteel, .steelelectric{
+    border: 3px solid;
+    border-radius: 20px;
+    color: rgb(240, 237, 237);
+    background: linear-gradient(to bottom right , rgb(215, 212, 0),rgb(143, 154, 140));
+    cursor: default;
+  }
+
+  .ghostpoison, .poisonghost{
+    border: 3px solid;
+    border-radius: 20px;
+    color: rgb(240, 237, 237);
+    background: linear-gradient(to bottom right ,rgb(77, 48, 82), #981a87);
+    cursor: default;
+  }
+
+  .psychicfairy, .fairypsychic{
+    border: 3px solid;
+    border-radius: 20px;
+    color: rgb(240, 237, 237);
+    background: linear-gradient(to bottom right ,rgb(205, 36, 135), rgb(253, 94, 120));
+    cursor: default;
+  }
+
+  .bugflying, .flyingbug{
+    border: 3px solid;
+    border-radius: 20px;
+    color: rgb(240, 237, 237);
+    background: linear-gradient(to bottom right ,rgb(19, 88, 19), rgb(123, 156, 247));
+    cursor: default;
+  }
+
+  .icepsychic, .psychicice{
+    border: 3px solid;
+    border-radius: 20px;
+    color: rgb(240, 237, 237);
+    background: linear-gradient(to bottom right ,rgb(5, 220, 216), rgb(205, 36, 135));
+    cursor: default;
+  }
+
+  .waterflying, .flyingwater{
+    border: 3px solid;
+    border-radius: 20px;
+    color: rgb(240, 237, 237);
+    background: linear-gradient(to bottom right ,rgb(55, 55, 243), rgb(123, 156, 247));
+    cursor: default;
+  }
+
+  .rockwater, .waterrock{
+    border: 3px solid;
+    border-radius: 20px;
+    color: rgb(240, 237, 237);
+    background: linear-gradient(to bottom right ,rgb(113, 74, 10), rgb(55, 55, 243));
+    cursor: default;
+  }
+
+  .rockflying, .flyingrock{
+    border: 3px solid;
+    border-radius: 20px;
+    color: rgb(240, 237, 237);
+    background: linear-gradient(to bottom right ,rgb(113, 74, 10), rgb(123, 156, 247));
+    cursor: default;
+  }
+
+  .iceflying, .flyinice{
+    border: 3px solid;
+    border-radius: 20px;
+    color: rgb(240, 237, 237);
+    background: linear-gradient(to bottom right ,rgb(5, 220, 216), rgb(123, 156, 247));
+    cursor: default;
+  }
+
+  .electricflying, .flyingelectric{
+    border: 3px solid;
+    border-radius: 20px;
+    color: rgb(240, 237, 237);
+    background: linear-gradient(to bottom right ,rgb(215, 212, 0), rgb(123, 156, 247));
+    cursor: default;
+  }
+
+  .dragonflying, .flyingdragon{
+    border: 3px solid;
+    border-radius: 20px;
+    color: rgb(240, 237, 237);
+    background: linear-gradient(to bottom right ,rgb(88, 186, 186), rgb(123, 156, 247));
+    cursor: default;
+  }
+
+  .bugpoison, .poisonbug{
+    border: 3px solid;
+    border-radius: 20px;
+    color: rgb(240, 237, 237);
+    background: linear-gradient(to bottom right ,rgb(19, 88, 19), rgb(123, 33, 86));
+    cursor: default;
+  }
+
+  .waterelectric, .electricwater{
+    border: 3px solid;
+    border-radius: 20px;
+    color: rgb(240, 237, 237);
+    background: linear-gradient(to bottom right ,rgb(55, 55, 243), rgb(215, 212, 0));
+    cursor: default;
+  }
+
+  .fairyflying, .flyingfairy{
+    border: 3px solid;
+    border-radius: 20px;
+    color: rgb(240, 237, 237);
+    background: linear-gradient(to bottom right ,rgb(253, 94, 120), rgb(123, 156, 247));
+    cursor: default;
+  }
+
+  .psychicflying, .flyingpsychic{
+    border: 3px solid;
+    border-radius: 20px;
+    color: rgb(240, 237, 237);
+    background: linear-gradient(to bottom right ,rgb(205, 36, 135), rgb(123, 156, 247));
+    cursor: default;
+  }
+
+  .waterfairy, .fairywater{
+    border: 3px solid;
+    border-radius: 20px;
+    color: rgb(240, 237, 237);
+    background: linear-gradient(to bottom right ,rgb(55, 55, 243), rgb(253, 94, 120));
+    cursor: default;
+  }
+
+  .grassflying, .flyinggrass{
+    border: 3px solid;
+    border-radius: 20px;
+    color: rgb(240, 237, 237);
+    background: linear-gradient(to bottom right ,rgb(36, 213, 5), rgb(123, 156, 247));
+    cursor: default;
+  }
+
+  .bugflying, .flyingbug{
+    border: 3px solid;
+    border-radius: 20px;
+    color: rgb(240, 237, 237);
+    background: linear-gradient(to bottom right ,rgb(19, 88, 19), rgb(123, 156, 247));
+    cursor: default;
+  }
+
+  .waterground, .groundwater{
+    border: 3px solid;
+    border-radius: 20px;
+    color: rgb(240, 237, 237);
+    background: linear-gradient(to bottom right ,rgb(55, 55, 243), rgb(88, 57, 8));
+    cursor: default;
+  }
+
+  .darkflying, .flyingdark{
+    border: 3px solid;
+    border-radius: 20px;
+    color: rgb(240, 237, 237);
+    background: linear-gradient(to bottom right ,rgb(76, 83, 76), rgb(123, 156, 247));
+    cursor: default;
+  }
+
+  .normalpsychic, .psychicnormal{
+    border: 3px solid;
+    border-radius: 20px;
+    color: rgb(240, 237, 237);
+    background: linear-gradient(to bottom right ,rgb(202, 160, 167), rgb(205, 36, 135));
+    cursor: default;
+  }
+
+  .bugsteel, .steelbug{
+    border: 3px solid;
+    border-radius: 20px;
+    color: rgb(240, 237, 237);
+    background: linear-gradient(to bottom right ,rgb(19, 88, 19), rgb(143, 154, 140));
+    cursor: default;
+  }
+
+  .groundflying, .flyingground{
+    border: 3px solid;
+    border-radius: 20px;
+    color: rgb(240, 237, 237);
+    background: linear-gradient(to bottom right ,rgb(88, 57, 8), rgb(123, 156, 247));
+    cursor: default;
+  }
+
+  .steelground, .groundsteel{
+    border: 3px solid;
+    border-radius: 20px;
+    color: rgb(240, 237, 237);
+    background: linear-gradient(to bottom right ,rgb(143, 154, 140),rgb(88, 57, 8));
+    cursor: default;
+  }
+
+  .bugrock, .rockbug{
+    border: 3px solid;
+    border-radius: 20px;
+    color: rgb(240, 237, 237);
+    background: linear-gradient(to bottom right ,rgb(19, 88, 19), rgb(124, 81, 0));
+    cursor: default;
+  }
+
+  .darkice, .icedark{
+    border: 3px solid;
+    border-radius: 20px;
+    color: rgb(240, 237, 237);
+    background: linear-gradient(to bottom right ,rgb(76, 83, 76), rgb(5, 220, 216));
+    cursor: default;
+  }
+  
+  .firerock, .rockfire{
+    border: 3px solid;
+    border-radius: 20px;
+    color: rgb(240, 237, 237);
+    background: linear-gradient(to bottom right ,red, rgb(113, 74, 10));
+    cursor: default;
+  }
+
+  .iceground, .groundice{
+    border: 3px solid;
+    border-radius: 20px;
+    color: rgb(240, 237, 237);
+    background: linear-gradient(to bottom right , rgb(5, 220, 216),rgb(88, 57, 8));
+    cursor: default;
+  }
+
+  .steelflying, .flyingsteel{
+    border: 3px solid;
+    border-radius: 20px;
+    color: rgb(240, 237, 237);
+    background: linear-gradient(to bottom right , rgb(143, 154, 140),rgb(123, 156, 247));
+    cursor: default;
+  }
+
+  .darkfire, .firedark{
+    border: 3px solid;
+    border-radius: 20px;
+    color: rgb(240, 237, 237);
+    background: linear-gradient(to bottom right , rgb(76, 83, 76),red);
+    cursor: default;
+  }
+
+  .waterdragon, .dragonwater{
+    border: 3px solid;
+    border-radius: 20px;
+    color: rgb(240, 237, 237);
+    background: linear-gradient(to bottom right , rgb(55, 55, 243),rgb(88, 186, 186));
+    cursor: default;
+  }
+
+  .rockdark, .rockdark{
+    border: 3px solid;
+    border-radius: 20px;
+    color: rgb(240, 237, 237);
+    background: linear-gradient(to bottom right ,rgb(88, 57, 8), rgb(76, 83, 76));
+    cursor: default;
+  }
+
+  .firefighting, .fightingfire{
+    border: 3px solid;
+    border-radius: 20px;
+    color: rgb(240, 237, 237);
+    background: linear-gradient(to bottom right ,red, rgb(253, 152, 0));
+    cursor: default;
+  }
+
+  .watergrass, .grasswater{
+    border: 3px solid;
+    border-radius: 20px;
+    color: rgb(240, 237, 237);
+    background: linear-gradient(to bottom right ,rgb(55, 55, 243), green);
+    cursor: default;
+  }
+
+  .grassdark, .darkgrass{
+    border: 3px solid;
+    border-radius: 20px;
+    color: rgb(240, 237, 237);
+    background: linear-gradient(to bottom right , green,rgb(76, 83, 76));
+    cursor: default;
+  }
+
+  .bugwater, .waterbug{
+    border: 3px solid;
+    border-radius: 20px;
+    color: rgb(240, 237, 237);
+    background: linear-gradient(to bottom right ,rgb(19, 88, 19),rgb(55, 55, 243));
+    cursor: default;
+  }
+
+  .grassfighting, .fightinggrass{
+    border: 3px solid;
+    border-radius: 20px;
+    color: rgb(240, 237, 237);
+    background: linear-gradient(to bottom right ,green,rgb(253, 152, 0));
+    cursor: default;
+  }
+
+  .bugground, .groundbug{
+    border: 3px solid;
+    border-radius: 20px;
+    color: rgb(240, 237, 237);
+    background: linear-gradient(to bottom right , rgb(19, 88, 19),rgb(88, 57, 8));
+    cursor: default;
+  }
+
+  .bugghost, .ghostbug{
+    border: 3px solid;
+    border-radius: 20px;
+    color: rgb(240, 237, 237);
+    background: linear-gradient(to bottom right , rgb(19, 88, 19),rgb(77, 48, 82));
+    cursor: default;
+  }
+
+  .darkghost, .ghostdark{
+    border: 3px solid;
+    border-radius: 20px;
+    color: rgb(240, 237, 237);
+    background: linear-gradient(to bottom right , rgb(76, 83, 76),rgb(77, 48, 82));
+    cursor: default;
+  }
+
+  .steelfairy, .fairysteel{
+    border: 3px solid;
+    border-radius: 20px;
+    color: rgb(240, 237, 237);
+    background: linear-gradient(to bottom right , rgb(143, 154, 140),rgb(253, 94, 120));
+    cursor: default;
+  }
+
+  .steelrock, .rocksteel{
+    border: 3px solid;
+    border-radius: 20px;
+    color: rgb(240, 237, 237);
+    background: linear-gradient(to bottom right , rgb(143, 154, 140),rgb(88, 57, 8));
+    cursor: default;
+  }
+
+  .fightingpsychic, .psychicfighting{
+    border: 3px solid;
+    border-radius: 20px;
+    color: rgb(240, 237, 237);
+    background: linear-gradient(to bottom right , rgb(253, 152, 0),rgb(205, 36, 135));
+    cursor: default;
+  }
+
+  .waterdark, .darkwater{
+    border: 3px solid;
+    border-radius: 20px;
+    color: rgb(240, 237, 237);
+    background: linear-gradient(to bottom right , rgb(55, 55, 243),rgb(76, 83, 76));
+    cursor: default;
+  }
+
+  .fireground, .groundfire{
+    border: 3px solid;
+    border-radius: 20px;
+    color: rgb(240, 237, 237);
+    background: linear-gradient(to bottom right , red,rgb(88, 57, 8));
+    cursor: default;
+  }
+
+  .grounddragon, .dragonground{
+    border: 3px solid;
+    border-radius: 20px;
+    color: rgb(240, 237, 237);
+    background: linear-gradient(to bottom right ,rgb(88, 57, 8),rgb(88, 186, 186));
+    cursor: default;
+  }
+
+  .groundpsychic, .psychicground{
+    border: 3px solid;
+    border-radius: 20px;
+    color: rgb(240, 237, 237);
+    background: linear-gradient(to bottom right ,rgb(88, 57, 8),rgb(205, 36, 135));
+    cursor: default;
+  }
+
+  .rockpsychic, .psychicrock{
+    border: 3px solid;
+    border-radius: 20px;
+    color: rgb(240, 237, 237);
+    background: linear-gradient(to bottom right ,rgb(124, 81, 0),rgb(205, 36, 135));
+    cursor: default;
+  }
+
+  .rockgrass, .grassrock{
+    border: 3px solid;
+    border-radius: 20px;
+    color: rgb(240, 237, 237);
+    background: linear-gradient(to bottom right,green ,rgb(124, 81, 0));
+    cursor: default;
+  }
+
+  .steelpsychic, .psychicsteel{
+    border: 3px solid;
+    border-radius: 20px;
+    color: rgb(240, 237, 237);
+    background: linear-gradient(to bottom right,rgb(143, 154, 140) ,rgb(205, 36, 135));
+    cursor: default;
+  }
+
+  .dragonpsychic, .psychicdragon{
+    border: 3px solid;
+    border-radius: 20px;
+    color: rgb(240, 237, 237);
+    background: linear-gradient(to bottom right ,rgb(88, 186, 186),rgb(205, 36, 135));
+    cursor: default;
+  }
+
+  .grassground, .groundgrass{
+    border: 3px solid;
+    border-radius: 20px;
+    color: rgb(240, 237, 237);
+    background: linear-gradient(to bottom right ,green ,rgb(88, 57, 8));
+    cursor: default;
+  }
+  /* Animacion subir y bajar */
+  @keyframes subirBajar {
+    from {
+      transform: translateY(0);
+    }
+  
+    to {
+      transform: translateY(-5px); /* Puedes ajustar la distancia que sube el elemento */
+    }
   }

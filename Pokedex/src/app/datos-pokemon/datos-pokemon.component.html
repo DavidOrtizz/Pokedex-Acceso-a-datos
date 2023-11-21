@@ -1,102 +1,104 @@
-<div> <!-- Video fondo -->
-  <video src="../../assets/video/FondoDatosPokemon2.mp4" autoplay muted loop class="video-foreground"></video>
-</div>
-
-<div  class="adaptarPantalla"><!-- Botones -->
-  <table>
-    <tr> <!-- Botón para anterior pokemon -->
-      <td><button class="btn-Video" (click)="anteriorPokemon()" >Anterior</button></td>
-    </tr>
-  </table>
-  <table>
-    <tr> <!-- Botón para volver a la lista -->
-      <td> <button class="btn-Video" [routerLink]="'/listado'">Volver</button></td>
-    </tr>
-  </table>
-  <table>
-    <tr> <!-- Botón para siguiente pokemon -->
-      <td><button class="btn-Video" (click)="siguientePokemon()" >Siguiente</button></td>
-    </tr>
-  </table>
-</div>
-
-<br>
-
-<div  class="adaptarPantalla"> <!-- Carta pokemon -->
-  <div class="charizard">
-    <div class="perspective">
-      <div class="{{pokemon.tipos}} carta_fondo">
-        <div class="power">ID: {{pokemon.id}}</div>
-        <div class="nombre"><h2>{{pokemon.nombre}}</h2></div>
+<div>
+  <div> <!-- Video fondo -->
+    <video src="../../assets/video/FondoDatosPokemon2.mp4" autoplay muted loop class="video-foreground"></video>
+  </div>
   
-        <div class="img_charizard"><img src="{{pokemon.imagen}}" width="100%"></div>
-
-        <div class="descripcion"><h3>Peso: {{pokemon.peso}}kg |  Altura: {{pokemon.altura}}</h3></div>
-
-        <div class="Habilidad"><h4>Descripción:</h4></div>
-
-        <div class="Habilidad_detalle">{{pokemon.descripcion}}</div>
-
-        <br>
-
-        <div>
-          <span *ngFor="let tipo of pokemon.tipos" class="{{tipo}}Letter resistencia mayuscula"> {{tipo}}</span>
+  <div  class="adaptarPantalla"><!-- Botones -->
+    <table>
+      <tr> <!-- Botón para anterior pokemon -->
+        <td><button class="btn-Video" (click)="anteriorPokemon()" >Anterior</button></td>
+      </tr>
+    </table>
+    <table>
+      <tr> <!-- Botón para volver a la lista -->
+        <td> <button class="btn-Video" [routerLink]="'/listado'">Volver</button></td>
+      </tr>
+    </table>
+    <table>
+      <tr> <!-- Botón para siguiente pokemon -->
+        <td><button class="btn-Video" (click)="siguientePokemon()" >Siguiente</button></td>
+      </tr>
+    </table>
+  </div>
+  
+  <br>
+  
+  <div  class="adaptarPantalla"> <!-- Carta pokemon -->
+    <div class="charizard">
+      <div class="perspective">
+        <div class="{{pokemon.tipos[0]}}{{pokemon.tipos[1]}} carta_fondo">
+          <div class="power">ID: {{pokemon.id}}</div>
+          <div class="nombre"><h2>{{pokemon.nombre}}</h2></div>
+    
+          <div class="img_charizard"><img src="{{pokemon.imagen}}" width="100%"></div>
+  
+          <div class="descripcion"><h3>Peso: {{pokemon.peso}}kg |  Altura: {{pokemon.altura}}</h3></div>
+  
+          <div class="Habilidad"><h4>Descripción:</h4></div>
+  
+          <div class="Habilidad_detalle">{{pokemon.descripcion}}</div>
+  
+          <br>
+  
+          <div>
+            <span *ngFor="let tipo of pokemon.tipos" class="{{tipo}}Letter resistencia mayuscula"> {{tipo}}</span>
+          </div>
+          <br>
+    
         </div>
-        <br>
+    
+      </div> <!-- Para que aparezca al lado de la carta -->
   
+      <!-- Estadísticas pokémon -->
+      <div class="texto-sombra meter-izquierda meter-arriba letra-mediana">
+        <table>
+          <tr>
+            <th colspan="2">Estadísticas pokémon</th>
+          </tr>
+          <tr>
+            <td>Vida</td>
+            <td>{{pokemon.vida}}</td>
+          </tr>
+          <tr>
+            <td>Ataque</td>
+            <td>{{pokemon.ataque}}</td>
+          </tr>
+          <tr>
+            <td>Defensa</td>
+            <td>{{pokemon.defensa}}</td>
+          </tr>
+          <tr>
+            <td>AtqEspecial</td>
+            <td>{{pokemon.atqEspecial}}</td>
+          </tr>
+          <tr>
+            <td>DefEspecial</td>
+            <td>{{pokemon.defEspecial}}</td>
+          </tr>
+          <tr>
+            <td>Velocidad</td>
+            <td>{{pokemon.velocidad}}</td>
+          </tr>
+        </table>
       </div>
   
-    </div> <!-- Para que aparezca al lado de la carta -->
-
-    <!-- Estadísticas pokémon -->
-    <div class="texto-sombra meter-izquierda meter-arriba letra-mediana">
-      <table>
-        <tr>
-          <th colspan="2">Estadísticas pokémon</th>
-        </tr>
-        <tr>
-          <td>Vida</td>
-          <td>{{pokemon.vida}}</td>
-        </tr>
-        <tr>
-          <td>Ataque</td>
-          <td>{{pokemon.ataque}}</td>
-        </tr>
-        <tr>
-          <td>Defensa</td>
-          <td>{{pokemon.defensa}}</td>
-        </tr>
-        <tr>
-          <td>AtqEspecial</td>
-          <td>{{pokemon.atqEspecial}}</td>
-        </tr>
-        <tr>
-          <td>DefEspecial</td>
-          <td>{{pokemon.defEspecial}}</td>
-        </tr>
-        <tr>
-          <td>Velocidad</td>
-          <td>{{pokemon.velocidad}}</td>
-        </tr>
-      </table>
-    </div>
-
-    <div class="texto-sombra meter-unPoco-arriba meter-izquierda letra-mediana">
-      <table class="mayuscula">
-        <tr>
-          <th colspan="2">Debilidades</th>
-        </tr>
-        <tr> <!-- Todas las debilidades -->
-          <td *ngFor="let tipo of pokemon.tipos "class="{{tipo}}"></td>
-        </tr>
-        <tr>
-          <th colspan="2">Fortaleza</th>
-        </tr>
-        <tr> <!-- Todas las fortalezas-->
-          <td *ngFor="let tipo of pokemon.tipos "class="{{tipo}}"></td>
-        </tr>
-      </table>
-    </div>
-
-  </div> <!-- Lo que este debajo de esto se pone debajo de la carta -->
+      <div class="texto-sombra meter-unPoco-arriba meter-izquierda letra-mediana">
+        <table class="mayuscula">
+          <tr>
+            <th colspan="2">Debilidades</th>
+          </tr>
+          <tr> <!-- Todas las debilidades -->
+            <td *ngFor="let tipo of pokemon.tipos "class="{{tipo}}"></td>
+          </tr>
+          <tr>
+            <th colspan="2">Fortaleza</th>
+          </tr>
+          <tr> <!-- Todas las fortalezas-->
+            <td *ngFor="let tipo of pokemon.tipos "class="{{tipo}}"></td>
+          </tr>
+        </table>
+      </div>
+  
+    </div> <!-- Lo que este debajo de esto se pone debajo de la carta -->
+  </div>
 </div>
