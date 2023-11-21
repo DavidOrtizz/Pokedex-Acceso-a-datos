@@ -78,11 +78,11 @@ export class PokemonService {
   cargarTiposDebilidadesFortalezas(tiposPokemon: string[]) {
     return this.http.get(this.tiposUrl).subscribe((data: any) => {
       this.tiposDebilidadesFortalezas = data.Types;
-      console.log('Tipos de Pokémon cargados:', this.tiposDebilidadesFortalezas); 
-  
+
       tiposPokemon.forEach(tipo => {
         this.obtenerDebilidadesDeTipo(tipo);
         this.obtenerFortalezasDeTipo(tipo);
+        this.obtenerInmunidadDeTipo(tipo);
       });
     });
   }
@@ -97,7 +97,7 @@ export class PokemonService {
       debilidades.push(...tipos["2"]);
     } 
   
-    console.log('Debilidades:', debilidades);
+
     return debilidades;
   }
 
@@ -109,8 +109,18 @@ export class PokemonService {
 
       fortalezas.push(...tipos["0.5"]);
     }
-    console.log('fortalezas:',fortalezas);
+
     return fortalezas;
   }
+  obtenerInmunidadDeTipo(tipo: string): string[] {
+    const inmunidad: string[] = [];
+    const tipos = this.tiposDebilidadesFortalezas[tipo];
 
+    if (tipos && tipos["0"]) {
+
+      inmunidad.push(...tipos["0"]);
+    }
+
+    return inmunidad;
+  }
 }
