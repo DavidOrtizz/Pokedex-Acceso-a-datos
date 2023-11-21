@@ -12,8 +12,10 @@ import { PokemonDetalle } from './pokemonDetalle';
 })
 export class PokemonService {
   pokemons: Pokemon[] = [];
-
+  tiposDebilidadesFortalezas: any;
+  private tiposUrl = 'assets/tablaTipos.json'; // Ruta del archivo JSON con la información de tipos
   constructor(private http: HttpClient) {}
+
 
 //conseguir un pokemon con sus datos
 //ruta para gifts
@@ -35,6 +37,7 @@ export class PokemonService {
         defEspecial:data.stats['4'].base_stat,
         velocidad:data.stats['5'].base_stat    
       }
+
     }));
   }
   //descripion de pokemon
@@ -50,10 +53,9 @@ export class PokemonService {
 
     for (let i = 1; i <= cantidad; i++) {
       const pokemonActual = this.getPokemon(i);
-
       requests.push(pokemonActual);
+      
     }
-
     return forkJoin(requests).pipe(map((dataPokemons: Pokemon[]) => dataPokemons))
   }
 
@@ -63,15 +65,62 @@ export class PokemonService {
       this.getPokemon(identificador),
       this.getDescripcion(identificador)
     ]).pipe(map(([pokemonData, descripcion]: [Pokemon, string]) => {
-      console.log(descripcion);
+      const tipos = pokemonData.tipos || [];
+      this.cargarTiposDebilidadesFortalezas(tipos);
         return {
           ...pokemonData,
           descripcion: descripcion
-          
         };
       })
     );
   }
+
+  cargarTiposDebilidadesFortalezas(tiposPokemon: string[]) {
+    return this.http.get(this.tiposUrl).subscribe((data: any) => {
+      this.tiposDebilidadesFortalezas = data.Types;
+
+      tiposPokemon.forEach(tipo => {
+        this.obtenerDebilidadesDeTipo(tipo);
+        this.obtenerFortalezasDeTipo(tipo);
+        this.obtenerInmunidadDeTipo(tipo);
+      });
+    });
+  }
+
+  obtenerDebilidadesDeTipo(tipo: string): string[] {
+  const debilidades: string[] = [];
+  const tipos = this.tiposDebilidadesFortalezas[tipo];
+
+
+    if (tipos && tipos["2"]) {
+
+      debilidades.push(...tipos["2"]);
+    } 
   
 
+    return debilidades;
+  }
+
+  obtenerFortalezasDeTipo(tipo: string): string[] {
+    const fortalezas: string[] = [];
+    const tipos = this.tiposDebilidadesFortalezas[tipo];
+
+    if (tipos && tipos["0.5"]) {
+
+      fortalezas.push(...tipos["0.5"]);
+    }
+
+    return fortalezas;
+  }
+  obtenerInmunidadDeTipo(tipo: string): string[] {
+    const inmunidad: string[] = [];
+    const tipos = this.tiposDebilidadesFortalezas[tipo];
+
+    if (tipos && tipos["0"]) {
+
+      inmunidad.push(...tipos["0"]);
+    }
+
+    return inmunidad;
+  }
 }
