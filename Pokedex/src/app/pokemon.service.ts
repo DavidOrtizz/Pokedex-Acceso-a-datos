@@ -65,18 +65,22 @@ export class PokemonService {
       this.getPokemon(identificador),
       this.getDescripcion(identificador)
     ]).pipe(map(([pokemonData, descripcion]: [Pokemon, string]) => {
-      const tipos = pokemonData.tipos || [];
-      this.cargarTiposDebilidadesFortalezas(tipos);
-        return {
-          ...pokemonData,
-          descripcion: descripcion
-        };
-      })
-    );
+      return {
+        ...pokemonData,
+        descripcion: descripcion
+      };
+    }));
+      /*const tipos = pokemonData.tipos || [];
+      console.log(1);
+      return this.cargarTiposDebilidadesFortalezas(tipos).subscribe(map((_: any) => {
+        console.log(3);
+        
+      }))
+      }));*/
   }
 
-  cargarTiposDebilidadesFortalezas(tiposPokemon: string[]) {
-    return this.http.get(this.tiposUrl).subscribe((data: any) => {
+  cargarTiposDebilidadesFortalezas(tiposPokemon: string[]) : Observable<any> {
+    return this.http.get(this.tiposUrl).pipe(map((data: any) => {
       this.tiposDebilidadesFortalezas = data.Types;
 
       tiposPokemon.forEach(tipo => {
@@ -84,7 +88,10 @@ export class PokemonService {
         this.obtenerFortalezasDeTipo(tipo);
         this.obtenerInmunidadDeTipo(tipo);
       });
-    });
+
+      console.log(2);
+      return [];
+    }));
   }
 
   obtenerDebilidadesDeTipo(tipo: string): string[] {
@@ -114,13 +121,11 @@ export class PokemonService {
   }
   obtenerInmunidadDeTipo(tipo: string): string[] {
     const inmunidad: string[] = [];
-    const tipos = this.tiposDebilidadesFortalezas[tipo];
-
-    if (tipos && tipos["0"]) {
-
-      inmunidad.push(...tipos["0"]);
+    // Asegúrate de que tiposDebilidadesFortalezas esté definido antes de acceder a sus propiedades
+    if (this.tiposDebilidadesFortalezas && this.tiposDebilidadesFortalezas[tipo] && this.tiposDebilidadesFortalezas[tipo]["0"]) {
+      inmunidad.push(...this.tiposDebilidadesFortalezas[tipo]["0"]);
     }
-
+  
     return inmunidad;
   }
 }

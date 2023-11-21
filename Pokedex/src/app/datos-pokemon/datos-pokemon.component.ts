@@ -47,13 +47,15 @@ export class DatosPokemonComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    const id = this.activatedRoute.snapshot.paramMap.get(
-      'id'
-    ) as unknown as number;
+    const id = this.activatedRoute.snapshot.paramMap.get('id') as unknown as number;
     this.pokemonService.getPokemonsDetalle(id).subscribe(
       (pokemonDatos: PokemonDetalle) => {
         this.pokemon = pokemonDatos;
-        this.actualizarDebilidadesYFortalezas();
+
+        this.pokemonService.cargarTiposDebilidadesFortalezas(pokemonDatos.tipos).subscribe(() => {
+          this.actualizarDebilidadesYFortalezas();
+        })
+        
       }
     );
   }
@@ -65,7 +67,6 @@ export class DatosPokemonComponent implements OnInit {
     this.inmunidadAux = [];
     this.muyResistente= [];
     this.muyEficaz= [];
-
 
     if (this.pokemon && this.pokemon.tipos && this.pokemon.tipos.length > 0) {
       console.log('Tipos:', this.pokemon.tipos);

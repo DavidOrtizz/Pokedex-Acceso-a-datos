@@ -15,7 +15,7 @@
       },
       "grass": {
         "2": ["Fire", "Ice", "Poison", "Flying", "Bug"],
-        "0.5": ["Water", "Ground", "Rock","Grass"]
+        "0.5": ["Water", "Ground", "Electric","Grass"]
       },
       "electric": {
         "2": ["Ground"],
