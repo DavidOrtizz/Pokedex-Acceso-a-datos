@@ -16,7 +16,7 @@
   }
 
   .meter-izquierda{
-   margin-left: -180px;
+   margin-left: -200px;
   }
 
   .meter-arriba{
@@ -34,8 +34,13 @@
 
   .texto-sombra{
     cursor: default;
-    text-shadow: 2px 2px 2px #000;
+    text-shadow: 3px 3px 20px black;
     color: white;
+  }
+
+  .tablaDatos{
+    background-color: #7bd5ff6b;
+    border-radius: 5px;
   }
 
 .btn-Video {

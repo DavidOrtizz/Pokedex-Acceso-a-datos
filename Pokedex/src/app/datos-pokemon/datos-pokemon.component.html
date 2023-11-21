@@ -51,7 +51,7 @@
   
       <!-- Estadísticas pokémon -->
       <div class="texto-sombra meter-izquierda meter-arriba letra-mediana">
-        <table>
+        <table class="tablaDatos">
           <tr>
             <th colspan="2">Estadísticas pokémon</th>
           </tr>
@@ -80,44 +80,34 @@
             <td>{{pokemon.velocidad}}</td>
           </tr>
         </table>
+        
       </div>
   
-      <div class="texto-sombra meter-unPoco-arriba meter-izquierda letra-mediana">
-        <table class="mayuscula">
+      <div class="texto-sombra  meter-izquierda letra-mediana">
+        <table class="tablaDatos">
           <tr>
-            <th colspan="2">Debilidades</th>
-          </tr>
-          <tr> <!-- Todas las debilidades -->
-            <td *ngFor="let tipo of pokemon.tipos "class="{{tipo}}"></td>
+            <th>Muy resistente</th>
+            <td *ngFor="let muyResistente of this.muyResistente" class="{{muyResistente}}">{{muyResistente}}</td>
+          </tr>  
+          <tr>
+            <th>Resistente</th>
+            <td *ngFor="let fortaleza of this.fortalezasAux">{{fortaleza}}</td>
           </tr>
           <tr>
-            <th colspan="2">Fortaleza</th>
+          <th>Eficaz</th>
+          <td *ngFor="let debil of this.debilidadesAux">{{debil}}</td>
           </tr>
-          <tr> <!-- Todas las fortalezas-->
-            <td *ngFor="let tipo of pokemon.tipos "class="{{tipo}}"></td>
+          <tr>
+            <th>Muy Eficaz</th>
+            <td *ngFor="let muyEficaz of this.muyEficaz">{{muyEficaz}}</td>
+          </tr>
+         <tr>
+            <th>Inmune</th>
+            <td *ngFor="let inmune of this.inmunidadAux">{{inmune}}</td>
           </tr>
         </table>
       </div>
-      <tr>
-        <td>Muy Resistente</td>
-        <td *ngFor="let muyResistente of this.muyResistente">{{muyResistente}}</td>
-      </tr>  
-      <tr>
-        <td>Resistente</td>
-        <td *ngFor="let fortaleza of this.fortalezasAux">{{fortaleza}}</td>
-      </tr>
-      <tr>
-        <td>Eficaz</td>
-        <td *ngFor="let debil of this.debilidadesAux">{{debil}}</td>
-        </tr>
-        <tr>
-        <td>Muy Eficaz</td>
-        <td *ngFor="let muyEficaz of this.muyEficaz">{{muyEficaz}}</td>
-      </tr>
-     <tr>
-        <td>Inmune</td>
-        <td *ngFor="let inmune of this.inmunidadAux">{{inmune}}</td>
-      </tr>
+
     </div> <!-- Lo que este debajo de esto se pone debajo de la carta -->
   </div>
 </div>
