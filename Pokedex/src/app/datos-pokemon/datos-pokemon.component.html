@@ -101,7 +101,7 @@
             <th>Muy Eficaz</th>
             <td *ngFor="let muyEficaz of this.muyEficaz">{{muyEficaz}}</td>
           </tr>
-         <tr>
+        <tr>
             <th>Inmune</th>
             <td *ngFor="let inmune of this.inmunidadAux">{{inmune}}</td>
           </tr>
@@ -109,5 +109,16 @@
       </div>
 
     </div> <!-- Lo que este debajo de esto se pone debajo de la carta -->
+  </div>
+</div>
+<div *ngIf="pokemon">
+  <!-- Mostrar información del Pokémon -->
+  <h1>{{ pokemon.nombre }}</h1>
+  <!-- Mostrar evoluciones -->
+  <div *ngIf="pokemon.evoluciones && pokemon.evoluciones.length > 0">
+    <h2>Evoluciones:</h2>
+    <ul>
+      <li *ngFor="let evolucion of pokemon.evoluciones">{{ evolucion }}</li>
+    </ul>
   </div>
 </div>
