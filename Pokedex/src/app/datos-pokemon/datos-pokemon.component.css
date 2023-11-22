@@ -1,6 +1,12 @@
+  .adaptarPantallaMenu{
+    justify-content:space-between;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
   .adaptarPantalla{
     text-align: center;
-    justify-content:space-between;
+    justify-content: center;
     display: flex;
     flex-wrap: wrap;
   }
@@ -25,6 +31,10 @@
 
   .meter-unPoco-arriba{
     margin-top: -100px;
+  }
+
+  .estiloShiny{
+    margin-top: 320px;
   }
 
   .letra-mediana{

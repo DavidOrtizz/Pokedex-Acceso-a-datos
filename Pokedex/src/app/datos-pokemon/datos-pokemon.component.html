@@ -3,10 +3,10 @@
     <video src="../../assets/video/FondoDatosPokemon2.mp4" autoplay muted loop class="video-foreground"></video>
   </div>
   
-  <div  class="adaptarPantalla"><!-- Botones -->
+  <div  class="adaptarPantallaMenu"><!-- Botones -->
     <table>
       <tr> <!-- Botón para anterior pokemon -->
-        <td><button class="btn-Video" (click)="anteriorPokemon()" >Anterior</button></td>
+        <td><button class="btn-Video" *ngIf="botonActivoInicio == true" (click)="anteriorPokemon()" >Anterior</button></td>
       </tr>
     </table>
     <table>
@@ -16,7 +16,7 @@
     </table>
     <table>
       <tr> <!-- Botón para siguiente pokemon -->
-        <td><button class="btn-Video" (click)="siguientePokemon()" >Siguiente</button></td>
+        <td><button class="btn-Video" *ngIf="botonActivoFinal == true" (click)="siguientePokemon()" (mousehover)="botonActivo()">Siguiente</button></td>
       </tr>
     </table>
   </div>
@@ -32,7 +32,7 @@
     
           <div class="img_charizard"><img src="{{pokemon.imagen}}" width="100%"></div>
   
-          <div class="descripcion"><h3>Peso: {{pokemon.peso}}kg |  Altura: {{pokemon.altura}}</h3></div>
+          <div class="descripcion"><h3>Peso: {{(pokemon.peso/10)}}kg |  Altura: {{(pokemon.altura/10)}}m</h3></div>
   
           <div class="Habilidad"><h4>Descripción:</h4></div>
   
@@ -50,7 +50,7 @@
       </div> <!-- Para que aparezca al lado de la carta -->
   
       <!-- Estadísticas pokémon -->
-      <div class="texto-sombra meter-izquierda meter-arriba letra-mediana">
+      <div class="texto-sombra meter-izquierda meter-arriba letra-mediana adaptarPantalla">
         <table class="tablaDatos">
           <tr>
             <th colspan="2" >Estadísticas</th>
@@ -83,7 +83,7 @@
         
       </div>
   
-      <div class="texto-sombra  meter-izquierda letra-mediana">
+      <div class="texto-sombra  meter-izquierda letra-mediana adaptarPantalla">
         <table class="tablaDatos">
           <tr>
             <th class="separacionDatos">Muy resistente</th>
@@ -107,7 +107,7 @@
           </tr>
         </table>
       </div>
-
+      <div class="estiloShiny"><img src="{{pokemon.shiny}}" width="200px"></div>
     </div> <!-- Lo que este debajo de esto se pone debajo de la carta -->
   </div>
 </div>
