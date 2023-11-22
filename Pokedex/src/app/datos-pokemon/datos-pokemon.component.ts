@@ -39,7 +39,8 @@ export class DatosPokemonComponent implements OnInit {
   fortalezasAux2: string[] = [];
   inmunidadAux2: string[] = [];
 
-
+  botonActivoInicio = true;
+  botonActivoFinal = true;
   constructor(
     private pokemonService: PokemonService,
     private activatedRoute: ActivatedRoute,
@@ -47,6 +48,10 @@ export class DatosPokemonComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.cargarDetalles();
+  }
+
+  cargarDetalles() { 
     const id = this.activatedRoute.snapshot.paramMap.get('id') as unknown as number;
     this.pokemonService.getPokemonsDetalle(id).subscribe(
       (pokemonDatos: PokemonDetalle) => {
@@ -55,11 +60,9 @@ export class DatosPokemonComponent implements OnInit {
         this.pokemonService.cargarTiposDebilidadesFortalezas(pokemonDatos.tipos).subscribe(() => {
           this.actualizarDebilidadesYFortalezas();
         })
-
       }
     );
   }
-
 
   actualizarDebilidadesYFortalezas() {
     this.debilidadesAux = [];
@@ -85,7 +88,6 @@ export class DatosPokemonComponent implements OnInit {
           this.fortalezasAux = fortalezas;
           this.inmunidadAux = inmunidad;
         } else {
-
           console.log('debilidades2:', debilidades);
           console.log('fortalezas2:', fortalezas);
           console.log('inmunidad2:', inmunidad);
@@ -95,16 +97,12 @@ export class DatosPokemonComponent implements OnInit {
           this.ordenarTipos();
         }
         this.cont++;
-
-
       });
 
       // Imprimir los resultados por consola
       console.log('Muy resistente:', this.muyResistente);
       console.log('DebilidadesAux:', this.debilidadesAux);
       console.log('FortalezasAux:', this.fortalezasAux);
-
-
       console.log('Muy Eficaz:', this.muyEficaz);
       console.log('InmunidadAux. ', this.inmunidadAux);
     }
@@ -150,33 +148,36 @@ export class DatosPokemonComponent implements OnInit {
       (elemento) => !listaX2copia.includes(elemento)
     );
   }
-  cargarDetalles() {
-    const id = this.activatedRoute.snapshot.paramMap.get('id') as unknown as number;
-    this.idPokemon(id);
-    this.pokemonService.getPokemonsDetalle(id).subscribe((pokemonDatos: PokemonDetalle) => {
-      this.pokemon = pokemonDatos;
-    });
-  }
 
   idPokemon(id: number) {
     this.router.navigate(['/datos/', id]);
   }
 
   anteriorPokemon() {
-    if ((this.pokemon.id - 1) != 0) { // Para controlar a que no llegue a pokemon 0
+    if ((this.pokemon.id - 1) != 0) { // Para controlar a que no se pase del mínimo
       this.idPokemon(this.pokemon.id - 1);
       setTimeout(() => {
         location.reload();
       }, 1);
+    } else {
+        this.botonActivoInicio = !this.botonActivoInicio;
     }
   }
 
   siguientePokemon() {
-    if ((this.pokemon.id + 1) != 1009) {
+    if ((this.pokemon.id + 1) != 1009) { // Para controlar a que no se pase del máximo
       this.idPokemon(this.pokemon.id + 1);
       setTimeout(() => {
         location.reload();
       }, 1);
+    } else {
+      this.botonActivoFinal = !this.botonActivoFinal;
+    }
+  }
+
+  botonActivo(){
+    if(this.pokemon.id  == 1) {
+      this.botonActivoInicio = !this.botonActivoInicio;
     }
   }
 }
