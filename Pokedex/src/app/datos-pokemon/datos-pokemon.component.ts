@@ -12,6 +12,7 @@ import { PokemonDetalle } from '../pokemonDetalle';
   styleUrls: ['./datos-pokemon.component.css']
 })
 export class DatosPokemonComponent implements OnInit {
+  //variables que comienzan vacias y se iran llegando
   pokemon: PokemonDetalle = {
     id: 0,
     nombre: "",
@@ -47,11 +48,13 @@ export class DatosPokemonComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    // Obtener el ID del Pokémon desde la URL
     const id = this.activatedRoute.snapshot.paramMap.get('id') as unknown as number;
+    // Obtener detalles del Pokémon utilizando el servicio pasandole la id del pokemon 
     this.pokemonService.getPokemonsDetalle(id).subscribe(
       (pokemonDatos: PokemonDetalle) => {
         this.pokemon = pokemonDatos;
-
+        // Cargar tipos, debilidades y fortalezas del Pokémon
         this.pokemonService.cargarTiposDebilidadesFortalezas(pokemonDatos.tipos).subscribe(() => {
           this.actualizarDebilidadesYFortalezas();
         })
