@@ -1,6 +1,13 @@
-  .adaptarPantalla{
+  .adaptarPantallaMenu{
     text-align: center;
     justify-content:space-between;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .adaptarPantalla{
+    text-align: center;
+    justify-content: center;
     display: flex;
     flex-wrap: wrap;
   }
