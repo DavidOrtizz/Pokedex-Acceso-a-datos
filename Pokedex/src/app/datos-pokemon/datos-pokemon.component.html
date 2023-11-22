@@ -26,7 +26,7 @@
   <div  class="adaptarPantalla"> <!-- Carta pokemon -->
     <div class="charizard">
       <div class="perspective">
-        <div class="{{pokemon.tipos[0]}}{{pokemon.tipos[1]}} carta_fondo">
+        <div class="{{pokemon.tipos[0]}}{{pokemon.tipos[1]}} {{pokemon.tipos[0]}} carta_fondo">
           <div class="power">ID: {{pokemon.id}}</div>
           <div class="nombre"><h2>{{pokemon.nombre}}</h2></div>
     
@@ -53,11 +53,11 @@
       <div class="texto-sombra meter-izquierda meter-arriba letra-mediana">
         <table class="tablaDatos">
           <tr>
-            <th colspan="2">Estadísticas pokémon</th>
+            <th colspan="2" >Estadísticas</th>
           </tr>
           <tr>
-            <td>Vida</td>
-            <td>{{pokemon.vida}}</td>
+            <td class="separacionDatos">Vida</td>
+            <td class="separacionDatos">{{pokemon.vida}}</td>
           </tr>
           <tr>
             <td>Ataque</td>
@@ -86,24 +86,24 @@
       <div class="texto-sombra  meter-izquierda letra-mediana">
         <table class="tablaDatos">
           <tr>
-            <th>Muy resistente</th>
-            <td *ngFor="let muyResistente of this.muyResistente" class="{{muyResistente}}">{{muyResistente}}</td>
+            <th class="separacionDatos">Muy resistente</th>
+            <td *ngFor="let muyResistente of this.muyResistente" class="separacionDatos">{{muyResistente}}</td>
           </tr>  
           <tr>
             <th>Resistente</th>
-            <td *ngFor="let fortaleza of this.fortalezasAux">{{fortaleza}}</td>
+            <td *ngFor="let fortaleza of this.fortalezasAux" class="separacionDatos">{{fortaleza}}</td>
           </tr>
           <tr>
           <th>Eficaz</th>
-          <td *ngFor="let debil of this.debilidadesAux">{{debil}}</td>
+          <td *ngFor="let debil of this.debilidadesAux" class="separacionDatos">{{debil}}</td>
           </tr>
           <tr>
             <th>Muy Eficaz</th>
-            <td *ngFor="let muyEficaz of this.muyEficaz">{{muyEficaz}}</td>
+            <td *ngFor="let muyEficaz of this.muyEficaz" class="separacionDatos">{{muyEficaz}}</td>
           </tr>
          <tr>
             <th>Inmune</th>
-            <td *ngFor="let inmune of this.inmunidadAux">{{inmune}}</td>
+            <td *ngFor="let inmune of this.inmunidadAux" class="separacionDatos">{{inmune}}</td>
           </tr>
         </table>
       </div>

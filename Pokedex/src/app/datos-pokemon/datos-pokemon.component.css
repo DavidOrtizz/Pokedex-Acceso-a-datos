@@ -16,7 +16,7 @@
   }
 
   .meter-izquierda{
-   margin-left: -200px;
+   margin-left: -180px;
   }
 
   .meter-arriba{
@@ -41,6 +41,10 @@
   .tablaDatos{
     background-color: #7bd5ff6b;
     border-radius: 5px;
+  }
+
+  .separacionDatos{
+    padding-right: 20px;
   }
 
 .btn-Video {
@@ -95,7 +99,6 @@
 .carta_fondo {
   height: 80%; 
   width: 60%; 
-  background: radial-gradient(ellipse, rgb(198, 198, 198),rgb(87, 87, 87));
   border-radius: 5%;
   overflow: hidden;
   position: relative;
@@ -179,14 +182,16 @@
   }
 
   .fire {
-    color: red;
+    color: white;
     cursor: default;
     border-color: red;
+    background: radial-gradient(circle ,rgb(255, 193, 193), red);
   }
 
-  .fire:hover{
-    background-color:red; /* Cambia #color del fondo */
-    color: white; /* Cambia el color de texto */
+  .fire:hover, .water:hover, .grass:hover, .bug:hover, .dark:hover, .dragon:hover,
+  .electric:hover,  .fairy:hover, .fighting:hover, .flying:hover,  .ghost:hover,
+  .ground:hover, .ice:hover, .normal:hover,  .poison:hover, .psychic:hover,
+  .rock:hover, .steel:hover {
     animation: subirBajar 1s infinite alternate;
   }
 
@@ -203,15 +208,9 @@
   }
 
   .water {
-    color: rgb(55, 55, 243);
+    color: white;
     cursor: default;
-    border-color: rgb(55, 55, 243);
-  }
-
-  .water:hover{
-    background-color:rgb(55, 55, 243);
-    color: white; 
-    animation: subirBajar 1s infinite alternate;
+    background: radial-gradient(circle ,rgb(159, 159, 255), rgb(55, 55, 243));
   }
 
   .waterLetter{
@@ -227,15 +226,9 @@
   }
 
   .grass {
-    color: green;
+    color: white;
     cursor: default;
-    border-color:green;
-  }
-
-  .grass:hover{
-    background-color:green;
-    color: white; 
-    animation: subirBajar 1s infinite alternate;
+    background: radial-gradient(circle ,rgb(211, 255, 211), green);
   }
 
   .grassLetter{
@@ -251,15 +244,9 @@
   }
 
   .bug {
-    color: rgb(19, 88, 19);
+    color: white;
     cursor: default;
-    border-color:rgb(19, 88, 19);
-  }
-
-  .bug:hover{
-    background-color:rgb(19, 88, 19);
-    color: white; 
-    animation: subirBajar 1s infinite alternate;
+    background: radial-gradient(circle ,rgb(211, 255, 211), rgb(19, 88, 19));
   }
 
   .bugLetter{
@@ -275,15 +262,9 @@
   }
 
   .dark {
-    color: rgb(76, 83, 76);
+    color: white;
     cursor: default;
-    border-color:rgb(76, 83, 76);
-  }
-
-  .dark:hover{
-    background-color:rgb(76, 83, 76);
-    color: white; 
-    animation: subirBajar 1s infinite alternate;
+    background: radial-gradient(circle ,rgb(187, 190, 187), rgb(47, 52, 47));
   }
 
   .darkLetter{
@@ -299,15 +280,9 @@
   }
 
   .dragon {
-    color: rgb(88, 186, 186);
+    color: white;
     cursor: default;
-    border-color:rgb(88, 186, 186);
-  }
-
-  .dragon:hover{
-    background-color:rgb(88, 186, 186);
-    color: white; 
-    animation: subirBajar 1s infinite alternate;
+    background: radial-gradient(circle ,rgb(173, 235, 235), rgb(12, 122, 139));
   }
 
   .dragonLetter{
@@ -323,15 +298,9 @@
   }
 
   .electric {
-    color: rgb(215, 212, 0);
+    color: white;
     cursor: default;
-    border-color:rgb(215, 212, 0);
-  }
-
-  .electric:hover{
-    background-color:rgb(215, 212, 0);
-    color: white; 
-    animation: subirBajar 1s infinite alternate;
+    background: radial-gradient(circle ,rgb(255, 251, 0), rgb(182, 179, 0));
   }
 
   .electricLetter{
@@ -347,15 +316,9 @@
   }
 
   .fairy{
-    color: rgb(253, 94, 120);
+    color: white;
     cursor: default;
-    border-color:rgb(253, 94, 120);
-  }
-
-  .fairy:hover{
-    background-color:rgb(253, 94, 120);
-    color: white; 
-    animation: subirBajar 1s infinite alternate;
+    background: radial-gradient(circle ,rgb(251, 169, 183), rgb(253, 94, 120));
   }
 
   .fairyLetter{
@@ -371,15 +334,9 @@
   }
 
   .fighting{
-    color: rgb(253, 152, 0);
+    color: white;
     cursor: default;
-    border-color:rgb(253, 152, 0);
-  }
-
-  .fighting:hover{
-    background-color:rgb(253, 152, 0);
-    color: white; 
-    animation: subirBajar 1s infinite alternate;
+    background: radial-gradient(circle ,rgb(255, 207, 135), rgb(253, 152, 0));
   }
 
   .fightingLetter{
@@ -395,15 +352,9 @@
   }
 
   .flying{
-    color: rgb(123, 156, 247);
+    color: white;
     cursor: default;
-    border-color:rgb(123, 156, 247);
-  }
-
-  .flying:hover{
-    background-color:rgb(123, 156, 247);
-    color: white; 
-    animation: subirBajar 1s infinite alternate;
+    background: radial-gradient(circle ,rgb(187, 205, 255), rgb(123, 156, 247));
   }
 
   .flyingLetter{
@@ -419,15 +370,9 @@
   }
 
   .ghost{
-    color: rgb(77, 48, 82);
+    color: white;
     cursor: default;
-    border-color:rgb(77, 48, 82);
-  }
-
-  .ghost:hover{
-    background-color:rgb(77, 48, 82);
-    color: white; 
-    animation: subirBajar 1s infinite alternate;
+    background: radial-gradient(circle ,rgb(228, 165, 239), rgb(77, 48, 82));
   }
 
   .ghostLetter{
@@ -443,15 +388,9 @@
   }
 
   .ground{
-    color: rgb(113, 74, 10);
+    color: white;
     cursor: default;
-    border-color:rgb(113, 74, 10);
-  }
-
-  .ground:hover{
-    background-color:rgb(113, 74, 10);
-    color: white; 
-    animation: subirBajar 1s infinite alternate;
+    background: radial-gradient(circle ,rgb(155, 128, 86), rgb(113, 74, 10));
   }
 
   .groundLetter{
@@ -467,15 +406,9 @@
   }
     
   .ice{
-    color: rgb(5, 220, 216);
+    color: white;
     cursor: default;
-    border-color:rgb(5, 220, 216);
-  }
-
-  .ice:hover{
-    background-color:rgb(5, 220, 216);
-    color: white; 
-    animation: subirBajar 1s infinite alternate;
+    background: radial-gradient(circle ,rgb(162, 240, 239), rgb(5, 220, 216));
   }
 
   .iceLetter{
@@ -491,15 +424,9 @@
   }
 
   .normal{
-    color: rgb(202, 160, 167);
+    color: white;
     cursor: default;
-    border-color:rgb(202, 160, 167);
-  }
-
-  .normal:hover{
-    background-color:rgb(202, 160, 167);
-    color: white; 
-    animation: subirBajar 1s infinite alternate;
+    background: radial-gradient(circle ,rgb(246, 209, 216), rgb(202, 160, 167));
   }
 
   .normalLetter{
@@ -515,15 +442,9 @@
   }
 
   .poison{
-    color: rgb(123, 33, 86);
+    color: white;
     cursor: default;
-    border-color:rgb(123, 33, 86);
-  }
-
-  .poison:hover{
-    background-color:rgb(123, 33, 86);
-    color: white; 
-    animation: subirBajar 1s infinite alternate;
+    background: radial-gradient(circle ,rgb(175, 104, 145), rgb(123, 33, 86));
   }
 
   .poisonLetter{
@@ -539,15 +460,9 @@
   }
 
   .psychic{
-    color: rgb(205, 36, 135);
+    color: white;
     cursor: default;
-    border-color:rgb(205, 36, 135);
-  }
-
-  .psychic:hover{
-    background-color:rgb(205, 36, 135);
-    color: white; 
-    animation: subirBajar 1s infinite alternate;
+    background: radial-gradient(circle ,rgb(245, 130, 197), rgb(205, 36, 135));
   }
 
   .psychicLetter{
@@ -563,15 +478,9 @@
   }
 
   .rock{
-    color: rgb(124, 81, 0);
+    color: white;
     cursor: default;
-    border-color:rgb(124, 81, 0);
-  }
-
-  .rock:hover{
-    background-color:rgb(124, 81, 0);
-    color: white; 
-    animation: subirBajar 1s infinite alternate;
+    background: radial-gradient(circle ,rgb(128, 99, 47), rgb(124, 81, 0));
   }
 
   .rockLetter{
@@ -587,15 +496,9 @@
   }
 
   .steel{
-    color: rgb(143, 154, 140);
+    color: white;
     cursor: default;
-    border-color:rgb(143, 154, 140);
-  }
-
-  .steel:hover{
-    background-color:rgb(143, 154, 140);
-    color: white; 
-    animation: subirBajar 1s infinite alternate;
+    background: radial-gradient(circle ,rgb(207, 220, 203), rgb(143, 154, 140));
   }
 
   .steelLetter{
