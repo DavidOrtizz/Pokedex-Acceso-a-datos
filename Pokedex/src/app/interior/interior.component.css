@@ -34,6 +34,46 @@ button{
     flex-wrap: wrap;
   }
 
+  .controlarImagen-cabecera{
+    width: 400px;
+  }
+
+  .controlarImagen{
+    width: 200px;
+  }
+
+  @media (max-width: 1024px) {
+    /* Estilos para pantallas más pequeñas que 1024px de ancho */
+    .controlarImagen{
+      width: 150px;
+    }
+
+    .controlarImagen-cabecera{
+      margin-top: 10px;
+      width: 350px;
+    }
+
+    .menu td {
+      display:inline-block;
+    }
+  }
+
+  @media (max-width: 653px) {
+    /* Estilos para pantallas más pequeñas que 1024px de ancho */
+    .controlarImagen{
+      width: 150px;
+    }
+
+    .controlarImagen-cabecera{
+      margin-top: 10px;
+      width: 200px;
+    }
+
+    .menu td {
+      display:inline-block;
+    }
+  }
+
   .tarjetasPokemon {
     text-transform: capitalize;
     display: flex;

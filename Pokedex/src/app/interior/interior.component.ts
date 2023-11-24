@@ -28,7 +28,7 @@ export class InteriorComponent implements OnInit {
   /*
   shiny= false;
   */
-  textoOscuro = 'Tema claro';
+  textoOscuro = 'Te encuentras con el tema claro';
   buscamos = new EventEmitter<string>(); // Emitir el nombre del Pokémon a buscar
   constructor(private pokemonService: PokemonService) {}
   
@@ -51,7 +51,7 @@ export class InteriorComponent implements OnInit {
       this.textoOscuro = 'Tema oscuro no existe asi que te quedas con el claro';
     } else {
       this.oscuro = false;
-      this.textoOscuro = 'Tema claro';
+      this.textoOscuro = 'Te encuentras con el tema claro';
     }
   }
 

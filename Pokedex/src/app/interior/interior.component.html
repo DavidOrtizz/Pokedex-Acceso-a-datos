@@ -1,17 +1,17 @@
 <div class="centro">
-  <img src="../../assets/img/nombrePokedex.png" width="400px" />
+  <img src="../../assets/img/nombrePokedex.png" class="controlarImagen-cabecera" />
 </div>
 <br>
 <div> <!-- Menu principal -->
   <table class="menu">
     <tr> <!-- Buscador -->
-      <td><b>Buscador pokémon:</b></td>
+      <td class="adaptarMenu"><b>Buscador pokémon:</b></td>
       <td>
         <div>
           <input type="search" [(ngModel)]="buscadorPokemon" (input)="buscarPokemon()" placeholder="Buscar Pokémon" class="estiloBuscador">
         </div>
       </td>
-      <td></td>
+      <td ></td>
       <td><b>Buscador avanzado:</b></td> <!-- Buscador para tipos -->
       <td>
         <button *ngIf="menuAbierto == false" (click)="abrirMenu()" class="botonOpciones"><img
@@ -157,7 +157,7 @@
     <table>
       <tr> <!-- Imagen -->
         <td colspan="2">
-          <img src="{{pokemon.imagen}}" width="200px" >
+          <img src="{{pokemon.imagen}}" class="controlarImagen">
         </td>
       </tr>
       <tr> <!-- id -->
