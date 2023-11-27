@@ -41,6 +41,12 @@ export class PokemonService {
       };
     }));
   }
+  getImagen(nombre: any): Observable<string> {
+    return this.http.get('https://pokeapi.co/api/v2/pokemon/' + nombre).pipe(map((data: any) => {      
+      
+      return data.sprites.other['official-artwork'].front_default;
+    }));
+  }
 //Obtiene un observable de la cadena evolutiva
   getEvoluciones(url:string): Observable<string[]> {
     console.log('fsfds' + url)
@@ -103,20 +109,22 @@ console.log("evoluciones= "+evoluciones)
     return forkJoin(requests).pipe(map((dataPokemons: Pokemon[]) => dataPokemons));
   }
 
-  getPokemonsDetalle(identificador: number): Observable<PokemonDetalle> {
+  getPokemonsDetalle(identificador: any): Observable<PokemonDetalle> {
     //Guardamos el resultado de las funciones en una variable para poder usarlas mejor(incluimos evoluciones ahora)
     const basicInfo = this.getPokemon(identificador)
     const description = this.getDescripcion(identificador);
     const cadenas = this.getCadena(identificador);
+    const imagen = this.getImagen(identificador)
     console.log("detalleCadena="+cadenas)
     // Combinamos todo mientras recorremos el array
-    return forkJoin([basicInfo, description, cadenas]).pipe(map(([pokemonData, descripcion, cadenas]:[Pokemon, string , string]) => {
+    return forkJoin([basicInfo, description, cadenas,imagen]).pipe(map(([pokemonData, descripcion, cadenas,imagen]:[Pokemon, string , string,string]) => {
 console.log("jjj"+cadenas)
 
         return {
           ...pokemonData,
           descripcion: descripcion,
-          cadenas: cadenas
+          cadenas: cadenas,
+          imagen:imagen
         
         };
       
