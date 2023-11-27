@@ -28,7 +28,7 @@ export class DatosPokemonComponent implements OnInit {
     velocidad: 0,
     altura: 0,
     descripcion: '',
-    evoluciones: []
+    cadenas:"",
   };
   cont:number=0;
   debilidadesAux: string[] = [];
@@ -41,7 +41,7 @@ export class DatosPokemonComponent implements OnInit {
   fortalezasAux2: string[] = [];
   inmunidadAux2: string[]=[];
 
-
+  evoluciones:string[]=[];
   constructor(
     private pokemonService: PokemonService,
     private activatedRoute: ActivatedRoute,
@@ -54,6 +54,15 @@ export class DatosPokemonComponent implements OnInit {
     // Obtener detalles del Pokémon utilizando el servicio pasandole la id del pokemon 
     this.pokemonService.getPokemonsDetalle(id).subscribe(
       (pokemonDatos: PokemonDetalle) => {
+        this.pokemon = pokemonDatos;  
+        console.log(pokemonDatos)
+        console.log("cadenas" + this.pokemon.cadenas);
+        console.log(id)
+        this.pokemonService.getEvoluciones(this.pokemon.cadenas).subscribe((data:any) => {
+          
+          this.evoluciones = data;
+        })
+
         this.pokemon = pokemonDatos;
         // Cargar tipos, debilidades y fortalezas del Pokémon
         this.pokemonService.cargarTiposDebilidadesFortalezas(pokemonDatos.tipos).subscribe(() => {
@@ -73,7 +82,7 @@ export class DatosPokemonComponent implements OnInit {
     this.muyEficaz= [];
 
     if (this.pokemon && this.pokemon.tipos && this.pokemon.tipos.length > 0) {
- 
+
 
       // Obtener debilidades y fortalezas de cada tipo del Pokémon
       this.pokemon.tipos.forEach((tipo) => {
@@ -82,7 +91,7 @@ export class DatosPokemonComponent implements OnInit {
         let fortalezas = this.pokemonService.obtenerFortalezasDeTipo(tipo);
         // Almacenar las debilidades y fortalezas correspondientes
         if(this.cont==0){     
- 
+
         this.debilidadesAux = debilidades;
         this.fortalezasAux = fortalezas;
         this.inmunidadAux = inmunidad;
@@ -170,9 +179,5 @@ siguientePokemon() {
   }, 1);
 }
 
-obtenerEvoluciones(id: number) {
-    this.pokemonService.getEvoluciones(id).subscribe((evoluciones: string[]) => {
-      this.pokemon.evoluciones = evoluciones;
-    });
-  }
+
 }

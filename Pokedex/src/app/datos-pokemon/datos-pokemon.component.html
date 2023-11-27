@@ -111,14 +111,11 @@
     </div> <!-- Lo que este debajo de esto se pone debajo de la carta -->
   </div>
 </div>
-<div *ngIf="pokemon">
-  <!-- Mostrar información del Pokémon -->
-  <h1>{{ pokemon.nombre }}</h1>
-  <!-- Mostrar evoluciones -->
-  <div *ngIf="pokemon.evoluciones && pokemon.evoluciones.length > 0">
+
+
+
     <h2>Evoluciones:</h2>
     <ul>
-      <li *ngFor="let evolucion of pokemon.evoluciones">{{ evolucion }}</li>
+      <li *ngFor="let evolucion of this.evoluciones">{{evolucion}}</li>
     </ul>
-  </div>
-</div>
+

@@ -36,20 +36,21 @@ export class PokemonService {
         defensa: data.stats['2'].base_stat,
         atqEspecial: data.stats['3'].base_stat,
         defEspecial: data.stats['4'].base_stat,
-        velocidad: data.stats['5'].base_stat    
+        velocidad: data.stats['5'].base_stat,
       };
     }));
   }
 //Obtiene un observable de la cadena evolutiva
-  getEvoluciones(i: number): Observable<string[]> {
-  return this.http.get('https://pokeapi.co/api/v2/evolution-chain/' + i).pipe(map((data: any) => {
+  getEvoluciones(url:string): Observable<string[]> {
+    console.log('fsfds' + url)
+  return this.http.get(url).pipe(map((data: any) => {
 
       const evoluciones: string[] = [];
-
+      console.log("url"+url)
       // Función recursiva para obtener todas las evoluciones
       const obtenerEvoluciones = (chain: any) => {
         if (chain.species) {
-          evoluciones.push(chain.species.name);
+          evoluciones.push(chain.species.name);           
         }
 
         if (chain.evolves_to && chain.evolves_to.length > 0) {
@@ -63,18 +64,25 @@ export class PokemonService {
       if (data.chain) {
         obtenerEvoluciones(data.chain);
       }
-
+console.log("evoluciones= "+evoluciones)
       return evoluciones;
 
     })
   );
 }
+/*
 
-
-
+*/
+    getCadena(i: number): Observable<string> {
+  return this.http.get('https://pokeapi.co/api/v2/pokemon-species/' + i).pipe(map((data: any) => {      
+    
+  console.log(data.evolution_chain.url)
+    return data.evolution_chain.url;
+  }));
+}
   // Obtener la descripción de un Pokémon
   getDescripcion(i: number): Observable<string> {
-    return this.http.get('https://pokeapi.co/api/v2/pokemon-species/' + i).pipe(map((data: any) => {
+    return this.http.get('https://pokeapi.co/api/v2/pokemon-species/' + i).pipe(map((data: any) => {      
       // Mapear la respuesta de la API para obtener la descripción del Pokémon
       return data.flavor_text_entries[0].flavor_text;
     }));
@@ -96,18 +104,21 @@ export class PokemonService {
 
   getPokemonsDetalle(identificador: number): Observable<PokemonDetalle> {
     //Guardamos el resultado de las funciones en una variable para poder usarlas mejor(incluimos evoluciones ahora)
-    const basicInfo = this.getPokemon(identificador);
+    const basicInfo = this.getPokemon(identificador)
     const description = this.getDescripcion(identificador);
-    const evolutions = this.getEvoluciones(identificador);
+    const cadenas = this.getCadena(identificador);
+    console.log("detalleCadena="+cadenas)
     // Combinamos todo mientras recorremos el array
-    return forkJoin([basicInfo, description, evolutions]).pipe(map(([pokemonData, descripcion, evoluciones]:[Pokemon, string, string[]]) => {
+    return forkJoin([basicInfo, description, cadenas]).pipe(map(([pokemonData, descripcion, cadenas]:[Pokemon, string , string]) => {
+console.log("jjj"+cadenas)
+
         return {
           ...pokemonData,
           descripcion: descripcion,
-          evoluciones: evoluciones 
-
+          cadenas: cadenas
+        
         };
-       
+      
       })
     );
   }
