@@ -1,9 +1,8 @@
-import { Component } from '@angular/core';
+import { Component} from '@angular/core';
 import { PokemonService } from '../pokemon.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { EventEmitter, Input, OnInit } from '@angular/core';
+import { OnInit } from '@angular/core';
 
-import { Pokemon } from '../pokemon';
 import { PokemonDetalle } from '../pokemonDetalle';
 
 @Component({
@@ -12,7 +11,7 @@ import { PokemonDetalle } from '../pokemonDetalle';
   styleUrls: ['./datos-pokemon.component.css']
 })
 export class DatosPokemonComponent implements OnInit {
-  //variables que comienzan vacias y se iran llegando
+ //variables que comienzan vacias y se iran llegando
   pokemon: PokemonDetalle = {
     id: 0,
     nombre: "",
@@ -183,5 +182,35 @@ export class DatosPokemonComponent implements OnInit {
     if(this.pokemon.id  == 1) {
       this.botonActivoInicio = !this.botonActivoInicio;
     }
+  }
+
+  calcularAnchoVida(): string {
+    const resultado = (this.pokemon.vida * 100) / 255;
+    return `${resultado}%`;
+  }
+
+  calcularAnchoAtaque(): string {
+    const resultado = (this.pokemon.ataque * 100) / 255;
+    return `${resultado}%`;
+  }
+
+  calcularAnchoDefensa(): string {
+    const resultado = (this.pokemon.defensa * 100) / 255;
+    return `${resultado}%`;
+  }
+
+  calcularAnchoAtqEspecial(): string {
+    const resultado = (this.pokemon.atqEspecial * 100) / 255;
+    return `${resultado}%`;
+  }
+
+  calcularAnchoDefEspecial(): string {
+    const resultado = (this.pokemon.defEspecial * 100) / 255;
+    return `${resultado}%`;
+  }
+
+  calcularAnchoVelocidad(): string {
+    const resultado = (this.pokemon.velocidad * 100) / 255;
+    return `${resultado}%`;
   }
 }
