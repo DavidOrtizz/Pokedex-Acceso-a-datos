@@ -152,12 +152,15 @@
         </div>
       </div>
   
-      <div class="estiloShiny"><img src="{{pokemon.shiny}}" width="200px"></div>
+      <div class="estiloNormal"><img src="{{pokemon.shiny}}" width="100px"></div>
+      <div class="estiloShiny"><img src="{{pokemon.animado}}" width="100px"></div>
     </div> <!-- Lo que este debajo de esto se pone debajo de la carta -->
   </div>
 </div>
-    <h2>Evoluciones:</h2>
-    <ul>
-      <li *ngFor="let evolucion of this.evoluciones">{{evolucion}}</li>
-    </ul>
+<div class="fondoCesped">
+  <h2>Evoluciones:</h2>
+  <ul>
+    <li *ngFor="let evolucion of this.evoluciones">{{evolucion}}</li>
+  </ul>
+</div>
 
