@@ -34,7 +34,12 @@
   }
 
   .estiloShiny{
-    margin-top: 320px;
+    
+    margin-top: 325px;
+  }
+  .estiloNormal{
+    margin-top: 325px;
+    transform: scaleX(-1);
   }
 
   .letra-mediana{

@@ -19,6 +19,7 @@ export class DatosPokemonComponent implements OnInit {
     tipos: [],
     imagen: "",
     shiny: "",
+    animado: "",
     peso: 0,
     vida: 0,
     ataque: 0,

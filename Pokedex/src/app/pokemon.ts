@@ -6,6 +6,7 @@ export interface Pokemon  {
   tipos: string[]; 
   imagen:string ;
   shiny:string;
+  animado: string;
   peso:number;
   ataque:number;
   defensa:number;
