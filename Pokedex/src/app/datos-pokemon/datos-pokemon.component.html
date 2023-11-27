@@ -101,7 +101,7 @@
             <th>Muy Eficaz</th>
             <td *ngFor="let muyEficaz of this.muyEficaz" class="separacionDatos">{{muyEficaz}}</td>
           </tr>
-         <tr>
+        <tr>
             <th>Inmune</th>
             <td *ngFor="let inmune of this.inmunidadAux" class="separacionDatos">{{inmune}}</td>
           </tr>
@@ -111,3 +111,11 @@
     </div> <!-- Lo que este debajo de esto se pone debajo de la carta -->
   </div>
 </div>
+
+
+
+    <h2>Evoluciones:</h2>
+    <ul>
+      <li *ngFor="let evolucion of this.evoluciones">{{evolucion}}</li>
+    </ul>
+

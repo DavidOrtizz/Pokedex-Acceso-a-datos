@@ -36,14 +36,53 @@ export class PokemonService {
         defensa: data.stats['2'].base_stat,
         atqEspecial: data.stats['3'].base_stat,
         defEspecial: data.stats['4'].base_stat,
-        velocidad: data.stats['5'].base_stat    
+        velocidad: data.stats['5'].base_stat,
       };
     }));
   }
+//Obtiene un observable de la cadena evolutiva
+  getEvoluciones(url:string): Observable<string[]> {
+    console.log('fsfds' + url)
+  return this.http.get(url).pipe(map((data: any) => {
 
+      const evoluciones: string[] = [];
+      console.log("url"+url)
+      // Función recursiva para obtener todas las evoluciones
+      const obtenerEvoluciones = (chain: any) => {
+        if (chain.species) {
+          evoluciones.push(chain.species.name);           
+        }
+
+        if (chain.evolves_to && chain.evolves_to.length > 0) {
+          chain.evolves_to.forEach((evolucion: any) => {
+            obtenerEvoluciones(evolucion);
+          });
+        }
+      };
+
+      // Comenzar con la cadena de evolución inicial
+      if (data.chain) {
+        obtenerEvoluciones(data.chain);
+      }
+console.log("evoluciones= "+evoluciones)
+      return evoluciones;
+
+    })
+  );
+}
+/*
+
+*/
+    getCadena(i: number): Observable<string> {
+  return this.http.get('https://pokeapi.co/api/v2/pokemon-species/' + i).pipe(map((data: any) => {      
+    
+  console.log(data.evolution_chain.url)
+    return data.evolution_chain.url;
+  }));
+}
   // Obtener la descripción de un Pokémon
   getDescripcion(i: number): Observable<string> {
-    return this.http.get('https://pokeapi.co/api/v2/pokemon-species/' + i).pipe(map((data: any) => {
+    return this.http.get('https://pokeapi.co/api/v2/pokemon-species/' + i).pipe(map((data: any) => {      
       // Mapear la respuesta de la API para obtener la descripción del Pokémon
       return data.flavor_text_entries[0].flavor_text;
     }));
@@ -59,27 +98,35 @@ export class PokemonService {
       requests.push(pokemonActual);
     }
     
-    // Combinar todas las peticiones en paralelo usando forkJoin
+
     return forkJoin(requests).pipe(map((dataPokemons: Pokemon[]) => dataPokemons));
   }
 
-  // Obtener detalles de un Pokémon, incluyendo su descripción
   getPokemonsDetalle(identificador: number): Observable<PokemonDetalle> {
-    return forkJoin([
-      this.getPokemon(identificador),
-      this.getDescripcion(identificador)
-      // Combinar la información básica y la descripción en un objeto 'PokemonDetalle'
-    ]).pipe(map(([pokemonData, descripcion]: [Pokemon, string]) => {
-      return {
-        ...pokemonData,
-        descripcion: descripcion
-      };
-    }));
+    //Guardamos el resultado de las funciones en una variable para poder usarlas mejor(incluimos evoluciones ahora)
+    const basicInfo = this.getPokemon(identificador)
+    const description = this.getDescripcion(identificador);
+    const cadenas = this.getCadena(identificador);
+    console.log("detalleCadena="+cadenas)
+    // Combinamos todo mientras recorremos el array
+    return forkJoin([basicInfo, description, cadenas]).pipe(map(([pokemonData, descripcion, cadenas]:[Pokemon, string , string]) => {
+console.log("jjj"+cadenas)
+
+        return {
+          ...pokemonData,
+          descripcion: descripcion,
+          cadenas: cadenas
+        
+        };
+      
+      })
+    );
   }
 
   // Cargar información sobre debilidades, fortalezas e inmunidades de tipos de Pokémon
   cargarTiposDebilidadesFortalezas(tiposPokemon: string[]): Observable<any> {
     return this.http.get(this.tiposUrl).pipe(map((data: any) => {
+      
       this.tiposDebilidadesFortalezas = data.Types;
 
       // Llamamos a las funciones y hacemos un bucle para que compruebe las debilidades y las fortalezas y las inmunidades
