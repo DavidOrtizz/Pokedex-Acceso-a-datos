@@ -21,18 +21,6 @@
     text-transform: capitalize;
   }
 
-  .meter-izquierda{
-   margin-left: -180px;
-  }
-
-  .meter-arriba{
-    margin-top: -400px;
-  }
-
-  .meter-unPoco-arriba{
-    margin-top: -100px;
-  }
-
   .estiloShiny{
     margin-top: 320px;
   }
@@ -49,13 +37,59 @@
   }
 
   .tablaDatos{
-    background-color: #7bd5ff6b;
     border-radius: 5px;
   }
 
   .separacionDatos{
     padding-right: 20px;
   }
+
+/* CSS tabla de datos estadísticas */
+
+.caja-padre{
+  width: 40%;
+  min-width: 590px;
+  margin-right: 75px;
+}
+
+.contenedor{
+  margin-top: 40px;
+  width: 100%;
+  padding: 30px 30px 50px;
+  background: #035d873d;
+  border-radius: 10px;
+}
+
+.skills:not(:last-child){
+  margin-bottom: 5px;
+}
+
+.detalles{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.menu{
+  position: relative;
+  border: 1px solid rgb(255, 162, 0);
+  border-radius: 20px;
+}
+
+.menu div{
+  position: relative;
+  width: 0;
+  height: 8px;
+  border-radius: 10px;
+  background-color: rgb(0, 255, 47);
+}
+
+.detallesResistencias{
+  margin-top: 25px;
+  font-size: large;
+}
+
+/* Cierre tabla de datos estadísticas */
 
 .btn-Video {
   color: #fff;
