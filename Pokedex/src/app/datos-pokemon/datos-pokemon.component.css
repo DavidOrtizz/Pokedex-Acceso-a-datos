@@ -13,8 +13,6 @@
 
   .fondoCesped{
     background-color: #82B773;
-    width: 100%;
-    height: 100%;
     z-index: -1;
   }
 
@@ -24,11 +22,11 @@
 
   .estiloShiny{
     z-index: 1;
-    margin-top: 325px;
+    margin-top: 350px;
   }
 
   .estiloNormal{
-    margin-top: 325px;
+    margin-top: 350px;
     transform: scaleX(-1);
   }
 
@@ -61,8 +59,7 @@
 }
 
 .contenedor{
-  margin-top: 40px;
-  width: 100%;
+  margin-top: 10px;
   padding: 30px 30px 50px;
   background: #035d873d;
   border-radius: 10px;
@@ -93,8 +90,7 @@
 }
 
 .detallesResistencias{
-  margin-top: 25px;
-  font-size: large;
+  margin-top: 10px;
 }
 
 #vida-menu, #ataque-menu, #defensa-menu, #atqEspecial-menu, #defEspecial-menu,
@@ -152,8 +148,8 @@
 }
 
 .charizard {
-  height: 0%; /* Ajustado a porcentaje para hacerlo proporcional */
-  width:100%; /* Ajustado a porcentaje para hacerlo proporcional */
+  height: 80%;
+  width:100%;
   display:flex;
   justify-content:left;
   align-items: center;
@@ -175,11 +171,11 @@
 }
 
 .img_charizard {
-  width: 300px; /* Cambiado a porcentaje para hacerlo proporcional */
+  width: 200px;
   background-size: cover;
   z-index: 2;
-  position: relative; /* Cambiado a relative */
-  border: 3px solid rgb(194, 193, 193); /* Cambiado a porcentaje para hacerlo proporcional */
+  position: relative; 
+  border: 3px solid rgb(194, 193, 193); 
   display: flex;
   justify-content: center;
   align-items: center;
@@ -248,7 +244,7 @@
   .fire {
     color: white;
     cursor: default;
-    border-color: red;
+    border-color: white;
     background: radial-gradient(circle ,rgb(255, 193, 193), red);
   }
 
