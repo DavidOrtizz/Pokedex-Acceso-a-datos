@@ -2,11 +2,12 @@
   <div> <!-- Video fondo -->
     <video src="../../assets/video/FondoDatosPokemon2.mp4" autoplay muted loop class="video-foreground"></video>
   </div>
-  
-  <div  class="adaptarPantallaMenu"><!-- Botones -->
+
+  <div class="adaptarPantallaMenu"><!-- Botones -->
     <table>
       <tr> <!-- Botón para anterior pokemon -->
-        <td><button class="btn-Video" *ngIf="botonActivoInicio == true" (click)="anteriorPokemon()" >Anterior</button></td>
+        <td><button class="btn-Video" *ngIf="botonActivoInicio == true" (click)="anteriorPokemon()">Anterior</button>
+        </td>
       </tr>
     </table>
     <table>
@@ -16,44 +17,51 @@
     </table>
     <table>
       <tr> <!-- Botón para siguiente pokemon -->
-        <td><button class="btn-Video" *ngIf="botonActivoFinal == true" (click)="siguientePokemon()" (mousehover)="botonActivo()">Siguiente</button></td>
+        <td><button class="btn-Video" *ngIf="botonActivoFinal == true" (click)="siguientePokemon()"
+            (mousehover)="botonActivo()">Siguiente</button></td>
       </tr>
     </table>
   </div>
-  
+
   <br>
-  
-  <div  class="adaptarPantalla"> <!-- Carta pokemon -->
+
+  <div class="adaptarPantalla"> <!-- Carta pokemon -->
     <div class="charizard">
       <div class="perspective">
         <div class="{{pokemon.tipos[0]}}{{pokemon.tipos[1]}} {{pokemon.tipos[0]}} carta_fondo">
           <div class="power">ID: {{pokemon.id}}</div>
-          <div class="nombre"><h2>{{pokemon.nombre}}</h2></div>
-    
+          <div class="nombre">
+            <h2>{{pokemon.nombre}}</h2>
+          </div>
+
           <div class="img_charizard"><img src="{{pokemon.imagen}}" width="100%"></div>
-  
-          <div class="descripcion"><h3>Peso: {{(pokemon.peso/10)}}kg |  Altura: {{(pokemon.altura/10)}}m</h3></div>
-  
-          <div class="Habilidad"><h4>Descripción:</h4></div>
-  
+
+          <div class="descripcion">
+            <h3>Peso: {{(pokemon.peso/10)}}kg | Altura: {{(pokemon.altura/10)}}m</h3>
+          </div>
+
+          <div class="Habilidad">
+            <h4>Descripción:</h4>
+          </div>
+
           <div class="Habilidad_detalle">{{pokemon.descripcion}}</div>
-  
+
           <br>
-  
+
           <div>
             <span *ngFor="let tipo of pokemon.tipos" class="{{tipo}}Letter resistencia mayuscula"> {{tipo}}</span>
           </div>
           <br>
-    
+
         </div>
-    
+
       </div> <!-- Para que aparezca al lado de la carta -->
-  
+
       <!-- Estadísticas pokémon -->
       <div class="texto-sombra letra-mediana adaptarPantalla">
         <div class="caja-padre">
           <div class="contenedor">
-              <h2>Estadísticas</h2>
+            <h2>Estadísticas</h2>
 
             <div class="skills">
               <div class="detalles">
@@ -61,7 +69,7 @@
                 <span>{{pokemon.vida}}</span>
               </div>
 
-              <div class="menu" >
+              <div class="menu">
                 <div id="vida-menu" [style.width]="calcularAnchoVida()"></div>
               </div>
             </div>
@@ -133,7 +141,7 @@
 
             <div class="detalles detallesResistencias">
               <b>Eficaz </b>
-              <span *ngFor="let debil of this.debilidadesAux" >{{debil}} </span>
+              <span *ngFor="let debil of this.debilidadesAux">{{debil}} </span>
             </div>
 
             <div class="detalles detallesResistencias">
@@ -151,7 +159,7 @@
           </div>
         </div>
       </div>
-  
+
       <div class="estiloNormal"><img src="{{pokemon.shiny}}" width="100px"></div>
       <div class="estiloShiny"><img src="{{pokemon.animado}}" width="100px"></div>
     </div> <!-- Lo que este debajo de esto se pone debajo de la carta -->
@@ -162,5 +170,19 @@
   <ul>
     <li *ngFor="let evolucion of this.evoluciones">{{evolucion}}</li>
   </ul>
-</div>
 
+  <!-- Evoluciones -->
+  <div>
+    <div> <!-- Primera evolución -->
+
+    </div>
+
+    <div> <!-- Pokemon actual -->
+
+    </div>
+
+    <div> <!-- Tercera evolución -->
+
+    </div>
+  </div>
+</div>

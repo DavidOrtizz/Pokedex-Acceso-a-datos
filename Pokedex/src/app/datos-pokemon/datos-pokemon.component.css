@@ -94,6 +94,18 @@
   font-size: large;
 }
 
+#vida-menu, #ataque-menu, #defensa-menu, #atqEspecial-menu, #defEspecial-menu,
+#velocidad-menu{
+  animation-duration: 3s;
+  animation-name: slidein;
+}
+
+@keyframes slidein {
+  from {
+    width: 0%;
+  }
+}
+
 /* Cierre tabla de datos estadísticas */
 
 .btn-Video {
