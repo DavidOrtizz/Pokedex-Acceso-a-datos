@@ -7,7 +7,7 @@
   
         <div class="circuloAmarillo espaciado"></div>
     
-        <div class="circuloVerde espaciado"></div>
+        <div class="circuloVerde espaciado" (click)="easterEgg()"></div>
       </div>
     </div>
     <br>
@@ -165,9 +165,12 @@
     <div class="tarjetasPokemon">
       <button [routerLink]="'/datos/' + pokemon.id" class="fondoTarjeta btn" *ngFor="let pokemon of pokemons">
         <table>
-          <tr> <!-- Imagen -->
-            <td colspan="2">
+          <tr class="centrarImgPixel"> <!-- Imagen -->
+            <td colspan="2" *ngIf="mostrarEasterEgg == false">
               <img src="{{pokemon.imagen}}" class="controlarImagen">
+            </td>
+            <td colspan="2" *ngIf="mostrarEasterEgg == true">
+              <img src="{{pokemon.animado}}" class="controlarImagenPixel">
             </td>
           </tr>
           <tr> <!-- id -->

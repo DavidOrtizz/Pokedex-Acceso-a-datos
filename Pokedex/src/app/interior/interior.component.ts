@@ -25,6 +25,7 @@ export class InteriorComponent implements OnInit {
   menuAbierto = false;
   oscuro = true;
   opcionSeleccionada: number = 0; 
+  mostrarEasterEgg = false;
   /*
   shiny= false;
   */
@@ -141,6 +142,10 @@ export class InteriorComponent implements OnInit {
         }
         this.filtrarPorTipos();
       });
+    }
+
+    easterEgg(){
+      this.mostrarEasterEgg = !this.mostrarEasterEgg;
     }
 
     /*
