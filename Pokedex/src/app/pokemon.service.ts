@@ -5,6 +5,8 @@ import { Observable } from 'rxjs/internal/Observable';
 import { forkJoin } from 'rxjs';
 import { map } from 'rxjs/operators'; 
 import { PokemonDetalle } from './pokemonDetalle';
+import { Trigger } from './trigger';
+import { Evolution } from './evolution';
 
 @Injectable({
   providedIn: 'root',
@@ -18,7 +20,7 @@ export class PokemonService {
   constructor(private http: HttpClient) {}
 
   // Obtener información básica de un Pokémon a través de la PokeAPI
-  getPokemon(i: number): Observable<Pokemon> {
+  getPokemon(i: any): Observable<Pokemon> {
     // Mapear la respuesta de la API a un objeto de tipo 'Pokemon'
     return this.http.get('https://pokeapi.co/api/v2/pokemon/' + i).pipe(map((data: any) => {
     // Hace las peticiones para cada uno de los datos
@@ -42,22 +44,61 @@ export class PokemonService {
     }));
   }
   getImagen(nombre: any): Observable<string> {
-    return this.http.get('https://pokeapi.co/api/v2/pokemon/' + nombre).pipe(map((data: any) => {      
-      
+    return this.http.get('https://pokeapi.co/api/v2/pokemon/' + nombre).pipe(map((data: any) => {        
       return data.sprites.other['official-artwork'].front_default;
     }));
   }
+
+
+
+  getDetalleEvo(url: string): any[]{
+    console.log("asdadsadsa")
+    console.log("1"+url) 
+    let DetEvo : string[] = [];
+    this.http.get(url).pipe(map((data: any) => {
+
+    data.chain.evolves_to[0].evolution_details[0].forEach((data: any) => {
+    DetEvo.push(data);
+    console.log("3"+data)
+
+    
+    return DetEvo;
+    })
+   
+  })
+
+  )
+
+  return DetEvo
+  }
+
+    
+
+    
+  
+
 //Obtiene un observable de la cadena evolutiva
-  getEvoluciones(url:string): Observable<string[]> {
-    console.log('fsfds' + url)
+  getEvoluciones(url:string): Observable<Evolution[]> {
+  
   return this.http.get(url).pipe(map((data: any) => {
 
-      const evoluciones: string[] = [];
-      console.log("url"+url)
+      const evoluciones : Evolution[] = [];
+
       // Función recursiva para obtener todas las evoluciones
       const obtenerEvoluciones = (chain: any) => {
         if (chain.species) {
-          evoluciones.push(chain.species.name);           
+          //console.log(chain.evolves_to)
+          const evolucion : Evolution = {
+            nombre: chain.species.name,
+            triggers: []
+          };
+
+          if (chain.evolution_details) {
+            evolucion.triggers = chain.evolution_details;
+          }
+          console.log(evolucion);
+
+          evoluciones.push(evolucion);         
         }
 
         if (chain.evolves_to && chain.evolves_to.length > 0) {
@@ -71,19 +112,15 @@ export class PokemonService {
       if (data.chain) {
         obtenerEvoluciones(data.chain);
       }
-console.log("evoluciones= "+evoluciones)
+      console.log("evoluciones= "+evoluciones)
       return evoluciones;
 
     })
   );
 }
-/*
 
-*/
     getCadena(i: number): Observable<string> {
   return this.http.get('https://pokeapi.co/api/v2/pokemon-species/' + i).pipe(map((data: any) => {      
-    
-  console.log(data.evolution_chain.url)
     return data.evolution_chain.url;
   }));
 }
@@ -111,21 +148,20 @@ console.log("evoluciones= "+evoluciones)
 
   getPokemonsDetalle(identificador: any): Observable<PokemonDetalle> {
     //Guardamos el resultado de las funciones en una variable para poder usarlas mejor(incluimos evoluciones ahora)
-    const basicInfo = this.getPokemon(identificador)
+    const basicInfo = this.getPokemon(identificador);
     const description = this.getDescripcion(identificador);
     const cadenas = this.getCadena(identificador);
-    const imagen = this.getImagen(identificador)
-    console.log("detalleCadena="+cadenas)
+    const imagen = this.getImagen(identificador);
     // Combinamos todo mientras recorremos el array
-    return forkJoin([basicInfo, description, cadenas,imagen]).pipe(map(([pokemonData, descripcion, cadenas,imagen]:[Pokemon, string , string,string]) => {
-console.log("jjj"+cadenas)
+    return forkJoin([basicInfo, description, cadenas,imagen]).pipe(map(([pokemonData, descripcion, cadenas,imagen,]:[Pokemon, string , string,string]) => {
+
 
         return {
           ...pokemonData,
           descripcion: descripcion,
           cadenas: cadenas,
-          imagen:imagen
-        
+          imagen:imagen,
+
         };
       
       })

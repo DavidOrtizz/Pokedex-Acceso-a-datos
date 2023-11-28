@@ -157,10 +157,18 @@
     </div> <!-- Lo que este debajo de esto se pone debajo de la carta -->
   </div>
 </div>
+
 <div class="fondoCesped">
   <h2>Evoluciones:</h2>
   <ul>
     <li *ngFor="let evolucion of this.evoluciones">{{evolucion}}</li>
+  </ul>
+</div>
+
+<div class="fondoCesped">
+  <h2> detalles Evoluciones:</h2>
+  <ul>
+    <li *ngFor="let detalle of this.NecesidadesEvolucion">{{detalle}}</li>
   </ul>
 </div>
 
