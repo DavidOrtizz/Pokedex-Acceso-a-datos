@@ -23,12 +23,12 @@ export class InteriorComponent implements OnInit {
   busquedaActual: string = ''; 
   generacionSeleccionada: number = 0;
   menuAbierto = false;
-  oscuro = false;
+  oscuro = true;
   opcionSeleccionada: number = 0; 
   /*
   shiny= false;
   */
-  textoOscuro = 'Te encuentras con el tema claro';
+  textoOscuro = '';
   buscamos = new EventEmitter<string>(); // Emitir el nombre del Pokémon a buscar
   constructor(private pokemonService: PokemonService) {}
   
@@ -45,13 +45,27 @@ export class InteriorComponent implements OnInit {
     this.menuAbierto = !this.menuAbierto;
   }
 
-  modoOscuro() {
+  modoOscuro(): String {
     if(this.oscuro == false){
       this.oscuro = true;
-      this.textoOscuro = 'Tema oscuro no existe asi que te quedas con el claro';
+      this.textoOscuro = 'Tema oscuro';
+      const fondo = "#1C1C27";
+      return `${fondo}`;
     } else {
       this.oscuro = false;
-      this.textoOscuro = 'Te encuentras con el tema claro';
+      this.textoOscuro = 'Tema claro';
+      const fondo = "white";
+      return `${fondo}`;
+    }
+  }
+
+  comprobarOscuro(): String {
+    if(this.oscuro == false){
+      const letras = "black";
+      return `${letras}`;
+    } else {
+      const letras = "white";
+      return `${letras}`;
     }
   }
 
@@ -128,6 +142,7 @@ export class InteriorComponent implements OnInit {
         this.filtrarPorTipos();
       });
     }
+
     /*
     cambiarImagen() {
       if (this.shiny) {

@@ -1,177 +1,186 @@
-<div class="centro">
-  <img src="../../assets/img/nombrePokedex.png" class="controlarImagen-cabecera" />
-</div>
-<br>
-<div> <!-- Menu principal -->
-  <table class="menu">
-    <tr> <!-- Buscador -->
-      <td class="adaptarMenu"><b>Buscador pokémon:</b></td>
-      <td>
-        <div>
-          <input type="search" [(ngModel)]="buscadorPokemon" (input)="buscarPokemon()" placeholder="Buscar Pokémon" class="estiloBuscador">
-        </div>
-      </td>
-      <td ></td>
-      <td><b>Buscador avanzado:</b></td> <!-- Buscador para tipos -->
-      <td>
-        <button *ngIf="menuAbierto == false" (click)="abrirMenu()" class="botonOpciones"><img
-            src="../../assets/img/pokeballCerrada.png" width="30px" /></button>
-        <button *ngIf="menuAbierto == true" (click)="abrirMenu()" class="botonOpciones"><img
-            src="../../assets/img/pokeballAbierta.png" width="30px" /></button>
-      </td>
-    </tr>
-    <tr> <!-- Seleccionar generación -->
-      <td>|</td>
-      <td><b>Selecciona generación: </b></td>
-      <td>
-        <select [(ngModel)]="opcionSeleccionada" (change)="cambiarGeneracion()"  >
-          
-          <option value="1">Generación 1</option>
-          <option value="2">Generación 2</option>
-          <option value="3">Generación 3</option>
-          <option value="4">Generación 4</option>
-          <!-- Generaciones raretas
-          <option value="0">Todas las generaciones</option>
-          <option value="5">Generación 5</option>
-          <option value="6">Generación 6</option>
-          <option value="7">Generación 7</option>
-          <option value="8">Generación 8</option>
-          <option value="9">Generación 9</option>
-        -->
-        </select>
-      </td>
-    </tr>
-    <tr> <!-- Seleccionar modo oscuro o modo claro -->
-      <td>|</td>
-      <td class="derecha">
-        <button *ngIf="oscuro == false" (click)="modoOscuro()" class="botonOpciones"><img
-            src="../../assets/img/pokeballSol.png" width="30px" /></button>
-        <button *ngIf="oscuro == true" (click)="modoOscuro()" class="botonOpciones"><img
-            src="../../assets/img/pokeballLuna.png" width="30px" /></button>
-      </td>
-      <td><b>{{textoOscuro}}</b></td>
-  </table>
-</div> <!-- Fin del menu principal -->
-
-<!-- Opciones del buscador avanzado -->
-<fieldset class="menu" *ngIf="menuAbierto"> <!-- Menu avanzado -->
-  <legend><b>Selecciona el tipo</b></legend>
-  <div class="adaptarPantalla">
-    <form class="seleccionFire">
-      <input type="checkbox" id="fire" class="fire seleccionFire noCuadrado" />
-      <label for="fire" (click)="filtroTipos('fire')" class="seleccionFire-label"><b>Fuego</b></label>
-    </form>
-
-    <form class="seleccionWater">
-      <input type="checkbox" id="water" class="seleccionWater noCuadrado" />
-      <label for="water" (click)="filtroTipos('water')" class="seleccionWater-label"><b>Agua</b></label>
-    </form>
-
-    <form class="seleccionGrass">
-      <input type="checkbox" id="grass" class="seleccionGrass noCuadrado" />
-      <label for="grass" (click)="filtroTipos('grass')" class="seleccionGrass-label"><b>Planta</b></label>
-    </form>
-
-    <form class="seleccionBug">
-      <input type="checkbox" id="bug" class="seleccionBug noCuadrado" />
-      <label for="bug" (click)="filtroTipos('bug')" class="seleccionBug-label"><b>Bicho</b></label>
-    </form>
-
-    <form class="seleccionDark">
-      <input type="checkbox" id="dark" class="seleccionDark noCuadrado" />
-      <label for="dark" (click)="filtroTipos('dark')" class="seleccionDark-label"><b>Siniestro</b></label>
-    </form>
-
-    <form class="seleccionDragon">
-      <input type="checkbox" id="dragon" class="seleccionDragon noCuadrado" />
-      <label for="dragon" (click)="filtroTipos('dragon')" class="seleccionDragon-label"><b>Dragón</b></label>
-    </form>
-
-    <form class="seleccionElectric">
-      <input type="checkbox" id="electric" class="seleccionElectric noCuadrado" />
-      <label for="electric" (click)="filtroTipos('electric')" class="seleccionElectric-label"><b>Eléctrico</b></label>
-    </form>
-
-    <form class="seleccionFairy">
-      <input type="checkbox" id="fairy" class="seleccionFairy noCuadrado" />
-      <label for="fairy" (click)="filtroTipos('fairy')" class="seleccionFairy-label"><b>Hada</b></label>
-    </form>
-
-    <form class="seleccionFighting">
-      <input type="checkbox" id="fighting" class="seleccionFighting noCuadrado" />
-      <label for="fighting" (click)="filtroTipos('fighting')" class="seleccionFighting-label"><b>Lucha</b></label>
-    </form>
-
-    <form class="seleccionFlying">
-      <input type="checkbox" id="flying" class="seleccionFlying noCuadrado"/>
-      <label for="flying" (click)="filtroTipos('flying')" class="seleccionFlying-label"><b>Volador</b></label>
-    </form>
-
-    <form class="seleccionGhost">
-      <input type="checkbox" id="ghost" class="seleccionGhost noCuadrado"/>
-      <label for="ghost" (click)="filtroTipos('ghost')" class="seleccionGhost-label"><b>Fantasma</b></label>
-    </form>
-
-    <form class="seleccionGround">
-      <input type="checkbox" id="ground" class="seleccionGround noCuadrado"/>
-      <label for="ground" (click)="filtroTipos('ground')" class="seleccionGround-label"><b>Tierra</b></label>
-    </form>
-
-    <form class="seleccionIce">
-      <input type="checkbox" id="ice" class="seleccionIce noCuadrado"/>
-      <label for="ice" (click)="filtroTipos('ice')" class="seleccionIce-label"><b>Hielo</b></label>
-    </form>
-
-    <form class="seleccionNormal">
-      <input type="checkbox" id="normal" class="seleccionNormal noCuadrado"/>
-      <label for="normal" (click)="filtroTipos('normal')" class="seleccionNormal-label"><b>Normal</b></label>
-    </form>
-
-    <form class="seleccionPoison">
-      <input type="checkbox" id="poison" class="seleccionPoison noCuadrado"/>
-      <label for="poison" (click)="filtroTipos('poison')" class="seleccionPoison-label"><b>Veneno</b></label>
-    </form>
-
-    <form class="seleccionPsychic">
-      <input type="checkbox" id="psychic" class="seleccionPsychic noCuadrado"/>
-      <label for="psychic" (click)="filtroTipos('psychic')" class="seleccionPsychic-label"><b>Psíquico</b></label>
-    </form>
-
-    <form class="seleccionRock">
-      <input type="checkbox" id="rock" class="seleccionRock noCuadrado"/>
-      <label for="rock" (click)="filtroTipos('rock')" class="seleccionRock-label"><b>Roca</b></label>
-    </form>
-
-    <form class="seleccionSteel">
-      <input type="checkbox" id="steel" class="seleccionSteel noCuadrado"/>
-      <label for="steel" (click)="filtroTipos('steel')" class="seleccionSteel-label"><b>Acero</b></label>
-    </form>
+<body class="fondoPagina" [style.background-color]="modoOscuro()" [style.color]="comprobarOscuro()">
+  <div class="fondoPagina" [style.background-color]="modoOscuro()" [style.color]="comprobarOscuro()">
+    <div class="controlarCabecera">
+      <img src="../../assets/img/nombrePokedex.png" class="controlarImagen-cabecera" />
+      <div class="centro">
+        <div class="circuloRojo espaciado"></div>
+  
+        <div class="circuloAmarillo espaciado"></div>
+    
+        <div class="circuloVerde espaciado"></div>
+      </div>
+    </div>
+    <br>
+    <div> <!-- Menu principal -->
+      <table class="menu">
+        <tr> <!-- Buscador -->
+          <td class="adaptarMenu"><b>Buscador pokémon:</b></td>
+          <td>
+            <div>
+              <input type="search" [(ngModel)]="buscadorPokemon" (input)="buscarPokemon()" placeholder="Buscar Pokémon"
+                class="estiloBuscador">
+            </div>
+          </td>
+          <td></td>
+          <td><b>Buscador avanzado:</b></td> <!-- Buscador para tipos -->
+          <td>
+            <button *ngIf="menuAbierto == false" (click)="abrirMenu()" class="botonOpciones"><img
+                src="../../assets/img/pokeballCerrada.png" width="30px" /></button>
+            <button *ngIf="menuAbierto == true" (click)="abrirMenu()" class="botonOpciones"><img
+                src="../../assets/img/pokeballAbierta.png" width="30px" /></button>
+          </td>
+        </tr>
+        <tr> <!-- Seleccionar generación -->
+          <td>|</td>
+          <td><b>Selecciona generación: </b></td>
+          <td>
+            <select [(ngModel)]="opcionSeleccionada" (change)="cambiarGeneracion()">
+  
+              <option value="1">Generación 1</option>
+              <option value="2">Generación 2</option>
+              <option value="3">Generación 3</option>
+              <option value="4">Generación 4</option>
+              <!-- Generaciones raretas
+              <option value="0">Todas las generaciones</option>
+              <option value="5">Generación 5</option>
+              <option value="6">Generación 6</option>
+              <option value="7">Generación 7</option>
+              <option value="8">Generación 8</option>
+              <option value="9">Generación 9</option>
+            -->
+            </select>
+          </td>
+        </tr>
+        <tr> <!-- Seleccionar modo oscuro o modo claro -->
+          <td>|</td>
+          <td class="derecha">
+            <button *ngIf="oscuro == false" (click)="modoOscuro()" class="botonOpciones">
+              <img src="../../assets/img/pokeballSol.png" width="30px" /></button>
+            <button *ngIf="oscuro == true" (click)="modoOscuro()" class="botonOpciones">
+              <img src="../../assets/img/pokeballLuna.png" width="30px" /></button>
+          </td>
+          <td><b>{{textoOscuro}}</b></td>
+      </table>
+    </div> <!-- Fin del menu principal -->
+  
+    <!-- Opciones del buscador avanzado -->
+    <fieldset class="menu" *ngIf="menuAbierto"> <!-- Menu avanzado -->
+      <legend><b>Selecciona el tipo</b></legend>
+      <div class="adaptarPantalla">
+        <form class="seleccionFire">
+          <input type="checkbox" id="fire" class="fire seleccionFire noCuadrado" />
+          <label for="fire" (click)="filtroTipos('fire')" class="seleccionFire-label"><b>Fuego</b></label>
+        </form>
+  
+        <form class="seleccionWater">
+          <input type="checkbox" id="water" class="seleccionWater noCuadrado" />
+          <label for="water" (click)="filtroTipos('water')" class="seleccionWater-label"><b>Agua</b></label>
+        </form>
+  
+        <form class="seleccionGrass">
+          <input type="checkbox" id="grass" class="seleccionGrass noCuadrado" />
+          <label for="grass" (click)="filtroTipos('grass')" class="seleccionGrass-label"><b>Planta</b></label>
+        </form>
+  
+        <form class="seleccionBug">
+          <input type="checkbox" id="bug" class="seleccionBug noCuadrado" />
+          <label for="bug" (click)="filtroTipos('bug')" class="seleccionBug-label"><b>Bicho</b></label>
+        </form>
+  
+        <form class="seleccionDark">
+          <input type="checkbox" id="dark" class="seleccionDark noCuadrado" />
+          <label for="dark" (click)="filtroTipos('dark')" class="seleccionDark-label"><b>Siniestro</b></label>
+        </form>
+  
+        <form class="seleccionDragon">
+          <input type="checkbox" id="dragon" class="seleccionDragon noCuadrado" />
+          <label for="dragon" (click)="filtroTipos('dragon')" class="seleccionDragon-label"><b>Dragón</b></label>
+        </form>
+  
+        <form class="seleccionElectric">
+          <input type="checkbox" id="electric" class="seleccionElectric noCuadrado" />
+          <label for="electric" (click)="filtroTipos('electric')" class="seleccionElectric-label"><b>Eléctrico</b></label>
+        </form>
+  
+        <form class="seleccionFairy">
+          <input type="checkbox" id="fairy" class="seleccionFairy noCuadrado" />
+          <label for="fairy" (click)="filtroTipos('fairy')" class="seleccionFairy-label"><b>Hada</b></label>
+        </form>
+  
+        <form class="seleccionFighting">
+          <input type="checkbox" id="fighting" class="seleccionFighting noCuadrado" />
+          <label for="fighting" (click)="filtroTipos('fighting')" class="seleccionFighting-label"><b>Lucha</b></label>
+        </form>
+  
+        <form class="seleccionFlying">
+          <input type="checkbox" id="flying" class="seleccionFlying noCuadrado" />
+          <label for="flying" (click)="filtroTipos('flying')" class="seleccionFlying-label"><b>Volador</b></label>
+        </form>
+  
+        <form class="seleccionGhost">
+          <input type="checkbox" id="ghost" class="seleccionGhost noCuadrado" />
+          <label for="ghost" (click)="filtroTipos('ghost')" class="seleccionGhost-label"><b>Fantasma</b></label>
+        </form>
+  
+        <form class="seleccionGround">
+          <input type="checkbox" id="ground" class="seleccionGround noCuadrado" />
+          <label for="ground" (click)="filtroTipos('ground')" class="seleccionGround-label"><b>Tierra</b></label>
+        </form>
+  
+        <form class="seleccionIce">
+          <input type="checkbox" id="ice" class="seleccionIce noCuadrado" />
+          <label for="ice" (click)="filtroTipos('ice')" class="seleccionIce-label"><b>Hielo</b></label>
+        </form>
+  
+        <form class="seleccionNormal">
+          <input type="checkbox" id="normal" class="seleccionNormal noCuadrado" />
+          <label for="normal" (click)="filtroTipos('normal')" class="seleccionNormal-label"><b>Normal</b></label>
+        </form>
+  
+        <form class="seleccionPoison">
+          <input type="checkbox" id="poison" class="seleccionPoison noCuadrado" />
+          <label for="poison" (click)="filtroTipos('poison')" class="seleccionPoison-label"><b>Veneno</b></label>
+        </form>
+  
+        <form class="seleccionPsychic">
+          <input type="checkbox" id="psychic" class="seleccionPsychic noCuadrado" />
+          <label for="psychic" (click)="filtroTipos('psychic')" class="seleccionPsychic-label"><b>Psíquico</b></label>
+        </form>
+  
+        <form class="seleccionRock">
+          <input type="checkbox" id="rock" class="seleccionRock noCuadrado" />
+          <label for="rock" (click)="filtroTipos('rock')" class="seleccionRock-label"><b>Roca</b></label>
+        </form>
+  
+        <form class="seleccionSteel">
+          <input type="checkbox" id="steel" class="seleccionSteel noCuadrado" />
+          <label for="steel" (click)="filtroTipos('steel')" class="seleccionSteel-label"><b>Acero</b></label>
+        </form>
+      </div>
+    </fieldset>
+  
+    <br> <!-- Espacio separatorio del menu y las tarjetas -->
+  
+    <!-- Tarjetas -->
+    <div class="tarjetasPokemon">
+      <button [routerLink]="'/datos/' + pokemon.id" class="fondoTarjeta btn" *ngFor="let pokemon of pokemons">
+        <table>
+          <tr> <!-- Imagen -->
+            <td colspan="2">
+              <img src="{{pokemon.imagen}}" class="controlarImagen">
+            </td>
+          </tr>
+          <tr> <!-- id -->
+            <td colspan="2" class="letraId">N.º {{ pokemon.id }}</td>
+          </tr>
+          <tr> <!-- Nombre -->
+            <td colspan="2" class="letraNombre" [style.color]="comprobarOscuro()">{{ pokemon.nombre }}</td>
+          </tr>
+          <tr> <!-- Tipos -->
+            <td *ngFor="let tipo of pokemon.tipos " class="{{tipo}}">{{tipo}}</td>
+          </tr>
+        </table>
+      </button>
+    </div>
   </div>
-</fieldset>
-
-<br> <!-- Espacio separatorio del menu y las tarjetas -->
-
-<!-- Tarjetas -->
-<div class="tarjetasPokemon">
-  <button [routerLink]="'/datos/' + pokemon.id"  class="fondoTarjeta btn" *ngFor="let pokemon of pokemons" >
-    <table>
-      <tr> <!-- Imagen -->
-        <td colspan="2">
-          <img src="{{pokemon.imagen}}" class="controlarImagen">
-        </td>
-      </tr>
-      <tr> <!-- id -->
-        <td colspan="2" class="letraId">N.º {{ pokemon.id }}</td>
-      </tr>
-      <tr> <!-- Nombre -->
-        <td colspan="2" class="letraNombre">{{ pokemon.nombre }}</td>
-      </tr>
-      <tr> <!-- Tipos -->
-        <td *ngFor="let tipo of pokemon.tipos "class="{{tipo}}">{{tipo}}</td>
-      </tr>
-    </table>
-  </button>
-</div>
-
-
-
+</body>

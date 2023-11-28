@@ -6,6 +6,59 @@ button{
   border: none;
 }
 
+/* Controlar fondo pantalla */
+.fondoPagina{
+  transition: background-color 2s ease;
+}
+
+.controlarCabecera {
+  margin-left: 20px;
+  display: flex;
+  justify-content:baseline;  /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+}
+
+/* Animaciones circulos */
+.circuloRojo, .circuloAmarillo, .circuloVerde {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 1px solid black;
+}
+
+.circuloRojo{
+  background-color: red;
+  animation: parpadeo 0.6s infinite alternate-reverse ; /* Animación de parpadeo */
+}
+
+.circuloAmarillo{
+  background-color: yellow;
+  animation: parpadeo 1s infinite alternate-reverse ; /* Animación de parpadeo */
+}
+
+.circuloVerde{
+  background-color: greenyellow;
+  animation: parpadeo 0.8s infinite alternate-reverse ; /* Animación de parpadeo */
+}
+
+/* Espaciado entre círculos */
+.espaciado {
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+/* Animación de parpadeo */
+@keyframes parpadeo {
+  from {
+    opacity: 1; /* Opacidad al inicio */
+  }
+  to {
+    opacity: 0; /* Opacidad al final */
+  }
+}
+
+/* Fin animacion circulo*/
+
 .noCuadrado{
   display: none;
 }
@@ -101,7 +154,6 @@ button{
   
   .letraNombre {
     font-size: 20px;
-    color: black;
   }
 
   .fondoTarjeta:hover .letraNombre {
@@ -126,7 +178,7 @@ button{
     text-transform: capitalize;
     cursor: pointer;
     position: relative;
-    background: white;
+    background: none;
     font-size: 28px;
     transition: all 1s;
     &:after,
