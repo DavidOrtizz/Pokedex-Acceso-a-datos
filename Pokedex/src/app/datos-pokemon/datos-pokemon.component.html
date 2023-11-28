@@ -164,25 +164,19 @@
       <div class="estiloShiny"><img src="{{pokemon.animado}}" width="100px"></div>
     </div> <!-- Lo que este debajo de esto se pone debajo de la carta -->
   </div>
-  <div class="fondoCesped">
-    <h2>Evoluciones:</h2>
-    <ul>
-      <li *ngFor="let evolucion of this.evoluciones">{{evolucion}}</li>
-    </ul>
 
-    <!-- Evoluciones -->
-    <div>
-      <div> <!-- Primera evolución -->
 
-      </div>
+<div class="fondoCesped">
+  <h2>Evoluciones:</h2>
+  <ul>
+    <li *ngFor="let evolucion of this.evoluciones">{{evolucion}}</li>
+  </ul>
+</div>
 
-      <div> <!-- Pokemon actual -->
+<div class="fondoCesped">
+  <h2> detalles Evoluciones:</h2>
+  <ul>
+    <li *ngFor="let detalle of this.NecesidadesEvolucion">{{detalle}}</li>
+  </ul>
+</div>
 
-      </div>
-
-      <div> <!-- Tercera evolución -->
-
-      </div>
-    </div>
-  </div>
-</body>
