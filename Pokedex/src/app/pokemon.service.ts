@@ -65,7 +65,7 @@ export class PokemonService {
           //console.log(chain.evolves_to)
           const evolucion : Evolution = {
             nombre: chain.species.name,
-            imagen:"",
+            imagen: chain.species.url,
             triggers: []
             
           };
