@@ -23,7 +23,7 @@ export class InteriorComponent implements OnInit {
   busquedaActual: string = ''; 
   generacionSeleccionada: number = 0;
   menuAbierto = false;
-  oscuro = true;
+  icono = true;
   fondoOscuro = true;
   textOscuro = true;
   opcionSeleccionada: number = 0; 
@@ -49,18 +49,14 @@ export class InteriorComponent implements OnInit {
   }
 
   modoOscuro() {
-    if(this.oscuro == false){
-      this.oscuro = true;
+    if(this.icono == false){
+      this.icono = true;
       this.fondoOscuro = true;
       this.textOscuro = true;
-
-      this.textoOscuro = 'Tema oscuro';
     } else {
-      this.oscuro = false;
+      this.icono = false;
       this.fondoOscuro = false;
       this.textOscuro = false;
-
-      this.textoOscuro = 'Tema claro';
     }
   }
 

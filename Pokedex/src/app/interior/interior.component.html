@@ -54,12 +54,11 @@
         <tr> <!-- Seleccionar modo oscuro o modo claro -->
           <td>|</td>
           <td class="derecha">
-            <button *ngIf="oscuro == false" (click)="modoOscuro()" class="botonOpciones">
+            <button *ngIf="icono == false" (click)="modoOscuro()" class="botonOpciones">
               <img src="../../assets/img/pokeballSol.png" width="30px" /></button>
-            <button *ngIf="oscuro == true" (click)="modoOscuro()" class="botonOpciones">
+            <button *ngIf="icono == true" (click)="modoOscuro()" class="botonOpciones">
               <img src="../../assets/img/pokeballLuna.png" width="30px" /></button>
           </td>
-          <td><b>{{textoOscuro}}</b></td>
       </table>
     </div> <!-- Fin del menu principal -->
   
