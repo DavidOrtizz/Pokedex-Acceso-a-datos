@@ -24,6 +24,8 @@ export class InteriorComponent implements OnInit {
   generacionSeleccionada: number = 0;
   menuAbierto = false;
   oscuro = true;
+  fondoOscuro = true;
+  textOscuro = true;
   opcionSeleccionada: number = 0; 
   mostrarEasterEgg = false;
   /*
@@ -46,22 +48,34 @@ export class InteriorComponent implements OnInit {
     this.menuAbierto = !this.menuAbierto;
   }
 
-  modoOscuro(): String {
+  modoOscuro() {
     if(this.oscuro == false){
       this.oscuro = true;
+      this.fondoOscuro = true;
+      this.textOscuro = true;
+
       this.textoOscuro = 'Tema oscuro';
+    } else {
+      this.oscuro = false;
+      this.fondoOscuro = false;
+      this.textOscuro = false;
+
+      this.textoOscuro = 'Tema claro';
+    }
+  }
+
+  comprobarFondo():String{
+    if(this.fondoOscuro == true){
       const fondo = "#1C1C27";
       return `${fondo}`;
     } else {
-      this.oscuro = false;
-      this.textoOscuro = 'Tema claro';
       const fondo = "white";
       return `${fondo}`;
     }
   }
 
-  comprobarOscuro(): String {
-    if(this.oscuro == false){
+  comprobarTexto():String{
+    if(this.textOscuro == false){
       const letras = "black";
       return `${letras}`;
     } else {

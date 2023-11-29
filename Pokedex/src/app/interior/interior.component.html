@@ -1,5 +1,5 @@
-<body class="fondoPagina" [style.background-color]="modoOscuro()" [style.color]="comprobarOscuro()">
-  <div class="fondoPagina" [style.background-color]="modoOscuro()" [style.color]="comprobarOscuro()">
+<body class="fondoPagina" [style.background-color]="comprobarFondo()" [style.color]="comprobarTexto()">
+  <div class="fondoPagina" [style.background-color]="comprobarFondo()" [style.color]="comprobarTexto()">
     <div class="controlarCabecera">
       <img src="../../assets/img/nombrePokedex.png" class="controlarImagen-cabecera" />
       <div class="centro">
@@ -177,7 +177,7 @@
             <td colspan="2" class="letraId">N.º {{ pokemon.id }}</td>
           </tr>
           <tr> <!-- Nombre -->
-            <td colspan="2" class="letraNombre" [style.color]="comprobarOscuro()">{{ pokemon.nombre }}</td>
+            <td colspan="2" class="letraNombre" [style.color]="comprobarTexto()">{{ pokemon.nombre }}</td>
           </tr>
           <tr> <!-- Tipos -->
             <td *ngFor="let tipo of pokemon.tipos " class="{{tipo}}">{{tipo}}</td>
