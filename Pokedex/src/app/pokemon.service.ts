@@ -81,28 +81,6 @@ export class PokemonService {
       }));
     }
 
-  getDetalleEvo(url: string): any[]{
-    console.log("asdadsadsa")
-    console.log("1"+url) 
-    let DetEvo : string[] = [];
-    this.http.get(url).pipe(map((data: any) => {
-
-    data.chain.evolves_to[0].evolution_details[0].forEach((data: any) => {
-    DetEvo.push(data);
-    console.log("3"+data)
-
-    
-    return DetEvo;
-    })
-   
-  })
-
-  )
-
-  return DetEvo
-  }
-
-    
 
     
   

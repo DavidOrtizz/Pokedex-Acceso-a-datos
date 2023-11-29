@@ -106,8 +106,7 @@ export class DatosPokemonComponent implements OnInit {
           this.evoluciones = data;
           console.log("bbbbb"+this.evoluciones)
         })
-        this.NecesidadesEvolucion= this.pokemonService.getDetalleEvo(this.pokemon.cadenas);
-        console.log("aaaaa"+this.NecesidadesEvolucion)
+
         this.pokemon = pokemonDatos;
         // Cargar tipos, debilidades y fortalezas del Pokémon
         this.pokemonService.cargarTiposDebilidadesFortalezas(pokemonDatos.tipos).subscribe(() => {
