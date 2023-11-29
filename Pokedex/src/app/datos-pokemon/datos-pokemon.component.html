@@ -167,13 +167,6 @@
       </div> <!-- Lo que este debajo de esto se pone debajo de la carta -->
     </div>
 
-    <div>
-      <h2> detalles Evoluciones:</h2>
-      <ul>
-        <li *ngFor="let detalle of this.NecesidadesEvolucion">{{detalle}}</li>
-      </ul>
-    </div>
-
     <div class="fondoCesped">
       <div>
         <h2 class="estiloTituloEvo texto-sombra">Evoluciones</h2>
@@ -183,13 +176,49 @@
         </div>
 
         <div class="adaptarEvoluciones">
-          <div *ngFor="let evolucion of this.evoluciones">{{pokemonEvo.nombre}}
-            <img src="{{pokemon.imagen}}" width="200px">
+ 
+            <img *ngFor="let imagenEvo of this.evoluciones" src="{{pokemon.imagen}}" width="200px">
           </div>
-        </div>
+       
   
       </div>
     </div>
-
+    <div *ngFor="let evolucion of evoluciones">
+      <h3>{{ evolucion.nombre }}</h3>
+      <div *ngIf="evolucion.triggers && evolucion.triggers.length > 0">
+        <ul>
+          <li *ngFor="let trigger of evolucion.triggers">
+            <!-- Verificar si hay al menos un campo con datos en el trigger -->
+            <div *ngIf="trigger.genero || trigger.tenerItem || trigger.item || trigger.movimientoConocido || trigger.tipoMovimientoConocido || trigger.localizacion || trigger.afecto || trigger.belleza || trigger.felicidad || trigger.nivel || trigger.lluvia || trigger.partySpecies || trigger.partType || trigger.stats || trigger.horaDelDia || trigger.intercambio || trigger.trigger || trigger.imagen">
+              <!-- Mostrar detalles del trigger -->
+              <p *ngIf="trigger.genero">Genero: {{ trigger.genero }}</p>
+              <p *ngIf="trigger.tenerItem">Tener item: {{ trigger.tenerItem }}</p>
+              <p *ngIf="trigger.item">Item: {{ trigger.item }}</p>
+              <p *ngIf="trigger.movimientoConocido">Movimiento conocido: {{ trigger.movimientoConocido }}</p>
+              <p *ngIf="trigger.tipoMovimientoConocido">Tipo de movimiento conocido: {{ trigger.tipoMovimientoConocido }}</p>
+              <p *ngIf="trigger.localizacion">Localización: {{ trigger.localizacion }}</p>
+              <p *ngIf="trigger.afecto">Afecto: {{ trigger.afecto }}</p>
+              <p *ngIf="trigger.belleza">Belleza: {{ trigger.belleza }}</p>
+              <p *ngIf="trigger.felicidad">Felicidad: {{ trigger.felicidad }}</p>
+              <p *ngIf="trigger.nivel">Nivel: {{ trigger.nivel }}</p>
+              <p *ngIf="trigger.lluvia">Lluvia: {{ trigger.lluvia }}</p>
+              <p *ngIf="trigger.partySpecies">Party Species: {{ trigger.partySpecies }}</p>
+              <p *ngIf="trigger.partType">Part Type: {{ trigger.partType }}</p>
+              <p *ngIf="trigger.stats">Stats: {{ trigger.stats }}</p>
+              <p *ngIf="trigger.horaDelDia">Hora del día: {{ trigger.horaDelDia }}</p>
+              <p *ngIf="trigger.intercambio">Intercambio: {{ trigger.intercambio }}</p>
+              <p *ngIf="trigger.trigger">Trigger: {{ trigger.trigger }}</p>
+              <p *ngIf="trigger.imagen">Imagen: {{ trigger.imagen }}</p>
+              <!-- Añadir aquí el resto de campos si los hay -->
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div *ngIf="!(evolucion.triggers && evolucion.triggers.length > 0)">
+        <!-- Mensaje si no hay información de triggers para esta evolución -->
+        <p>No hay información de triggers para esta evolución.</p>
+      </div>
+    </div>
+    
   </div> <!-- Fin HTML -->
 </body>

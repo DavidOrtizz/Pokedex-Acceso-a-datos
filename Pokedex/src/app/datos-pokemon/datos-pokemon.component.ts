@@ -6,7 +6,7 @@ import { OnInit } from '@angular/core';
 import { PokemonDetalle } from '../pokemonDetalle';
 import { Trigger } from '../trigger';
 import { Evolution } from '../evolution';
-import { PokemonEvo } from '../pokemonEvo';
+
 
 @Component({
   selector: 'app-detalle',
@@ -32,15 +32,6 @@ export class DatosPokemonComponent implements OnInit {
     altura: 0,
     descripcion: '',
     cadenas:"",
-  };
-
-  pokemonEvo: PokemonEvo = {
-    id: 0,
-    nombre: "",
-    tipos: [],
-    imagen: "",
-    shiny: "",
-    animado: "",
   };
 
   detallesEvo: Trigger={
@@ -78,7 +69,6 @@ export class DatosPokemonComponent implements OnInit {
 
   evoluciones:Evolution[]=[];
 
-  NecesidadesEvolucion:any[]=[];
 
   botonActivoInicio = true;
   botonActivoFinal = true;
@@ -102,8 +92,9 @@ export class DatosPokemonComponent implements OnInit {
         this.pokemon = pokemonDatos;  
 
         this.pokemonService.getEvoluciones(this.pokemon.cadenas).subscribe((data:Evolution[]) => {
-          
+  
           this.evoluciones = data;
+
           console.log("bbbbb"+this.evoluciones)
         })
 
@@ -117,6 +108,9 @@ export class DatosPokemonComponent implements OnInit {
     );
 
   }
+  
+
+
 
   actualizarDebilidadesYFortalezas() {
     this.debilidadesAux = [];
