@@ -7,6 +7,7 @@ import { map } from 'rxjs/operators';
 import { PokemonDetalle } from './pokemonDetalle';
 import { Trigger } from './trigger';
 import { Evolution } from './evolution';
+import { PokemonEvo } from './pokemonEvo';
 
 @Injectable({
   providedIn: 'root',
@@ -49,7 +50,36 @@ export class PokemonService {
     }));
   }
 
+  /* Evoluciones */
 
+    // Obtener información básica de un Pokémon a través de la PokeAPI
+    getPokemonEvo(i: any): Observable<PokemonEvo> {
+      // Mapear la respuesta de la API a un objeto de tipo 'Pokemon'
+      return this.http.get('https://pokeapi.co/api/v2/pokemon-species/' + i).pipe(map((data: any) => {
+      // Hace las peticiones para cada uno de los datos
+        return {
+          id: data.id,
+          nombre: data.name,
+          altura: data.height,
+          tipos: data.types.map((dat: any) => dat.type.name),
+          imagen: data.sprites.other['official-artwork'].front_default,
+          shiny: data.sprites.versions['generation-v']['black-white'].animated.front_shiny,
+          animado: data.sprites.versions['generation-v']['black-white'].animated.front_default,
+          peso: data.weight,      
+          vida: data.stats['0'].base_stat,
+          ataque: data.stats['1'].base_stat,
+          defensa: data.stats['2'].base_stat,
+          atqEspecial: data.stats['3'].base_stat,
+          defEspecial: data.stats['4'].base_stat,
+          velocidad: data.stats['5'].base_stat,
+        };
+      }));
+    }
+    getImagenEvo(nombre: any): Observable<string> {
+      return this.http.get('https://pokeapi.co/api/v2/pokemon/' + nombre).pipe(map((data: any) => {        
+        return data.sprites.other['official-artwork'].front_default;
+      }));
+    }
 
   getDetalleEvo(url: string): any[]{
     console.log("asdadsadsa")
@@ -90,6 +120,7 @@ export class PokemonService {
           //console.log(chain.evolves_to)
           const evolucion : Evolution = {
             nombre: chain.species.name,
+            urlEvo: chain.species.url,
             triggers: []
           };
 

@@ -6,6 +6,7 @@ import { OnInit } from '@angular/core';
 import { PokemonDetalle } from '../pokemonDetalle';
 import { Trigger } from '../trigger';
 import { Evolution } from '../evolution';
+import { PokemonEvo } from '../pokemonEvo';
 
 @Component({
   selector: 'app-detalle',
@@ -33,6 +34,15 @@ export class DatosPokemonComponent implements OnInit {
     cadenas:"",
   };
 
+  pokemonEvo: PokemonEvo = {
+    id: 0,
+    nombre: "",
+    tipos: [],
+    imagen: "",
+    shiny: "",
+    animado: "",
+  };
+
   detallesEvo: Trigger={
     genero: "",
     tenerItem: "",
@@ -51,6 +61,7 @@ export class DatosPokemonComponent implements OnInit {
     horaDelDia:"",
     intercambio: "",
     trigger:"",
+    imagen:"",
   };
 
 
@@ -117,7 +128,6 @@ export class DatosPokemonComponent implements OnInit {
 
     if (this.pokemon && this.pokemon.tipos && this.pokemon.tipos.length > 0) {
 
-
       // Obtener debilidades y fortalezas de cada tipo del Pokémon
       this.pokemon.tipos.forEach((tipo) => {
         let inmunidad = this.pokemonService.obtenerInmunidadDeTipo(tipo);
@@ -141,7 +151,6 @@ export class DatosPokemonComponent implements OnInit {
 
     }
   }
-
 
   ordenarTipos() {
     this.inmunidadAux2.forEach((elemento) => {

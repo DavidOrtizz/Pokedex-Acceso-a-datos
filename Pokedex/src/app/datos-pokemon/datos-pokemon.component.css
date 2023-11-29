@@ -107,6 +107,22 @@
 
 /* Cierre tabla de datos estadísticas */
 
+/* Css evoluciones */
+
+.estiloTituloEvo{
+  text-align: center;
+}
+
+.adaptarEvoluciones{
+  width: 100%;
+  display: flex;
+  justify-content:space-around;
+}
+
+
+
+/* Cierre css evoluciones*/
+
 .btn-Video {
   color: #fff;
   background-color: #7BD6FF;

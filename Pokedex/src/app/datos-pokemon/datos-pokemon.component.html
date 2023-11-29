@@ -1,182 +1,195 @@
 <body class="fondoCesped">
-  <div> <!-- Video fondo -->
-    <video src="../../assets/video/FondoDatosPokemon2.mp4" autoplay muted loop class="video-foreground"></video>
-  </div>
+  <div class="fondoCesped">
 
-  <div class="adaptarPantallaMenu"><!-- Botones -->
-    <table>
-      <tr> <!-- Botón para anterior pokemon -->
-        <td><button class="btn-Video" *ngIf="botonActivoInicio == true" (click)="anteriorPokemon()">Anterior</button>
-        </td>
-      </tr>
-    </table>
-    <table>
-      <tr> <!-- Botón para volver a la lista -->
-        <td> <button class="btn-Video" [routerLink]="'/listado'">Volver</button></td>
-      </tr>
-    </table>
-    <table>
-      <tr> <!-- Botón para siguiente pokemon -->
-        <td><button class="btn-Video" *ngIf="botonActivoFinal == true" (click)="siguientePokemon()"
-            (mousehover)="botonActivo()">Siguiente</button></td>
-      </tr>
-    </table>
-  </div>
+    <div> <!-- Video fondo -->
+      <video src="../../assets/video/FondoDatosPokemon2.mp4" autoplay muted loop class="video-foreground"></video>
+    </div>
 
-  <br>
+    <div class="adaptarPantallaMenu"><!-- Botones -->
+      <table>
+        <tr> <!-- Botón para anterior pokemon -->
+          <td><button class="btn-Video" *ngIf="botonActivoInicio == true" (click)="anteriorPokemon()">Anterior</button>
+          </td>
+        </tr>
+      </table>
+      <table>
+        <tr> <!-- Botón para volver a la lista -->
+          <td> <button class="btn-Video" [routerLink]="'/listado'">Volver</button></td>
+        </tr>
+      </table>
+      <table>
+        <tr> <!-- Botón para siguiente pokemon -->
+          <td><button class="btn-Video" *ngIf="botonActivoFinal == true" (click)="siguientePokemon()"
+              (mousehover)="botonActivo()">Siguiente</button></td>
+        </tr>
+      </table>
+    </div>
 
-  <div class="adaptarPantalla"> <!-- Carta pokemon -->
-    <div class="charizard">
-      <div class="perspective">
-        <div class="{{pokemon.tipos[0]}}{{pokemon.tipos[1]}} {{pokemon.tipos[0]}} carta_fondo">
-          <div class="power">ID: {{pokemon.id}}</div>
-          <div class="nombre">
-            <h2>{{pokemon.nombre}}</h2>
+    <br>
+
+    <div class="adaptarPantalla"> <!-- Carta pokemon -->
+      <div class="charizard">
+        <div class="perspective">
+          <div class="{{pokemon.tipos[0]}}{{pokemon.tipos[1]}} {{pokemon.tipos[0]}} carta_fondo">
+            <div class="power">ID: {{pokemon.id}}</div>
+            <div class="nombre">
+              <h2>{{pokemon.nombre}}</h2>
+            </div>
+
+            <div class="img_charizard"><img src="{{pokemon.imagen}}" width="100%"></div>
+
+            <div class="descripcion">
+              <h3>Peso: {{(pokemon.peso/10)}}kg | Altura: {{(pokemon.altura/10)}}m</h3>
+            </div>
+
+            <div class="Habilidad">
+              <h4>Descripción:</h4>
+            </div>
+
+            <div class="Habilidad_detalle">{{pokemon.descripcion}}</div>
+
+            <br>
+
+            <div>
+              <span *ngFor="let tipo of pokemon.tipos" class="{{tipo}}Letter resistencia mayuscula"> {{tipo}}</span>
+            </div>
+            <br>
+
           </div>
 
-          <div class="img_charizard"><img src="{{pokemon.imagen}}" width="100%"></div>
+        </div> <!-- Para que aparezca al lado de la carta -->
 
-          <div class="descripcion">
-            <h3>Peso: {{(pokemon.peso/10)}}kg | Altura: {{(pokemon.altura/10)}}m</h3>
+        <!-- Estadísticas pokémon -->
+        <div class="texto-sombra letra-mediana adaptarPantalla">
+          <div class="caja-padre">
+            <div class="contenedor">
+              <h2>Estadísticas</h2>
+
+              <div class="skills">
+                <div class="detalles">
+                  <span>Vida </span>
+                  <span>{{pokemon.vida}}</span>
+                </div>
+
+                <div class="menu">
+                  <div id="vida-menu" [style.width]="calcularAnchoVida()"></div>
+                </div>
+              </div>
+
+              <div class="skills">
+                <div class="detalles">
+                  <span>Ataque </span>
+                  <span>{{pokemon.ataque}}</span>
+                </div>
+
+                <div class="menu">
+                  <div id="ataque-menu" [style.width]="calcularAnchoAtaque()"></div>
+                </div>
+              </div>
+
+              <div class="skills">
+                <div class="detalles">
+                  <span>Defensa </span>
+                  <span>{{pokemon.defensa}}</span>
+                </div>
+
+                <div class="menu">
+                  <div id="defensa-menu" [style.width]="calcularAnchoDefensa()"></div>
+                </div>
+              </div>
+
+              <div class="skills">
+                <div class="detalles">
+                  <span>AtqEspecial </span>
+                  <span>{{pokemon.atqEspecial}}</span>
+                </div>
+
+                <div class="menu">
+                  <div id="atqEspecial-menu" [style.width]="calcularAnchoAtqEspecial()"></div>
+                </div>
+              </div>
+
+              <div class="skills">
+                <div class="detalles">
+                  <span>DefEspecial </span>
+                  <span>{{pokemon.defEspecial}}</span>
+                </div>
+
+                <div class="menu">
+                  <div id="defEspecial-menu" [style.width]="calcularAnchoDefEspecial()"></div>
+                </div>
+              </div>
+
+              <div class="skills">
+                <div class="detalles">
+                  <span>Velocidad </span>
+                  <span>{{pokemon.velocidad}}</span>
+                </div>
+
+                <div class="menu">
+                  <div id="velocidad-menu" [style.width]="calcularAnchoVelocidad()"></div>
+                </div>
+              </div>
+
+              <div class="detalles detallesResistencias">
+                <b>Muy resistente </b>
+                <span *ngFor="let muyResistente of this.muyResistente">{{muyResistente}} </span>
+              </div>
+
+              <div class="detalles detallesResistencias">
+                <b>Resistente </b>
+                <span *ngFor="let fortaleza of this.fortalezasAux">{{fortaleza}} </span>
+              </div>
+
+              <div class="detalles detallesResistencias">
+                <b>Eficaz </b>
+                <span *ngFor="let debil of this.debilidadesAux">{{debil}} </span>
+              </div>
+
+              <div class="detalles detallesResistencias">
+                <b>Muy Eficaz </b>
+                <span *ngFor="let muyEficaz of this.muyEficaz">{{muyEficaz}} </span>
+              </div>
+
+              <div class="detalles detallesResistencias">
+                <b>Inmune </b>
+                <span *ngFor="let inmune of this.inmunidadAux">{{inmune}} </span>
+              </div>
+
+            </div>
+            <div>
+            </div>
           </div>
-
-          <div class="Habilidad">
-            <h4>Descripción:</h4>
-          </div>
-
-          <div class="Habilidad_detalle">{{pokemon.descripcion}}</div>
-
-          <br>
-
-          <div>
-            <span *ngFor="let tipo of pokemon.tipos" class="{{tipo}}Letter resistencia mayuscula"> {{tipo}}</span>
-          </div>
-          <br>
-
         </div>
 
-      </div> <!-- Para que aparezca al lado de la carta -->
+        <div class="estiloNormal"><img src="{{pokemon.shiny}}" width="100px"></div>
+        <div class="estiloShiny"><img src="{{pokemon.animado}}" width="100px"></div>
+      </div> <!-- Lo que este debajo de esto se pone debajo de la carta -->
+    </div>
 
-      <!-- Estadísticas pokémon -->
-      <div class="texto-sombra letra-mediana adaptarPantalla">
-        <div class="caja-padre">
-          <div class="contenedor">
-            <h2>Estadísticas</h2>
+    <div>
+      <h2> detalles Evoluciones:</h2>
+      <ul>
+        <li *ngFor="let detalle of this.NecesidadesEvolucion">{{detalle}}</li>
+      </ul>
+    </div>
 
-            <div class="skills">
-              <div class="detalles">
-                <span>Vida </span>
-                <span>{{pokemon.vida}}</span>
-              </div>
+    <div class="fondoCesped">
+      <div>
+        <h2 class="estiloTituloEvo texto-sombra">Evoluciones</h2>
+  
+        <div class="adaptarEvoluciones mayuscula texto-sombra">
+          <div *ngFor="let evolucion of this.evoluciones">{{evolucion.nombre}}</div>
+        </div>
 
-              <div class="menu">
-                <div id="vida-menu" [style.width]="calcularAnchoVida()"></div>
-              </div>
-            </div>
-
-            <div class="skills">
-              <div class="detalles">
-                <span>Ataque </span>
-                <span>{{pokemon.ataque}}</span>
-              </div>
-
-              <div class="menu">
-                <div id="ataque-menu" [style.width]="calcularAnchoAtaque()"></div>
-              </div>
-            </div>
-
-            <div class="skills">
-              <div class="detalles">
-                <span>Defensa </span>
-                <span>{{pokemon.defensa}}</span>
-              </div>
-
-              <div class="menu">
-                <div id="defensa-menu" [style.width]="calcularAnchoDefensa()"></div>
-              </div>
-            </div>
-
-            <div class="skills">
-              <div class="detalles">
-                <span>AtqEspecial </span>
-                <span>{{pokemon.atqEspecial}}</span>
-              </div>
-
-              <div class="menu">
-                <div id="atqEspecial-menu" [style.width]="calcularAnchoAtqEspecial()"></div>
-              </div>
-            </div>
-
-            <div class="skills">
-              <div class="detalles">
-                <span>DefEspecial </span>
-                <span>{{pokemon.defEspecial}}</span>
-              </div>
-
-              <div class="menu">
-                <div id="defEspecial-menu" [style.width]="calcularAnchoDefEspecial()"></div>
-              </div>
-            </div>
-
-            <div class="skills">
-              <div class="detalles">
-                <span>Velocidad </span>
-                <span>{{pokemon.velocidad}}</span>
-              </div>
-
-              <div class="menu">
-                <div id="velocidad-menu" [style.width]="calcularAnchoVelocidad()"></div>
-              </div>
-            </div>
-
-            <div class="detalles detallesResistencias">
-              <b>Muy resistente </b>
-              <span *ngFor="let muyResistente of this.muyResistente">{{muyResistente}} </span>
-            </div>
-
-            <div class="detalles detallesResistencias">
-              <b>Resistente </b>
-              <span *ngFor="let fortaleza of this.fortalezasAux">{{fortaleza}} </span>
-            </div>
-
-            <div class="detalles detallesResistencias">
-              <b>Eficaz </b>
-              <span *ngFor="let debil of this.debilidadesAux">{{debil}} </span>
-            </div>
-
-            <div class="detalles detallesResistencias">
-              <b>Muy Eficaz </b>
-              <span *ngFor="let muyEficaz of this.muyEficaz">{{muyEficaz}} </span>
-            </div>
-
-            <div class="detalles detallesResistencias">
-              <b>Inmune </b>
-              <span *ngFor="let inmune of this.inmunidadAux">{{inmune}} </span>
-            </div>
-
-          </div>
-          <div>
+        <div class="adaptarEvoluciones">
+          <div *ngFor="let evolucion of this.evoluciones">
+            <img src="{{pokemonEvo.imagen}}" width="200px">
           </div>
         </div>
+  
       </div>
+    </div>
 
-      <div class="estiloNormal"><img src="{{pokemon.shiny}}" width="100px"></div>
-      <div class="estiloShiny"><img src="{{pokemon.animado}}" width="100px"></div>
-    </div> <!-- Lo que este debajo de esto se pone debajo de la carta -->
-  </div>
-
-
-<div class="fondoCesped">
-  <h2>Evoluciones:</h2>
-  <ul>
-    <li *ngFor="let evolucion of this.evoluciones">{{evolucion}}</li>
-  </ul>
-</div>
-
-<div class="fondoCesped">
-  <h2> detalles Evoluciones:</h2>
-  <ul>
-    <li *ngFor="let detalle of this.NecesidadesEvolucion">{{detalle}}</li>
-  </ul>
-</div>
-
+  </div> <!-- Fin HTML -->
+</body>

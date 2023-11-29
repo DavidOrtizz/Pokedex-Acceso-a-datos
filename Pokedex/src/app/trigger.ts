@@ -16,6 +16,5 @@ export interface Trigger {
     horaDelDia:string;
     intercambio: string;
     trigger:string;
-
-    
+    imagen:string;
 }
