@@ -177,7 +177,7 @@
         </div>
 
         <div class="adaptarEvoluciones">
-          <img *ngFor="let imagenEvo of this.evoluciones" src="{{pokemon.imagen}}" width="100px">
+          <img *ngFor="let imagenEvo of this.evoluciones" [src]="imagenEvo.imagen" width="100px">
         </div>
 
         <div class="adaptarEvoluciones texto-sombra">
