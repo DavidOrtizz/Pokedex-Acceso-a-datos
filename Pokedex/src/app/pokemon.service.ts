@@ -65,17 +65,17 @@ export class PokemonService {
           //console.log(chain.evolves_to)
           const evolucion : Evolution = {
             nombre: chain.species.name,
-            imagen: chain.species.url,
-            triggers: []
+
+            triggers: [],
             
           };
           console.log("nombre="+evolucion.nombre)
-          console.log("imagen="+evolucion.imagen)
+         // console.log("imagen="+evolucion.imagen)
           if (chain.evolution_details) {
             evolucion.triggers = chain.evolution_details;
           }
-          console.log(evolucion);
-
+          
+          console.log("asasas  "+evolucion);
           evoluciones.push(evolucion);         
         }
 
