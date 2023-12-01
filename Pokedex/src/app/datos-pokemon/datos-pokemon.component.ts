@@ -35,24 +35,25 @@ export class DatosPokemonComponent implements OnInit {
   };
 
   detallesEvo: Trigger = {
-    genero: "",
-    tenerItem: "",
+    gender: "",
+    held_item: "",
     item: "",
-    movimientoConocido: "",
-    tipoMovimientoConocido: "",
-    localizacion: "",
-    afecto: "",
-    belleza:"",
-    felicidad: "",
-    nivel:"",
-    lluvia:"",
-    partySpecies:"",
-    partType:"",
-    stats:"",
-    horaDelDia:"",
-    intercambio: "",
+    known_move: "",
+    known_move_type: "",
+    location: "",
+    min_affection: "",
+    min_beauty:"",
+    min_happiness: "",
+    min_level:"",
+    needs_overworld_rain:"",
+    party_species:"",
+    party_type:"",
+    relative_physical_stats:"",
+    time_of_day:"",
+    trade_species: "",
     trigger:"",
-    imagen:"",
+    turn_upside_down:"",
+  
   };
 
 
@@ -92,9 +93,13 @@ export class DatosPokemonComponent implements OnInit {
         this.pokemon = pokemonDatos;  
 
         this.pokemonService.getEvoluciones(this.pokemon.cadenas).subscribe((data:Evolution[]) => {
-
           this.evoluciones = data;
 
+/*
+          this.pokemonService.getPokemon(this.pokemon.cadenas).forEach(cadenas => {
+            this.evoluciones.imagen=this.pokemonService.getPokemon(this.pokemonService.getEvoluciones(this.pokemon.cadenas).imagen) 
+          });*/
+          
           console.log("bbbbb"+this.evoluciones)
         })
 
@@ -109,37 +114,6 @@ export class DatosPokemonComponent implements OnInit {
 
   }
   
-  filtrarTriggers(triggers: Trigger[]): Trigger[] {
-    return triggers.filter(trigger => this.tieneValoresValidos(trigger));
-  }
-
-  // Función auxiliar para verificar si el trigger tiene valores válidos
-  tieneValoresValidos(trigger: Trigger): boolean {
-    return (
-      this.esValido(trigger.genero) &&
-      this.esValido(trigger.tenerItem) &&
-      this.esValido(trigger.item) &&
-      this.esValido(trigger.movimientoConocido) &&
-      this.esValido(trigger.tipoMovimientoConocido) &&
-      this.esValido(trigger.localizacion) &&
-      this.esValido(trigger.afecto) &&
-      this.esValido(trigger.belleza) &&
-      this.esValido(trigger.felicidad) &&
-      this.esValido(trigger.nivel) &&
-      this.esValido(trigger.lluvia) &&
-      this.esValido(trigger.partySpecies) &&
-      this.esValido(trigger.partType) &&
-      this.esValido(trigger.stats) &&
-      this.esValido(trigger.horaDelDia) &&
-      this.esValido(trigger.intercambio)
-      // ... verifica todas las demás propiedades de Trigger aquí
-    );
-  }
-
-  // Función auxiliar para verificar si un valor es válido
-  esValido(valor: any): boolean {
-    return valor !== null && valor !== '';
-  }
 
 
   actualizarDebilidadesYFortalezas() {

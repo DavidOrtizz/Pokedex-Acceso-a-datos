@@ -4,5 +4,5 @@ export interface Evolution {
 
     triggers: Trigger[];
     nombre: string;
-    imagen: string;
+  
 }

@@ -185,34 +185,33 @@
             <div *ngIf="evolucion.triggers && evolucion.triggers.length > 0">
               <div *ngFor="let trigger of evolucion.triggers">
                 <div
-                  *ngIf="trigger.genero || trigger.tenerItem || trigger.item || trigger.movimientoConocido || trigger.tipoMovimientoConocido || trigger.localizacion || trigger.afecto || trigger.belleza || trigger.felicidad || trigger.nivel || trigger.lluvia || trigger.partySpecies || trigger.partType || trigger.stats || trigger.horaDelDia || trigger.intercambio || trigger.trigger || trigger.imagen">
-
-                  <p *ngIf="trigger.genero">Genero: {{ trigger.genero }}</p>
-                  <p *ngIf="trigger.tenerItem">Tener item: {{ trigger.tenerItem }}</p>
-                  <p *ngIf="trigger.item">Item: {{ trigger.item }}</p>
-                  <p *ngIf="trigger.movimientoConocido">Movimiento conocido: {{ trigger.movimientoConocido }}</p>
-                  <p *ngIf="trigger.tipoMovimientoConocido">Tipo de movimiento conocido: {{trigger.tipoMovimientoConocido }}</p>
-                  <p *ngIf="trigger.localizacion">Localización: {{ trigger.localizacion }}</p>
-                  <p *ngIf="trigger.afecto">Afecto: {{ trigger.afecto }}</p>
-                  <p *ngIf="trigger.belleza">Belleza: {{ trigger.belleza }}</p>
-                  <p *ngIf="trigger.felicidad">Felicidad: {{ trigger.felicidad }}</p>
-                  <p *ngIf="trigger.nivel">Nivel: {{ trigger.nivel }}</p>
-                  <p *ngIf="trigger.lluvia">Lluvia: {{ trigger.lluvia }}</p>
-                  <p *ngIf="trigger.partySpecies">Party Species: {{ trigger.partySpecies }}</p>
-                  <p *ngIf="trigger.partType">Part Type: {{ trigger.partType }}</p>
-                  <p *ngIf="trigger.stats">Stats: {{ trigger.stats }}</p>
-                  <p *ngIf="trigger.horaDelDia">Hora del día: {{ trigger.horaDelDia }}</p>
-                  <p *ngIf="trigger.intercambio">Intercambio: {{ trigger.intercambio }}</p>
-                  <p *ngIf="trigger.trigger">Trigger: {{ trigger.trigger }}</p>
-                  <p *ngIf="trigger.imagen">Imagen: {{ trigger.imagen }}</p>
+                  *ngIf="trigger.gender || trigger.held_item || trigger.item || trigger.known_move 
+                  || trigger.known_move_type || trigger.location || trigger.min_affection 
+                  || trigger.min_beauty || trigger.min_happiness || trigger.min_level || trigger.needs_overworld_rain 
+                  || trigger.party_species || trigger.party_type || trigger.relative_physical_stats || trigger.time_of_day 
+                  || trigger.trade_species || trigger.trigger ">
+                  
+                  <p *ngIf="trigger.trigger">{{ trigger.trigger.name}}</p>
+                  <p *ngIf="trigger.gender">Genero: {{ trigger.gender }}</p>
+                  <p *ngIf="trigger.held_item">Tener item: {{ trigger.held_item.name }}</p>
+                  <p *ngIf="trigger.item">Item: {{ trigger.item.name }}</p>
+                  <p *ngIf="trigger.known_move">Movimiento conocido: {{ trigger.known_move }}</p>
+                  <p *ngIf="trigger.known_move_type">T. movimiento conocido: {{trigger.known_move_type.name }}</p>
+                  <p *ngIf="trigger.location">Localización: {{ trigger.location.name }}</p>
+                  <p *ngIf="trigger.min_affection">Afecto: {{ trigger.min_affection }}</p>
+                  <p *ngIf="trigger.min_beauty">Belleza: {{ trigger.min_beauty }}</p>
+                  <p *ngIf="trigger.min_happiness">Felicidad: {{ trigger.min_happiness }}</p>
+                  <p *ngIf="trigger.min_level">Nivel: {{ trigger.min_level}}</p>
+                  <p *ngIf="trigger.needs_overworld_rain">Lluvia: {{ trigger.needs_overworld_rain}}</p>
+                  <p *ngIf="trigger.party_species">Party Species: {{ trigger.party_species }}</p>
+                  <p *ngIf="trigger.party_type">Equipo tipo: {{ trigger.party_type }}</p>
+                  <p *ngIf="trigger.relative_physical_stats">Stats: {{ trigger.relative_physical_stats }}</p>
+                  <p *ngIf="trigger.time_of_day">Hora del día: {{ trigger.time_of_day }}</p>
+                  <p *ngIf="trigger.trade_species">Intercambio: {{ trigger.trade_species }}</p>
+                  <p *ngIf="trigger.turn_upside_down">Giroscopio: {{ trigger.trigger.turn_upside_down}}</p>
 
                 </div>
               </div>
-            </div>
-
-            <div *ngIf="!(evolucion.triggers && evolucion.triggers.length > 0)">
-              <!-- Mensaje si no hay información de triggers para esta evolución -->
-              <p>No hay información para esta evolución.</p>
             </div>
 
           </div>
