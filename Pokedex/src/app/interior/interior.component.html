@@ -65,95 +65,95 @@
     <!-- Opciones del buscador avanzado -->
     <fieldset class="menu" *ngIf="menuAbierto"> <!-- Menu avanzado -->
       <legend><b>Selecciona el tipo</b></legend>
-      <div class="adaptarPantalla">
+      <div class="adaptarPantalla margenesMenu">
         <form class="seleccionFire">
           <input type="checkbox" id="fire" class="fire seleccionFire noCuadrado" />
-          <label for="fire" (click)="filtroTipos('fire')" class="seleccionFire-label"><b>Fuego</b></label>
+          <label for="fire" (click)="filtroTipos('fire')" class="seleccionFire-label"><b class="estiloLetraMenu">Fuego</b></label>
         </form>
   
         <form class="seleccionWater">
           <input type="checkbox" id="water" class="seleccionWater noCuadrado" />
-          <label for="water" (click)="filtroTipos('water')" class="seleccionWater-label"><b>Agua</b></label>
+          <label for="water" (click)="filtroTipos('water')" class="seleccionWater-label"><b class="estiloLetraMenu">Agua</b></label>
         </form>
   
         <form class="seleccionGrass">
           <input type="checkbox" id="grass" class="seleccionGrass noCuadrado" />
-          <label for="grass" (click)="filtroTipos('grass')" class="seleccionGrass-label"><b>Planta</b></label>
+          <label for="grass" (click)="filtroTipos('grass')" class="seleccionGrass-label"><b class="estiloLetraMenu">Planta</b></label>
         </form>
   
         <form class="seleccionBug">
           <input type="checkbox" id="bug" class="seleccionBug noCuadrado" />
-          <label for="bug" (click)="filtroTipos('bug')" class="seleccionBug-label"><b>Bicho</b></label>
+          <label for="bug" (click)="filtroTipos('bug')" class="seleccionBug-label"><b class="estiloLetraMenu">Bicho</b></label>
         </form>
   
         <form class="seleccionDark">
           <input type="checkbox" id="dark" class="seleccionDark noCuadrado" />
-          <label for="dark" (click)="filtroTipos('dark')" class="seleccionDark-label"><b>Siniestro</b></label>
+          <label for="dark" (click)="filtroTipos('dark')" class="seleccionDark-label"><b class="estiloLetraMenu">Siniestro</b></label>
         </form>
   
         <form class="seleccionDragon">
           <input type="checkbox" id="dragon" class="seleccionDragon noCuadrado" />
-          <label for="dragon" (click)="filtroTipos('dragon')" class="seleccionDragon-label"><b>Dragón</b></label>
+          <label for="dragon" (click)="filtroTipos('dragon')" class="seleccionDragon-label"><b class="estiloLetraMenu">Dragón</b></label>
         </form>
   
         <form class="seleccionElectric">
           <input type="checkbox" id="electric" class="seleccionElectric noCuadrado" />
-          <label for="electric" (click)="filtroTipos('electric')" class="seleccionElectric-label"><b>Eléctrico</b></label>
+          <label for="electric" (click)="filtroTipos('electric')" class="seleccionElectric-label"><b class="estiloLetraMenu">Eléctrico</b></label>
         </form>
   
         <form class="seleccionFairy">
           <input type="checkbox" id="fairy" class="seleccionFairy noCuadrado" />
-          <label for="fairy" (click)="filtroTipos('fairy')" class="seleccionFairy-label"><b>Hada</b></label>
+          <label for="fairy" (click)="filtroTipos('fairy')" class="seleccionFairy-label"><b class="estiloLetraMenu">Hada</b></label>
         </form>
   
         <form class="seleccionFighting">
           <input type="checkbox" id="fighting" class="seleccionFighting noCuadrado" />
-          <label for="fighting" (click)="filtroTipos('fighting')" class="seleccionFighting-label"><b>Lucha</b></label>
+          <label for="fighting" (click)="filtroTipos('fighting')" class="seleccionFighting-label"><b class="estiloLetraMenu">Lucha</b></label>
         </form>
   
         <form class="seleccionFlying">
           <input type="checkbox" id="flying" class="seleccionFlying noCuadrado" />
-          <label for="flying" (click)="filtroTipos('flying')" class="seleccionFlying-label"><b>Volador</b></label>
+          <label for="flying" (click)="filtroTipos('flying')" class="seleccionFlying-label"><b class="estiloLetraMenu">Volador</b></label>
         </form>
   
         <form class="seleccionGhost">
           <input type="checkbox" id="ghost" class="seleccionGhost noCuadrado" />
-          <label for="ghost" (click)="filtroTipos('ghost')" class="seleccionGhost-label"><b>Fantasma</b></label>
+          <label for="ghost" (click)="filtroTipos('ghost')" class="seleccionGhost-label"><b class="estiloLetraMenu">Fantasma</b></label>
         </form>
   
         <form class="seleccionGround">
           <input type="checkbox" id="ground" class="seleccionGround noCuadrado" />
-          <label for="ground" (click)="filtroTipos('ground')" class="seleccionGround-label"><b>Tierra</b></label>
+          <label for="ground" (click)="filtroTipos('ground')" class="seleccionGround-label"><b class="estiloLetraMenu">Tierra</b></label>
         </form>
   
         <form class="seleccionIce">
           <input type="checkbox" id="ice" class="seleccionIce noCuadrado" />
-          <label for="ice" (click)="filtroTipos('ice')" class="seleccionIce-label"><b>Hielo</b></label>
+          <label for="ice" (click)="filtroTipos('ice')" class="seleccionIce-label"><b class="estiloLetraMenu">Hielo</b></label>
         </form>
   
         <form class="seleccionNormal">
           <input type="checkbox" id="normal" class="seleccionNormal noCuadrado" />
-          <label for="normal" (click)="filtroTipos('normal')" class="seleccionNormal-label"><b>Normal</b></label>
+          <label for="normal" (click)="filtroTipos('normal')" class="seleccionNormal-label"><b class="estiloLetraMenu">Normal</b></label>
         </form>
   
         <form class="seleccionPoison">
           <input type="checkbox" id="poison" class="seleccionPoison noCuadrado" />
-          <label for="poison" (click)="filtroTipos('poison')" class="seleccionPoison-label"><b>Veneno</b></label>
+          <label for="poison" (click)="filtroTipos('poison')" class="seleccionPoison-label"><b class="estiloLetraMenu">Veneno</b></label>
         </form>
   
         <form class="seleccionPsychic">
           <input type="checkbox" id="psychic" class="seleccionPsychic noCuadrado" />
-          <label for="psychic" (click)="filtroTipos('psychic')" class="seleccionPsychic-label"><b>Psíquico</b></label>
+          <label for="psychic" (click)="filtroTipos('psychic')" class="seleccionPsychic-label"><b class="estiloLetraMenu">Psíquico</b></label>
         </form>
   
         <form class="seleccionRock">
           <input type="checkbox" id="rock" class="seleccionRock noCuadrado" />
-          <label for="rock" (click)="filtroTipos('rock')" class="seleccionRock-label"><b>Roca</b></label>
+          <label for="rock" (click)="filtroTipos('rock')" class="seleccionRock-label"><b class="estiloLetraMenu">Roca</b></label>
         </form>
   
         <form class="seleccionSteel">
           <input type="checkbox" id="steel" class="seleccionSteel noCuadrado" />
-          <label for="steel" (click)="filtroTipos('steel')" class="seleccionSteel-label"><b>Acero</b></label>
+          <label for="steel" (click)="filtroTipos('steel')" class="seleccionSteel-label"><b class="estiloLetraMenu">Acero</b></label>
         </form>
       </div>
     </fieldset>

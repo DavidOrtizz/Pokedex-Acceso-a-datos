@@ -6,6 +6,8 @@ button{
   border: none;
 }
 
+
+
 /* Controlar fondo pantalla */
 .fondoPagina{
   transition: background-color 2s ease;
@@ -85,6 +87,15 @@ button{
     justify-content: center;
     display: flex;
     flex-wrap: wrap;
+  }
+
+  .margenesMenu{
+    margin-top: 8px;
+    margin-bottom: 8px;
+  }
+
+  .estiloLetraMenu{
+    text-shadow: 1px 1px 15px rgba(255, 255, 255, 0.326);
   }
 
   .controlarImagen-cabecera{
