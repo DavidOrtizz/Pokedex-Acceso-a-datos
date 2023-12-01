@@ -119,9 +119,25 @@
   justify-content:space-around;
 }
 
-
-
 /* Cierre css evoluciones*/
+
+@media (max-width: 1024px) {
+  .caja-padre{
+    width: 20%;
+    min-width: 390px;
+    margin-right: 75px;
+    z-index: 1;
+  }
+}
+
+@media (max-width: 653px) {
+  .caja-padre{
+    width: 10%;
+    min-width: 290px;
+    margin-right: 75px;
+    z-index: 1;
+  }
+}
 
 .btn-Video {
   color: #fff;
