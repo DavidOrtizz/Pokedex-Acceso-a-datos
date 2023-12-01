@@ -32,6 +32,8 @@ export class DatosPokemonComponent implements OnInit {
     altura: 0,
     descripcion: '',
     cadenas:"",
+    movimientoURL:"",
+    nivelMovimiento: 0,
   };
 
   detallesEvo: Trigger = {

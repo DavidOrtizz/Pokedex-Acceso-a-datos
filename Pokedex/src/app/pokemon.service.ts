@@ -7,6 +7,7 @@ import { map } from 'rxjs/operators';
 import { PokemonDetalle } from './pokemonDetalle';
 import { Trigger } from './trigger';
 import { Evolution } from './evolution';
+import { Movimiento } from './movimiento';
 
 
 @Injectable({
@@ -41,10 +42,26 @@ export class PokemonService {
         atqEspecial: data.stats['3'].base_stat,
         defEspecial: data.stats['4'].base_stat,
         velocidad: data.stats['5'].base_stat,
+        movimientoURL: data.moves.map((dat: any) => dat.move.url),
+        nivelMovimiento: data.moves.map((dat: any) => dat.version_group_details['0'].level_learned_at)
+
       };
     }));
   }
 
+  getMovimiento(url:string): Observable<Movimiento> {
+    return this.http.get(url).pipe(map((data: any) => {
+
+        return {      
+          name: data.name,
+          accuracy: data.accuracy,
+          power: data.power,
+          damage_class: data.damage_class.name,
+          type: data.type.name,
+          
+        };
+      }));
+    }
 
 //Obtiene un observable de la cadena evolutiva
   getEvoluciones(url:string): Observable<Evolution[]> {
