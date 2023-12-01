@@ -73,6 +73,7 @@ export class DatosPokemonComponent implements OnInit {
 
   botonActivoInicio = true;
   botonActivoFinal = true;
+  imagenes: any;
   constructor(
     private pokemonService: PokemonService,
     private activatedRoute: ActivatedRoute,
@@ -94,19 +95,14 @@ export class DatosPokemonComponent implements OnInit {
 
         this.pokemonService.getEvoluciones(this.pokemon.cadenas).subscribe((data:Evolution[]) => {
           this.evoluciones = data;
-
-/*
-          this.pokemonService.getPokemon(this.pokemon.cadenas).forEach(cadenas => {
-            this.evoluciones.imagen=this.pokemonService.getPokemon(this.pokemonService.getEvoluciones(this.pokemon.cadenas).imagen) 
-          });*/
-          
-          console.log("bbbbb"+this.evoluciones)
         })
 
         this.pokemon = pokemonDatos;
         // Cargar tipos, debilidades y fortalezas del Pokémon
         this.pokemonService.cargarTiposDebilidadesFortalezas(pokemonDatos.tipos).subscribe(() => {
           this.actualizarDebilidadesYFortalezas();
+
+
         })
       }
       

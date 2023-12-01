@@ -46,12 +46,6 @@ export class PokemonService {
   }
 
 
-  /* Evoluciones */
-
-    // Obtener información básica de un Pokémon a través de la PokeAPI
-   
-
-
 //Obtiene un observable de la cadena evolutiva
   getEvoluciones(url:string): Observable<Evolution[]> {
   
@@ -67,15 +61,15 @@ export class PokemonService {
             nombre: chain.species.name,
 
             triggers: [],
-            
+            imagen: ''
           };
-          console.log("nombre="+evolucion.nombre)
+          
          // console.log("imagen="+evolucion.imagen)
           if (chain.evolution_details) {
             evolucion.triggers = chain.evolution_details;
           }
           
-          console.log("asasas  "+evolucion);
+          
           evoluciones.push(evolucion);         
         }
 
@@ -90,7 +84,15 @@ export class PokemonService {
       if (data.chain) {
         obtenerEvoluciones(data.chain);
       }
-      console.log("evoluciones= "+evoluciones)
+      
+      
+      evoluciones.forEach((evolucion: Evolution) => {
+        // Llamar al nuevo método para obtener detalles del Pokémon por su nombre
+        this.getPokemon(evolucion.nombre).subscribe((Pokemon: Pokemon) => {
+
+          evolucion.imagen = Pokemon.imagen; // Asignar la imagen obtenida a la evolución
+        });
+      });
 
       return evoluciones;
 
