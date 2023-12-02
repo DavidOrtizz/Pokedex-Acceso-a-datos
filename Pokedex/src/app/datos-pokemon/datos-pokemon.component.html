@@ -170,14 +170,20 @@
     <br><br><br><br><br><br><br>
 
     <div class="fondoCesped">
-      <div >
-        <h2 class="estiloTituloEvo texto-sombra">Evoluciones</h2>
+      <div>
+        <h1 class="estiloTituloEvo texto-sombra">Evoluciones</h1>
+
+        <div class="controlEvo">
+          <div *ngFor="let evolucion of this.evoluciones">
+            <img [src]="evolucion.animado" width="100px" [routerLink]="'/datos/' + evolucion.id" (click)="actualizarPagina()" class="click">
+          </div>
+        </div>
 
         <div class="adaptarEvoluciones mayuscula texto-sombra">
-          <div *ngFor="let evolucion of this.evoluciones" class="pokemon-container">
+          <div *ngFor="let evolucion of this.evoluciones" class="contenedorEvo">
             <h3>{{evolucion.nombre}}</h3>
             <div class="adaptarEvoluciones">
-              <img [src]="evolucion.imagen" width="200px" [routerLink]="'/datos/' + evolucion.id" (click)="actualizarPagina()">
+              <img [src]="evolucion.imagen" width="200px" [routerLink]="'/datos/' + evolucion.id" (click)="actualizarPagina()" class="click">
             </div>
             <div class="adaptarEvoluciones texto-sombra">
               <div>

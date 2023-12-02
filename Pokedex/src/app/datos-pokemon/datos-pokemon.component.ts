@@ -76,6 +76,7 @@ export class DatosPokemonComponent implements OnInit {
   botonActivoInicio = true;
   botonActivoFinal = true;
   imagenes: any;
+  mostrarDatosEvo = false;
   constructor(
     private pokemonService: PokemonService,
     private activatedRoute: ActivatedRoute,
@@ -252,6 +253,7 @@ export class DatosPokemonComponent implements OnInit {
   actualizarPagina(){
     setTimeout(() => {
       location.reload();
-    }, 1);
+      window.scrollTo(0, 0); // Manda al inicio del html
+    }, 2);
   }
 }

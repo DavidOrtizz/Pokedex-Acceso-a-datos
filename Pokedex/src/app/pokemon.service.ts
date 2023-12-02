@@ -78,7 +78,8 @@ export class PokemonService {
             nombre: chain.species.name,
             id: '',
             triggers: [],
-            imagen: ''
+            imagen: '',
+            animado: ''
           };
           
          // console.log("imagen="+evolucion.imagen)
@@ -109,6 +110,7 @@ export class PokemonService {
 
           evolucion.imagen = Pokemon.imagen; // Asignar la imagen obtenida a la evolución
           evolucion.id = Pokemon.id;
+          evolucion.animado = Pokemon.animado;
         });
       });
 

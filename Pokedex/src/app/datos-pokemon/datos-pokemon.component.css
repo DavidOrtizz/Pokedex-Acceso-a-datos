@@ -121,7 +121,7 @@
 }
 
 .adaptarEvoluciones img {
-  max-width: 100%; /* Asegura que las imágenes no superen el ancho del contenedor */
+  max-width: 100%; 
   height: auto;
 }
 
@@ -131,6 +131,17 @@
   justify-content: space-around;
 }
 
+.contenedorEvo{
+  margin-top: 10px;
+  padding: 30px 30px 50px;
+  background: #035d873d;
+  border-radius: 10px;
+  border: 3px solid white;
+}
+
+.click{
+  cursor: pointer;
+}
 /* Cierre css evoluciones */
 
 @media (max-width: 1024px) {
