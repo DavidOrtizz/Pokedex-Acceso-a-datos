@@ -248,4 +248,10 @@ export class DatosPokemonComponent implements OnInit {
     const resultado = (this.pokemon.velocidad * 100) / 255;
     return `${resultado}%`;
   }
+
+  actualizarPagina(){
+    setTimeout(() => {
+      location.reload();
+    }, 1);
+  }
 }

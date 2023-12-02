@@ -76,7 +76,7 @@ export class PokemonService {
           //console.log(chain.evolves_to)
           const evolucion : Evolution = {
             nombre: chain.species.name,
-
+            id: '',
             triggers: [],
             imagen: ''
           };
@@ -108,6 +108,7 @@ export class PokemonService {
         this.getPokemon(evolucion.nombre).subscribe((Pokemon: Pokemon) => {
 
           evolucion.imagen = Pokemon.imagen; // Asignar la imagen obtenida a la evolución
+          evolucion.id = Pokemon.id;
         });
       });
 

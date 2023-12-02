@@ -109,17 +109,29 @@
 
 /* Css evoluciones */
 
-.estiloTituloEvo{
+.estiloTituloEvo {
   text-align: center;
 }
 
-.adaptarEvoluciones{
-  width: 100%;
+.adaptarEvoluciones {
+  margin-right: 25px;
   display: flex;
+  flex-wrap: wrap;
   justify-content:space-around;
 }
 
-/* Cierre css evoluciones*/
+.adaptarEvoluciones img {
+  max-width: 100%; /* Asegura que las imágenes no superen el ancho del contenedor */
+  height: auto;
+}
+
+.controlEvo {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+/* Cierre css evoluciones */
 
 @media (max-width: 1024px) {
   .caja-padre{
