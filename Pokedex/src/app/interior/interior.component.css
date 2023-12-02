@@ -6,8 +6,6 @@ button{
   border: none;
 }
 
-
-
 /* Controlar fondo pantalla */
 .fondoPagina{
   transition: background-color 2s ease;
@@ -254,19 +252,12 @@ button{
     border-radius: 20px;
     transition-duration: 0.4s;
     color: currentColor;
-  }
-  
-  .fire {
-    color: red;
     cursor: default;
-    border-color: red;
   }
   
-  .seleccionFire{
-    padding-right: 5px;
-    color: red;
-    margin: auto;
-  }
+  .fire, .seleccionFire { color: red; border-color: red; margin-right: 4px;}
+  
+  .fondoTarjeta:hover .fire {background-color:red; color: white;}
 
   .seleccionFire:checked + .seleccionFire-label {
     background-color: red; /* Cambiamos el color de fondo */
@@ -277,17 +268,9 @@ button{
     transition-duration: 0.4s; /* Duración de la transición */
   }
 
-  .water {
-    color: rgb(55, 55, 243);
-    cursor: default;
-    border-color: rgb(55, 55, 243);
-  }
-  
-  .seleccionWater{
-    padding-right: 5px;
-    color:rgb(55, 55, 243);
-    margin: auto;
-  }
+  .water, .seleccionWater {color: rgb(55, 55, 243); border-color: rgb(55, 55, 243); margin-right: 4px;}
+
+  .fondoTarjeta:hover .water {background-color: rgb(55, 55, 243); color: white;}
 
   .seleccionWater:checked + .seleccionWater-label {
     background-color: rgb(55, 55, 243);
@@ -298,20 +281,12 @@ button{
     transition-duration: 0.4s; /* Duración de la transición */
   }
   
-  .grass {
-    color: green;
-    cursor: default;
-    border-color:green;
-  }
+  .grass, .seleccionGrass {color: rgb(0, 162, 0); border-color:rgb(0, 162, 0); margin-right: 4px;}
 
-  .seleccionGrass{
-    padding-right: 5px;
-    color: green;
-    margin: auto;
-  }
+  .fondoTarjeta:hover .grass {background-color: rgb(0, 162, 0); color: white;}
 
   .seleccionGrass:checked + .seleccionGrass-label {
-    background-color: green;
+    background-color: rgb(0, 162, 0);
     color: white; /* Cambiamos el color de la letra */
     margin: 4px 2px;  /* Margen del primer valor arriba y abajo. Segundo valor margen de izquierda y derecha */
     padding: 4px 10px;  /* Espacio entre los elementos */
@@ -320,20 +295,12 @@ button{
   }
 
   
-  .bug {
-    color: rgb(19, 88, 19);
-    cursor: default;
-    border-color:rgb(19, 88, 19);
-  }
-  
-  .seleccionBug{
-    padding-right: 5px;
-    color: rgb(19, 88, 19);
-    margin: auto;
-  }
+  .bug, .seleccionBug {color: rgb(27, 124, 27); border-color:rgb(27, 124, 27); margin-right: 4px;}
+
+  .fondoTarjeta:hover .bug { background-color: rgb(27, 124, 27); color: white;}
 
   .seleccionBug:checked + .seleccionBug-label {
-    background-color: rgb(19, 88, 19);
+    background-color: rgb(27, 124, 27);
     color: white; /* Cambiamos el color de la letra */
     margin: 4px 2px;  /* Margen del primer valor arriba y abajo. Segundo valor margen de izquierda y derecha */
     padding: 4px 10px;  /* Espacio entre los elementos */
@@ -341,20 +308,12 @@ button{
     transition-duration: 0.4s; /* Duración de la transición */
   }
   
-  .dark {
-    color: rgb(76, 83, 76);
-    cursor: default;
-    border-color:rgb(76, 83, 76);
-  }
-  
-  .seleccionDark{
-    padding-right: 5px;
-    color: rgb(76, 83, 76);
-    margin: auto;
-  }
+  .dark, .seleccionDark {color: rgb(88, 90, 88); border-color:rgb(88, 90, 88); margin-right: 4px;}
+
+  .fondoTarjeta:hover .dark {background-color: rgb(88, 90, 88); color: white;}
 
   .seleccionDark:checked + .seleccionDark-label {
-    background-color: rgb(76, 83, 76);
+    background-color: rgb(88, 90, 88);
     color: white; /* Cambiamos el color de la letra */
     margin: 4px 2px;  /* Margen del primer valor arriba y abajo. Segundo valor margen de izquierda y derecha */
     padding: 4px 10px;  /* Espacio entre los elementos */
@@ -362,17 +321,9 @@ button{
     transition-duration: 0.4s; /* Duración de la transición */
   }
   
-  .dragon {
-    color: rgb(88, 186, 186);
-    cursor: default;
-    border-color:rgb(88, 186, 186);
-  }
-  
-  .seleccionDragon{
-    padding-right: 5px;
-    color: rgb(88, 186, 186);
-    margin: auto;
-  }
+  .dragon, .seleccionDragon { color: rgb(88, 186, 186); border-color:rgb(88, 186, 186); margin-right: 4px;}
+
+  .fondoTarjeta:hover .dragon {background-color: rgb(88, 186, 186); color: white;}
 
   .seleccionDragon:checked + .seleccionDragon-label {
     background-color: rgb(88, 186, 186);
@@ -383,17 +334,9 @@ button{
     transition-duration: 0.4s; /* Duración de la transición */
   }
   
-  .electric {
-    color: rgb(215, 212, 0);
-    cursor: default;
-    border-color:rgb(215, 212, 0);
-  }
-  
-  .seleccionElectric{
-    padding-right: 5px;
-    color: rgb(215, 212, 0);
-    margin: auto;
-  }
+  .electric, .seleccionElectric {color: rgb(215, 212, 0); border-color:rgb(215, 212, 0); margin-right: 4px;}
+
+  .fondoTarjeta:hover .electric {background-color: rgb(215, 212, 0); color: white;}
 
   .seleccionElectric:checked + .seleccionElectric-label {
     background-color: rgb(215, 212, 0);
@@ -404,17 +347,9 @@ button{
     transition-duration: 0.4s; /* Duración de la transición */
   }
   
-  .fairy{
-    color: rgb(253, 94, 120);
-    cursor: default;
-    border-color:rgb(253, 94, 120);
-  }
-  
-  .seleccionFairy{
-    padding-right: 5px;
-    color: rgb(253, 94, 120);
-    margin: auto;
-  }
+  .fairy, .seleccionFairy{ color: rgb(253, 94, 120); border-color:rgb(253, 94, 120); margin-right: 4px;}
+
+  .fondoTarjeta:hover .fairy { background-color:  rgb(253, 94, 120); color: white;}
 
   .seleccionFairy:checked + .seleccionFairy-label {
     background-color: rgb(253, 94, 120);
@@ -425,17 +360,9 @@ button{
     transition-duration: 0.4s; /* Duración de la transición */
   }
   
-  .fighting{
-    color: rgb(253, 152, 0);
-    cursor: default;
-    border-color:rgb(253, 152, 0);
-  }
-  
-  .seleccionFighting{
-    padding-right: 5px;
-    color: rgb(253, 152, 0);
-    margin: auto;
-  }
+  .fighting, .seleccionFighting{ color: rgb(253, 152, 0); border-color:rgb(253, 152, 0); margin-right: 4px;}
+
+  .fondoTarjeta:hover .fighting {background-color: rgb(253, 152, 0); color: white;}
 
   .seleccionFighting:checked + .seleccionFighting-label {
     background-color: rgb(253, 152, 0);
@@ -446,17 +373,9 @@ button{
     transition-duration: 0.4s; /* Duración de la transición */
   }
   
-  .flying{
-    color: rgb(123, 156, 247);
-    cursor: default;
-    border-color:rgb(123, 156, 247);
-  }
-  
-  .seleccionFlying{
-    padding-right: 5px;
-    color: rgb(123, 156, 247);
-    margin: auto;
-  }
+  .flying, .seleccionFlying{color: rgb(123, 156, 247); border-color:rgb(123, 156, 247); margin-right: 4px;}
+
+  .fondoTarjeta:hover .flying { background-color: rgb(123, 156, 247); color: white;}
 
   .seleccionFlying:checked + .seleccionFlying-label {
     background-color: rgb(123, 156, 247);
@@ -467,20 +386,12 @@ button{
     transition-duration: 0.4s; /* Duración de la transición */
   }
   
-  .ghost{
-    color: rgb(77, 48, 82);
-    cursor: default;
-    border-color:rgb(77, 48, 82);
-  }
-  
-  .seleccionGhost{
-    padding-right: 5px;
-    color: rgb(77, 48, 82);
-    margin: auto;
-  }
+  .ghost, .seleccionGhost{ color: rgb(116, 73, 123); border-color:rgb(116, 73, 123); margin-right: 4px;}
+
+  .fondoTarjeta:hover .ghost { background-color: rgb(116, 73, 123); color: white;}
 
   .seleccionGhost:checked + .seleccionGhost-label {
-    background-color: rgb(77, 48, 82);
+    background-color: rgb(116, 73, 123);
     color: white; /* Cambiamos el color de la letra */
     margin: 4px 2px;  /* Margen del primer valor arriba y abajo. Segundo valor margen de izquierda y derecha */
     padding: 4px 10px;  /* Espacio entre los elementos */
@@ -488,20 +399,12 @@ button{
     transition-duration: 0.4s; /* Duración de la transición */
   }
   
-  .ground{
-    color: rgb(113, 74, 10);
-    cursor: default;
-    border-color:rgb(113, 74, 10);
-  }
-  
-  .seleccionGround{
-    padding-right: 5px;
-    color: rgb(113, 74, 10);
-    margin: auto;
-  }
+  .ground, .seleccionGround{ color: rgb(113, 74, 10); border-color:rgb(113, 74, 10); margin-right: 4px;}
+
+  .fondoTarjeta:hover .ground {background-color: rgb(113, 74, 10); color: white;}
 
   .seleccionGround:checked + .seleccionGround-label {
-    background-color: rgb(77, 48, 82);
+    background-color: rgb(113, 74, 10); 
     color: white; /* Cambiamos el color de la letra */
     margin: 4px 2px;  /* Margen del primer valor arriba y abajo. Segundo valor margen de izquierda y derecha */
     padding: 4px 10px;  /* Espacio entre los elementos */
@@ -509,17 +412,9 @@ button{
     transition-duration: 0.4s; /* Duración de la transición */
   }
   
-  .ice{
-    color: rgb(5, 220, 216);
-    cursor: default;
-    border-color:rgb(5, 220, 216);
-  }
-  
-  .seleccionIce{
-    padding-right: 5px;
-    color: rgb(5, 220, 216);
-    margin: auto;
-  }
+  .ice, .seleccionIce{color: rgb(5, 220, 216); border-color:rgb(5, 220, 216); margin-right: 4px;}
+
+  .fondoTarjeta:hover .ice {background-color: rgb(5, 220, 216); color: white;}
 
   .seleccionIce:checked + .seleccionIce-label {
     background-color: rgb(5, 220, 216);
@@ -530,17 +425,9 @@ button{
     transition-duration: 0.4s; /* Duración de la transición */
   }
   
-  .normal{
-    color: rgb(202, 160, 167);
-    cursor: default;
-    border-color:rgb(202, 160, 167);
-  }
-  
-  .seleccionNormal{
-    padding-right: 5px;
-    color: rgb(202, 160, 167);
-    margin: auto;
-  }
+  .normal, .seleccionNormal{color: rgb(202, 160, 167); border-color:rgb(202, 160, 167); margin-right: 4px;}
+
+  .fondoTarjeta:hover .normal {background-color: rgb(202, 160, 167); color: white;}
 
   .seleccionNormal:checked + .seleccionNormal-label {
     background-color: rgb(202, 160, 167);
@@ -551,20 +438,12 @@ button{
     transition-duration: 0.4s; /* Duración de la transición */
   }
   
-  .poison{
-    color: rgb(123, 33, 86);
-    cursor: default;
-    border-color:rgb(123, 33, 86);
-  }
-  
-  .seleccionPoison{
-    padding-right: 5px;
-    color: rgb(123, 33, 86);
-    margin: auto;
-  }
+  .poison, .seleccionPoison{color: rgb(143, 38, 99); border-color:rgb(143, 38, 99); margin-right: 4px;}
+
+  .fondoTarjeta:hover .poison {background-color: rgb(143, 38, 99); color: white;}
 
   .seleccionPoison:checked + .seleccionPoison-label {
-    background-color: rgb(123, 33, 86);
+    background-color: rgb(143, 38, 99);
     color: white; /* Cambiamos el color de la letra */
     margin: 4px 2px;  /* Margen del primer valor arriba y abajo. Segundo valor margen de izquierda y derecha */
     padding: 4px 10px;  /* Espacio entre los elementos */
@@ -572,17 +451,9 @@ button{
     transition-duration: 0.4s; /* Duración de la transición */
   }
   
-  .psychic{
-    color: rgb(205, 36, 135);
-    cursor: default;
-    border-color:rgb(205, 36, 135);
-  }
-  
-  .seleccionPsychic{
-    padding-right: 5px;
-    color: rgb(205, 36, 135);
-    margin: auto;
-  }
+  .psychic, .seleccionPsychic{color: rgb(205, 36, 135); border-color:rgb(205, 36, 135); margin-right: 4px;}
+
+  .fondoTarjeta:hover .psychic { background-color: rgb(205, 36, 135); color: white;}
 
   .seleccionPsychic:checked + .seleccionPsychic-label {
     background-color: rgb(205, 36, 135);
@@ -593,17 +464,9 @@ button{
     transition-duration: 0.4s; /* Duración de la transición */
   }
   
-  .rock{
-    color: rgb(124, 81, 0);
-    cursor: default;
-    border-color:rgb(124, 81, 0);
-  }
-  
-  .seleccionRock{
-    padding-right: 5px;
-    color: rgb(124, 81, 0);
-    margin: auto;
-  }
+  .rock, .seleccionRock{color: rgb(124, 81, 0); border-color:rgb(124, 81, 0); margin-right: 4px;}
+
+  .fondoTarjeta:hover .rock { background-color: rgb(124, 81, 0); color: white;}
 
   .seleccionRock:checked + .seleccionRock-label {
     background-color: rgb(124, 81, 0);
@@ -614,17 +477,9 @@ button{
     transition-duration: 0.4s; /* Duración de la transición */
   }
   
-  .steel{
-    color: rgb(143, 154, 140);
-    cursor: default;
-    border-color:rgb(143, 154, 140);
-  }
-  
-  .seleccionSteel{
-    padding-right: 5px;
-    color: rgb(143, 154, 140);
-    margin: auto;
-  }
+  .steel, .seleccionSteel{color: rgb(143, 154, 140); border-color:rgb(143, 154, 140); margin-right: 4px;}
+
+  .fondoTarjeta:hover .steel {background-color: rgb(143, 154, 140); color: white;}
 
   .seleccionSteel:checked + .seleccionSteel-label {
     background-color: rgb(143, 154, 140);
@@ -634,95 +489,3 @@ button{
     border-radius: 20px; /* Radio que ge genera en los bordes del border (Efecto de redondeo)  */
     transition-duration: 0.4s; /* Duración de la transición */
   }
-
-  .fondoTarjeta:hover .fire {
-    /* hover en tarjeta y boton */
-    background-color:red; /* Cambia #color del fondo */
-    color: white; /* Cambia el color de texto */
-  }
-  
-  .fondoTarjeta:hover .water {
-    background-color: rgb(55, 55, 243);
-    color: white;
-  }
-  
-  .fondoTarjeta:hover .grass {
-    background-color: green;
-    color: white;
-  }
-  
-  .fondoTarjeta:hover .bug {
-    background-color: rgb(19, 88, 19);
-    color: white;
-  }
-  
-  .fondoTarjeta:hover .dark {
-    background-color: rgb(31, 34, 31);
-    color: white;
-  }
-  
-  .fondoTarjeta:hover .dragon {
-    background-color: rgb(88, 186, 186);
-    color: white;
-  }
-  
-  .fondoTarjeta:hover .electric {
-    background-color: rgb(215, 212, 0);
-    color: white;
-  }
-  
-  .fondoTarjeta:hover .fairy {
-    background-color:  rgb(253, 94, 120);
-    color: white;
-  }
-  
-  .fondoTarjeta:hover .fighting {
-    background-color: rgb(253, 152, 0);
-    color: white;
-  }
-  
-  .fondoTarjeta:hover .flying {
-    background-color: rgb(123, 156, 247);
-    color: white;
-  }
-  
-  .fondoTarjeta:hover .ghost {
-    background-color: rgb(77, 48, 82);
-    color: white;
-  }
-  
-  .fondoTarjeta:hover .ground {
-    background-color: rgb(113, 74, 10);
-    color: white;
-  }
-  
-  .fondoTarjeta:hover .ice {
-    background-color: rgb(5, 220, 216);
-    color: white;
-  }
-  
-  .fondoTarjeta:hover .normal {
-    background-color: rgb(202, 160, 167);
-    color: white;
-  }
-  
-  .fondoTarjeta:hover .poison {
-    background-color: rgb(123, 33, 86);
-    color: white;
-  }
-.letraNombre
-  .fondoTarjeta:hover .psychic {
-    background-color: rgb(205, 36, 135);
-    color: white;
-  }
-  
-  .fondoTarjeta:hover .rock {
-    background-color: rgb(124, 81, 0);
-    color: white;
-  }
-  
-  .fondoTarjeta:hover .steel {
-    background-color: rgb(143, 154, 140);
-    color: white;
-  }
-
