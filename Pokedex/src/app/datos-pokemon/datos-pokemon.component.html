@@ -173,11 +173,13 @@
       <div>
         <h1 class="estiloTituloEvo texto-sombra">Evoluciones</h1>
 
+        <!-- Pokemon en pixeles 
         <div class="controlEvo">
           <div *ngFor="let evolucion of this.evoluciones">
             <img [src]="evolucion.animado" width="100px" [routerLink]="'/datos/' + evolucion.id" (click)="actualizarPagina()" class="click">
           </div>
         </div>
+        -->
 
         <div class="adaptarEvoluciones mayuscula texto-sombra">
           <div *ngFor="let evolucion of this.evoluciones" class="contenedorEvo">
