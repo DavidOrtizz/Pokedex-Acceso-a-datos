@@ -15,7 +15,9 @@ export interface Pokemon  {
   velocidad:number;
   vida:number;
   altura:number;
-  movimientoURL: any;
+
+
+  movimientosURL: any;
   nivelMovimiento:number;
 
 
