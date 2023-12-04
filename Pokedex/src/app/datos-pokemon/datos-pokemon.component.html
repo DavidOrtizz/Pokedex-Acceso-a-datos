@@ -52,6 +52,8 @@
 
             <div>
               <span *ngFor="let tipo of pokemon.tipos" class="{{tipo}}Letter resistencia mayuscula"> {{tipo}}</span>
+
+       
             </div>
             <br>
 
@@ -178,6 +180,7 @@
 
         <div class="adaptarEvoluciones">
           <img *ngFor="let imagenEvo of this.evoluciones" [src]="imagenEvo.imagen" width="100px">
+    
         </div>
 
         <div class="adaptarEvoluciones texto-sombra">

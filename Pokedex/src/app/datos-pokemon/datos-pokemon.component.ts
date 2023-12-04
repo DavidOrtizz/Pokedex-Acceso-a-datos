@@ -6,6 +6,7 @@ import { OnInit } from '@angular/core';
 import { PokemonDetalle } from '../pokemonDetalle';
 import { Trigger } from '../trigger';
 import { Evolution } from '../evolution';
+import { Movimiento } from '../movimiento';
 
 
 @Component({
@@ -32,9 +33,16 @@ export class DatosPokemonComponent implements OnInit {
     altura: 0,
     descripcion: '',
     cadenas:"",
-    movimientoURL:"",
+    movimientosURL:"",
     nivelMovimiento: 0,
   };
+movimiento: Movimiento={
+  name: "",
+  accuracy: 0,
+  power: 0,
+  damage_class: "",
+  type:"",
+}
 
   detallesEvo: Trigger = {
     gender: "",
@@ -72,6 +80,7 @@ export class DatosPokemonComponent implements OnInit {
 
   evoluciones:Evolution[]=[];
 
+movimientos :Movimiento[]=[];
 
   botonActivoInicio = true;
   botonActivoFinal = true;
@@ -89,7 +98,7 @@ export class DatosPokemonComponent implements OnInit {
 
   cargarDetalles() { 
     const id = this.activatedRoute.snapshot.paramMap.get('id') as unknown as number;
-    
+    console.log("id"+ id)
     // Obtener detalles del Pokémon utilizando el servicio pasandole la id del pokemon 
     this.pokemonService.getPokemonsDetalle(id).subscribe(
       (pokemonDatos: PokemonDetalle) => {
@@ -98,7 +107,10 @@ export class DatosPokemonComponent implements OnInit {
         this.pokemonService.getEvoluciones(this.pokemon.cadenas).subscribe((data:Evolution[]) => {
           this.evoluciones = data;
         })
-
+        console.log(this.pokemon.movimientosURL)
+        this.pokemonService.getMovimientos(this.pokemon.movimientosURL).subscribe((data:Movimiento[]) => {
+          this.movimientos = data;
+        })
         this.pokemon = pokemonDatos;
         // Cargar tipos, debilidades y fortalezas del Pokémon
         this.pokemonService.cargarTiposDebilidadesFortalezas(pokemonDatos.tipos).subscribe(() => {
@@ -109,7 +121,7 @@ export class DatosPokemonComponent implements OnInit {
       }
       
     );
-
+    
   }
   
 
