@@ -8,6 +8,7 @@ import { PokemonDetalle } from './pokemonDetalle';
 import { Trigger } from './trigger';
 import { Evolution } from './evolution';
 import { Movimiento } from './movimiento';
+import { trigger } from '@angular/animations';
 
 
 @Injectable({
@@ -79,7 +80,7 @@ export class PokemonService {
             id: '',
             triggers: [],
             imagen: '',
-            animado: ''
+            animado: '',
           };
           
          // console.log("imagen="+evolucion.imagen)

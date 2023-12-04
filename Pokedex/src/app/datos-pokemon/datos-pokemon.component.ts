@@ -7,7 +7,6 @@ import { PokemonDetalle } from '../pokemonDetalle';
 import { Trigger } from '../trigger';
 import { Evolution } from '../evolution';
 
-
 @Component({
   selector: 'app-detalle',
   templateUrl: './datos-pokemon.component.html',
@@ -50,12 +49,11 @@ export class DatosPokemonComponent implements OnInit {
     needs_overworld_rain:"",
     party_species:"",
     party_type:"",
-    relative_physical_stats:"",
+    relative_physical_stats: "",
     time_of_day:"",
     trade_species: "",
     trigger:"",
     turn_upside_down:"",
-  
   };
 
 
@@ -77,6 +75,7 @@ export class DatosPokemonComponent implements OnInit {
   botonActivoFinal = true;
   imagenes: any;
   mostrarDatosEvo = false;
+  stats: string = "";
   constructor(
     private pokemonService: PokemonService,
     private activatedRoute: ActivatedRoute,
@@ -84,7 +83,6 @@ export class DatosPokemonComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-
     this.cargarDetalles();
   }
 
@@ -95,6 +93,9 @@ export class DatosPokemonComponent implements OnInit {
     this.pokemonService.getPokemonsDetalle(id).subscribe(
       (pokemonDatos: PokemonDetalle) => {
         this.pokemon = pokemonDatos;  
+
+        console.log('Detalles de evolución:', this.detallesEvo);
+        console.log('Valor de relative_physical_stats:', this.detallesEvo.trigger.relative_physical_stats);
 
         this.pokemonService.getEvoluciones(this.pokemon.cadenas).subscribe((data:Evolution[]) => {
           this.evoluciones = data;
@@ -113,8 +114,6 @@ export class DatosPokemonComponent implements OnInit {
 
   }
   
-
-
   actualizarDebilidadesYFortalezas() {
     this.debilidadesAux = [];
     this.fortalezasAux = [];
@@ -221,32 +220,32 @@ export class DatosPokemonComponent implements OnInit {
   }
 
   calcularAnchoVida(): string {
-    const resultado = (this.pokemon.vida * 100) / 255;
+    const resultado = (this.pokemon.vida * 100) / 255
     return `${resultado}%`;
   }
 
   calcularAnchoAtaque(): string {
-    const resultado = (this.pokemon.ataque * 100) / 255;
+    const resultado = (this.pokemon.ataque * 100) / 255
     return `${resultado}%`;
   }
 
   calcularAnchoDefensa(): string {
-    const resultado = (this.pokemon.defensa * 100) / 255;
+    const resultado = (this.pokemon.defensa * 100) / 255
     return `${resultado}%`;
   }
 
   calcularAnchoAtqEspecial(): string {
-    const resultado = (this.pokemon.atqEspecial * 100) / 255;
+    const resultado = (this.pokemon.atqEspecial * 100) / 255
     return `${resultado}%`;
   }
 
   calcularAnchoDefEspecial(): string {
-    const resultado = (this.pokemon.defEspecial * 100) / 255;
+    const resultado = (this.pokemon.defEspecial * 100) / 255
     return `${resultado}%`;
   }
 
   calcularAnchoVelocidad(): string {
-    const resultado = (this.pokemon.velocidad * 100) / 255;
+    const resultado = (this.pokemon.velocidad * 100) / 255
     return `${resultado}%`;
   }
 
@@ -256,4 +255,43 @@ export class DatosPokemonComponent implements OnInit {
       window.scrollTo(0, 0); // Manda al inicio del html
     }, 2);
   }
+
+  // Comprueba el stats
+  comprobarStats(num: number): string {
+    //Si está vacio muestra que no hay datos
+    if (num === undefined || num === null) {
+      return "No hay datos disponible";
+    }
+
+    // Si contiene datos pues entonces comprueba 
+    if (num < 0) {
+      return "Más defensa que daño";
+    } else {
+      return "Más daño que defensa";
+    }
+  }
+
+    // Comprueba el stats
+    comprobarGenero(num: number): string {
+      //Si está vacio muestra que no hay datos
+      if (num === undefined || num === null) {
+        return "No hay datos disponible";
+      }
+  
+      // Si contiene datos pues entonces comprueba 
+      if (num < 0) {
+        return "Hembra";
+      } else {
+        return "Macho";
+      }
+    }
+
+    controlEvoluciones(evolucion: Evolution): boolean {
+      // Verificar si la evolución es Sylveon y el Pokémon actual es Eevee
+      if (evolucion.nombre === 'sylveon' && this.pokemon.nombre === 'eevee') {
+        return false; // No mostrar a sylveon cuando evoluciona desde eevee
+      }
+      // Cuando podamos mostrar a Sylveon lo añasimos aquí
+      return true;
+    }
 }

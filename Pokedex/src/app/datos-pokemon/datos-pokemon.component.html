@@ -185,49 +185,53 @@
         </div>
         -->
 
+        <!-- Datos sobre evoluciones -->
         <div class="adaptarEvoluciones mayuscula texto-sombra">
-          <div *ngFor="let evolucion of this.evoluciones" class="contenedorEvo">
-            <h3>{{evolucion.nombre}}</h3>
-            <div class="adaptarEvoluciones">
-              <img [src]="evolucion.imagen" width="200px" [routerLink]="'/datos/' + evolucion.id" (click)="actualizarPagina()" class="click">
-            </div>
-            <div class="adaptarEvoluciones texto-sombra">
-              <div>
-                <div *ngIf="evolucion.triggers && evolucion.triggers.length > 0">
-                  <div *ngFor="let trigger of evolucion.triggers">
-                    <div *ngIf="trigger.gender || trigger.held_item || trigger.item || trigger.known_move 
-                || trigger.known_move_type || trigger.location || trigger.min_affection 
-                || trigger.min_beauty || trigger.min_happiness || trigger.min_level || trigger.needs_overworld_rain 
-                || trigger.party_species || trigger.party_type || trigger.relative_physical_stats || trigger.time_of_day 
-                || trigger.trade_species || trigger.trigger ">
-
-                      <p *ngIf="trigger.trigger">{{ trigger.trigger.name}}</p>
-                      <p *ngIf="trigger.gender">Genero: {{ trigger.gender }}</p>
-                      <p *ngIf="trigger.held_item">Tener item: {{ trigger.held_item.name }}</p>
-                      <p *ngIf="trigger.item">Item: {{ trigger.item.name }}</p>
-                      <p *ngIf="trigger.known_move">Movimiento conocido: {{ trigger.known_move }}</p>
-                      <p *ngIf="trigger.known_move_type">T. movimiento conocido: {{trigger.known_move_type.name }}</p>
-                      <p *ngIf="trigger.location">Localización: {{ trigger.location.name }}</p>
-                      <p *ngIf="trigger.min_affection">Afecto: {{ trigger.min_affection }}</p>
-                      <p *ngIf="trigger.min_beauty">Belleza: {{ trigger.min_beauty }}</p>
-                      <p *ngIf="trigger.min_happiness">Felicidad: {{ trigger.min_happiness }}</p>
-                      <p *ngIf="trigger.min_level">Nivel: {{ trigger.min_level}}</p>
-                      <p *ngIf="trigger.needs_overworld_rain">Lluvia: {{ trigger.needs_overworld_rain}}</p>
-                      <p *ngIf="trigger.party_species">Party Species: {{ trigger.party_species }}</p>
-                      <p *ngIf="trigger.party_type">Equipo tipo: {{ trigger.party_type }}</p>
-                      <p *ngIf="trigger.relative_physical_stats">Stats: {{ trigger.relative_physical_stats }}</p>
-                      <p *ngIf="trigger.time_of_day">Hora del día: {{ trigger.time_of_day }}</p>
-                      <p *ngIf="trigger.trade_species">Intercambio: {{ trigger.trade_species }}</p>
-                      <p *ngIf="trigger.turn_upside_down">Giroscopio: {{ trigger.trigger.turn_upside_down}}</p>
-
+          <div *ngFor="let evolucion of this.evoluciones">
+            <div *ngIf="controlEvoluciones(evolucion)" class="contenedorEvo">
+              <h3>{{evolucion.nombre}}</h3>
+              <div class="adaptarEvoluciones">
+                <img [src]="evolucion.imagen" width="200px" [routerLink]="'/datos/' + evolucion.id" (click)="actualizarPagina()" class="click">
+              </div>
+              <div class="adaptarEvoluciones texto-sombra">
+                <div>
+                  <div *ngIf="evolucion.triggers && evolucion.triggers.length > 0">
+                    <div *ngFor="let trigger of evolucion.triggers">
+                      <div *ngIf="trigger.gender || trigger.held_item || trigger.item || trigger.known_move 
+                  || trigger.known_move_type || trigger.location || trigger.min_affection 
+                  || trigger.min_beauty || trigger.min_happiness || trigger.min_level || trigger.needs_overworld_rain 
+                  || trigger.party_species || trigger.party_type || trigger.relative_physical_stats || trigger.time_of_day 
+                  || trigger.trade_species || trigger.trigger ">
+  
+                        <p *ngIf="trigger.trigger">{{ trigger.trigger.name}}</p>
+                        <p *ngIf="trigger.gender">Genero: {{ comprobarGenero(trigger.gender) }}</p>
+                        <p *ngIf="trigger.held_item">Tener item: {{ trigger.held_item.name }}</p>
+                        <p *ngIf="trigger.item">Item: {{ trigger.item.name }}</p>
+                        <p *ngIf="trigger.known_move">Movimiento conocido: {{ trigger.known_move }}</p>
+                        <p *ngIf="trigger.known_move_type">T. movimiento conocido: {{trigger.known_move_type.name }}</p>
+                        <p *ngIf="trigger.location">Localización: {{ trigger.location.name }}</p>
+                        <p *ngIf="trigger.min_affection">Afecto: {{ trigger.min_affection }}</p>
+                        <p *ngIf="trigger.min_beauty">Belleza: {{ trigger.min_beauty }}</p>
+                        <p *ngIf="trigger.min_happiness">Felicidad: {{ trigger.min_happiness }}</p>
+                        <p *ngIf="trigger.min_level">Nivel: {{ trigger.min_level}}</p>
+                        <p *ngIf="trigger.needs_overworld_rain">Lluvia: {{ trigger.needs_overworld_rain}}</p>
+                        <p *ngIf="trigger.party_species">Party Species: {{ trigger.party_species }}</p>
+                        <p *ngIf="trigger.party_type">Equipo tipo: {{ trigger.party_type }}</p>
+                        <p *ngIf="trigger.relative_physical_stats">Stats: {{ comprobarStats(trigger.relative_physical_stats) }}</p>
+                        <p *ngIf="trigger.time_of_day">Hora del día: {{ trigger.time_of_day }}</p>
+                        <p *ngIf="trigger.trade_species">Intercambio: {{ trigger.trade_species }}</p>
+                        <p *ngIf="trigger.turn_upside_down">Giroscopio: {{ trigger.trigger.turn_upside_down}}</p>
+  
+                      </div>
                     </div>
                   </div>
+  
                 </div>
-
               </div>
             </div>
           </div>
-        </div>
+        </div> <!-- Fin datos sobre evoluciones -->
+
       </div>
     </div>
 

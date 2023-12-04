@@ -12,10 +12,9 @@ export interface Trigger {
     needs_overworld_rain:any;
     party_species:any;
     party_type:any;
-    relative_physical_stats:any;
+    relative_physical_stats: any;
     time_of_day:any;
     trade_species: any;
     trigger:any;
-   
     turn_upside_down:any;
 }
