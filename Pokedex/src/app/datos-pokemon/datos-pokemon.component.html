@@ -27,145 +27,149 @@
 
     <br>
 
-    <div class="adaptarPantalla"> <!-- Carta pokemon -->
-      <div class="charizard">
-        <div class="perspective">
-          <div class="{{pokemon.tipos[0]}}{{pokemon.tipos[1]}} {{pokemon.tipos[0]}} carta_fondo">
-            <div class="power">ID: {{pokemon.id}}</div>
-            <div class="nombre">
-              <h2>{{pokemon.nombre}}</h2>
+    <div class="adaptarPantallaGeneral">
+
+      <div> <!-- Carta pokemon -->
+        <div class="charizard">
+          <div class="perspective">
+            <div class="{{pokemon.tipos[0]}}{{pokemon.tipos[1]}} {{pokemon.tipos[0]}} carta_fondo">
+              <div class="power">ID: {{pokemon.id}}</div>
+              <div class="nombre">
+                <h2>{{pokemon.nombre}}</h2>
+              </div>
+  
+              <div class="img_charizard"><img src="{{pokemon.imagen}}" width="100%"></div>
+  
+              <div class="descripcion">
+                <h3>Peso: {{(pokemon.peso/10)}}kg | Altura: {{(pokemon.altura/10)}}m</h3>
+              </div>
+  
+              <div class="Habilidad">
+                <h4>Descripción:</h4>
+              </div>
+  
+              <div class="Habilidad_detalle">{{pokemon.descripcion}}</div>
+  
+              <br>
+  
+              <div>
+                <span *ngFor="let tipo of pokemon.tipos" class="{{tipo}}Letter resistencia mayuscula"> {{tipo}}</span>
+              </div>
+              <br>
+  
+            </div>
+  
+          </div> <!-- Para que aparezca al lado de la carta -->
+        </div> <!-- Lo que este debajo de esto se pone debajo de la carta -->
+      </div>
+
+      <!-- Estadísticas pokémon -->
+      <div class="texto-sombra letra-mediana adaptarPantalla">
+        <div class="caja-padre">
+          <div class="contenedor">
+            <h2>Estadísticas</h2>
+
+            <div class="skills">
+              <div class="detalles">
+                <span>Vida </span>
+                <span>{{pokemon.vida}}</span>
+              </div>
+
+              <div class="menu">
+                <div id="vida-menu" [style.width]="calcularAnchoVida()"></div>
+              </div>
             </div>
 
-            <div class="img_charizard"><img src="{{pokemon.imagen}}" width="100%"></div>
+            <div class="skills">
+              <div class="detalles">
+                <span>Ataque </span>
+                <span>{{pokemon.ataque}}</span>
+              </div>
 
-            <div class="descripcion">
-              <h3>Peso: {{(pokemon.peso/10)}}kg | Altura: {{(pokemon.altura/10)}}m</h3>
+              <div class="menu">
+                <div id="ataque-menu" [style.width]="calcularAnchoAtaque()"></div>
+              </div>
             </div>
 
-            <div class="Habilidad">
-              <h4>Descripción:</h4>
+            <div class="skills">
+              <div class="detalles">
+                <span>Defensa </span>
+                <span>{{pokemon.defensa}}</span>
+              </div>
+
+              <div class="menu">
+                <div id="defensa-menu" [style.width]="calcularAnchoDefensa()"></div>
+              </div>
             </div>
 
-            <div class="Habilidad_detalle">{{pokemon.descripcion}}</div>
+            <div class="skills">
+              <div class="detalles">
+                <span>AtqEspecial </span>
+                <span>{{pokemon.atqEspecial}}</span>
+              </div>
 
-            <br>
-
-            <div>
-              <span *ngFor="let tipo of pokemon.tipos" class="{{tipo}}Letter resistencia mayuscula"> {{tipo}}</span>
+              <div class="menu">
+                <div id="atqEspecial-menu" [style.width]="calcularAnchoAtqEspecial()"></div>
+              </div>
             </div>
-            <br>
+
+            <div class="skills">
+              <div class="detalles">
+                <span>DefEspecial </span>
+                <span>{{pokemon.defEspecial}}</span>
+              </div>
+
+              <div class="menu">
+                <div id="defEspecial-menu" [style.width]="calcularAnchoDefEspecial()"></div>
+              </div>
+            </div>
+
+            <div class="skills">
+              <div class="detalles">
+                <span>Velocidad </span>
+                <span>{{pokemon.velocidad}}</span>
+              </div>
+
+              <div class="menu">
+                <div id="velocidad-menu" [style.width]="calcularAnchoVelocidad()"></div>
+              </div>
+            </div>
+
+            <div class="detalles detallesResistencias adaptarPantalla">
+              <b>Muy resistente </b>
+              <span *ngFor="let muyResistente of this.muyResistente">{{muyResistente}} </span>
+            </div>
+
+            <div class="detalles detallesResistencias adaptarPantalla">
+              <b>Resistente </b>
+              <span *ngFor="let fortaleza of this.fortalezasAux">{{fortaleza}}</span>
+            </div>
+
+            <div class="detalles detallesResistencias adaptarPantalla">
+              <b>Eficaz </b>
+              <span *ngFor="let debil of this.debilidadesAux">{{debil}} </span>
+            </div>
+
+            <div class="detalles detallesResistencias adaptarPantalla">
+              <b>Muy Eficaz </b>
+              <span *ngFor="let muyEficaz of this.muyEficaz">{{muyEficaz}} </span>
+            </div>
+
+            <div class="detalles detallesResistencias adaptarPantalla">
+              <b>Inmune </b>
+              <span *ngFor="let inmune of this.inmunidadAux">{{inmune}} </span>
+            </div>
 
           </div>
-
-        </div> <!-- Para que aparezca al lado de la carta -->
-
-        <!-- Estadísticas pokémon -->
-        <div class="texto-sombra letra-mediana adaptarPantalla">
-          <div class="caja-padre">
-            <div class="contenedor">
-              <h2>Estadísticas</h2>
-
-              <div class="skills">
-                <div class="detalles">
-                  <span>Vida </span>
-                  <span>{{pokemon.vida}}</span>
-                </div>
-
-                <div class="menu">
-                  <div id="vida-menu" [style.width]="calcularAnchoVida()"></div>
-                </div>
-              </div>
-
-              <div class="skills">
-                <div class="detalles">
-                  <span>Ataque </span>
-                  <span>{{pokemon.ataque}}</span>
-                </div>
-
-                <div class="menu">
-                  <div id="ataque-menu" [style.width]="calcularAnchoAtaque()"></div>
-                </div>
-              </div>
-
-              <div class="skills">
-                <div class="detalles">
-                  <span>Defensa </span>
-                  <span>{{pokemon.defensa}}</span>
-                </div>
-
-                <div class="menu">
-                  <div id="defensa-menu" [style.width]="calcularAnchoDefensa()"></div>
-                </div>
-              </div>
-
-              <div class="skills">
-                <div class="detalles">
-                  <span>AtqEspecial </span>
-                  <span>{{pokemon.atqEspecial}}</span>
-                </div>
-
-                <div class="menu">
-                  <div id="atqEspecial-menu" [style.width]="calcularAnchoAtqEspecial()"></div>
-                </div>
-              </div>
-
-              <div class="skills">
-                <div class="detalles">
-                  <span>DefEspecial </span>
-                  <span>{{pokemon.defEspecial}}</span>
-                </div>
-
-                <div class="menu">
-                  <div id="defEspecial-menu" [style.width]="calcularAnchoDefEspecial()"></div>
-                </div>
-              </div>
-
-              <div class="skills">
-                <div class="detalles">
-                  <span>Velocidad </span>
-                  <span>{{pokemon.velocidad}}</span>
-                </div>
-
-                <div class="menu">
-                  <div id="velocidad-menu" [style.width]="calcularAnchoVelocidad()"></div>
-                </div>
-              </div>
-
-              <div class="detalles detallesResistencias">
-                <b>Muy resistente </b>
-                <span *ngFor="let muyResistente of this.muyResistente">{{muyResistente}} </span>
-              </div>
-
-              <div class="detalles detallesResistencias">
-                <b>Resistente </b>
-                <span *ngFor="let fortaleza of this.fortalezasAux">{{fortaleza}} </span>
-              </div>
-
-              <div class="detalles detallesResistencias">
-                <b>Eficaz </b>
-                <span *ngFor="let debil of this.debilidadesAux">{{debil}} </span>
-              </div>
-
-              <div class="detalles detallesResistencias">
-                <b>Muy Eficaz </b>
-                <span *ngFor="let muyEficaz of this.muyEficaz">{{muyEficaz}} </span>
-              </div>
-
-              <div class="detalles detallesResistencias">
-                <b>Inmune </b>
-                <span *ngFor="let inmune of this.inmunidadAux">{{inmune}} </span>
-              </div>
-
-            </div>
-            <div>
-            </div>
+          <div>
           </div>
         </div>
+      </div>
 
-        <div class="estiloNormal"><img src="{{pokemon.shiny}}" width="100px"></div>
-        <div class="estiloShiny"><img src="{{pokemon.animado}}" width="100px"></div>
-      </div> <!-- Lo que este debajo de esto se pone debajo de la carta -->
-    </div>
+      <div class="estiloNormal"><img src="{{pokemon.shiny}}" width="100px"></div>
+      <div class="estiloShiny"><img src="{{pokemon.animado}}" width="100px"></div>
+
+    </div> <!-- Cerrar adaptar pantalla principal -->
 
     <br><br><br><br><br><br><br>
 
