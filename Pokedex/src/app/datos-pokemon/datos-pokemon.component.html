@@ -235,6 +235,35 @@
       </div>
     </div>
 
+    <br>
+
+    <h1 class="estiloTituloEvo texto-sombra">Tabla de movimientos</h1>
+    <div class="centrar-tabla"> <!-- Tabla movimientos -->
+      <table class="texto-sombra tablaMov">
+        <tr>
+          <th>Nombre del movimiento</th>
+          <td>&nbsp;</td>
+          <th>Precisión</th>
+          <td>&nbsp;</td>
+          <th>Poder</th>
+          <td>&nbsp;</td>
+          <th>Daño</th>
+          <td>&nbsp;</td>
+          <th>Tipo</th>
+        </tr>
+        <tr *ngFor="let movimiento of this.movimientos" class="mayuscula">
+          <td>{{ movimiento.name }}</td>
+          <td>&nbsp;</td>
+          <td>{{ movimiento.accuracy }}</td>
+          <td>&nbsp;</td>
+          <td>{{ movimiento.power }}</td>
+          <td>&nbsp;</td>
+          <td>{{ movimiento.damage_class }}</td>
+          <td>&nbsp;</td>
+          <td>{{ movimiento.type }}</td>
+        </tr>
+      </table>
+    </div>
 
   </div> <!-- Fin HTML -->
 </body>

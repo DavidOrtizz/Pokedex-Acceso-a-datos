@@ -150,12 +150,29 @@
 }
 /* Cierre css evoluciones */
 
+/*  Tabla movimientos */
+.centrar-tabla {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tablaMov td{
+  padding-right: 10px;
+  padding-bottom: 5px;
+  text-align:center;
+  padding-left: 5px;
+}
+
+/* Cierre tabla movimientos */
+
 @media (max-width: 1024px) {
   .caja-padre{
     width: 30%;
     min-width: 390px;
     z-index: 1;
   }
+
 }
 
 @media (max-width: 653px) {
