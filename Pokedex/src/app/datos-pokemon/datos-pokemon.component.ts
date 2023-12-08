@@ -33,7 +33,7 @@ export class DatosPokemonComponent implements OnInit {
     descripcion: '',
     cadenas:"",
     movimientosURL:"",
-    nivelMovimiento: 0,
+    nivelMovimiento:[],
   };
 movimiento: Movimiento={
   name: "",

@@ -18,7 +18,7 @@ export interface Pokemon  {
 
 
   movimientosURL: any;
-  nivelMovimiento:number;
+  nivelMovimiento:number[];
 
 
 }
