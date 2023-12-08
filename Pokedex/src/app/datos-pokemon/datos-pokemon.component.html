@@ -243,6 +243,8 @@
         <tr>
           <th>Nombre del movimiento</th>
           <td>&nbsp;</td>
+          <th>Nivel movimiento</th>
+          <td>&nbsp;</td>
           <th>Precisión</th>
           <td>&nbsp;</td>
           <th>Poder</th>
@@ -251,8 +253,10 @@
           <td>&nbsp;</td>
           <th>Tipo</th>
         </tr>
-        <tr *ngFor="let movimiento of this.movimientos" class="mayuscula">
+        <tr *ngFor="let movimiento of this.movimientos; let i = index" class="mayuscula">
           <td>{{ movimiento.name }}</td>
+          <td>&nbsp;</td>
+          <td>{{pokemon.nivelMovimiento[i]}}</td>
           <td>&nbsp;</td>
           <td>{{ movimiento.accuracy }}</td>
           <td>&nbsp;</td>
