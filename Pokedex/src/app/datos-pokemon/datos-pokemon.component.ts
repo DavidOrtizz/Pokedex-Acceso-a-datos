@@ -306,4 +306,9 @@ movimientos :Movimiento[]=[];
       // Cuando podamos mostrar a Sylveon lo añasimos aquí
       return true;
     }
+
+    contadorNivel: number = 0;
+    nivelMovimiento(){
+      this.contadorNivel++;
+    }
 }
