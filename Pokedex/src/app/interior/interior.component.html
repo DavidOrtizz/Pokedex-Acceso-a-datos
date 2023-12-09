@@ -1,7 +1,7 @@
 <body class="fondoPagina" [style.background-color]="comprobarFondo()" [style.color]="comprobarTexto()">
   <div class="fondoPagina" [style.background-color]="comprobarFondo()" [style.color]="comprobarTexto()">
     <div class="controlarCabecera">
-      <img src="node_modules\.cache\gh-pages\https!github.com!DavidOrtizz!Pokedex-Acceso-a-datos.git\assets\img\nombrePokedex.png" class="controlarImagen-cabecera" />
+      <img src="assets/img/nombrePokedex.png" class="controlarImagen-cabecera" />
       <div class="centro">
         <div class="circuloRojo espaciado"></div>
   
@@ -25,9 +25,9 @@
           <td><b>Buscador avanzado:</b></td> <!-- Buscador para tipos -->
           <td>
             <button *ngIf="menuAbierto == false" (click)="abrirMenu()" class="botonOpciones"><img
-                src="../../assets/img/pokeballCerrada.png" width="30px" /></button>
+                src="assets/img/pokeballCerrada.png" width="30px" /></button>
             <button *ngIf="menuAbierto == true" (click)="abrirMenu()" class="botonOpciones"><img
-                src="../../assets/img/pokeballAbierta.png" width="30px" /></button>
+                src="assets/img/pokeballAbierta.png" width="30px" /></button>
           </td>
         </tr>
         <tr> <!-- Seleccionar generación -->
@@ -55,9 +55,9 @@
           <td>|</td>
           <td class="derecha">
             <button *ngIf="icono == false" (click)="modoOscuro()" class="botonOpciones">
-              <img src="../../assets/img/pokeballSol.png" width="30px" /></button>
+              <img src="assets/img/pokeballSol.png" width="30px" /></button>
             <button *ngIf="icono == true" (click)="modoOscuro()" class="botonOpciones">
-              <img src="../../assets/img/pokeballLuna.png" width="30px" /></button>
+              <img src="assets/img/pokeballLuna.png" width="30px" /></button>
           </td>
       </table>
     </div> <!-- Fin del menu principal -->
