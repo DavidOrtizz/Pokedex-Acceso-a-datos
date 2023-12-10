@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, isDevMode } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
@@ -10,6 +10,7 @@ import { PieDePaginaComponent } from './pie-de-pagina/pie-de-pagina.component';
 import { InteriorComponent } from './interior/interior.component';
 import { Pagina404Component } from './pagina404/pagina404.component';
 import { DatosPokemonComponent } from './datos-pokemon/datos-pokemon.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 
 @NgModule({
@@ -24,7 +25,13 @@ import { DatosPokemonComponent } from './datos-pokemon/datos-pokemon.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: !isDevMode(),
+      // Register the ServiceWorker as soon as the application is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]  
