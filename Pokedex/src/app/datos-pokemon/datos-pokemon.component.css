@@ -59,6 +59,7 @@
 /* CSS tabla de datos estadísticas */
 
 .caja-padre{
+  margin-left: -120px;
   width: 40%;
   min-width: 590px;
   z-index: 1;
@@ -168,11 +169,32 @@
 
 @media (max-width: 1024px) {
   .caja-padre{
+    margin-left: 1px;
     width: 30%;
     min-width: 390px;
     z-index: 1;
   }
 
+  .controlMovil{
+    margin-left: 50px;
+  }
+
+  .controlMovilTexto-titulo{
+    font-size: large;
+    margin-top: 40px;
+    margin-left: 5px;
+  }
+
+  .controlMovilTexto{
+    font-size: medium;
+    margin-top: 40px;
+    margin-left: 5px;
+  }
+
+  .controlMovilTabla{
+    font-size: 10px;
+    margin-left: -4px;
+  }
 }
 
 @media (max-width: 653px) {
@@ -180,6 +202,22 @@
     width: 20%;
     min-width: 290px;
     z-index: 1;
+  }
+
+  .controlMovil{
+    margin-left: 50px;
+  }
+
+  .controlMovilTexto-titulo{
+    font-size: large;
+    margin-top: 40px;
+    margin-left: 5px;
+  }
+
+  .controlMovilTexto{
+    font-size: medium;
+    margin-top: 40px;
+    margin-left: 5px;
   }
 }
 

@@ -29,13 +29,13 @@
 
     <div class="adaptarPantallaGeneral">
 
-      <div> <!-- Carta pokemon -->
+      <div class="controlMovil"> <!-- Carta pokemon -->
         <div class="charizard">
           <div class="perspective">
             <div class="{{pokemon.tipos[0]}}{{pokemon.tipos[1]}} {{pokemon.tipos[0]}} carta_fondo">
               <div class="power">ID: {{pokemon.id}}</div>
               <div class="nombre">
-                <h2>{{pokemon.nombre}}</h2>
+                <h2 class="controlMovilTexto-titulo">{{pokemon.nombre}}</h2>
               </div>
   
               <div class="img_charizard"><img src="{{pokemon.imagen}}" width="100%"></div>
@@ -45,7 +45,7 @@
               </div>
   
               <div class="Habilidad">
-                <h4>Descripción:</h4>
+                <h4 class="controlMovilTexto">Descripción:</h4>
               </div>
   
               <div class="Habilidad_detalle">{{pokemon.descripcion}}</div>
@@ -230,33 +230,23 @@
     <br>
 
     <h1 class="estiloTituloEvo texto-sombra">Tabla de movimientos</h1>
-    <div class="centrar-tabla"> <!-- Tabla movimientos -->
+    <div class="centrar-tabla controlMovilTabla"> <!-- Tabla movimientos -->
       <table class="texto-sombra tablaMov">
         <tr>
           <th>Nombre del movimiento</th>
-          <td>&nbsp;</td>
           <th>Nivel movimiento</th>
-          <td>&nbsp;</td>
           <th>Precisión</th>
-          <td>&nbsp;</td>
           <th>Poder</th>
-          <td>&nbsp;</td>
           <th>Daño</th>
-          <td>&nbsp;</td>
           <th>Tipo</th>
         </tr>
         <tr *ngFor="let movimiento of this.movimientos; let i = index" class="mayuscula">
           <td>{{ movimiento.name }}</td>
-          <td>&nbsp;</td>
           <td>{{pokemon.nivelMovimiento[i]}}</td>
-          <td>&nbsp;</td>
           <td>{{ movimiento.accuracy }}</td>
-          <td>&nbsp;</td>
           <td>{{ movimiento.power }}</td>
-          <td>&nbsp;</td>
           <td>{{ movimiento.damage_class }}</td>
-          <td>&nbsp;</td>
-          <td>{{ movimiento.type }}</td>
+          <td>{{ controlTraducirTipos(movimiento.type) }}</td>
         </tr>
       </table>
     </div>
