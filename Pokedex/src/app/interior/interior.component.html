@@ -179,7 +179,7 @@
             <td colspan="2" class="letraNombre" [style.color]="comprobarTexto()">{{ pokemon.nombre }}</td>
           </tr>
           <tr> <!-- Tipos -->
-            <td *ngFor="let tipo of pokemon.tipos " class="{{tipo}}">{{tipo}}</td>
+            <td *ngFor="let tipo of pokemon.tipos " class="{{tipo}}">{{ controlTraducirTipos(tipo) }}</td>
           </tr>
         </table>
       </button>

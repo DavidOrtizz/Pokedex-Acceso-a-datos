@@ -311,4 +311,47 @@ movimientos :Movimiento[]=[];
     nivelMovimiento(){
       this.contadorNivel++;
     }
+
+    controlTraducirTipos(tipo: string): string {
+      switch (tipo) {
+        case "fire":
+          return "Fuego";
+        case "water":
+          return "Agua";
+        case "grass":
+          return "Planta";
+        case "bug":
+          return "Bicho";
+        case "dark":
+          return "Siniestro";
+        case "dragon":
+          return "Dragón";
+        case "electric":
+          return "Eléctrico";
+        case "fairy":
+          return "Hada";
+        case "fighting":
+          return "Lucha";
+        case "flying":
+          return "Volador";
+        case "ghost":
+          return "Fantasma";
+        case "ground":
+          return "Tierra";
+        case "ice":
+          return "Hielo";
+        case "normal":
+          return "Normal";
+        case "poison":
+          return "Veneno";
+        case "psychic":
+          return "Psísico";
+        case "rock":
+          return "Roca";
+        case "steel":
+          return "Acero";
+        default:
+          return "";
+      }
+    }  
 }

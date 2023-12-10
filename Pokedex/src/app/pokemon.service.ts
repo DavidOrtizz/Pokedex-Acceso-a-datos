@@ -150,7 +150,8 @@ export class PokemonService {
   getDescripcion(i: number): Observable<string> {
     return this.http.get('https://pokeapi.co/api/v2/pokemon-species/' + i).pipe(map((data: any) => {      
       // Mapear la respuesta de la API para obtener la descripción del Pokémon
-      return data.flavor_text_entries[34].flavor_text;
+      return data.flavor_text_entries.find( 
+        (data: any) => data.language.name === 'es' &&  data.version.name === 'x').flavor_text;
     }));
   } // 42 Guay 52 Rata español
 
