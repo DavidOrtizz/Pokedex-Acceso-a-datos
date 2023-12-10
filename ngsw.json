@@ -1,0 +1,99 @@
+{
+  "configVersion": 1,
+  "timestamp": 1702225918272,
+  "index": "https://DavidOrtizz.github.io/Pokedex-Acceso-a-datos/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "https://DavidOrtizz.github.io/Pokedex-Acceso-a-datos/favicon.ico",
+        "https://DavidOrtizz.github.io/Pokedex-Acceso-a-datos/index.html",
+        "https://DavidOrtizz.github.io/Pokedex-Acceso-a-datos/main.6bc1935102accb94.js",
+        "https://DavidOrtizz.github.io/Pokedex-Acceso-a-datos/manifest.webmanifest",
+        "https://DavidOrtizz.github.io/Pokedex-Acceso-a-datos/polyfills.cc6002e21b5b151e.js",
+        "https://DavidOrtizz.github.io/Pokedex-Acceso-a-datos/runtime.82452df24e47a557.js",
+        "https://DavidOrtizz.github.io/Pokedex-Acceso-a-datos/styles.186c8db44232dde1.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "https://DavidOrtizz.github.io/Pokedex-Acceso-a-datos/assets/icons/icon-128x128.png",
+        "https://DavidOrtizz.github.io/Pokedex-Acceso-a-datos/assets/icons/icon-144x144.png",
+        "https://DavidOrtizz.github.io/Pokedex-Acceso-a-datos/assets/icons/icon-152x152.png",
+        "https://DavidOrtizz.github.io/Pokedex-Acceso-a-datos/assets/icons/icon-192x192.png",
+        "https://DavidOrtizz.github.io/Pokedex-Acceso-a-datos/assets/icons/icon-384x384.png",
+        "https://DavidOrtizz.github.io/Pokedex-Acceso-a-datos/assets/icons/icon-512x512.png",
+        "https://DavidOrtizz.github.io/Pokedex-Acceso-a-datos/assets/icons/icon-72x72.png",
+        "https://DavidOrtizz.github.io/Pokedex-Acceso-a-datos/assets/icons/icon-96x96.png",
+        "https://DavidOrtizz.github.io/Pokedex-Acceso-a-datos/assets/img/Rotomdex.png",
+        "https://DavidOrtizz.github.io/Pokedex-Acceso-a-datos/assets/img/nombrePokedex.png",
+        "https://DavidOrtizz.github.io/Pokedex-Acceso-a-datos/assets/img/pokeballAbierta.png",
+        "https://DavidOrtizz.github.io/Pokedex-Acceso-a-datos/assets/img/pokeballCerrada.png",
+        "https://DavidOrtizz.github.io/Pokedex-Acceso-a-datos/assets/img/pokeballLuna.png",
+        "https://DavidOrtizz.github.io/Pokedex-Acceso-a-datos/assets/img/pokeballSol.png",
+        "https://DavidOrtizz.github.io/Pokedex-Acceso-a-datos/assets/tablaTipos.json",
+        "https://DavidOrtizz.github.io/Pokedex-Acceso-a-datos/assets/video/FondoDatosPokemon.mp4",
+        "https://DavidOrtizz.github.io/Pokedex-Acceso-a-datos/assets/video/FondoDia.mp4"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "https://DavidOrtizz.github.io/Pokedex-Acceso-a-datos/assets/icons/icon-128x128.png": "f912963bdc6d5a38d8f1dd0afbaab2ce8d657acb",
+    "https://DavidOrtizz.github.io/Pokedex-Acceso-a-datos/assets/icons/icon-144x144.png": "b155fd5f2fd5d2ea7760721063003c4cd95fd783",
+    "https://DavidOrtizz.github.io/Pokedex-Acceso-a-datos/assets/icons/icon-152x152.png": "eae6e0f0c8afb8aaae339e2a569b43e9238e5e6c",
+    "https://DavidOrtizz.github.io/Pokedex-Acceso-a-datos/assets/icons/icon-192x192.png": "15c4180454633880d98674aa7394656196c91584",
+    "https://DavidOrtizz.github.io/Pokedex-Acceso-a-datos/assets/icons/icon-384x384.png": "94a915751ef6c9282df9aea405ad679230631814",
+    "https://DavidOrtizz.github.io/Pokedex-Acceso-a-datos/assets/icons/icon-512x512.png": "1de182f76f7329dfa8f9fcdd1fdcdd695bea6a99",
+    "https://DavidOrtizz.github.io/Pokedex-Acceso-a-datos/assets/icons/icon-72x72.png": "aa88a6096bd973be7f6d7a5489bfa6bc2463f8c4",
+    "https://DavidOrtizz.github.io/Pokedex-Acceso-a-datos/assets/icons/icon-96x96.png": "7fb8f59c30ce2ff12c700321a0b39e14b3dc8f95",
+    "https://DavidOrtizz.github.io/Pokedex-Acceso-a-datos/assets/img/Rotomdex.png": "26973cc059b5fabeb26e8d6d3c9c5ff9710015f7",
+    "https://DavidOrtizz.github.io/Pokedex-Acceso-a-datos/assets/img/nombrePokedex.png": "a694584115b2c8895a87aa32592f41cdced56ff1",
+    "https://DavidOrtizz.github.io/Pokedex-Acceso-a-datos/assets/img/pokeballAbierta.png": "ba77a00a27720b1c0d2d7195284e83ccf0e9cabf",
+    "https://DavidOrtizz.github.io/Pokedex-Acceso-a-datos/assets/img/pokeballCerrada.png": "8d0967750b9afcbcf32575b46d7676e7592eb8f8",
+    "https://DavidOrtizz.github.io/Pokedex-Acceso-a-datos/assets/img/pokeballLuna.png": "24a54b4c6aeafd4bc1b5cb757b35adfebb2783a8",
+    "https://DavidOrtizz.github.io/Pokedex-Acceso-a-datos/assets/img/pokeballSol.png": "b12d68964fba718e4b5c6466e43d4de2e3fa4187",
+    "https://DavidOrtizz.github.io/Pokedex-Acceso-a-datos/assets/tablaTipos.json": "76eb57901de69e3e91a1581ec8643cab037a209a",
+    "https://DavidOrtizz.github.io/Pokedex-Acceso-a-datos/assets/video/FondoDatosPokemon.mp4": "e7ed1dffe5ac6c9b7154ef49e34cf05b36a25c04",
+    "https://DavidOrtizz.github.io/Pokedex-Acceso-a-datos/assets/video/FondoDia.mp4": "6a2678e575941eaa8cf0ead48264bbe6c7e501dc",
+    "https://DavidOrtizz.github.io/Pokedex-Acceso-a-datos/favicon.ico": "f61aef2ab42208511706f0f7f981166d3b9d58b6",
+    "https://DavidOrtizz.github.io/Pokedex-Acceso-a-datos/index.html": "f203c71856c2f3ab2edbcf561e1b33023c5ab61d",
+    "https://DavidOrtizz.github.io/Pokedex-Acceso-a-datos/main.6bc1935102accb94.js": "983dff0937bbf14b3c029f3c3766c0e817856f3a",
+    "https://DavidOrtizz.github.io/Pokedex-Acceso-a-datos/manifest.webmanifest": "d3c133305833b4a066f38b3f733e321c38f479cb",
+    "https://DavidOrtizz.github.io/Pokedex-Acceso-a-datos/polyfills.cc6002e21b5b151e.js": "6698d957d30a8f65d61860b9ef9674c1f40fa7c9",
+    "https://DavidOrtizz.github.io/Pokedex-Acceso-a-datos/runtime.82452df24e47a557.js": "0c859b7c56705fd3dcf910a1c40619291036d266",
+    "https://DavidOrtizz.github.io/Pokedex-Acceso-a-datos/styles.186c8db44232dde1.css": "12aaf0c10261b2fe8093ba1a7d8c5d82c9204eb6"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ],
+  "navigationRequestStrategy": "performance"
+}
