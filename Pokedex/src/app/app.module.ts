@@ -12,7 +12,7 @@ import { Pagina404Component } from './pagina404/pagina404.component';
 import { DatosPokemonComponent } from './datos-pokemon/datos-pokemon.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 
-
+//aaaaa
 @NgModule({
   declarations: [
     AppComponent, 
